@@ -1,0 +1,24 @@
+/*general use variables*/
+:root{
+    --nav: #282828;
+    --search: #646464;
+    --logo: #f7452e;
+    --aside: #282828;
+    --background: #0D0D0D;
+    --white: #F3F3F3;
+    --post: #444444;
+    --principal: #711616;
+}
+
+/*APLICA A TODA LA PÁGINA*/
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    color: var(--white);
+}
+
+.titular{
+    font-family: 'Karla', sans-serif;;
+}
+
