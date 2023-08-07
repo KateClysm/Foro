@@ -1,0 +1,72 @@
+.container-post{
+    background-color: #444444;
+    width: 600px;
+    height: 500px;
+    margin: 50px 350px;
+    box-shadow: 3px 5px 6px 4px #282828;
+    padding: 20px;
+}
+
+.title-post h3{
+    color: #F3F3F3;
+    text-transform: uppercase;
+}
+.title-post input{
+    height: 25px;
+    width: 270px;
+}
+
+.category-post{
+    color: #F3F3F3;
+    text-transform: uppercase;
+}
+
+
+.content-post{
+    color: #F3F3F3;
+    text-transform: uppercase;
+}
+
+.category-post select:hover{
+    cursor: pointer;
+    border-color: #711616;
+}
+.category-post select{
+    height: 25px;
+    width: 200px;
+
+}
+
+.submit-post button{
+    background-color: #646464;
+    color: #F3F3F3;
+    border-radius: 45px;
+    box-shadow: 1px 2px 2px 1px #282828;
+    cursor: pointer;
+    padding: 8px;
+    margin: 20px 5px 5px 500px;
+    width: 100px;
+}
+
+.submit-post button:hover{
+    background-color: #711616;
+}
+
+
+.content-box p{
+    color: #F3F3F3;
+    font-size: 18px;
+    font-weight: 50;
+    font-style: initial;
+    padding: 60px;
+}
+.content-box p:hover{
+    color: #711616;
+    cursor: pointer;
+}
+.content-box{
+    background-color: #F3F3F3;
+    box-shadow: 2px 3px 3px 3px #282828;
+    height: 200px;
+    border-radius: 5px;
+}
