@@ -13,6 +13,11 @@
 
     <!--CSS PARTICULAR-->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/window.css">
+    <link rel="stylesheet" href="./css/statistics.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/aside.css">
 
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +33,10 @@
 <body>
 
     <!--Barra de navegación-->
-    <nav>
-        <!--logo-->
+    <!-- <nav>
         <div class="logo">
             <img src="/resources/logoNav.png" alt="Logo ParaSeekers">
         </div>
-        <!--search-->
         <div class="search-nav">
             <form action="https://www.google.com/search" method="get" class="search-bar" target="_blank">
                 <input type="text" placeholder="Search Post" name="q">
@@ -41,16 +44,8 @@
                     <img src="./resources/miniLogo.png" alt="Mini Logo ParaSeekers">
                 </button>
             </form>
-            
         </div>
 
-
-
-
-
-
-
-        <!--botones-->
         <div class="nav-buttons">
             <button class="login">
                 <a href="#">
@@ -63,6 +58,91 @@
                 </a> 
             </button>
         </div>
+    </nav> -->
+
+    <nav>
+            
+        <div class="logo">
+            <img src="/resources/logoNav.png" alt="Logo ParaSeekers">
+        </div>
+
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        
+
+        <!--Contiene los botones login y register que se visualizan en computadoras, en mobile también contiene al aside-->
+        <div class="nav-menu">
+            <div class="container-search-bar">
+                <div class="search-nav">
+                    <form action="https://www.google.com/search" method="get" class="search-bar" target="_blank">
+                        <input type="text" placeholder="Search Post" name="q">
+                        <button type="submit">
+                            <img src="./resources/miniLogo.png" alt="Mini Logo ParaSeekers">
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="login">
+                    <a href="#">
+                        Login
+                    </a> 
+                </button>
+                <button class="register">
+                    <a href="#">
+                        Register
+                    </a> 
+                </button>
+            </div>
+
+
+
+            <!--aside pero adentro del nav mobile-->
+            <div class="aside-nav-mobile">
+                <ul class="principal-page">
+                    <li href="#" class="access">Home</li>
+                    <li href="#" class="access popular-red">Popular</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <!--temario-->
+                <ul class="topics">
+                    <li href="#" class="access">Ghosts</li>
+                    <li href="#" class="access">Witchcraft</li>
+                    <li href="#" class="access">Demons</li>
+                    <li href="#" class="access">Mythological</li>
+                    <li href="#" class="access">Past Life Regression</li>
+                    <li href="#" class="access">Shadow People</li>
+                    <li href="#" class="access">Fairy Folklore</li>
+                    <li href="#" class="access">Premonitions and Prophecies</li>
+                    <li href="#" class="access">Zombies</li>
+                    <li href="#" class="access">Black Magic</li>
+                    <li href="#" class="access">Vudu Magic</li>
+                    <li href="#" class="access">Tulpas</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <!--contenido de ayuda o info-->
+                <ul class="secondary-page">
+                    <li href="#" class="access">About us</li>
+                    <li href="#" class="access">Contact</li>
+                    <li href="#" class="access">Help</li>
+                </ul>
+            </div>
+        </div>
+
+        
     </nav>
 
 
@@ -400,6 +480,11 @@
             </div>
         </div>
     </footer>
+
+
+
+
+    <script src="./scripts/nav.js"></script>
 </body>
 
 </html>
