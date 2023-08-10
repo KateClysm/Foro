@@ -7,10 +7,15 @@
 
     <!--FAVICON-->
     <link rel="shortcut icon" href="../resources/miniLogo.png" type="image/x-icon">
+
     <!--GENERAL CSS-->
     <link rel="stylesheet" href="../css/general.css">
 
     <!--SPECIFIC CSS-->
+    <link rel="stylesheet" href="../css/home/window.css">
+    <link rel="stylesheet" href="../css/home/footer.css">
+    <link rel="stylesheet" href="../css/home/nav.css">
+    <link rel="stylesheet" href="../css/home/aside.css">
     <link rel="stylesheet" href="../css/aboutUs.css">
 
     <!--GOOGLE FONTS-->
@@ -25,66 +30,128 @@
 </head>
 <body>
     <nav>
+            
         <div class="logo">
             <img src="/resources/logoNav.png" alt="Logo ParaSeekers">
         </div>
 
-        <div class="search-nav">
-            <div class="search">
-                Search Topic
+        <button class="nav-toggle" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        
+        <div class="nav-menu">
+
+            <div class="container-search-bar">
+                <div class="search-nav">
+                    <form action="https://www.google.com/search" method="get" class="search-bar" target="_blank">
+                        <input type="text" placeholder="Search Post" name="q">
+                        <button type="submit">
+                            <img src="../resources/miniLogo.png" alt="Mini Logo ParaSeekers">
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="mini-logo">
-                <img src="../resources/miniLogo.png" alt="Small Logo ParaSeekers">
+
+            <div class="nav-buttons">
+                <button class="login">
+                    <a href="#">
+                        Login
+                    </a> 
+                </button>
+                <button class="register">
+                    <a href="#">
+                        Register
+                    </a> 
+                </button>
+            </div>
+
+
+            <div class="aside-nav-mobile">
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+                <ul class="principal-page">
+                    <li href="#" class="access">Home</li>
+                    <li href="#" class="access popular-red">Popular</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="topics">
+                    <li href="#" class="access">Ghosts</li>
+                    <li href="#" class="access">Witchcraft</li>
+                    <li href="#" class="access">Demons</li>
+                    <li href="#" class="access">Mythological</li>
+                    <li href="#" class="access">Past Life Regression</li>
+                    <li href="#" class="access">Shadow People</li>
+                    <li href="#" class="access">Fairy Folklore</li>
+                    <li href="#" class="access">Premonitions and Prophecies</li>
+                    <li href="#" class="access">Zombies</li>
+                    <li href="#" class="access">Black Magic</li>
+                    <li href="#" class="access">Vudu Magic</li>
+                    <li href="#" class="access">Tulpas</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="secondary-page">
+                    <li href="#" class="access">About us</li>
+                    <li href="#" class="access">Contact</li>
+                    <li href="#" class="access">Help</li>
+                </ul>
             </div>
         </div>
 
-        <div class="buttons">
-            <button class="login">
-                <a href="#">
-                    Login
-                </a> 
-            </button>
-            <button class="register">
-                <a href="#">
-                    Register
-                </a> 
-            </button>
-        </div>
+        
     </nav>
 
     <div class="container-general">
 
-    <div class="aside-nav">
-        <div class="principal-page">
-            <a href="#" class="access">Home</a>
-            <a href="#" class="access">Popular</a>
-        </div>
+        <div class="aside-nav">
 
-        <div class="padding-divider">
-            <div class="divider"></div>
-        </div>
+            <ul class="principal-page">
+                <li href="#" class="access">Home</li>
+                <li href="#" class="access">Popular</li>
+            </ul>
 
-        <div class="topics">
-            <a href="#" class="access">Ghosts</a>
-            <a href="#" class="access">Witchcraft</a>
-            <a href="#" class="access">Demons</a>
-            <a href="#" class="access">Mythological</a>
-            <a href="#" class="access">Past Life Regression</a>
-            <a href="#" class="access">Shadow People</a>
-            <a href="#" class="access">Fairy Folklore</a>
-            <a href="#" class="access">Premonitions and Prophecies</a>
-        </div>
+            <div class="padding-divider">
+                <div class="divider"></div>
+            </div>
 
-        <div class="padding-divider">
-            <div class="divider"></div>
-        </div>
+            <ul class="topics">
+                <li href="#" class="access">Ghosts</li>
+                <li href="#" class="access">Witchcraft</li>
+                <li href="#" class="access">Demons</li>
+                <li href="#" class="access">Mythological</li>
+                <li href="#" class="access">Past Life Regression</li>
+                <li href="#" class="access">Shadow People</li>
+                <li href="#" class="access">Fairy Folklore</li>
+                <li href="#" class="access">Premonitions and Prophecies</li>
+                <li href="#" class="access">Zombies</li>
+                <li href="#" class="access">Black Magic</li>
+                <li href="#" class="access">Vudu Magic</li>
+                <li href="#" class="access">Tulpas</li>
+            </ul>
 
-        <div class="secondary-page">
-            <a href="#" class="access active">About us</a>
-            <a href="#" class="access">Contact</a>
-            <a href="#" class="access">Help</a>
+            <div class="padding-divider">
+                <div class="divider"></div>
+            </div>
+
+            <ul class="secondary-page">
+                <li href="#" class="access popular-red">About us</li>
+                <li href="#" class="access">Contact</li>
+                <li href="#" class="access">Help</li>
+            </ul>
         </div>
-    </div>
 
     <section class="about-us">
         <h1 class="about-head">About Us</h1>
@@ -127,5 +194,27 @@
     </section>
 
     </div>
+
+    <footer>
+        <div class="inside-footer">
+            <div class="footer-logo">
+                <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
+            </div>
+    
+            <div class="footer-text">
+                <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
+                
+                <div class="footer-icons">
+                    <a href="#">
+                        <i class="fa-brands fa-square-github"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-figma"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>
