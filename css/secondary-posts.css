@@ -1,0 +1,142 @@
+/*POST SECUNDARIOS*/
+.secondary-posts{
+    display: grid;
+    row-gap: 1rem;
+    padding-bottom: 2rem;
+}
+.secondary-post{
+    height: 40px;
+    background-color: var(--post);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+.secondary-post-image{
+    background-image: url(/resources/imagenPrueba.png); /*hasta tener los datos*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.secondary-post-user-image{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: var(--white);
+}
+.secondary-post-user-text{
+    padding-left: 0.5rem;
+}
+.secondary-post-user-time{
+    color: #bebebe;
+}
+.secondary-post-buttons{
+    display: flex;
+    padding: 1rem 0.2rem;
+    justify-self: end;
+}
+.secondary-post-button{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+.secondary-posts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+}
+
+.secondary-post{
+    height: 100%;
+    background-color: var(--post);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    
+    .secondary-post-button img{
+        height: 20px;
+    }
+    .container-imgPost-user{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        padding: 1rem 0;
+        
+    }
+    .secondary-post-title{
+        padding: 1rem 0.5rem;
+        width: 100%;
+        background-color: var(--search);
+        border-radius: 3px;
+    }
+
+    .secondary-post-image{
+        height: 80px;
+        width: 100%;
+        border-radius: 3px;
+    }
+    .secondary-post-user{
+        display: flex;
+        align-items: center;
+        padding: 0 0.2rem;
+        justify-self: center;
+    }
+}
+
+@media (min-width: 425px) {
+    .secondary-post-image{
+        height: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .secondary-post-image{
+        height: 100px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .secondary-post-button img{
+        height: 20px;
+    }
+    .container-imgPost-user{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 3fr 3fr;
+        padding: 1rem 0;
+        
+    }
+    .secondary-post-title{
+        padding: 1rem 0.5rem;
+        width: 100%;
+        background-color: var(--search);
+        border-radius: 3px;
+    }
+
+    .secondary-post-image{
+        height: 80px;
+        width: 100%;
+        border-radius: 3px;
+    }
+    .secondary-post-user{
+        display: flex;
+        align-items: center;
+        padding: 0 0.2rem;
+        justify-self: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-imgPost-user{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3fr 3fr 5fr;
+        padding: 1rem 0;
+        
+    }
+}

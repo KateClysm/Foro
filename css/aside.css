@@ -1,60 +1,41 @@
 
-/*ASIDE*/
-.aside-nav, .aside-nav-mobile{
+.aside-nav{
     background-color: var(--aside);
-    width: 100%;
     border-top: 1px solid var(--background);
     display: flex;
     flex-direction: column;
     align-items: start;
-    box-sizing: content-box;
     padding: 2rem 0;
+    box-sizing: border-box;
 }
-/*color de popular*/
-.popular-red{
+.aside-nav .popular-red{
     color: var(--logo);
 }
-/*estilo de los temas*/
-.access{
+.aside-nav .access{
     display: block;
     padding-bottom: 1.5rem;
     font-size: 1rem;
     padding-left: 2rem;
 }
-/*hover de los temas del aside y el show more de las comunidades*/
-.access:hover, .show-more-comunities:hover{
+.aside-nav .access:hover, .aside-nav .show-more-comunities:hover{
     color:var(--logo);
     cursor: pointer;
 }
-/*padding vertical del divider*/
-.padding-divider{
+.aside-nav .padding-divider{
     padding: 2rem 0;
     width: 100%;
 }
-/*estilos del divider*/
-.divider{
+.aside-nav .divider{
     height: 1px;
     background-color: var(--search);
 }
 
-/*se quita el padding a los últimos hijos de las siguientes clases*/
-.principal-page a:last-child, .topics a:last-child, .secondary-page a:last-child{
+.aside-nav .access:last-child{
     padding-bottom: 0;
 }
 
-.aside-nav-mobile{
-    display: none;
-}
-
-
-
-
-/* MOBILE */
-@media (max-width: 768px) {   
+@media (max-width: 768px) {
     .aside-nav{
         display: none;
-    }
-    .aside-nav-mobile{
-        display: flex;
     }
 }
