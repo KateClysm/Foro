@@ -1,0 +1,16 @@
+/*CONTENEDOR GENERAL*/
+.main-content{
+    background-color: var(--background);
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    width: 100vw;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -136,7 +136,7 @@ nav{
         height: calc(100% - 60px);
         overflow-y: auto;
         left: 100%;
-        transition: left 0.3s;
+        transition: left 0.5s;
         display: block;
     }
 

@@ -1,0 +1,12 @@
+/*---------MOBILE FIRST---------*/
+
+/*CONTENEDOR POSTEOS PRINCIPALES*/
+.posts-content{
+    width: 90%; /*Lo separa de las otras secciones, deja ese espacio negro del fondo*/
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    row-gap: 2rem;
+    padding-top: 2rem;
+}
+

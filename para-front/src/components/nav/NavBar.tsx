@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './navBar.css';
-import logoNav from '../../resources/logoNav.png';
-import miniLogo from '../../resources/miniLogo.png';
+import logoNav from '../../assets/logoNav.png';
+import miniLogo from '../../assets/miniLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 

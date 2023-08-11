@@ -1,0 +1,9 @@
+/*CONTENEDOR POSTEOS SECUNDARIOS*/
+
+.secondary-posts{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 2rem;
+    padding-bottom: 2rem;
+}
