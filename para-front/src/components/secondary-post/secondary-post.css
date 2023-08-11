@@ -30,7 +30,7 @@
 }
 /*imagen del post*/
 .secondary-post-image{
-    background-image: url(/resources/imagenPrueba.png); /*hasta tener los datos*/
+    background-image: url(../../assets/imagenPrueba.png); /*hasta tener los datos*/
     background-repeat: no-repeat;
     background-size: cover;
     height: 80px;

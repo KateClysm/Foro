@@ -22,6 +22,7 @@ const App: React.FC = () => {
                 <PrincipalPost/>
           
                 <div className="secondary-posts">
+                  {/* datos puestos de ejemplo, luego deben ser reemplazados con datos de posteos */}
                   <SecondaryPost
                     title="Scary House In Road 16°. I think i saw a Poltergeist."
                     userName="Lucas Trobato"
@@ -29,12 +30,26 @@ const App: React.FC = () => {
                     comments={10}
                     likes={3}
                     views={40}/>  
-                    {/* datos puestos de ejemplo, luego deben ser reemplazados con datos de posteos */}
+                    <SecondaryPost
+                    title="Scary House In Road 16°. I think i saw a Poltergeist."
+                    userName="Lucas Trobato"
+                    userTime="16 hours ago"
+                    comments={10}
+                    likes={3}
+                    views={40}/>  
+                    <SecondaryPost
+                    title="Scary House In Road 16°. I think i saw a Poltergeist."
+                    userName="Lucas Trobato"
+                    userTime="16 hours ago"
+                    comments={10}
+                    likes={3}
+                    views={40}/>  
                 </div>
           </div>
           
           <AsideRight />
       </div>
+
       <Footer />
     </div>
   );

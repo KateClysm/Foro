@@ -2,7 +2,7 @@ import React from 'react';
 import commentsIcon from '../../assets/comments.png';
 import likesIcon from '../../assets/likes.png';
 import seenIcon from '../../assets/seen.png';
-import imagenPrueba from '../../assets/imagenPrueba.png'
+// import imagenPrueba from '../../assets/imagenPrueba.png'
 import './secondary-post.css';
 
 interface SecondaryPostProps {
@@ -26,7 +26,7 @@ const SecondaryPost: React.FC<SecondaryPostProps> = ({
     <div className="secondary-post">
       <div className="container-imgPost-user">
         <div className="secondary-post-image">
-          <img src={imagenPrueba}/>
+          
         </div>
 
         <div className="secondary-post-title">{title}</div>
