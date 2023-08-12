@@ -17,7 +17,6 @@
     font-family: 'Inconsolata', monospace;
     color: var(--white);
     font-size: 0.9rem;
-    overflow-x: hidden;
 }
 html, body{
     height: 100%;

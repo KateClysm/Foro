@@ -6,6 +6,7 @@ footer{
     align-items: center;
     justify-content: center;
     height: 450px;
+    width: 100vw;
 }
 .inside-footer{
     display: flex;
