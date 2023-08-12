@@ -22,7 +22,6 @@ const App: React.FC = () => {
                 <PrincipalPost/>
           
                 <div className="secondary-posts">
-                  {/* datos puestos de ejemplo, luego deben ser reemplazados con datos de posteos */}
                   <SecondaryPost
                     title="Scary House In Road 16°. I think i saw a Poltergeist."
                     userName="Lucas Trobato"

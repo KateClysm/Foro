@@ -3,7 +3,6 @@ import commentsIcon from '../../assets/comments.png';
 import likesIcon from '../../assets/likes.png';
 import seenIcon from '../../assets/seen.png';
 import './principal-post.css';
-import imagenPrueba from '../../assets/imagenPrueba.png'
 
 const PrincipalPosts: React.FC = () => {
   return (
@@ -18,7 +17,6 @@ const PrincipalPosts: React.FC = () => {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, mollitia officia. Sapiente itaque, sunt expedita delectus architecto non sint? Est quos vitae mollitia hic recusandae. Alias quidem soluta corrupti in nostrum deserunt harum quia ipsa excepturi vero error reiciendis veniam, neque recusandae fugiat molestiae animi maiores laudantium velit deleniti labore...</p>
         </div>
         <div className="post-image">
-          <img src={imagenPrueba} />
         </div>
         <div className="post-buttons">
           <button className="post-button">
