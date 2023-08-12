@@ -2,7 +2,7 @@
 nav{
     background-color: var(--nav);
     height: 70px;
-    width: 100vw;
+    /* width: 100vw;  error hdp */
     display: grid;
     grid-template-columns: 2fr 8fr; 
     align-items: center;
@@ -136,7 +136,7 @@ nav{
         height: calc(100% - 60px);
         overflow-y: auto;
         left: 100%;
-        transition: left 0.5s;
+        transition: left 0.3s;
         display: block;
     }
 
@@ -225,10 +225,3 @@ nav{
         padding: 0 1rem;
     }
 }
-
-
-
-
-
-
-

@@ -1,15 +1,3 @@
-/*----------MOBILE FIRST---------------*/
-
-/*POST SECUNDARIOS*/
-
-/*contenedor de los posts*/
-.secondary-posts{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    row-gap: 2rem;
-    padding-bottom: 2rem;
-}
 /*post individual*/
 .secondary-post{
     background-color: var(--post);

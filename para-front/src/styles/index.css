@@ -1,4 +1,4 @@
-
+/*general use variables*/
 :root{
     --nav: #282828;
     --search: #646464;
@@ -10,12 +10,14 @@
     --principal: #711616;
 }
 
-*{  margin: 0;
-    padding: 0;
+/*APLICA A TODA LA PÁGINA*/
+*{  margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
     color: var(--white);
     font-size: 0.9rem;
+    
 }
 html, body{
     height: 100%;
@@ -26,6 +28,7 @@ html, body{
     font-family: 'Karla', sans-serif;;
 }
 
+/*configuración de todos los anchor*/
 a{
     text-decoration: none;
 }
