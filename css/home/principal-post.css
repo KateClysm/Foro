@@ -1,0 +1,189 @@
+/*---------MOBILE FIRST---------*/
+
+/*CONTENEDOR POSTEOS PRINCIPALES*/
+.container-principal-posts{
+    width: 90%; /*Lo separa de las otras secciones, deja ese espacio negro del fondo*/
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    row-gap: 2rem;
+    padding-top: 2rem;
+}
+/*POSTEO PRINCIPAL*/
+.principal-post{
+    background-color: var(--principal);
+    border-radius: 5px; 
+    padding: 1rem;
+}
+.user{ /*contiene a la imagen, el nombre el tiempo*/
+    display: flex;
+    align-items: center;
+}
+.user-img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--white); /*Hasta tener una foto*/
+}
+.user-name{
+    padding-left: 0.8rem;
+    font-size: 0.8rem;
+}
+.user-time{ /*hasta tener el dato del tiempo*/
+    color: rgb(194, 194, 194);
+    padding-left: 0.8rem;
+    font-size: 0.7rem;
+}
+.principal-post .text p{
+    padding: 1rem 0;
+    font-size: 0.7rem;
+    line-height: 1.5rem; /*separa a las líneas de texto para que sean más legibles*/
+}
+.post-image{/*imagen grande del post*/
+    height: 200px;
+    background-image: url(/resources/imagenPrueba.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+}
+.post-buttons{ /*Contenedor de todos los bonotes del post principal*/
+    display: flex;
+    flex-wrap: wrap; /*hace un wrap si es necesario*/
+    row-gap: 0.5rem;
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+.post-button{/*cada botón*/
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0rem 0 0 0.6rem;
+    cursor: pointer;
+    font-size: 0.6rem;
+}
+.post-button img{/*la imagen de cada botón*/
+    height: 20px;
+    padding-right: 0.5rem;
+}
+/*BOTÓN SHOW MORE*/
+.post-button-show{
+    background-color:transparent;
+    padding-left: 0.8rem;
+    border: none;
+    cursor: pointer;
+}
+.post-button-show p{
+    background-color: var(--white);
+    color: var(--background);
+    border-radius: 3px;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.6rem;
+}
+.post-button-show:hover > p{
+    background-color: var(--search);
+    color: var(--white);
+}
+
+
+
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 768px) {
+    .principal-post .text p{
+        font-size: 0.8rem;
+        
+    }
+    .post-image{/*imagen grande del post*/
+        height: 250px;
+    }
+    .post-button{/*cada botón*/
+        font-size: 0.7rem;
+    }
+    .post-button img{/*la imagen de cada botón*/
+        height: 25px;
+    }
+    .post-button-show p{
+        padding: 0.5rem 0.7rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .user-name{
+        font-size: 1rem;
+    }
+    .user-time{ /*hasta tener el dato del tiempo*/
+        font-size: 0.8rem;
+    }
+    .principal-post .text p{
+        font-size: 0.9rem;
+        
+    }
+    .post-image{/*imagen grande del post*/
+        height: 250px;
+    }
+    .post-button{/*cada botón*/
+        font-size: 0.9rem;
+    }
+    .post-button img{/*la imagen de cada botón*/
+        height: 25px;
+    }
+    .post-button-show p{
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1240px) {
+    .user-name{
+        font-size: 1.1rem;
+    }
+    .user-time{ /*hasta tener el dato del tiempo*/
+        font-size: 0.9rem;
+    }
+    .principal-post .text p{
+        font-size: 1rem;
+    }
+    .post-image{/*imagen grande del post*/
+        height: 320px;
+    }
+    .post-button{/*cada botón*/
+        font-size: 1rem;
+    }
+    .post-button img{/*la imagen de cada botón*/
+        height: 35px;
+    }
+    .post-button-show p{
+        padding: 0.6rem 0.7rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .user-name{
+        font-size: 1.5rem;
+    }
+    .user-time{ /*hasta tener el dato del tiempo*/
+        font-size: 1.1rem;
+    }
+    .principal-post .text p{
+        font-size: 1.3rem;
+    }
+    .post-image{/*imagen grande del post*/
+        height: 400px;
+    }
+    .post-button{/*cada botón*/
+        font-size: 1rem;
+    }
+    .post-button img{/*la imagen de cada botón*/
+        height: 50px;
+    }
+    .post-button-show p{
+        padding: 0.5rem 0.7rem;
+        font-size: 1.1rem;
+    }
+}

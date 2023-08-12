@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="css/general.css">
 
     <!--CSS PARTICULAR-->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/home/window.css">
+    <link rel="stylesheet" href="./css/home/statistics.css">
+    <link rel="stylesheet" href="./css/home/footer.css">
+    <link rel="stylesheet" href="./css/home/nav.css">
+    <link rel="stylesheet" href="./css/home/aside.css">
+    <link rel="stylesheet" href="./css/home/secondary-posts.css">
+    <link rel="stylesheet" href="./css/home/principal-post.css">
+    <link rel="stylesheet" href="./css/home/divider.css">
 
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,97 +34,143 @@
 
 <body>
 
+    <!--Barra de navegación-->
     <nav>
+            
         <div class="logo">
             <img src="/resources/logoNav.png" alt="Logo ParaSeekers">
         </div>
 
-        <div class="search-nav">
-            <div class="search">
-                Search Topic
+        <button class="nav-toggle" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        
+        <div class="nav-menu">
+
+            <div class="container-search-bar">
+                <div class="search-nav">
+                    <form action="https://www.google.com/search" method="get" class="search-bar" target="_blank">
+                        <input type="text" placeholder="Search Post" name="q">
+                        <button type="submit">
+                            <img src="./resources/miniLogo.png" alt="Mini Logo ParaSeekers">
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="mini-logo">
-                <img src="resources/miniLogo.png" alt="Small Logo ParaSeekers">
+
+            <div class="nav-buttons">
+                <button class="login">
+                    <a href="#">
+                        Login
+                    </a> 
+                </button>
+                <button class="register">
+                    <a href="#">
+                        Register
+                    </a> 
+                </button>
+            </div>
+
+
+            <div class="aside-nav-mobile">
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+                <ul class="principal-page">
+                    <li href="#" class="access">Home</li>
+                    <li href="#" class="access popular-red">Popular</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="topics">
+                    <li href="#" class="access">Ghosts</li>
+                    <li href="#" class="access">Witchcraft</li>
+                    <li href="#" class="access">Demons</li>
+                    <li href="#" class="access">Mythological</li>
+                    <li href="#" class="access">Past Life Regression</li>
+                    <li href="#" class="access">Shadow People</li>
+                    <li href="#" class="access">Fairy Folklore</li>
+                    <li href="#" class="access">Premonitions and Prophecies</li>
+                    <li href="#" class="access">Zombies</li>
+                    <li href="#" class="access">Black Magic</li>
+                    <li href="#" class="access">Vudu Magic</li>
+                    <li href="#" class="access">Tulpas</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="secondary-page">
+                    <li href="#" class="access">About us</li>
+                    <li href="#" class="access">Contact</li>
+                    <li href="#" class="access">Help</li>
+                </ul>
             </div>
         </div>
 
-        <div class="buttons">
-            <button class="login">
-                <a href="#">
-                    Login
-                </a> 
-            </button>
-            <button class="register">
-                <a href="#">
-                    Register
-                </a> 
-            </button>
-        </div>
+        
     </nav>
 
-
     <div class="container-general">
-
         <div class="aside-nav">
-            <div class="principal-page">
-                <a href="#" class="access">Home</a>
-                <a href="#" class="access popular-red">Popular</a>
-            </div>
+
+            <ul class="principal-page">
+                <li href="#" class="access">Home</li>
+                <li href="#" class="access popular-red">Popular</li>
+            </ul>
 
             <div class="padding-divider">
                 <div class="divider"></div>
             </div>
 
-            <div class="topics">
-                <a href="#" class="access">Ghosts</a>
-                <a href="#" class="access">Witchcraft</a>
-                <a href="#" class="access">Demons</a>
-                <a href="#" class="access">Mythological</a>
-                <a href="#" class="access">Past Life Regression</a>
-                <a href="#" class="access">Shadow People</a>
-                <a href="#" class="access">Fairy Folklore</a>
-                <a href="#" class="access">Premonitions and Prophecies</a>
-                <a href="#" class="access">Ghosts</a>
-                <a href="#" class="access">Witchcraft</a>
-                <a href="#" class="access">Demons</a>
-                <a href="#" class="access">Mythological</a>
-                <a href="#" class="access">Past Life Regression</a>
-                <a href="#" class="access">Shadow People</a>
-                <a href="#" class="access">Fairy Folklore</a>
-                <a href="#" class="access">Premonitions and Prophecies Premonitions and Prophecies</a>
-            </div>
+            <ul class="topics">
+                <li href="#" class="access">Ghosts</li>
+                <li href="#" class="access">Witchcraft</li>
+                <li href="#" class="access">Demons</li>
+                <li href="#" class="access">Mythological</li>
+                <li href="#" class="access">Past Life Regression</li>
+                <li href="#" class="access">Shadow People</li>
+                <li href="#" class="access">Fairy Folklore</li>
+                <li href="#" class="access">Premonitions and Prophecies</li>
+                <li href="#" class="access">Zombies</li>
+                <li href="#" class="access">Black Magic</li>
+                <li href="#" class="access">Vudu Magic</li>
+                <li href="#" class="access">Tulpas</li>
+            </ul>
 
             <div class="padding-divider">
                 <div class="divider"></div>
             </div>
 
-            <div class="secondary-page">
-                <a href="#" class="access">About us</a>
-                <a href="#" class="access">Contact</a>
-                <a href="#" class="access">Help</a>
-            </div>
+            <ul class="secondary-page">
+                <li href="#" class="access">About us</li>
+                <li href="#" class="access">Contact</li>
+                <li href="#" class="access">Help</li>
+            </ul>
         </div>
 
         <div class="container-principal-posts">
             <div class="principal-post">
                 <div class="user">
-                    <div class="user-img">
-
-                    </div>
-                    <div class="user-name">
-                        Lydia Green
-                    </div>
-                    <div class="user-time">
-                        ten minutes ago
-                    </div>
+                    <div class="user-img"></div>
+                    <div class="user-name">Lydia Green</div>
+                    <div class="user-time">ten minutes ago</div>
+                    <button class="post-button-show"><p>Show Post</p></button>
                 </div>
                 <div class="text">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, mollitia officia. Sapiente itaque, sunt expedita delectus architecto non sint? Est quos vitae mollitia hic recusandae. Alias quidem soluta corrupti in nostrum deserunt harum quia ipsa excepturi vero error reiciendis veniam, neque recusandae fugiat molestiae animi maiores laudantium velit deleniti labore...</p>
                 </div>
-
-                <div class="post-image">
-                </div>
-                
+                <div class="post-image"></div>
+               
                 <div class="post-buttons">
                     <button class="post-button">
                         <img src="resources/comments.png" alt="Icon Coments">
@@ -125,158 +178,150 @@
                     </button>
                     <button class="post-button">
                         <img src="resources/likes.png" alt="Icon Likes">
-                        3 Likes
+                        03 Likes
                     </button>
                     <button class="post-button">
                         <img src="resources/seen.png" alt="Icon Seen">
-                        Seen by 40 users
+                        40 Views
                     </button>
+                    
                 </div>
+                
             </div>
 
-            <div class="secondary-posts">
-                <div class="secondary-post">
-                    <div class="secondary-post-image"></div>
-                    <div class="secondary-post-user">
-                        <div class="secondary-post-user-image"></div>
-                        <div class="secondary-post-user-text">
-                            <div class="secondary-post-user-name">Lucas Trobato</div>
-                            <div class="secondary-post-user-time">16 hours ago</div>
-                        </div>
-                    </div>
-                 
-                    <div class="secondary-post-buttons">
-                        <button class="secondary-post-button">
-                            <img src="resources/comments.png" alt="Icon Coments">
-                            10 Comments
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/likes.png" alt="Icon Likes">
-                            3 Likes
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/seen.png" alt="Icon Seen">
-                            Seen by 40 users
-                        </button>
-                    </div>
 
+           <div class="secondary-posts"> 
+
+                <div class="secondary-post">
+
+                    <div class="container-imgPost-user">
+                        <div class="secondary-post-image"></div>
+
+                        <div class="secondary-post-title">Scary House In Road 16°. I think i saw a Poltergeist.</div>
+                        
+                        <div class="secondary-post-user-show">
+                            <div class="secondary-user">
+                                <div class="secondary-post-user-image"></div>
+                                <div class="secondary-post-user-data">
+                                    <div class="secondary-post-user-name">Lucas Trobato</div>
+                                    <div class="secondary-post-user-time">16 hours ago</div>
+                                </div>
+                            </div>
+                            
+                            <button class="post-button-show"><p>Show Post</p></button>
+                       
+                            <div class="secondary-post-buttons">
+                                <button class="secondary-post-button">
+                                    <img src="resources/comments.png" alt="Icon Coments">
+                                    10 Comments
+                                </button>
+                                <button class="secondary-post-button">
+                                    <img src="resources/likes.png" alt="Icon Likes">
+                                    03 Likes
+                                </button>
+                                <button class="secondary-post-button">
+                                    <img src="resources/seen.png" alt="Icon Seen">
+                                    40 Views
+                                </button>
+                            </div>
+                        </div>
+                       
+                    </div>
                 </div>
 
                 <div class="secondary-post">
-                    <div class="secondary-post-image"></div>
-                    <div class="secondary-post-user">
-                        <div class="secondary-post-user-image"></div>
-                        <div class="secondary-post-user-text">
-                            <div class="secondary-post-user-name">Lucas Trobato</div>
-                            <div class="secondary-post-user-time">16 hours ago</div>
-                        </div>
-                    </div>
-                 
-                    <div class="secondary-post-buttons">
-                        <button class="secondary-post-button">
-                            <img src="resources/comments.png" alt="Icon Coments">
-                            10 Comments
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/likes.png" alt="Icon Likes">
-                            3 Likes
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/seen.png" alt="Icon Seen">
-                            Seen by 40 users
-                        </button>
-                    </div>
 
+                    <div class="container-imgPost-user">
+                        <div class="secondary-post-image"></div>
+
+                        <div class="secondary-post-title">Scary House In Road 16°. I think i saw a Poltergeist.</div>
+                        
+                        <div class="secondary-post-user-show">
+                            <div class="secondary-user">
+                                <div class="secondary-post-user-image"></div>
+                                <div class="secondary-post-user-data">
+                                    <div class="secondary-post-user-name">Lucas Trobato</div>
+                                    <div class="secondary-post-user-time">16 hours ago</div>
+                                </div>
+                            </div>
+                            
+                            <button class="post-button-show"><p>Show Post</p></button>
+                       
+                            <div class="secondary-post-buttons">
+                                <button class="secondary-post-button">
+                                    <img src="resources/comments.png" alt="Icon Coments">
+                                    10 Comments
+                                </button>
+                                <button class="secondary-post-button">
+                                    <img src="resources/likes.png" alt="Icon Likes">
+                                    03 Likes
+                                </button>
+                                <button class="secondary-post-button">
+                                    <img src="resources/seen.png" alt="Icon Seen">
+                                    40 Views
+                                </button>
+                            </div>
+                        </div>
+                       
+                    </div>
                 </div>
 
                 <div class="secondary-post">
-                    <div class="secondary-post-image"></div>
-                    <div class="secondary-post-user">
-                        <div class="secondary-post-user-image"></div>
-                        <div class="secondary-post-user-text">
-                            <div class="secondary-post-user-name">Lucas Trobato</div>
-                            <div class="secondary-post-user-time">16 hours ago</div>
+
+                    <div class="container-imgPost-user">
+                        <div class="secondary-post-image"></div>
+
+                        <div class="secondary-post-title">Scary House In Road 16°. I think i saw a Poltergeist.</div>
+                        
+                        <div class="secondary-post-user-show">
+                            <div class="secondary-user">
+                                <div class="secondary-post-user-image"></div>
+                                <div class="secondary-post-user-data">
+                                    <div class="secondary-post-user-name">Lucas Trobato</div>
+                                    <div class="secondary-post-user-time">16 hours ago</div>
+                                </div>
+                            </div>
+                            
+                            <button class="post-button-show"><p>Show Post</p></button>
+                       
+                            <div class="secondary-post-buttons">
+                                <button class="secondary-post-button">
+                                    <img src="resources/comments.png" alt="Icon Coments">
+                                    10 Comments
+                                </button>
+                                <button class="secondary-post-button">
+                                    <img src="resources/likes.png" alt="Icon Likes">
+                                    03 Likes
+                                </button>
+                                <button class="secondary-post-button">
+                                    <img src="resources/seen.png" alt="Icon Seen">
+                                    40 Views
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                 
-                    <div class="secondary-post-buttons">
-                        <button class="secondary-post-button">
-                            <img src="resources/comments.png" alt="Icon Coments">
-                            10 Comments
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/likes.png" alt="Icon Likes">
-                            3 Likes
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/seen.png" alt="Icon Seen">
-                            Seen by 40 users
-                        </button>
+                       
                     </div>
 
+                   
+
+                    
+                    
+                    
                 </div>
+            
 
-                <div class="secondary-post">
-                    <div class="secondary-post-image"></div>
-                    <div class="secondary-post-user">
-                        <div class="secondary-post-user-image"></div>
-                        <div class="secondary-post-user-text">
-                            <div class="secondary-post-user-name">Lucas Trobato</div>
-                            <div class="secondary-post-user-time">16 hours ago</div>
-                        </div>
-                    </div>
-                 
-                    <div class="secondary-post-buttons">
-                        <button class="secondary-post-button">
-                            <img src="resources/comments.png" alt="Icon Coments">
-                            10 Comments
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/likes.png" alt="Icon Likes">
-                            3 Likes
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/seen.png" alt="Icon Seen">
-                            Seen by 40 users
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="secondary-post">
-                    <div class="secondary-post-image"></div>
-                    <div class="secondary-post-user">
-                        <div class="secondary-post-user-image"></div>
-                        <div class="secondary-post-user-text">
-                            <div class="secondary-post-user-name">Lucas Trobato</div>
-                            <div class="secondary-post-user-time">16 hours ago</div>
-                        </div>
-                    </div>
-                 
-                    <div class="secondary-post-buttons">
-                        <button class="secondary-post-button">
-                            <img src="resources/comments.png" alt="Icon Coments">
-                            10 Comments
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/likes.png" alt="Icon Likes">
-                            3 Likes
-                        </button>
-                        <button class="secondary-post-button">
-                            <img src="resources/seen.png" alt="Icon Seen">
-                            Seen by 40 users
-                        </button>
-                    </div>
-
-                </div>
             </div>
         </div>
 
-        <div class="container-statistics">
 
-            <div class="statistic-1">
-                <div class="popular-comunities">
-                    <div class="statistic-title">Popular Comunities</div>
+        <div class="padding-divider-statistics">
+            <div class="statistics-divider"></div>
+        </div>
+
+        <div class="container-statistics-and-comunities">
+
+            <div class="comunities">
+                <div class="statistic-title">Popular Comunities</div>
 
                     <a href="#" class="comunity">
                         <div class="comunity-image"></div>
@@ -285,94 +330,96 @@
 
                     <a href="#" class="comunity">
                         <div class="comunity-image"></div>
-                        <div class="comunity-name">Red Witches</div>
+                        <div class="comunity-name">Book of Shadows</div>
                     </a>
                     
                     <a href="#" class="comunity">
                         <div class="comunity-image"></div>
-                        <div class="comunity-name">Red Witches</div>
+                        <div class="comunity-name">Black Spiders</div>
                     </a>
 
                     <a href="#" class="comunity">
                         <div class="comunity-image"></div>
-                        <div class="comunity-name">Red Witches</div>
+                        <div class="comunity-name">Crimsom Union</div>
                     </a>
 
                     <a href="#" class="comunity">
                         <div class="comunity-image"></div>
-                        <div class="comunity-name">Red Witches</div>
+                        <div class="comunity-name">Ghost Hunters</div>
                     </a>
 
                     <a class="show-more-comunities comunity" href="#">Show More...</a>
-                    
+            </div>
+
+            <div class="statistic">
+                <div class="statistic-title">
+                    <i class="fa-solid fa-chart-column statistics-icon"></i>
+                    Online Statistics</div>
+
+                <div class="statistic-data">
+                    <div class="members">Members</div>
+                    <div class="number">3</div>
+                </div>
+
+                <div class="statistic-data">
+                    <div class="visitors">Visitors</div>
+                    <div class="number">12</div>
                 </div>
             </div>
 
-            <div class="statistic-1 statistic-2">
-                <div class="popular-comunities">
-                    <div class="statistic-title">
-                        <i class="fa-solid fa-chart-column statistics-icon"></i>
-                        Online Statistics</div>
+            <div class="statistic">
+                <div class="statistic-title">
+                    <i class="fa-solid fa-chart-column statistics-icon"></i>
+                    Forum Statistics</div>
 
-                    <div class="statistic">
-                        <div class="members">Members</div>
-                        <div class="members-number">3</div>
-                    </div>
+                <div class="statistic-data">
+                    <div class="members">Threads:</div>
+                    <div class="number">40</div>
+                </div>
 
-                    <div class="statistic">
-                        <div class="visitors">Visitors</div>
-                        <div class="visitors-number">12</div>
-                    </div>
+                <div class="statistic-data">
+                    <div class="visitors">Messages</div>
+                    <div class="number">120</div>
+                </div>
+
+                <div class="statistic-data">
+                    <div class="visitors">Members</div>
+                    <div class="number">15</div>
                 </div>
             </div>
-            
-            <div class="statistic-1 statistic-3">
-                <div class="popular-comunities">
-                    <div class="statistic-title">
-                        <i class="fa-solid fa-chart-column statistics-icon"></i>
-                        Forum Statistics</div>
-
-                    <div class="statistic">
-                        <div class="members">Threads:</div>
-                        <div class="members-number">40</div>
-                    </div>
-
-                    <div class="statistic">
-                        <div class="visitors">Messages</div>
-                        <div class="visitors-number">120</div>
-                    </div>
-
-                    <div class="statistic">
-                        <div class="visitors">Members</div>
-                        <div class="visitors-number">15</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
 
     </div>
 
+
     
+    <!--footer-->
     <footer>
-        <div class="footer-logo">
-            <img src="resources/logoNav.png" alt="Logo ParaSeekers">
-        </div>
-
-        <div class="footer-text">
-            <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
-
-            <div class="footer-icons">
-                <a href="#">
-                    <i class="fa-brands fa-square-github"></i>
-                </a>
+        <div class="inside-footer">
+            <div class="footer-logo">
+                <img src="resources/logoNavWhite.png" alt="Logo ParaSeekers">
+            </div>
+    
+            <div class="footer-text">
+                <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
                 
-                <a href="#">
-                    <i class="fa-brands fa-figma"></i>
-                </a>
-              
+                <div class="footer-icons">
+                    <a href="#">
+                        <i class="fa-brands fa-square-github"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-figma"></i>
+                    </a>
+                </div>
             </div>
         </div>
+
     </footer>
+
+
+
+
+    <script src="./scripts/nav.js"></script>
 </body>
 
 </html>
