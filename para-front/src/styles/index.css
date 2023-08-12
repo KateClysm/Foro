@@ -27,8 +27,7 @@ html, body{
 .title{
     font-family: 'Karla', sans-serif;;
 }
+a{text-decoration: none;}
 
-/*configuración de todos los anchor*/
-a{
-    text-decoration: none;
-}
+
+

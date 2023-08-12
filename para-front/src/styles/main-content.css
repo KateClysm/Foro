@@ -5,6 +5,12 @@
     grid-template-columns: 2fr 6fr 2fr;
 }
 
+.user-name{font-size: 0.8rem;}
+.user-time{font-size: 0.6rem;}
+.post-title{font-size: 0.8rem;}
+.post-text{font-size: 0.7rem;}
+.button-text{font-size: 0.8rem;}
+
 /* MOBILE */
 @media (max-width: 768px) {
     .main-content{
