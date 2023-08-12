@@ -30,7 +30,7 @@
 }
 .post-image{/*imagen grande del post*/
     height: 200px;
-    background-image: url(../../assets/imagenPrueba.png);
+    /* background-image: url(../../assets/imagenPrueba.png); */
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
