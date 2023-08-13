@@ -1,53 +1,69 @@
+/*-----------------MOBILE FIRST--------------------*/
+
+
+
+
+/*-------------------------------------------------*/
+/*contenedor*/
 .principal-post{
     border-radius: 5px;
-    padding: 0.8rem 1rem;
-    height: 100%;
+    padding: 0.8rem 0.6rem;
     display: flex;
     flex-direction: column;
     background-color: var(--principal);
 }
 
-.principal-post-access-user{
+/*contenedor usuario y botón show post*/
+.principal-post-user{
     padding-bottom: 1rem;
     display: flex;
     align-items: center;
 }
-.principal-post-access-user-data{
+/*datos del usuario*/
+.principal-post-user-data{
     padding: 0rem 2rem 0rem 0.5rem;
 }
-
-.principal-post-content{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-}
-
-.principal-post-content-img{
-    background-image: url(../../assets/imagenPrueba.png);
+/*imagen del usuario*/
+.principal-post-user-image{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 320px;
-    border-radius: 3px;
 }
 
-.principal-post-access{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding-top: 0.5rem;
-}
 
-.principal-post-access-buttons-show p{
-    color: var(--background);
-}
-.principal-post-access-buttons-show{
+
+/*-------------------------------------------------*/
+/*botón show post*/
+.principal-post-buttons-show{
     border-radius: 3px;
     outline: none;
     border: none;
     padding: 0.6rem;
     background-color: var(--white);
 }
+.principal-post-buttons-show p{
+    color: var(--background);
+}
 
+
+
+/*-------------------------------------------------*/
+/*contenedor del la imagen y texto*/
+.principal-post-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+/*imagen del post*/
+.principal-post-content-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    border-radius: 3px;
+}
+/*contenido textual del post*/
 .principal-post-content-data{
     border-radius: 3px;
     padding: 0.5rem;
@@ -55,8 +71,83 @@
     overflow: hidden;
     height: 150px;
 }
+.principal-post-content-data-title{
+    padding-bottom: 0.7rem;
+}
+/*configuración de desbordamiento*/
 .principal-post-content-data-text{
     max-height: 6.5rem; 
     overflow: hidden; 
     word-wrap: break-word; 
+}
+
+
+
+
+
+/*-------------------------------------------------*/
+/*contenedor botones*/
+.principal-post-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0rem;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+}
+/*cada botón*/
+.principal-post-buttons-button{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding-right: 0.3rem;
+    cursor: pointer;
+}
+/*íconos coments, likes, seen*/
+.principal-post-buttons-button img{
+    padding-right: 0.4rem;
+    height: 20px;
+}
+
+
+
+
+
+
+/*----------------------RESPONSIVE---------------------------*/
+@media (min-width: 768px) {
+    .principal-post-buttons{
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 2rem;
+        padding-top: 1rem;   
+    }
+    .principal-post-content-data-text{
+        max-height: 5.9rem; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .principal-post-content-data-text{
+        max-height: 6rem; 
+    }
+    .principal-post-content-data{
+        height: 160px;
+    }
+    .principal-post-content-img{
+        height: 250px;
+    }
+    .principal-post{
+        padding:1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .principal-post-content-img{
+        height: 320px;
+    }
+    .principal-post-buttons-button img{
+        height: 35px;
+    }
 }

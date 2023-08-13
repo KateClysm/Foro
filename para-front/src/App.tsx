@@ -20,6 +20,7 @@ const App: React.FC = () => {
 
           <div className="posts-content">
               <PrincipalPost
+                  userImage='https://toppng.com/uploads/preview/animated-black-cat-gif-115497838102ojcyei5lu.png'
                   title="I think my Grandma is eating people"
                   text={
                     <>
@@ -40,7 +41,7 @@ const App: React.FC = () => {
                   comments={2}
                   likes={5}
                   views={15}
-                  userImage="https://cdn.vox-cdn.com/uploads/chorus_image/image/45707818/cannibalsinbrazil.0.0.jpg"
+                  imagePost="https://cdn.vox-cdn.com/uploads/chorus_image/image/45707818/cannibalsinbrazil.0.0.jpg"
                 /> 
           
               <div className="secondary-posts">
