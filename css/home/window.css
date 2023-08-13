@@ -1,0 +1,15 @@
+/*CONTENEDOR GENERAL*/
+.container-general{
+    background-color: var(--background);
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .container-general{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

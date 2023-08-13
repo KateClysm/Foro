@@ -1,0 +1,40 @@
+
+.aside-nav{
+    background-color: var(--aside);
+    border-top: 1px solid var(--background);
+    align-items: start;
+    padding: 2rem 0;
+    box-sizing: border-box;
+    
+}
+.aside-nav .popular-red{
+    color: var(--logo);
+}
+.aside-nav .access{
+    display: block;
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+.aside-nav .access:hover, .aside-nav .show-more-comunities:hover{
+    color:var(--logo);
+    cursor: pointer;
+}
+.aside-nav .padding-divider{
+    padding: 2rem 0;
+    width: 100%;
+}
+.aside-nav .divider{
+    height: 1px;
+    background-color: var(--search);
+}
+
+.aside-nav .access:last-child{
+    padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .aside-nav{
+        display: none;
+    }
+}
