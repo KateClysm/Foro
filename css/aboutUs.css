@@ -1,130 +1,35 @@
-body {
-    background-color: var(--background);
-}
+.container-general {
+    grid-template-columns: 2fr 8fr
+};
 
-/* Nav and Aside styles*/
-nav{
-    height: 60px;
-    background-color: var(--nav);
-    display: grid;
-    grid-template-columns: 2fr 5fr 2fr;
-    align-items: center;
-    justify-items: center;
-}
-.logo{
-    height: 100%;
-}
-.search-nav{
-    width: 90%;
-    height: 35px;
-    background-color: var(--search);
-    border-radius: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: content-box;
-    padding: 0 1.5rem;
-}
-
-.mini-logo img{
-    height: 25px;
-}
-.buttons{
-    height: 35px;
-    width: 100%;
-    /* border: 1px solid white; */
-    display: flex;
-    justify-content: center;
-    column-gap: 1rem;
-}
-
-.login{
-    background-color: var(--logo);
-}
-
-.login, .register{
-    height: 100%;
-    border-radius: 45px;
-    min-width: 100px;
-    border: none;
-    cursor: pointer;
-}
-
-.register{
-    background-color: var(--search);
-}
-
-.logo img{
-    height: 60px;
-}
-
-a{
-    text-decoration: none;
-}
-
-.container-general{
-    background-color: var(--background);
-    display: grid;
-    grid-template-columns: 2fr 6fr;
-}
-
-.aside-nav{
-    background-color: var(--aside);
-    width: 100%;
-    border-top: 1px solid var(--background);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    box-sizing: content-box;
-    padding: 2rem 0;
-}
-
-.popular-red{
-    color: var(--logo);
-}
-.access{
-    display: block;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    padding: 1rem;
-}
-
-.padding-divider{
-    padding: 2rem 0;
-    width: 100%;
-}
-.divider{
-    height: 1px;
-    background-color: var(--search);
-}
-
-.active {
-    border: 1px solid var(--logo);
-    border-radius: 10px;
-}
-
-/* About us */
 h1, h2, h3 {
     font-family: 'Karla', sans-serif;;
 }
 
-.about-us {
-    margin: 2rem 3rem;
+h2 {
+    font-size: 1.5rem;
 }
+
+.about-us {
+    padding: 2rem 3rem;
+}
+
 
 .about-head {
     font-size: 2rem;
 }
 
-.fa-solid {
+.about-title i{
     color: var(--logo);
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    
 }
 
 .about-title {
     display: flex;
     column-gap: 0.7rem;
-    margin: 3rem 0 1.25rem;
+    padding: 3rem 0 1.25rem;
+    align-items: baseline;
 }
 
 .about-title h2 {
@@ -134,5 +39,5 @@ h1, h2, h3 {
 }
 
 .about-subtitle, .about-spacing {
-    margin: 1.563rem 0 1rem;
+    padding: 1.563rem 0 1rem;
 }
