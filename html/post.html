@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParaSeekers | About Us</title>
+    <title>ParaSeekers | Post</title>
 
     <!--FAVICON-->
     <link rel="shortcut icon" href="../resources/miniLogo.png" type="image/x-icon">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/home/footer.css">
     <link rel="stylesheet" href="../css/home/nav.css">
     <link rel="stylesheet" href="../css/home/aside.css">
-    <link rel="stylesheet" href="../css/aboutUs.css">
+    <link rel="stylesheet" href="../css/post.css">
 
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,65 +153,67 @@
             </ul>
         </div>
 
-    <section class="about-us">
-        <h1 class="about-head">About Us</h1>
-        <p class="about-subtitle">
-            Welcome to ParaSeekers - Your Gateway to the Unseen!
-        </p>
-        <p>
-            We are a passionate community of fearless individuals united by our insatiable curiosity about the mysterious and the unexplained. Our forum serves as a haven for all those intrigued by the paranormal, offering a safe and welcoming space to share, explore, and discuss the extraordinary realms that lie beyond the confines of the known.
-        </p>
-        <div class="about-title">
-            <i class="fas fa-magnifying-glass"></i> <h2>Who We Are</h2>
-        </div>
-        <p class="about-spacing">
-            ParaSeekers is a diverse group of open-minded enthusiasts, ranging from seasoned paranormal investigators to curious novices eager to embark on their first otherworldly adventure. We hail from all walks of life, each bringing a unique perspective to the table. Our common bond is the relentless pursuit of truth, unwavering in our commitment to unraveling the enigmas that surround us.
-        </p>
-        <div class="about-title">
-            <i class="fas fa-lightbulb"></i>
-            <h2>
-                Our Mission
-            </h2>
-        </div>
-        <p>
-            At the heart of ParaSeekers lies a profound mission - to shed light on the shadowy corners of the inexplicable. We are dedicated to investigating and documenting the unexplained phenomena that have puzzled humanity for generations. Whether it's paranormal encounters, ghostly sightings, premonitions, or encounters with mythological creatures, we are resolute in our quest to discern fact from fiction and decipher the mysteries that elude conventional understanding.
-        </p>
-        <div class="about-title">
-            <i class="fas fa-ghost"></i>
-            <h2>
-                Join Us
-            </h2>
-        </div>
-        <p>
-            Whether you are an intrepid explorer of the unexplained, a seasoned investigator, or just someone with a profound interest in the paranormal, ParaSeekers invites you to join our community. Expand your horizons, share your encounters, and become part of a group that is relentless in its pursuit of the truth.
-        </p>
-        <p>
-            Remember, the journey into the unknown is best taken together.
-        </p>
-    </section>
-
+<!-- Section Post -->
+<div class="container-post">
+    <div class="title-post">
+       <h3> Write a title for your post</h3>
+       <input type="text" name="q" id="titlePost">
+       <label for="titlePost"></label>
     </div>
 
-    <footer>
-        <div class="inside-footer">
-            <div class="footer-logo">
-                <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
-            </div>
-    
-            <div class="footer-text">
-                <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
-                
-                <div class="footer-icons">
-                    <a href="#">
-                        <i class="fa-brands fa-square-github"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-figma"></i>
-                    </a>
-                </div>
-            </div>
+    <div class="category-post">
+       <h3> Select a theme for your post</h3>
+        <select name="themes" id="themes">
+          <option value="select">- Select -</option>
+          <option value="ghost-theme"> Ghosts</option>
+          <option value="Witchcraft"> Witchcraft</option>
+          <option value="Demons">Demons</option>
+          <option value="Mythological"> Mythological</option>
+          <option value="Past Life Regression">Past Life Regression</option>
+          <option value="Shadow People">Shadow People</option>
+          <option value="Fairy Folklore">Fairy Folklore</option>
+          <option value="Premonitions and Prophecies">Premonitions and Prophecies</option>
+          <option value="Zombies">Zombies</option>
+          <option value="Black Magic">Black Magic</option>
+          <option value="Vudu Magic">Vudu Magic</option>
+          <option value="Tulpas">Tulpas</option>
+        </select>
+    </div>
+
+     <div class="content-post">
+         <h3> Write a story in your post</h3>
+         <div class="content-box" >
+             <input type="text" name="q" id="contentPost">
+         </div>
+     </div>
+ 
+     <div class="submit-post"> 
+         <button> Submit </button>
+     </div>
+ </div>
+
+    </div>    
+   
+
+   <footer>
+    <div class="inside-footer">
+        <div class="footer-logo">
+            <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
         </div>
 
-    </footer>
+        <div class="footer-text">
+            <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
+            
+            <div class="footer-icons">
+                <a href="#">
+                    <i class="fa-brands fa-square-github"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-figma"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

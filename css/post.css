@@ -1,0 +1,126 @@
+.container-post{
+    background-color: #444444;
+    width: 650px;
+    height: 500px;
+    box-shadow: 3px 5px 6px 4px #282828;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 80px 80px 50px 100px;
+}
+/* title post */
+.title-post {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+.title-post h3{
+    color: #F3F3F3;
+    text-transform: capitalize;
+}
+.title-post input{
+    height: 25px;
+    width: 270px;
+    margin-left: 15px;
+    color: #0D0D0D;
+    border-radius: 8px;
+}
+/* categories */
+.category-post{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    text-transform: capitalize;
+    border-radius: 8px;
+}
+.category-post select{
+    height: 25px;
+    width: 200px;
+    margin-left: 15px;
+    color: #646464;
+    border-radius: 8px;
+}
+.category-post option{
+    color: #646464;
+}
+
+.category-post select:hover{
+    cursor: pointer;
+    border-color: 2px #711616;
+}
+
+/* content of the post & submit button*/
+.content-post{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    text-transform: capitalize;
+}
+.content-box {
+    margin-top: 12px;
+    border-radius: 20px;
+    height: 250px;
+    width: 580px;
+}
+.content-box input{
+    height: 250px;
+    width: 580px;
+    color: #0D0D0D;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.submit-post button{
+    background-color: #646464;
+    color: #F3F3F3;
+    border-radius: 45px;
+    box-shadow: 1px 2px 2px 1px #282828;
+    cursor: pointer;
+    padding: 9px;
+    margin: 0px 5px 5px 490px;
+    width: 100px;
+}
+
+.submit-post button:hover{
+    background-color: #711616;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 760px), (min-width: 768px) and (max-width: 1024px){ 
+    .container-post{
+        background-color: #444444;
+        width: 380px;
+        height: 350px;
+        margin: 50px 150px 115px 115px;
+        box-shadow: 3px 5px 6px 4px #282828;
+        padding: 20px;
+    }
+    .category-post select{
+        margin-left: 15px;
+        color: #646464;
+        border-radius: 8px;
+        width: 100px;
+    }
+    .category-post option{
+        color: #646464;
+        width: 100px;
+    }
+    .content-box {
+        height: 120px;
+        width: 320px;
+    }
+    .content-box input{
+        height: 120px;
+        width: 320px;
+    }
+    .submit-post button{
+        padding: 5px;
+        margin: 0px 5px 5px 270px;
+        width: 80px;
+    }
+    
+}
