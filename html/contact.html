@@ -16,38 +16,97 @@
 
 
     <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/home/footer.css">
+    <link rel="stylesheet" href="../css/home/navBar.css">
+    <link rel="stylesheet" href="../css/home/aside.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/home/window.css">
 </head>
 <body>
 
-    <!--Barra de navegación-->
     <nav>
-        <!--logo-->
+            
         <div class="logo">
             <img src="../resources/logoNav.png" alt="Logo ParaSeekers">
         </div>
-        <!--search-->
-        <div class="search-nav">
-            <div class="search">
-                Search Topic
+
+        <button class="nav-toggle" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        
+        <div class="nav-menu">
+
+            <div class="container-search-bar">
+                <div class="search-nav">
+                    <form action="https://www.google.com/search" method="get" class="search-bar" target="_blank">
+                        <input type="text" placeholder="Search Post" name="q">
+                        <button type="submit">
+                            <img src="../resources/miniLogo.png" alt="Mini Logo ParaSeekers">
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="mini-logo">
-                <img src="../resources/miniLogo.png" alt="Small Logo ParaSeekers">
+
+            <div class="nav-buttons">
+                <button class="login">
+                    <a href="#">
+                        Login
+                    </a> 
+                </button>
+                <button class="register">
+                    <a href="#">
+                        Register
+                    </a> 
+                </button>
+            </div>
+
+
+            <div class="aside-nav-mobile">
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+                <ul class="principal-page">
+                    <li href="#" class="access">Home</li>
+                    <li href="#" class="access popular-red">Popular</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="topics">
+                    <li href="#" class="access">Ghosts</li>
+                    <li href="#" class="access">Witchcraft</li>
+                    <li href="#" class="access">Demons</li>
+                    <li href="#" class="access">Mythological</li>
+                    <li href="#" class="access">Past Life Regression</li>
+                    <li href="#" class="access">Shadow People</li>
+                    <li href="#" class="access">Fairy Folklore</li>
+                    <li href="#" class="access">Premonitions and Prophecies</li>
+                    <li href="#" class="access">Zombies</li>
+                    <li href="#" class="access">Black Magic</li>
+                    <li href="#" class="access">Vudu Magic</li>
+                    <li href="#" class="access">Tulpas</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="secondary-page">
+                    <li href="#" class="access">About us</li>
+                    <li href="#" class="access">Contact</li>
+                    <li href="#" class="access">Help</li>
+                </ul>
             </div>
         </div>
-        <!--botones-->
-        <div class="nav-buttons">
-            <button class="login">
-                <a href="#">
-                    Login
-                </a> 
-            </button>
-            <button class="register">
-                <a href="#">
-                    Register
-                </a> 
-            </button>
-        </div>
+
+        
     </nav>
 
 
@@ -100,6 +159,8 @@
                 <li href="#" class="access">Help</li>
             </ul>
         </div>
+
+        
         <div class="container-contact">
 
             <form>
@@ -143,23 +204,23 @@
     </div>
 
     
-    <!--footer-->
     <footer>
-        <!--logo-->
-        <div class="footer-logo">
-            <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
-        </div>
-        <!--texto-->
-        <div class="footer-text">
-            <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
-            <!--iconos-->
-            <div class="footer-icons">
-                <a href="#">
-                    <i class="fa-brands fa-square-github"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-figma"></i>
-                </a>
+        <div class="inside-footer">
+            <div class="footer-logo">
+                <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
+            </div>
+    
+            <div class="footer-text">
+                <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
+                
+                <div class="footer-icons">
+                    <a href="#">
+                        <i class="fa-brands fa-square-github"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-figma"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>

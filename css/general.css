@@ -8,6 +8,7 @@
     --white: #F3F3F3;
     --post: #444444;
     --principal: #711616;
+    --time:#bebebe;
 }
 
 /*APLICA A TODA LA PÁGINA*/
@@ -27,8 +28,7 @@ html, body{
 .title{
     font-family: 'Karla', sans-serif;;
 }
+a{text-decoration: none;}
 
-/*configuración de todos los anchor*/
-a{
-    text-decoration: none;
-}
+
+
