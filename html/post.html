@@ -3,50 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\post.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>ParaSeekers | Post</title>
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="../resources/miniLogo.png" type="image/x-icon">
+
+    <!--GENERAL CSS-->
+    <link rel="stylesheet" href="../css/general.css">
+
+    <!--SPECIFIC CSS-->
+    <link rel="stylesheet" href="../css/home/window.css">
+    <link rel="stylesheet" href="../css/home/footer.css">
+    <link rel="stylesheet" href="../css/home/nav.css">
+    <link rel="stylesheet" href="../css/home/aside.css">
+    <link rel="stylesheet" href="../css/post.css">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Karla&display=swap" rel="stylesheet">
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <nav>
+            
+        <div class="logo">
+            <img src="/resources/logoNav.png" alt="Logo ParaSeekers">
+        </div>
 
-   <div class="container-post">
+        <button class="nav-toggle" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        
+        <div class="nav-menu">
+
+            <div class="container-search-bar">
+                <div class="search-nav">
+                    <form action="https://www.google.com/search" method="get" class="search-bar" target="_blank">
+                        <input type="text" placeholder="Search Post" name="q">
+                        <button type="submit">
+                            <img src="../resources/miniLogo.png" alt="Mini Logo ParaSeekers">
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="login">
+                    <a href="#">
+                        Login
+                    </a> 
+                </button>
+                <button class="register">
+                    <a href="#">
+                        Register
+                    </a> 
+                </button>
+            </div>
+
+
+            <div class="aside-nav-mobile">
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+                <ul class="principal-page">
+                    <li href="#" class="access">Home</li>
+                    <li href="#" class="access popular-red">Popular</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="topics">
+                    <li href="#" class="access">Ghosts</li>
+                    <li href="#" class="access">Witchcraft</li>
+                    <li href="#" class="access">Demons</li>
+                    <li href="#" class="access">Mythological</li>
+                    <li href="#" class="access">Past Life Regression</li>
+                    <li href="#" class="access">Shadow People</li>
+                    <li href="#" class="access">Fairy Folklore</li>
+                    <li href="#" class="access">Premonitions and Prophecies</li>
+                    <li href="#" class="access">Zombies</li>
+                    <li href="#" class="access">Black Magic</li>
+                    <li href="#" class="access">Vudu Magic</li>
+                    <li href="#" class="access">Tulpas</li>
+                </ul>
+
+                <div class="padding-divider">
+                    <div class="divider"></div>
+                </div>
+
+
+                <ul class="secondary-page">
+                    <li href="#" class="access">About us</li>
+                    <li href="#" class="access">Contact</li>
+                    <li href="#" class="access">Help</li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </nav>
+
+    <div class="container-general">
+
+        <div class="aside-nav">
+
+            <ul class="principal-page">
+                <li href="#" class="access">Home</li>
+                <li href="#" class="access">Popular</li>
+            </ul>
+
+            <div class="padding-divider">
+                <div class="divider"></div>
+            </div>
+
+            <ul class="topics">
+                <li href="#" class="access">Ghosts</li>
+                <li href="#" class="access">Witchcraft</li>
+                <li href="#" class="access">Demons</li>
+                <li href="#" class="access">Mythological</li>
+                <li href="#" class="access">Past Life Regression</li>
+                <li href="#" class="access">Shadow People</li>
+                <li href="#" class="access">Fairy Folklore</li>
+                <li href="#" class="access">Premonitions and Prophecies</li>
+                <li href="#" class="access">Zombies</li>
+                <li href="#" class="access">Black Magic</li>
+                <li href="#" class="access">Vudu Magic</li>
+                <li href="#" class="access">Tulpas</li>
+            </ul>
+
+            <div class="padding-divider">
+                <div class="divider"></div>
+            </div>
+
+            <ul class="secondary-page">
+                <li href="#" class="access popular-red">About us</li>
+                <li href="#" class="access">Contact</li>
+                <li href="#" class="access">Help</li>
+            </ul>
+        </div>
+
+<!-- Section Post -->
+<div class="container-post">
     <div class="title-post">
-        <h3>Title post</h3>
-        <input type="text" name="title-post" id="titlePost">
+       <h3> Write a title for your post</h3>
+       <input type="text" name="q" id="titlePost">
+       <label for="titlePost"></label>
     </div>
 
     <div class="category-post">
-        <h4> Add some theme to your post!</h4>
+       <h3> Select a theme for your post</h3>
         <select name="themes" id="themes">
-            <option value="select">- Select -</option>
-            <option value="ghost-theme"> Ghosts</option>
-            <option value="Witchcraft"> Witchcraft</option>
-            <option value="Demons"> Demons</option>
-            <option value="Mythological"> Mythological</option>
-            <option value="Past Life Regression">Past Life Regression</option>
-            <option value="Shadow People">Shadow People</option>
-            <option value="Fairy Folklore">Fairy Folklore</option>
-            <option value="Premonitions and Prophecies">Premonitions and Prophecies</option>
-            <option value="  Zombies">  Zombies</option>
-            <option value="Black Magic">Black Magic</option>
-            <option value="Vudu Magic">Vudu Magic</option>
-            <option value="Tulpas">Tulpas</option>
+          <option value="select">- Select -</option>
+          <option value="ghost-theme"> Ghosts</option>
+          <option value="Witchcraft"> Witchcraft</option>
+          <option value="Demons">Demons</option>
+          <option value="Mythological"> Mythological</option>
+          <option value="Past Life Regression">Past Life Regression</option>
+          <option value="Shadow People">Shadow People</option>
+          <option value="Fairy Folklore">Fairy Folklore</option>
+          <option value="Premonitions and Prophecies">Premonitions and Prophecies</option>
+          <option value="Zombies">Zombies</option>
+          <option value="Black Magic">Black Magic</option>
+          <option value="Vudu Magic">Vudu Magic</option>
+          <option value="Tulpas">Tulpas</option>
         </select>
     </div>
 
-    <div class="content-post">
-        <h4>Add some content:</h4>
-        <div class="content-box">
-            <p>
-                This forum is cursed, whoever sees it and does not share the page will be haunted for the rest of his life </p>
+     <div class="content-post">
+         <h3> Write a story in your post</h3>
+         <div class="content-box" >
+             <input type="text" name="q" id="contentPost">
+         </div>
+     </div>
+ 
+     <div class="submit-post"> 
+         <button> Submit </button>
+     </div>
+ </div>
+
+    </div>    
+   
+
+   <footer>
+    <div class="inside-footer">
+        <div class="footer-logo">
+            <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
+        </div>
+
+        <div class="footer-text">
+            <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
+            
+            <div class="footer-icons">
+                <a href="#">
+                    <i class="fa-brands fa-square-github"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-figma"></i>
+                </a>
+            </div>
         </div>
     </div>
-
-    <div class="submit-post"> 
-        <button> Submit </button>
-    </div>
-
-   </div>
-
+</footer>
 </body>
 </html>
