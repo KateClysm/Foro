@@ -17,7 +17,7 @@
     font-size: 1rem;
     padding-left: 2rem;
 }
-.aside-nav .access:hover{
+.aside-nav .access a:hover{
     color: var(--logo);
 }
 .aside-nav .access:hover, .aside-nav .show-more-comunities:hover{
@@ -36,8 +36,11 @@
 .aside-nav .access:last-child{
     padding-bottom: 0;
 }
+.aside-nav .topics{
+    padding-right: 1rem;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     .aside-nav{
         display: none;
     }

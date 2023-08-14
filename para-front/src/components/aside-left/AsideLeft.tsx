@@ -15,18 +15,18 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <ul className="topics">
-        <li className="access"><a href="#">Ghosts</a></li>
-        <li className="access"><a href="#">Witchcraft</a></li>
-        <li className="access"><a href="#">Demons</a></li>
-        <li className="access"><a href="#">Mythological</a></li>
-        <li className="access"><a href="#">Past Life Regression</a></li>
-        <li className="access"><a href="#">Shadow People</a></li>
-        <li className="access"><a href="#">Fairy Folklore</a></li>
-        <li className="access"><a href="#">Premonitions and Prophecies</a></li>
-        <li className="access"><a href="#">Zombies</a></li>
-        <li className="access"><a href="#">Black Magic</a></li>
-        <li className="access"><a href="#">Vudu Magic</a></li>
-        <li className="access"><a href="#">Tulpas</a></li>
+        <li className="access"><a className='post-text' href="#">Ghosts</a></li>
+        <li className="access"><a className='post-text' href="#">Witchcraft</a></li>
+        <li className="access"><a className='post-text' href="#">Demons</a></li>
+        <li className="access"><a className='post-text' href="#">Mythological</a></li>
+        <li className="access"><a className='post-text' href="#">Past Life Regression</a></li>
+        <li className="access"><a className='post-text' href="#">Shadow People</a></li>
+        <li className="access"><a className='post-text' href="#">Fairy Folklore</a></li>
+        <li className="access"><a className='post-text' href="#">Premonitions and Prophecies</a></li>
+        <li className="access"><a className='post-text' href="#">Zombies</a></li>
+        <li className="access"><a className='post-text' href="#">Black Magic</a></li>
+        <li className="access"><a className='post-text' href="#">Vudu Magic</a></li>
+        <li className="access"><a className='post-text' href="#">Tulpas</a></li>
       </ul>
 
       <div className="padding-divider">

@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <div className="posts-content">
               <PrincipalPost
                   userImage='https://toppng.com/uploads/preview/animated-black-cat-gif-115497838102ojcyei5lu.png'
-                  title="I think my Grandma is eating people"
+                  title="I think my Grandma is eating peoplesadasdsadsadjkhsakdjhsakjdhsakjdhsakj"
                   text={
                     <>
                       So, picture this: I'm strolling down Road 16° one evening, and guess what catches my eye? Yup, the infamous Spooky House. You know, the one everyone's been talking about forever? Creepy vibes all around, let me tell you.
@@ -46,7 +46,7 @@ const App: React.FC = () => {
           
               <div className="secondary-posts">
                 <SecondaryPost
-                  title="Scary House In Road 16°. I think i saw a Poltergeist."
+                  title="Scary House In Road 16°. I think i saw a Poltergeist. Do yall think i should go inside?"
                   text={
                     <>
                       So, picture this: I'm strolling down Road 16° one evening, and guess what catches my eye? Yup, the infamous Spooky House. You know, the one everyone's been talking about forever? Creepy vibes all around, let me tell you.

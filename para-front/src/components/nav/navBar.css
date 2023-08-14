@@ -115,7 +115,7 @@ nav{
 
 
 /*ESTILOS PARA ANCHOS DE PANTALLAS MENORES A 768PX*/
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     /*NAV*/
     nav{
         display: flex;

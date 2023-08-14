@@ -7,7 +7,7 @@
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container-general{
         display: flex;
         flex-direction: column;

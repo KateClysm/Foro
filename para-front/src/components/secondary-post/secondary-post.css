@@ -1,70 +1,126 @@
-.post{
+/*--------------MOBILE FIRST-----------------*/
+
+
+
+
+/*contenedor del componente*/
+.secondary-post{
     background-color: var(--post);
     border-radius: 5px;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.6rem;
     height: 100%;
-    display: flex;
-    flex-direction: column;
 }
-.post-content{
+/*-----------------Imagen y texto----------------*/
+.secondary-post-content{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 1rem;
+    grid-template-columns: 3fr 2fr;
+    column-gap: 0.5rem;
 }
-.post-content-img{
-    background-image: url(../../assets/imagenPrueba.png);
+/*imagen del post*/
+.secondary-post-content-img{
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100px;
+    height: 110px;
     border-radius: 3px;
 }
-.post-content-data{
+/*contendor del título y texto del post*/
+.secondary-post-content-data{
     border-radius: 3px;
     padding: 0.5rem;
     background-color: var(--search);
     overflow: hidden;
-    height: 100px;
+    height: 110px;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr; 
+    grid-auto-rows: auto;
 }
-.post-content-data-title{
+/*título restringido al 75% del contenedor*/
+.secondary-post-content-data-title{
     padding-bottom: 0.7rem;
+    overflow: hidden; 
+    word-wrap: break-word;   
 }
-.post-content-data-text{
-    max-height: 3rem; 
+.secondary-post-content-data-title p{
+    height: 100%;
+}
+/*texto del posteo, en dispositivos pequeños no se muestra*/
+.secondary-post-content-data-text{
     overflow: hidden; 
     word-wrap: break-word; 
+    display: none;
 }
-.post-access{
+.secondary-post-content-data-text p{
+    max-height: 100%;
+}
+.secondary-post-content-data-text p {
+    background-image: linear-gradient(to bottom, var(--white)50%, transparent);
+    background-clip: text;
+    -webkit-background-clip: text; /* Para navegadores basados en WebKit */
+    color: transparent;
+  }
+.secondary-post-user-data .user-time{
+    color: var(--time);
+}
+
+
+/*-----------------Usuario y Botón show post----------------*/
+.secondary-post-user-buttons{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
+    flex-direction: column;
 }
-.post-access-user{
+
+.secondary-post-user{
+    padding:1rem 0rem;
     display: flex;
     align-items: center;
-    padding-right: 1rem;
 }
-.post-access-user-image{
+/*datos del usuario*/
+.secondary-post-user-data{
+    padding: 0rem 2rem 0rem 0.5rem;
+}
+.secondary-post-user-data .user-name:hover{
+    color: var(--logo);
+    cursor: pointer;
+}
+/*imagen del usuario*/
+.secondary-post-user-image{
     border-radius: 50%;
     height: 40px;
     width: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.secondary-post-button-show{
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 0.6rem;
     background-color: var(--white);
 }
-.post-access-user-data{
-    padding-left: 0.5rem;
+.secondary-post-button-show:hover{
+    outline: 1px solid var(--logo);
+    background-color: rgba(0, 0, 0, 0.096);
+    cursor: pointer;
 }
-.post-access-user-data-time{
-    color: #bebebe;
+.secondary-post-button-show p{
+    color: var(--background);
 }
-.post-access-buttons{
+.secondary-post-button-show:hover > p{
+    color:var(--white)
+}
+
+
+/*----------------------Botones---------------------------*/
+.secondary-post-buttons{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 0.5rem 0rem;
-    justify-self: end;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    column-gap: 2rem;
+    column-gap: 0.5rem;
 }
-.post-access-buttons-button{
+/*cada botón*/
+.secondary-post-button{
     background-color: transparent;
     border: none;
     display: flex;
@@ -72,87 +128,75 @@
     padding-right: 0.3rem;
     cursor: pointer;
 }
-.post-access-buttons-button img {
-    padding-right: 0.2rem;
-    height: 35px;
+.secondary-post-button:hover{
+    color: var(--logo);
 }
-.post-access-buttons-show p{
-    color: var(--background);
+/*íconos coments, likes, seen*/
+.secondary-post-button img{
+    padding-right: 0.4rem;
+    height: 20px;
 }
-.post-access-buttons-show{
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    padding: 0.4rem 0.6rem;
-    background-color: var(--white);
-} 
 
 
 
 
-
-/*RESPONSIVE*/
-@media (max-width: 768px) {
-    .secondary-post{
-        padding: 0.6rem;
+/*----------------------RESPONSIVE---------------------------*/
+@media (min-width: 768px) {
+    .secondary-post-content{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        column-gap: 1rem;
     }
-    .post-content{
-        column-gap: 0.5rem;
+    .secondary-post-buttons{
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 1.5rem;
+        padding-left: 2rem;
     }
-    
-    .post-content-img{
-        height: 100px;
-        border-radius: 3px;
+    .secondary-post-user-buttons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
-    .post-content-data{
-        border-radius: 3px;
-        padding: 0.5rem;
-        height: 100px;
+    /*íconos coments, likes, seen*/
+    .secondary-post-button img{
+        padding-right: 0.4rem;
+        height: 30px;
     }
-    .post-content-data-title{
-        padding-bottom: 0.6rem;
+    .secondary-post-content-data-text{
+        display: block;
     }
-    .post-content-data-text{
-        max-height: 1rem; 
-    }
-    .post-access{
-        padding-top: 1rem;
-    }
-    .post-access-user{
-        padding-right: 1rem;
-    }
-    .post-access-user-image{
-        border-radius: 50%;
-        height: 40px;
-        width: 40px;
-    }
-    .post-access-user-data{
-        padding-left: 0.5rem;
-    }
-    .post-access-buttons{
-        padding: 0.5rem 0rem;
-        row-gap: 0.5rem;
-        column-gap: 2rem;
-    }
-    .post-access-buttons-button{
-        padding-right: 0.3rem;
-    }
-    .post-access-buttons-button img {
-        padding-right: 0.2rem;
-        height: 35px;
-    }
-    .post-access-buttons-show{
-        padding: 0.4rem 0.6rem;
-    } 
-} 
+}
 
 @media (min-width: 1024px) {
-    
-} 
-
-@media (min-width: 1240px) {
-
+    .secondary-post-user-buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .secondary-post-content-data{
+        height: 120px;
+    }
+    .secondary-post-buttons{
+        padding-left: 0rem;
+    }
+    /*imagen del post*/
+    .secondary-post-content-img{
+        height: 120px;
+    }
+    .secondary-post{
+        padding:1rem;
+    }
 }
 
 
-
+@media (min-width: 1300px) {
+    .secondary-post-user-buttons{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+    }
+    .secondary-post-user-data{
+        padding: 0rem 1.5rem 0rem 0.5rem;
+    }
+  
+}

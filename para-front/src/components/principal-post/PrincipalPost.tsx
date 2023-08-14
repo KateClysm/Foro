@@ -41,7 +41,7 @@ const PrincipalPost: React.FC<PrincipalPostProps> = ({
             <div className="user-name">{userName}</div>
             <div className="user-time">{userTime}</div>
           </div>
-          <button className="principal-post-buttons-show ">
+          <button className="principal-post-button-show ">
             <p className='button-text'>Show Post</p>
           </button>
         </div>
@@ -49,22 +49,22 @@ const PrincipalPost: React.FC<PrincipalPostProps> = ({
         <div className="principal-post-content">
             <div className="principal-post-content-img" style={{ backgroundImage: `url(${imagePost})` }}></div>
             <div className="principal-post-content-data">
-              <div className="principal-post-content-data-title post-title">{title}</div>
-              <div className="principal-post-content-data-text post-text">{text}</div>
+              <div className="principal-post-content-data-title"><p className="post-title">{title}</p></div>
+              <div className="principal-post-content-data-text"><p className="post-text">{text}</p></div>
               <p className="post-text">...</p>
             </div>
         </div>
 
         <div className="principal-post-buttons">
-              <button className="principal-post-buttons-button button-text">
+              <button className="principal-post-button button-text">
                 <img src={commentsIcon} alt="Icon Coments" />
                 {comments} Comments
               </button>
-              <button className="principal-post-buttons-button button-text">
+              <button className="principal-post-button button-text">
                 <img src={likesIcon} alt="Icon Likes" />
                 {likes} Likes
               </button>
-              <button className="principal-post-buttons-button button-text">
+              <button className="principal-post-button button-text">
                 <img src={seenIcon} alt="Icon Seen" />
                 {views} Views
               </button>

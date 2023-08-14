@@ -17,7 +17,7 @@
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
     color: var(--white);
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     
 }
 html, body{

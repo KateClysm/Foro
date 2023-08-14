@@ -26,50 +26,47 @@ const SecondaryPost: React.FC<SecondaryPostProps> = ({
   userImage
 }) => {
   return (
-    <div className="post">
+    <div className="secondary-post">
 
-        <div className="post-content">
+        <div className="secondary-post-content">
           
-            <div className="post-content-img" style={{ backgroundImage: `url(${userImage})` }}></div>
+            <div className="secondary-post-content-img" style={{ backgroundImage: `url(${userImage})` }}></div>
 
-            <div className="post-content-data">
-              <div className="post-content-data-title post-title">{title}</div>
-              <div className="post-content-data-text post-text">{text}</div>
-              <p>...</p>
+            <div className="secondary-post-content-data">
+              <div className="secondary-post-content-data-title"><p className="post-title">{title}</p></div>
+              <div className="secondary-post-content-data-text "><p className="post-text">{text}</p></div>
+              <p className="post-text elipsis">...</p>
             </div>
         </div>
-
-        <div className="post-access">
-
-              <div className="post-access-user">
-                <div className="post-access-user-image"></div>
-                <div className="post-access-user-data">
-                  <div className="post-access-user-data-name  user-name">{userName}</div>
-                  <div className="post-access-user-data-time user-time">{userTime}</div>
-                </div>
+ 
+        <div className="secondary-post-user-buttons">
+            <div className="secondary-post-user">
+              <div className="secondary-post-user-image" style={{ backgroundImage: `url(${userImage})` }}></div>
+              <div className="secondary-post-user-data">
+                <div className="user-name">{userName}</div>
+                <div className="user-time">{userTime}</div>
               </div>
+              <button className="secondary-post-button-show ">
+                <p className='button-text'>Show Post</p>
+              </button>
+            </div>
 
-
-              <div className="post-access-buttons">
-                <button className="post-access-buttons-button button-text">
-                  <img src={commentsIcon} alt="Icon Coments" />
-                  {comments} Comments
-                </button>
-                <button className="post-access-buttons-button button-text">
-                  <img src={likesIcon} alt="Icon Likes" />
-                  {likes} Likes
-                </button>
-                <button className="post-access-buttons-button button-text">
-                  <img src={seenIcon} alt="Icon Seen" />
-                  {views} Views
-                </button>
-
-                <button className="post-access-buttons-show ">
-                  <p className='button-text'>Show Post</p>
-                </button>
-              </div>
-
+            <div className="secondary-post-buttons">
+                  <button className="secondary-post-button button-text">
+                    <img src={commentsIcon} alt="Icon Coments" />
+                    {comments} Comments
+                  </button>
+                  <button className="secondary-post-button button-text">
+                    <img src={likesIcon} alt="Icon Likes" />
+                    {likes} Likes
+                  </button>
+                  <button className="secondary-post-button button-text">
+                    <img src={seenIcon} alt="Icon Seen" />
+                    {views} Views
+                  </button>
+            </div>
         </div>
+        
     </div>
   );
 };
