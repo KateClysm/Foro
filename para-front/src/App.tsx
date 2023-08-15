@@ -2,11 +2,12 @@ import React from 'react';
 import './styles/main-content.css';
 import './styles/posts-content.css'; 
 import './styles/secondary-posts.css'; 
+import Ejemplo from './components/ejemplo/ejemplo';
 import NavBar from './components/nav/NavBar';
 import AsideLeft from './components/aside-left/AsideLeft';
-import SecondaryPost from './components/secondary-post/SecondaryPost';
-import PrincipalPost from './components/principal-post/PrincipalPost';
-import AsideRight from './components/aside-right/AsideRight';
+// import SecondaryPost from './components/secondary-post/SecondaryPost';
+// import PrincipalPost from './components/principal-post/PrincipalPost';
+// import AsideRight from './components/aside-right/AsideRight';
 import Footer from './components/footer/Footer';
 
 
@@ -18,7 +19,7 @@ const App: React.FC = () => {
       <div className="main-content">
           <AsideLeft />
 
-          <div className="posts-content">
+          {/* <div className="posts-content">
               <PrincipalPost
                   userImage='https://toppng.com/uploads/preview/animated-black-cat-gif-115497838102ojcyei5lu.png'
                   title="I think my Grandma is eating peoplesadasdsadsadjkhsakdjhsakjdhsakjdhsakj"
@@ -116,15 +117,23 @@ const App: React.FC = () => {
                   views={15}
                   userImage="https://cdn.vox-cdn.com/uploads/chorus_image/image/45707818/cannibalsinbrazil.0.0.jpg"
                 /> 
-
-
               </div>
-          </div>
-          
-          <AsideRight />
+          </div>     
+          <AsideRight /> */}
+
+
+          {/* Importación de componente  */}
+          <Ejemplo/>
+
       </div>
 
       <Footer />
+
+
+
+      
+
+
     </div>
   );
 };

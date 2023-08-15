@@ -17,7 +17,7 @@
     font-size: 1rem;
     padding-left: 2rem;
 }
-.aside-nav .access a:hover{
+.aside-nav .access > a:hover{
     color: var(--logo);
 }
 .aside-nav .access:hover, .aside-nav .show-more-comunities:hover{

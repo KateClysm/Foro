@@ -101,6 +101,7 @@
     max-height: 100%;
 }
 .principal-post-content-data-text p {
+    color: var(--white);
     background-image: linear-gradient(to bottom, var(--white)35%, transparent);
     background-clip: text;
     -webkit-background-clip: text; /* Para navegadores basados en WebKit */
