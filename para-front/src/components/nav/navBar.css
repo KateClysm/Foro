@@ -2,13 +2,11 @@
 nav{
     background-color: var(--nav);
     height: 70px;
-    /* width: 100vw;  error hdp */
     display: grid;
     grid-template-columns: 2fr 8fr; 
     align-items: center;
     justify-content: space-between;
 }
-/*NAV MENU contiene al search, los botones y el aside. Pero en pantallas grandes el aside está oculto, por lo cual las columnas se reparten sólo para el search y los botones.*/
 .nav-menu {
     display: grid;
     grid-template-columns: 5fr 2fr; 
@@ -18,11 +16,15 @@ nav{
 }
 /* TOGGLE NO SE VISUALIZA EN PANTALLAS GRANDES*/
 .nav-toggle{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 25px;
+    padding: 0 5px;
+    line-height: 60px;
+    cursor: pointer;
     display: none;
 }
-
-
-
 /*SEARCH BAR*/
 .container-search-bar{
     width: 100%;
@@ -31,8 +33,6 @@ nav{
 }
 .search-nav{
     width:70%;
-    margin: 0;
-    padding: 0;
 }
 .search-nav button img{
     height: 25px;
@@ -50,8 +50,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* box-sizing: content-box; */
-    padding: 0 1.5rem;
+    padding: 0 0.8rem 0rem 1.5rem;
 }
 .search-bar input{
     width: 100%;
@@ -70,7 +69,7 @@ nav{
 
 /*LOGO*/
 .logo{
-    height: 100%; /*toma el alto del contenedor padre*/
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,8 +80,6 @@ nav{
     padding: 0;
 }
   
-
-
 /*CONTENEDOR DE LOS BOTONES DEL NAV*/
 .nav-buttons{
     height: 35px;
@@ -103,8 +100,6 @@ nav{
     border: none;
     cursor: pointer;
 }
-
-
 /*EN C0MPUTADORA EL ASIDE MOBILE NO SE MUESTRA*/
 .aside-nav-mobile{
     display: none;
@@ -114,7 +109,7 @@ nav{
 
 
 
-/*ESTILOS PARA ANCHOS DE PANTALLAS MENORES A 768PX*/
+/*ESTILOS PARA ANCHOS DE PANTALLAS MENORES A 1023PX*/
 @media (max-width: 1023px) {
     /*NAV*/
     nav{
@@ -139,23 +134,12 @@ nav{
         transition: left 0.3s;
         display: block;
     }
-
-
     /*SEARCH BAR*/
     .container-search-bar{
         padding: 2rem 0;
     }
-
-
     /*TOGGLE*/
     .nav-toggle {
-        color: white;
-        background: none;
-        border: none;
-        font-size: 30px;
-        padding: 0 20px;
-        line-height: 60px;
-        cursor: pointer;
         display: flex;
     }
     .nav-menu_visible {
@@ -164,9 +148,6 @@ nav{
     .nav-toggle:focus:not(:focus-visible) {
         outline: none;
     }
-    
-
-
 
     /*ASIDE MOBILE*/
     .aside-nav-mobile{
@@ -178,7 +159,6 @@ nav{
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* box-sizing: content-box; */
         padding-bottom: 2rem;
     }
     .aside-nav-mobile .access{
@@ -204,7 +184,6 @@ nav{
         height: 1px;
         background-color: var(--search);
     }
-
     .aside-nav-mobile li{
         list-style: none;
     }
@@ -217,8 +196,6 @@ nav{
         color: var(--logo);
     }
 }
-
-
 
 @media (min-width: 1024px) {
     nav{

@@ -6,8 +6,8 @@ const AsideLeft: React.FC = () => {
   return (
     <div className="aside-nav">
       <ul className="principal-page">
-        <li className="access"><a href="#">Home</a></li>
-        <li className="access popular-red"><a href="#">Popular</a></li>
+        <li className="access"><a className='post-text' href="#">Home</a></li>
+        <li className="access popular-red"><a className='post-text' href="#">Popular</a></li>
       </ul>
 
       <div className="padding-divider">
@@ -34,9 +34,9 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <ul className="secondary-page">
-        <li className="access"><a href="#">About us</a></li>
-        <li className="access"><a href="#">Contact</a></li>
-        <li className="access"><a href="#">Help</a></li>
+        <li className="access"><a className='post-text' href="#">About us</a></li>
+        <li className="access"><a className='post-text' href="#">Contact</a></li>
+        <li className="access"><a className='post-text' href="#">Help</a></li>
       </ul>
     </div>
   );

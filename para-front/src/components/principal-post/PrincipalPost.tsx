@@ -1,4 +1,4 @@
-import React from 'react';
+
 import commentsIcon from '../../assets/comments.png';
 import likesIcon from '../../assets/likes.png';
 import seenIcon from '../../assets/seen.png';
@@ -16,6 +16,7 @@ interface PrincipalPostProps {
   likes: number;
   views: number;
   imagePost: string;
+  // handleShowShowPostClick: () => void;
 }
 
 
@@ -30,8 +31,10 @@ const PrincipalPost: React.FC<PrincipalPostProps> = ({
   comments,
   likes,
   views,
-  imagePost
+  imagePost,
+  // handleShowShowPostClick
 }) => {
+
   return (
     <div className="principal-post">
 
@@ -41,9 +44,19 @@ const PrincipalPost: React.FC<PrincipalPostProps> = ({
             <div className="user-name">{userName}</div>
             <div className="user-time">{userTime}</div>
           </div>
-          <button className="principal-post-button-show ">
+
+
+        <button className="principal-post-button-show">
             <p className='button-text'>Show Post</p>
-          </button>
+        </button>
+
+          {/* <button className="principal-post-button-show" onClick={handleShowShowPostClick}>
+          <p className='button-text'>Show Post</p>
+        </button> */}
+
+
+
+
         </div>
 
         <div className="principal-post-content">

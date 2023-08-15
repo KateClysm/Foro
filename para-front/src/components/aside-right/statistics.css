@@ -1,7 +1,7 @@
 /*STATISTICS*/
 /*contenedor*/
 .container-statistics-and-comunities{
-    width: 80%;
+    width: 85%;
     padding: 2rem 0;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     border-radius: 5px;
     padding: 1rem 1.5rem;
 }
-/*comunidades*/
+/*comunidades*/ 
 .comunity{
     padding: 0.3rem 0;
     display: flex;
@@ -21,7 +21,6 @@
 }
 .comunity:last-child{
     padding-top: 1rem;
-    font-size: 0.6rem;
     color: #bebebe;
 }
 .comunity-image{
@@ -32,7 +31,6 @@
 }
 .comunity-name{
     padding-left: 1rem;
-    font-size: 0.7rem;
 }
 
 /*contendor info statistics*/
@@ -40,7 +38,6 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 1rem;
-    font-size: 0.7rem;
 }
 /*quitado de padding al último elemento de las estadísticas*/
 .statistic:last-child{
@@ -49,7 +46,6 @@
 }
 .statistic-title{
     padding-bottom: 1rem;
-    font-size: 0.8rem;
 }
 
 
@@ -61,30 +57,4 @@
 .container-statistics-and-comunities{
     width: 90%;
 }
-.comunity-name{
-    font-size: 0.8rem;
-}
-.comunity:last-child{
-    font-size: 0.7rem;
-}
-}
-
-
-
-
-@media (min-width: 1240px) {
-
-    .comunity:last-child{
-        font-size: 0.9rem;
-    }
-    .comunity-name{
-        font-size: 0.9rem;
-    }
-    
-    .statistic-title{
-        font-size: 1rem;
-    }
-    .statistic-data{
-        font-size:0.9rem ;
-    }
 }

@@ -5,28 +5,30 @@ const AsideRight: React.FC = () => {
   return (
     <div className="container-statistics-and-comunities">
       <div className="comunities">
-        <div className="statistic-title">Popular Communities</div>
+        
+        <div className="statistic-title">
+        <p className='post-title'>Popular Communities</p></div>
         <a href="#" className="comunity">
           <div className="comunity-image"></div>
-          <div className="comunity-name">Red Witches</div>
+          <p className="comunity-name post-text">Red Witches</p>
         </a>
         <a href="#" className="comunity">
           <div className="comunity-image"></div>
-          <div className="comunity-name">Book of Shadows</div>
+          <p className="comunity-name post-text">Book of Shadows</p>
         </a>
         <a href="#" className="comunity">
           <div className="comunity-image"></div>
-          <div className="comunity-name">Black Spiders</div>
+          <p className="comunity-name post-text">Black Spiders</p>
         </a>
         <a href="#" className="comunity">
           <div className="comunity-image"></div>
-          <div className="comunity-name">Crimson Union</div>
+          <p className="comunity-name post-text">Crimson Union</p>
         </a>
         <a href="#" className="comunity">
           <div className="comunity-image"></div>
-          <div className="comunity-name">Ghost Hunters</div>
+          <p className="comunity-name post-text">Ghost Hunters</p>
         </a>
-        <a className="show-more-comunities comunity" href="#">
+        <a className="show-more-comunities comunity post-text" href="#">
           Show More...
         </a>
       </div>
@@ -34,34 +36,34 @@ const AsideRight: React.FC = () => {
       <div className="statistic">
         <div className="statistic-title">
           <i className="fa-solid fa-chart-column statistics-icon"></i>
-          Online Statistics
+          <p className='post-title'>Online Statistics</p>
         </div>
         <div className="statistic-data">
-          <div className="members">Members</div>
-          <div className="number">3</div>
+          <p className="post-text members">Members</p>
+          <p className="post-text number">3</p>
         </div>
         <div className="statistic-data">
-          <div className="visitors">Visitors</div>
-          <div className="number">12</div>
+          <p className="post-text visitors">Visitors</p>
+          <p className="post-text number">12</p>
         </div>
       </div>
 
       <div className="statistic">
         <div className="statistic-title">
           <i className="fa-solid fa-chart-column statistics-icon"></i>
-          Forum Statistics
+          <p className='post-title'>Forum Statistics</p>
         </div>
         <div className="statistic-data">
-          <div className="members">Threads:</div>
-          <div className="number">40</div>
+          <p className="post-text members">Threads:</p>
+          <p className="post-text number">40</p>
         </div>
         <div className="statistic-data">
-          <div className="visitors">Messages</div>
-          <div className="number">120</div>
+          <p className="post-text visitors">Messages</p>
+          <p className="post-text number">120</p>
         </div>
         <div className="statistic-data">
-          <div className="visitors">Members</div>
-          <div className="number">15</div>
+          <p className="post-text visitors">Members</p>
+          <p className="post-text number">15</p>
         </div>
       </div>
     </div>

@@ -1,11 +1,9 @@
-
 .aside-nav{
     background-color: var(--aside);
-    border-top: 1px solid var(--background);
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 2rem 0;
+    padding: 2rem 0rem;
     box-sizing: border-box;
 }
 .aside-nav .popular-red{
@@ -15,7 +13,6 @@
     display: block;
     padding-bottom: 1.5rem;
     font-size: 1rem;
-    padding-left: 2rem;
 }
 .aside-nav .access > a:hover{
     color: var(--logo);
@@ -32,14 +29,13 @@
     height: 1px;
     background-color: var(--search);
 }
-
 .aside-nav .access:last-child{
     padding-bottom: 0;
 }
-.aside-nav .topics{
-    padding-right: 1rem;
-}
 
+.principal-page, .topics, .secondary-page {
+    padding: 0 1rem 0 1.5rem;
+}
 @media (max-width: 1023px) {
     .aside-nav{
         display: none;

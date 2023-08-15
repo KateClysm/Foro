@@ -19,10 +19,10 @@ const Footer: React.FC = () => {
 
           <div className="footer-icons">
             <a href="#">
-                <FontAwesomeIcon icon={faGithub} />
+                <FontAwesomeIcon icon={faGithub} className='footer-icon'/>
             </a>
             <a href="#">
-                <FontAwesomeIcon icon={faFigma} />
+                <FontAwesomeIcon icon={faFigma} className='footer-icon'/>
             </a>
           </div>
         </div>
