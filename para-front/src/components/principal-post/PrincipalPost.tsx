@@ -4,45 +4,20 @@ import likesIcon from '../../assets/likes.png';
 import seenIcon from '../../assets/seen.png';
 import './principal-post.css';
 
-
-/*Datos que este componente recibe*/
-interface PrincipalPostProps {
-  title: string;
-  text: React.ReactNode;
-  userImage?:string;
-  userName: string;
-  userTime: string;
-  comments: number;
-  likes: number;
-  views: number;
-  imagePost: string;
-  // handleShowShowPostClick: () => void;
-}
+import { Ipost } from '../../models/Ipost'; 
 
 
-
-/*declaración del componente*/
-const PrincipalPost: React.FC<PrincipalPostProps> = ({
-  title,
-  text,
-  userImage,
-  userName,
-  userTime,
-  comments,
-  likes,
-  views,
-  imagePost,
-  // handleShowShowPostClick
-}) => {
+//recibe un objeto que cumple con la interface post, con ese objeto hace: ...
+const PrincipalPost: React.FC<{ post: Ipost }> = ({ post }) => {
 
   return (
     <div className="principal-post">
 
         <div className="principal-post-user">
-          <div className="principal-post-user-image" style={{ backgroundImage: `url(${userImage})` }}></div>
+          <div className="principal-post-user-image" style={{ backgroundImage: `url(${post.userImage})` }}></div>
           <div className="principal-post-user-data">
-            <div className="user-name">{userName}</div>
-            <div className="user-time">{userTime}</div>
+            <div className="user-name">{post.userName}</div>
+            <div className="user-time">{post.userTime}</div>
           </div>
 
 
@@ -50,20 +25,13 @@ const PrincipalPost: React.FC<PrincipalPostProps> = ({
             <p className='button-text'>Show Post</p>
         </button>
 
-          {/* <button className="principal-post-button-show" onClick={handleShowShowPostClick}>
-          <p className='button-text'>Show Post</p>
-        </button> */}
-
-
-
-
         </div>
 
         <div className="principal-post-content">
-            <div className="principal-post-content-img" style={{ backgroundImage: `url(${imagePost})` }}></div>
+            <div className="principal-post-content-img" style={{ backgroundImage: `url(${post.imagePost})` }}></div>
             <div className="principal-post-content-data">
-              <div className="principal-post-content-data-title"><p className="post-title">{title}</p></div>
-              <div className="principal-post-content-data-text"><p className="post-text">{text}</p></div>
+              <div className="principal-post-content-data-title"><p className="post-title">{post.title}</p></div>
+              <div className="principal-post-content-data-text"><p className="post-text">{post.text}</p></div>
               <p className="post-text">...</p>
             </div>
         </div>
@@ -71,15 +39,15 @@ const PrincipalPost: React.FC<PrincipalPostProps> = ({
         <div className="principal-post-buttons">
               <button className="principal-post-button button-text">
                 <img src={commentsIcon} alt="Icon Coments" />
-                {comments} Comments
+                {post.comments} Comments
               </button>
               <button className="principal-post-button button-text">
                 <img src={likesIcon} alt="Icon Likes" />
-                {likes} Likes
+                {post.likes} Likes
               </button>
               <button className="principal-post-button button-text">
                 <img src={seenIcon} alt="Icon Seen" />
-                {views} Views
+                {post.views} Views
               </button>
         </div>
     </div>

@@ -25,6 +25,7 @@
 }
 /*imagen del usuario*/
 .principal-post-user-image{
+    background-color: var(--white);
     border-radius: 50%;
     height: 40px;
     width: 40px;
