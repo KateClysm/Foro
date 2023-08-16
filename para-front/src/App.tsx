@@ -11,8 +11,6 @@ import Footer from './components/footer/Footer';
 const App: React.FC = () => {
 
 
-
-
   return (
     <div className="app">
       <NavBar />
