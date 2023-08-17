@@ -17,7 +17,7 @@
 .aside-nav .access > a:hover{
     color: var(--logo);
 }
-.aside-nav .access:hover, .aside-nav .show-more-comunities:hover{
+.aside-nav .access a:hover{
     color:var(--logo);
     cursor: pointer;
 }
