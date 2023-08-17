@@ -4,7 +4,7 @@ import React from 'react';
 import commentsIcon from '../../assets/comments.png';
 import likesIcon from '../../assets/likes.png';
 import seenIcon from '../../assets/seen.png';
-import './showPost.css';
+import './show-post.css';
 
 
 /*Datos que este componente recibe*/

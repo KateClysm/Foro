@@ -34,33 +34,6 @@
 }
 
 
-
-/*-------------------------------------------------*/
-/*botón show post*/
-.principal-post-button-show{
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    padding: 0.6rem;
-    background-color: var(--white);
-}
-.principal-post-button-show p{
-    color: var(--background);
-}
-.principal-post-button-show:hover{
-    outline: 1px solid var(--logo);
-    background-color: rgba(0, 0, 0, 0.096);
-    cursor: pointer;
-}
-.principal-post-button-show p{
-    color: var(--background);
-}
-.principal-post-button-show:hover > p{
-    color:var(--white)
-}
-
-
-
 /*-------------------------------------------------*/
 /*contenedor del la imagen y texto*/
 .principal-post-content{
@@ -103,7 +76,7 @@
 }
 .principal-post-content-data-text p {
     color: var(--white);
-    background-image: linear-gradient(to bottom, var(--white)35%, transparent);
+    background-image: linear-gradient(to bottom, var(--white)70%, transparent);
     background-clip: text;
     -webkit-background-clip: text; /* Para navegadores basados en WebKit */
     color: transparent;
@@ -112,52 +85,7 @@
     color: var(--time);
 }
 
-
-/*-------------------------------------------------*/
-/*contenedor botones*/
-.principal-post-buttons{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0.5rem 0rem;
-    flex-wrap: wrap;
-    column-gap: 0.5rem;
-}
-/*cada botón*/
-.principal-post-button{
-    background-color: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    padding-right: 0.3rem;
-    cursor: pointer;
-}
-/*íconos coments, likes, seen*/
-.principal-post-button img{
-    padding-right: 0.4rem;
-    height: 20px;
-}
-
-
-
-
-
-
 /*----------------------RESPONSIVE---------------------------*/
-@media (min-width: 768px) {
-    .principal-post-buttons{
-        display: flex;
-        justify-content: flex-end;
-        column-gap: 2rem;
-        padding-top: 1rem;   
-    }
-       /*íconos coments, likes, seen*/
-       .principal-post-button img{
-        padding-right: 0.4rem;
-        height: 30px;
-    }
-}
-
 @media (min-width: 1024px) {
     .principal-post-content-data{
         height: 160px;
@@ -173,8 +101,5 @@
 @media (min-width: 1240px) {
     .principal-post-content-img{
         height: 320px;
-    }
-    .principal-post-buttons-button img{
-        height: 35px;
     }
 }

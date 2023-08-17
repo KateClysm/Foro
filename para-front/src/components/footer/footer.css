@@ -39,7 +39,7 @@ footer{
     height: 100%;
 }
 .footer-icon{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 .footer-icon:hover{
     color: var(--search);
@@ -48,6 +48,9 @@ footer{
 @media (min-width: 768px) {
     .footer-logo img{
         width: 300px;
+    }
+    .footer-icon{
+        font-size: 2rem;
     }
 }
 
@@ -72,8 +75,5 @@ footer{
     }
     .footer-text{
         width: 50%;
-    }
-    .footer-icon{
-        font-size: 2rem;
     }
 }

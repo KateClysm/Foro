@@ -1,9 +1,8 @@
 import React from 'react';
-import commentsIcon from '../../assets/comments.png';
-import likesIcon from '../../assets/likes.png';
-import seenIcon from '../../assets/seen.png';
 import './secondary-post.css';
 import { Ipost } from '../../models/Ipost'; 
+import ShowPostButton from '../utilities/show-post/ShowPostButton';
+import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
 
 
 const SecondaryPost: React.FC<{ post: Ipost }> = ({ post }) => {
@@ -29,25 +28,14 @@ const SecondaryPost: React.FC<{ post: Ipost }> = ({ post }) => {
                 <div className="user-name">{post.userName}</div>
                 <div className="user-time">{post.userTime}</div>
               </div>
-              <button className="secondary-post-button-show ">
-                <p className='button-text'>Show Post</p>
-              </button>
+              <ShowPostButton/>
             </div>
 
-            <div className="secondary-post-buttons">
-                  <button className="secondary-post-button button-text">
-                    <img src={commentsIcon} alt="Icon Coments" />
-                    {post.comments} Comments
-                  </button>
-                  <button className="secondary-post-button button-text">
-                    <img src={likesIcon} alt="Icon Likes" />
-                    {post.likes} Likes
-                  </button>
-                  <button className="secondary-post-button button-text">
-                    <img src={seenIcon} alt="Icon Seen" />
-                    {post.views} Views
-                  </button>
-            </div>
+            <ButtonsPost
+              comments = {post.comments}
+              likes = {post.likes}
+              views = {post.views}
+            />
         </div>
         
     </div>

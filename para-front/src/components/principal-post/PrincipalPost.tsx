@@ -1,11 +1,7 @@
-
-import commentsIcon from '../../assets/comments.png';
-import likesIcon from '../../assets/likes.png';
-import seenIcon from '../../assets/seen.png';
 import './principal-post.css';
-
 import { Ipost } from '../../models/Ipost'; 
-
+import ShowPostButton from '../utilities/show-post/ShowPostButton';
+import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
 
 //recibe un objeto que cumple con la interface post, con ese objeto hace: ...
 const PrincipalPost: React.FC<{ post: Ipost }> = ({ post }) => {
@@ -21,9 +17,7 @@ const PrincipalPost: React.FC<{ post: Ipost }> = ({ post }) => {
           </div>
 
 
-        <button className="principal-post-button-show">
-            <p className='button-text'>Show Post</p>
-        </button>
+          <ShowPostButton/>
 
         </div>
 
@@ -36,20 +30,13 @@ const PrincipalPost: React.FC<{ post: Ipost }> = ({ post }) => {
             </div>
         </div>
 
-        <div className="principal-post-buttons">
-              <button className="principal-post-button button-text">
-                <img src={commentsIcon} alt="Icon Coments" />
-                {post.comments} Comments
-              </button>
-              <button className="principal-post-button button-text">
-                <img src={likesIcon} alt="Icon Likes" />
-                {post.likes} Likes
-              </button>
-              <button className="principal-post-button button-text">
-                <img src={seenIcon} alt="Icon Seen" />
-                {post.views} Views
-              </button>
-        </div>
+
+        <ButtonsPost
+          comments = {post.comments}
+          likes = {post.likes}
+          views = {post.views}
+        />
+    
     </div>
   );
 };
