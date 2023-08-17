@@ -3,7 +3,7 @@
 };
 
 h1, h2, h3 {
-    font-family: 'Karla', sans-serif;;
+    font-family: 'Karla', sans-serif;
 }
 
 h2 {
@@ -11,18 +11,11 @@ h2 {
 }
 
 .about-us {
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 4rem;
 }
-
 
 .about-head {
     font-size: 2rem;
-}
-
-.about-title i{
-    color: var(--logo);
-    font-size: 1.1rem;
-    
 }
 
 .about-title {
@@ -40,4 +33,9 @@ h2 {
 
 .about-subtitle, .about-spacing {
     padding: 1.563rem 0 1rem;
+}
+
+.icon, path {
+    color: var(--logo);
+    font-size: 1.3rem;
 }
