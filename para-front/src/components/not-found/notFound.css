@@ -1,14 +1,16 @@
 body {
     background-color: var(--background);
+}
+
+.error-container {
     display: flex; 
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 .error {
     max-width: 320px;
-    padding: 20% 0;
+    padding: 2rem 0;
 }
 
 .error-title {
@@ -45,18 +47,19 @@ body {
     font-weight: 600;
 }
 
-i {
-    margin-left: 0.2rem;
+.icon {
+    margin-left: 0.5rem;
     transition: transform .3s ease-in-out;
 }
 
-.error-button:hover i {
+.error-button:hover .icon {
     transform: translateX(5px);
 }
 
 @media screen and (min-width: 768px) {
     .error {
         max-width: 620px;
+        padding: 10rem 0;
     }
 }
 
@@ -64,7 +67,7 @@ i {
     .error {
         max-width: 900px;
         flex-direction: row;
-        padding: 10% 0;
+        padding: 12rem 0;
     }
 
     .error-img {
