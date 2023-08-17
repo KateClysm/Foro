@@ -1,10 +1,10 @@
 import './principal-post.css';
-import { Ipost } from '../../models/Ipost'; 
+import { IPost } from '../../models/IPost'; 
 import ShowPostButton from '../utilities/show-post/ShowPostButton';
 import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
 
 //recibe un objeto que cumple con la interface post, con ese objeto hace: ...
-const PrincipalPost: React.FC<{ post: Ipost }> = ({ post }) => {
+const PrincipalPost: React.FC<{ post: IPost }> = ({ post }) => {
 
   return (
     <div className="principal-post">
@@ -13,7 +13,7 @@ const PrincipalPost: React.FC<{ post: Ipost }> = ({ post }) => {
           <div className="principal-post-user-image" style={{ backgroundImage: `url(${post.userImage})` }}></div>
           <div className="principal-post-user-data">
             <div className="user-name">{post.userName}</div>
-            <div className="user-time">{post.userTime}</div>
+            <div className="user-time">{post.userTime} hours ago</div>
           </div>
 
 

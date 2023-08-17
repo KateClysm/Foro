@@ -26,7 +26,8 @@ const AsideLeft: React.FC = () => {
         <li className="access"><a className='post-text' href="#">Zombies</a></li>
         <li className="access"><a className='post-text' href="#">Black Magic</a></li>
         <li className="access"><a className='post-text' href="#">Vudu Magic</a></li>
-        <li className="access"><a className='post-text' href="#">Tulpas</a></li>
+        <li className="access"><a className='post-text' href="#">Sleep Paralysis</a></li>
+        <li className="access"><a className='post-text' href="#">Vampires</a></li>
       </ul>
 
       <div className="padding-divider">

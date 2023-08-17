@@ -1,6 +1,7 @@
-import { Ipost } from '../models/Ipost'; 
+import { IPost } from '../models/IPost'; 
+import { PostTypes } from '../models/PostTypes';
 
-const posts: Ipost[] = [
+const postsData: IPost[] = [
   {
     title: "Encounter in the Haunted Forest",
     text: (
@@ -30,12 +31,13 @@ const posts: Ipost[] = [
       </>
     ),
     userName: "Alice Queen",
-    userTime: "3 hours ago",
+    userTime: 3,
     comments: 9,
     likes: 2,
     views: 10,
     userImage: "https://clipart-library.com/images/kc8oLrMMi.png",
     imagePost: "https://img.lagaceta.com.ar/fotos/notas/2023/05/17/hoia-baciu-considerado-bosque-mas-tenebroso-mundo-991544-083744.png",
+    typePost: [PostTypes[0]]
   },
   {
     title: "Eerie Encounter: Ghostly Presence Caught on Camera",
@@ -63,12 +65,13 @@ const posts: Ipost[] = [
       </>
     ),
     userName: "Alice Queen",
-    userTime: "3 hours ago",
+    userTime: 6,
     comments: 9,
     likes: 2,
     views: 10,
     userImage: "https://i.pinimg.com/originals/f1/ca/c2/f1cac2d518b6213598222171b37a20e0.jpg",
     imagePost: "https://media.npr.org/assets/img/2010/10/25/paranormalactivity2_wide-ca386dd3fe015786d4863e65f717dc1b6530b956-s1100-c50.jpg",
+    typePost: [PostTypes[0], PostTypes[1]]
   },
   {
     title: "Haunted Dreams: Confronting Shadows in Sleep Paralysis",
@@ -96,13 +99,14 @@ const posts: Ipost[] = [
       </>
     ),
     userName: "Alice Queen",
-    userTime: "3 hours ago",
+    userTime: 7,
     comments: 9,
     likes: 2,
     views: 10,
     userImage: "https://i.pinimg.com/564x/ab/20/a7/ab20a702dcf8a96211b34ab60939417d.jpg",
     imagePost: "https://www.daysoftheyear.com/wp-content/uploads/paranormal-day1-scaled.jpg",
+    typePost: [PostTypes[0], PostTypes[1], PostTypes[4]]
   }
 ];
 
-export default posts;
+export default postsData;

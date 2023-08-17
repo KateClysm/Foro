@@ -1,11 +1,11 @@
 import React from 'react';
 import './secondary-post.css';
-import { Ipost } from '../../models/Ipost'; 
+import { IPost } from '../../models/IPost'; 
 import ShowPostButton from '../utilities/show-post/ShowPostButton';
 import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
 
 
-const SecondaryPost: React.FC<{ post: Ipost }> = ({ post }) => {
+const SecondaryPost: React.FC<{ post: IPost }> = ({ post }) => {
   
   return (
     <div className="secondary-post">
@@ -26,7 +26,7 @@ const SecondaryPost: React.FC<{ post: Ipost }> = ({ post }) => {
               <div className="secondary-post-user-image" style={{ backgroundImage: `url(${post.userImage})` }}></div>
               <div className="secondary-post-user-data">
                 <div className="user-name">{post.userName}</div>
-                <div className="user-time">{post.userTime}</div>
+                <div className="user-time">{post.userTime} hours ago</div>
               </div>
               <ShowPostButton/>
             </div>

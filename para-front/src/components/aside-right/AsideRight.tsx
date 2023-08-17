@@ -1,37 +1,13 @@
 import React from 'react';
 import './statistics.css';
+import Communities from '../communities/Comunities';
+import communitiesData from '../../data/communitiesData';
 
 const AsideRight: React.FC = () => {
   return (
     <div className="container-statistics-and-comunities">
-      <div className="comunities">
-        
-        <div className="statistic-title">
-        <p className='post-title'>Popular Communities</p></div>
-        <a href="#" className="comunity">
-          <div className="comunity-image"></div>
-          <p className="comunity-name post-text">Red Witches</p>
-        </a>
-        <a href="#" className="comunity">
-          <div className="comunity-image"></div>
-          <p className="comunity-name post-text">Book of Shadows</p>
-        </a>
-        <a href="#" className="comunity">
-          <div className="comunity-image"></div>
-          <p className="comunity-name post-text">Black Spiders</p>
-        </a>
-        <a href="#" className="comunity">
-          <div className="comunity-image"></div>
-          <p className="comunity-name post-text">Crimson Union</p>
-        </a>
-        <a href="#" className="comunity">
-          <div className="comunity-image"></div>
-          <p className="comunity-name post-text">Ghost Hunters</p>
-        </a>
-        <a className="show-more-comunities comunity post-text" href="#">
-          Show More...
-        </a>
-      </div>
+      
+      <Communities communities={communitiesData} />
 
       <div className="statistic">
         <div className="statistic-title">
