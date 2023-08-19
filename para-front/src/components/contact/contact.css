@@ -3,11 +3,20 @@
 }
 
 .contact-position {
-    padding: 2rem 0.2rem 6rem;
+    padding: 4rem 0.2rem 6rem;
 }
 
 .contact-position h1 {
     font-size: 2rem;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    width: 90%;
+    margin-top: 4rem;
 }
 
 .contact-icon {
@@ -22,9 +31,7 @@
 }
 
 .contact-validation {
-    margin-top: 3px;
-    font-size: 0.8rem;
-    display: none;
+    font-size: 0.7rem;
 }
 
 input:invalid[focused='true'] {
@@ -38,15 +45,18 @@ input:invalid[focused='true'] ~ .contact__validation {
 .contact-form, .contact-socials {
     background-color: var(--nav);
     width: 320px;
-    height: 450px;
+    height: 550px;
     border-radius: 1.3rem;
     padding: 2rem 3rem;
-    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.3rem;
 }
 
 .form-label {
     display: flex;
-    margin: 2rem 0 0.6rem;
+    margin: 1.5rem 0 0.6rem;
 }
 
 .form-label:first-child {
@@ -125,8 +135,13 @@ textarea {
 /* Media queries */
 
 @media screen and (min-width: 768px) {
+    .contact-container {
+        width: 100%;
+        flex-direction: row;
+    }
+
     .contact-position {
-        padding: 2rem 3rem 6rem;
+        padding: 4rem 3rem 6rem;
     }
 
     .contact-container {
@@ -139,5 +154,6 @@ textarea {
 @media screen and (min-width: 1024px) {
     .contact-form, .contact-socials {
         width: 380px;
+        height: 520px;
     }
 }
