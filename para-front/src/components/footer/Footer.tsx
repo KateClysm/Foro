@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <img src={logoNavWhite} alt="Logo ParaSeekers" />
         </div>
 
-        <div className="footer-text">
+        <div className="footer-text post-title">
           <p>
             This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!
           </p>
