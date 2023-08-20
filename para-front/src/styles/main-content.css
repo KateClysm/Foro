@@ -1,7 +1,18 @@
 /*CONTENEDOR GENERAL*/
+
+/*3 COLUMNAS para pantallas iguales o superiores a 1024px*/
 .main-content{
     background-color: var(--background);
     display: grid;
     grid-template-columns: 2fr 6fr 2fr;
     border-top: 1px solid var(--background);
+}
+
+/*Disposición del contenido en una única columna hasta que la pantalla tenga como mínimo 1024px*/
+@media (max-width: 1023px) {
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
