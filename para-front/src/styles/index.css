@@ -78,9 +78,9 @@ a{text-decoration: none;}
     .button-text{font-size: 1.1rem;}
 }
 @media (min-width: 2500px) {
-    .user-name{font-size: 1.4rem;}
-    .user-time{font-size: 1.2rem;}
-    .post-title{font-size: 1.4rem;}
-    .post-text{font-size: 1.3rem;}
-    .button-text{font-size: 1.3rem;}
+    .user-name{font-size: 1.5rem;}
+    .user-time{font-size: 1.3rem;}
+    .post-title{font-size: 1.5rem;}
+    .post-text{font-size: 1.4rem;}
+    .button-text{font-size: 1.4rem;}
 }
