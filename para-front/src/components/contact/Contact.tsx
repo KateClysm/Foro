@@ -5,7 +5,7 @@ import facebookIcon from '../../assets/contact/facebook.png'
 import twitterIcon from '../../assets/contact/twitter.png'
 import mailIcon from '../../assets/contact/mail.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faMessage } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faMessage, faL } from '@fortawesome/free-solid-svg-icons';
 
 const Contact: React.FC = () => {
 
@@ -15,12 +15,20 @@ const Contact: React.FC = () => {
     const [nameTouched, setNameTouched] = useState(false);
     const [emailTouched, setEmailTouched] = useState(false);
     const [messageTouched, setMessageTouched] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState('');
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isEmailValid = email === '' || emailRegex.test(email);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+        setSubmitMessage("Thank you! We'll be in touch with you shortly.")
+        setEmail('')
+        setName('')
+        setMessage('')
+        setNameTouched(false)
+        setEmailTouched(false)
+        setMessageTouched(false)
     };
 
     return (
@@ -29,7 +37,9 @@ const Contact: React.FC = () => {
                 Contact Us
             </h1>
             <div className='contact-container'>
-                <form className='contact-form' onSubmit={handleSubmit}>
+                <form action='#' className='contact-form' onSubmit={handleSubmit}>
+                {!submitMessage &&
+                <>
                     <div className='form-label'>
                         <FontAwesomeIcon icon={faUser} className='contact-icon' />
                         <label htmlFor='name'>
@@ -103,7 +113,20 @@ const Contact: React.FC = () => {
                             You can't send an empty message
                         </span>
                     )}
-                    <input className='contact-submit' type='submit' value='Send' />
+                    <input className='contact-submit' type='submit' value='Send' disabled={name.length <= 4 || !isEmailValid || message === ''} />
+                </>
+                }
+                {submitMessage &&
+                    <>
+                        <p className='contact-submit-message'>{submitMessage}</p>
+                        <button 
+                            className='contact-another-message'
+                            onClick={() => setSubmitMessage('')}
+                        >
+                            Send another message
+                        </button>
+                    </>
+                }
                 </form>
                 <div className='contact-socials'>
                     <a href='#' className='social'>

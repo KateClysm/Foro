@@ -57,6 +57,7 @@ input:invalid[focused='true'] ~ .contact__validation {
 .form-label {
     display: flex;
     margin: 1.5rem 0 0.6rem;
+    font-size: 0.9rem;
 }
 
 .form-label:first-child {
@@ -102,10 +103,26 @@ textarea {
     font-size: 1rem;
 }
 
-.contact-submit:hover {
+.contact-submit:hover, .contact-another-message:hover {
     background-color: var(--nav);
     border: 1px solid var(--logo);
     font-weight: 600;
+}
+
+.contact-another-message {
+    margin-top: 1rem;
+    background-color: var(--logo);
+    border: 1px solid var(--logo);
+    border-radius: 1.3rem;
+    transition: all .1s ease-out;
+    cursor: pointer;
+    padding: 0.6rem 2.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.contact-submit-message {
+    text-align: center;
 }
 
 /* Contact socials */
@@ -118,6 +135,7 @@ textarea {
 .social {
     display: flex;
     align-items: center;
+    font-size: 0.9rem;
 }
 
 .social:hover {
