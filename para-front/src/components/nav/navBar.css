@@ -1,62 +1,75 @@
-/*DESK FIRST*/
+/*DESK FIRST--1024px*/
+
+/*contenedor total. Separa el contenedor para el logo y el nav-menu(desk) con la search bar y los buttons*/
 nav{
     background-color: var(--nav);
     height: 70px;
     display: grid;
-    grid-template-columns: 2fr 8fr; 
+    grid-template-columns: 2fr 8fr;
     align-items: center;
     justify-content: space-between;
 }
+
+/*--------------------------------------------------------------------------------*/
+
+/*contenedor del logo y la imagen, el logo toma 2 columnas*/
+.logo{
+    height: 100%;
+    display: flex;  /*centra absolutamente la imágen del logo*/
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    height: 50px;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+/*nav-menu, contiene la search bar, los botones y el aside. En escritorio se divide en 2 columnas, una de 5fr para la search bar y otra 2fr para los botones. el aside está en display-none*/
 .nav-menu {
     display: grid;
     grid-template-columns: 5fr 2fr; 
     justify-content: center;
-    list-style: none;
-    width: 100%;
+    width: 100%; /*es importante esta declaración para que en mobile ocupe toda la pantalla*/
+    align-items: center; /*alinea la search bar con los botones*/
 }
-/* TOGGLE NO SE VISUALIZA EN PANTALLAS GRANDES*/
-.nav-toggle{
-    color: white;
-    background: none;
-    border: none;
-    font-size: 25px;
-    padding: 0 5px;
-    line-height: 60px;
-    cursor: pointer;
-    display: none;
-}
-/*SEARCH BAR*/
+
+/*--------------------------------------------------------------------------------*/
+
+/*contenedor que centra la search-bar*/
 .container-search-bar{
-    width: 100%;
     display: flex;
     justify-content: center;
 }
+/*ocupa el 70% de su asignación de 5fr */
 .search-nav{
-    width:70%;
+    width: 70%; 
 }
-.search-nav button img{
-    height: 25px;
-}
+/*botón de submit, contiene a la img*/
 .search-nav button{
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
+    padding-left: 0.8rem; /*si el texto es muy largo, no se choca con la lupa*/
 }
+/*altura de la lupa*/
+.search-nav button img{
+    height: 25px;
+}
+/*form class search-bar*/
 .search-bar{
     height: 35px;
     background-color: var(--search);
     border-radius: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*separa el input del botón submit*/
     align-items: center;
-    padding: 0 0.8rem 0rem 1.5rem;
+    padding: 0 0.8rem 0rem 1.5rem;/*separa un poco la lupa y el texto*/
 }
 .search-bar input{
     width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 50px;
+    border: none; 
     background-color: transparent;
     color: var(--white);
     outline: none;
@@ -66,69 +79,55 @@ nav{
     background-color: transparent;
 }
 
+/*--------------------------------------------------------------------------------*/
 
-/*contenedor del logo y la imagen*/
-.logo{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo img{
-    height: 50px;
-}
-  
 
-/*CONTENEDOR DE LOS BOTONES DEL NAV*/
+
+/*contenedor de los botones login y register*/
 .nav-buttons{
-    height: 35px;
+    height: 30px;
     display: flex;
     justify-content: center;
     column-gap: 1rem;
 }
+/*color del botón login*/
 .login{
     background-color: var(--logo);
 }
+/*color del botón register*/
 .register{
     background-color: var(--search);
 }
 .login, .register{
     height: 100%;
     border-radius: 45px;
-    min-width: 100px;
+    min-width: 80px;
     border: none;
     cursor: pointer;
 }
-/*EN C0MPUTADORA EL ASIDE MOBILE NO SE MUESTRA*/
+
+/*--------------------------------------------------------------------------------*/
+
+/*el contenido que pertenece al aside no se integra al nav si la pantalla en grande*/
 .aside-nav{
     display: none;
 }
 
-/*padding vertical del divider*/
-.aside-nav .padding-divider{
-padding: 2rem 0;
-width: 100%;
+/*--------------------------------------------------------------------------------*/
+
+/* El toggle del nav no se visualiza en pantallas grandes*/
+.nav-toggle{
+    display: none;
 }
-/*estilos del divider*/
-.aside-nav .divider{
-    height: 1px;
-    background-color: var(--search);
-}
-.aside-nav li{
-    list-style: none;
-}
-.aside-nav li a:hover{
-    color:var(--logo);
-    cursor: pointer;
-}
-/*color de popular*/
-.popular-red{
-    color: var(--logo);
-}
+  
+
+
+/*--------------------------------------------------------------------------------*/
 
 
 
-/*ESTILOS PARA ANCHOS DE PANTALLAS MENORES A 1023PX*/
+
+/*Para pantallas menores a 1024px*/
 @media (max-width: 1023px) {
     /*NAV*/
     nav{
@@ -158,7 +157,14 @@ width: 100%;
         padding: 2rem 0;
     }
     /*TOGGLE*/
-    .nav-toggle {
+    .nav-toggle{
+        color: white;
+        background: none;
+        border: none;
+        font-size: 25px;
+        padding: 0 5px;
+        line-height: 60px;
+        cursor: pointer;
         display: flex;
     }
     .nav-menu_visible {
@@ -182,13 +188,132 @@ width: 100%;
         align-items: center;
         row-gap: 1rem;
     } 
+
+
+
+
+    /*padding vertical del divider*/
+.aside-nav .padding-divider{
+    padding: 2rem 0;
+    width: 100%;
+    }
+    /*estilos del divider*/
+    .aside-nav .divider{
+        height: 1px;
+        background-color: var(--search);
+    }
+    .aside-nav li{
+        list-style: none;
+    }
+    .aside-nav li a:hover{
+        color:var(--logo);
+        cursor: pointer;
+    }
+    /*color de popular*/
+    .popular-red{
+        color: var(--logo);
+    }
 }
 
-@media (min-width: 1024px) {
-    nav{
-        padding: 0 1rem;
+
+
+/*Para pantallas de 1240px*/
+@media (min-width: 1240px) {
+    /*alto de la imagen del logo*/
+    .logo img{
+        height: 60px;
     }
+    /*botones login y register*/
+    .nav-buttons{
+        height: 36px;
+        column-gap: 1.2rem;
+    }
+    /*ancho de los botones*/
+    .login, .register{
+        min-width: 100px;
+    }
+    /*anchura de la search-nav*/
+    .search-nav{
+        width: 80%; 
+    }
+}
+
+/*Para pantallas de 1600px*/
+@media (min-width: 1600px) {
+    /*logo de la página*/
     .logo img{
         height: 65px;
+    }
+    /*altura de los botones*/
+    .nav-buttons{
+        height: 40px;
+    }
+    /*width de los botones*/
+    .login, .register{
+        min-width: 130px;
+    }
+}
+
+/*Para pantallas de 1900px*/
+@media (min-width: 1900px) {
+    /*logo de la página*/
+    .logo img{
+        height: 70px;
+    }
+    /*altura del nav más grande*/
+    nav {
+        height: 90px;
+    }
+    /*altura de la search bar*/
+    .search-bar {
+        height: 45px;
+    }
+    /*altura de la lupa*/
+    .search-nav button img{
+        height: 30px;
+    }
+    /*altura de los botones*/
+    .nav-buttons{
+        height: 45px;
+    }
+    /*width de los botones*/
+    .login, .register{
+        min-width: 150px;
+    }
+    /*padding de la search bar*/
+    .search-bar{
+        padding: 0 1.5rem 0rem 2rem;
+    }
+}
+
+/*Para pantallas de 2500px*/
+@media (min-width: 2500px) {
+    /*logo de la página*/
+    .logo img{
+        height: 100px;
+    }
+    /*altura del nav más grande*/
+    nav {
+        height: 130px;
+    }
+    /*altura de la search bar*/
+    .search-bar {
+        height: 60px;
+    }
+    /*altura de la lupa*/
+    .search-nav button img{
+        height: 40px;
+    }
+    /*altura de los botones*/
+    .nav-buttons{
+        height: 60px;
+    }
+    /*width de los botones*/
+    .login, .register{
+        min-width: 180px;
+    }
+    /*padding de la search bar*/
+    .search-bar{
+        padding: 0 2rem 0rem 2.5rem;
     }
 }

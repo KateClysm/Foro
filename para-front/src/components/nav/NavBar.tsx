@@ -14,6 +14,7 @@ const NavBar: React.FC = () => {
     };
   
     return (
+
         <nav>
             <div className="logo">
                 <img src={logoNav} alt="Logo ParaSeekers"/>
@@ -24,22 +25,23 @@ const NavBar: React.FC = () => {
             </button>
 
             <div className={`nav-menu ${isNavMenuVisible ? 'nav-menu_visible' : ''}`}>
+
                 <div className="container-search-bar">
                     <div className="search-nav">
                         <form action="https://www.google.com/search" method="get" className="search-bar" target="_blank">
-                            <input className='post-title' type="text" placeholder="Search Post" name="q" />
+                            <input className='post-text' type="text" placeholder="Search Post" name="q" />
                             <button type="submit">
-                            <img src={miniLogo} alt="Mini Logo ParaSeekers" />
+                              <img src={miniLogo} alt="Mini Logo ParaSeekers" />
                             </button>
                         </form>
                     </div>
                 </div>
 
                 <div className="nav-buttons">
-                    <button className="login post-title">
+                    <button className="login post-text">
                         <a href="#">Login</a>
                     </button>
-                    <button className="register post-title">
+                    <button className="register post-text">
                         <a href="#">Register</a>
                     </button>
                 </div>
