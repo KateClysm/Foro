@@ -5,7 +5,7 @@ import facebookIcon from '../../assets/contact/facebook.png'
 import twitterIcon from '../../assets/contact/twitter.png'
 import mailIcon from '../../assets/contact/mail.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faMessage, faL } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faMessage } from '@fortawesome/free-solid-svg-icons';
 
 const Contact: React.FC = () => {
 
