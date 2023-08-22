@@ -9,11 +9,11 @@ import PrincipalPost from './components/principal-post/PrincipalPost';
 import AsideRight from './components/aside-right/AsideRight';
 import Footer from './components/footer/Footer';
 
-import postsData from './data/postsData'; // Importa el arreglo de posts
+import postsData from './data/postsData';
 
 const App: React.FC = () => {
 
-  const firstPost = postsData[0]; // Obtén el primer objeto del arreglo
+  const firstPost = postsData[0]; 
 
   return (
     <div className="app">
@@ -22,15 +22,16 @@ const App: React.FC = () => {
         <AsideLeft />
         <div className="posts-content">
 
-            <PrincipalPost post={firstPost} /> {/* Pasa el primer objeto como prop */}
+            <PrincipalPost post={firstPost} />
 
             <div className="secondary-posts">
-                {postsData.map((post, index) => (
-                  <SecondaryPost key={index} post={post} />
+                {postsData.map((postData, index) => (
+                  <SecondaryPost key={index} post={postData} />
                 ))}
             </div>
 
         </div> 
+
         <AsideRight/> 
       </div>
       <Footer />

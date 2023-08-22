@@ -1,6 +1,6 @@
 import React from 'react';
 import './secondary-post.css';
-import { IPost } from '../../models/IPost'; 
+import { IPost } from '../../models/Ipost'; 
 import ShowPostButton from '../utilities/show-post/ShowPostButton';
 import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
 
