@@ -9,10 +9,6 @@ import PrincipalPost from './components/principal-post/PrincipalPost';
 import AsideRight from './components/aside-right/AsideRight';
 import Footer from './components/footer/Footer';
 import postsData from './data/postsData';
-// import ShowPost from './components/show-post/ShowPost';
-// import AboutUs from './components/about-us/AboutUs';
-// import Contact from './components/contact/Contact';
-// import NotFoundPage from './components/not-found/NotFound';
 
 const App: React.FC = () => {
   const firstPost = postsData[0]; 
@@ -23,7 +19,6 @@ const App: React.FC = () => {
       <div className="main-content">
         <AsideLeft />
         <div className="posts-content">
-            {/* <ShowPost post={firstPost} /> */}
             <PrincipalPost post={firstPost} />
 
             <div className="secondary-posts">
@@ -32,12 +27,9 @@ const App: React.FC = () => {
                 ))}
             </div>
         </div> 
-        {/* <AboutUs/> */}
-        {/* <Contact/> */}
         <AsideRight/> 
       </div>
       <Footer />
-      {/* <NotFoundPage/> */}
     </div>
   );
 };
