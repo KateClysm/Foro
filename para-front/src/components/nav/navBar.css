@@ -1,62 +1,75 @@
-/*NAV*/
+/*DESK FIRST--1024px*/
+
+/*contenedor total. Separa el contenedor para el logo y el nav-menu(desk) con la search bar y los buttons*/
 nav{
     background-color: var(--nav);
     height: 70px;
     display: grid;
-    grid-template-columns: 2fr 8fr; 
+    grid-template-columns: 2fr 8fr;
     align-items: center;
     justify-content: space-between;
 }
+
+/*--------------------------------------------------------------------------------*/
+
+/*contenedor del logo y la imagen, el logo toma 2 columnas*/
+.logo{
+    height: 100%;
+    display: flex;  /*centra absolutamente la imágen del logo*/
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    height: 50px;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+/*nav-menu, contiene la search bar, los botones y el aside. En escritorio se divide en 2 columnas, una de 5fr para la search bar y otra 2fr para los botones. el aside está en display-none*/
 .nav-menu {
     display: grid;
     grid-template-columns: 5fr 2fr; 
     justify-content: center;
-    list-style: none;
-    width: 100%;
+    width: 100%; /*es importante esta declaración para que en mobile ocupe toda la pantalla*/
+    align-items: center; /*alinea la search bar con los botones*/
 }
-/* TOGGLE NO SE VISUALIZA EN PANTALLAS GRANDES*/
-.nav-toggle{
-    color: white;
-    background: none;
-    border: none;
-    font-size: 25px;
-    padding: 0 5px;
-    line-height: 60px;
-    cursor: pointer;
-    display: none;
-}
-/*SEARCH BAR*/
+
+/*--------------------------------------------------------------------------------*/
+
+/*contenedor que centra la search-bar*/
 .container-search-bar{
-    width: 100%;
     display: flex;
     justify-content: center;
 }
+/*ocupa el 70% de su asignación de 5fr */
 .search-nav{
-    width:70%;
+    width: 70%; 
 }
-.search-nav button img{
-    height: 25px;
-}
+/*botón de submit, contiene a la img*/
 .search-nav button{
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
+    padding-left: 0.8rem; /*si el texto es muy largo, no se choca con la lupa*/
 }
+/*altura de la lupa*/
+.search-nav button img{
+    height: 25px;
+}
+/*form class search-bar*/
 .search-bar{
     height: 35px;
     background-color: var(--search);
     border-radius: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*separa el input del botón submit*/
     align-items: center;
-    padding: 0 0.8rem 0rem 1.5rem;
+    padding: 0 0.8rem 0rem 1.5rem;/*separa un poco la lupa y el texto*/
 }
 .search-bar input{
     width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 50px;
+    border: none; 
     background-color: transparent;
     color: var(--white);
     outline: none;
@@ -66,139 +79,273 @@ nav{
     background-color: transparent;
 }
 
+/*--------------------------------------------------------------------------------*/
 
-/*LOGO*/
-.logo{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo img{
-    height: 60px;
-    margin: 0;
-    padding: 0;
-}
-  
-/*CONTENEDOR DE LOS BOTONES DEL NAV*/
+/*contenedor de los botones login y register*/
 .nav-buttons{
-    height: 35px;
+    height: 30px;
     display: flex;
     justify-content: center;
     column-gap: 1rem;
 }
+/*color del botón login*/
 .login{
     background-color: var(--logo);
 }
+/*color del botón register*/
 .register{
     background-color: var(--search);
 }
 .login, .register{
     height: 100%;
     border-radius: 45px;
-    min-width: 100px;
+    min-width: 80px;
     border: none;
     cursor: pointer;
 }
-/*EN C0MPUTADORA EL ASIDE MOBILE NO SE MUESTRA*/
-.aside-nav-mobile{
+
+/*--------------------------------------------------------------------------------*/
+
+/*el contenido que pertenece al aside no se integra al nav si la pantalla en grande*/
+.aside-nav{
     display: none;
 }
 
+/*--------------------------------------------------------------------------------*/
+
+/* El toggle del nav no se visualiza en pantallas grandes*/
+.nav-toggle{
+    display: none;
+}
+  
+/*--------------------------------------------------------------------------------*/
 
 
+/*RESPONSIVE*/
 
+/*Para pantallas menores a 768px. Pre-Establecimiento del contenido del aside*/
 
-/*ESTILOS PARA ANCHOS DE PANTALLAS MENORES A 1023PX*/
+/*pone en una columna las tres secciones, principal, topics, y secondary*/
+.aside-nav{
+    background-color: var(--aside);
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}    
+/*Pone en dirección de columna el contenido de las secciones*/
+.aside-nav .principal-page, .aside-nav .topics, .aside-nav .secondary-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+} 
+/*padding vertical del divider*/
+.aside-nav .padding-divider{
+padding: 2rem 0;
+width: 100%;
+}
+/*estilos del divider*/
+.aside-nav .divider{
+    height: 1px;
+    background-color: var(--search);
+}
+.aside-nav li{
+    list-style: none;
+}
+.aside-nav li a{
+    font-size: 0.7rem;
+}
+.aside-nav li a:hover{
+    color:var(--logo);
+    cursor: pointer;
+}
+/*color de popular*/
+.popular-red{
+    color: var(--logo);
+}
+
+/*Para pantallas mayores a 768px*/
+@media (min-width: 768px) {
+    .aside-nav li a{
+        font-size: 0.8rem;
+    }
+}
+
+/*Para pantallas menores a 1024px*/
 @media (max-width: 1023px) {
-    /*NAV*/
     nav{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; /*espacio entre el logo y el toggle*/
         padding: 0 1rem;
-        position: sticky; /*SUPER IMPORTANTE*/
-        top: 0px;
+        position: sticky; /*Establece la posición del nav como "sticky", lo que significa que el elemento seguirá siendo fijo en su lugar hasta que se desplace más allá de él. En este caso, el elemento se quedará en la parte superior de la ventana del navegador cuando se desplace hacia abajo.*/
+        top: 0px; /*Fija el nav en la parte superior de la ventana del navegador, ya que su posición es "sticky" y el valor "0px" coloca su borde superior justo en la parte superior de la ventana.*/
         height: 60px;
     }
-    /*el display grid cambia a block ya que no se va a usar la configuración de grid horizontal*/
+    /*el display grid cambia a block para una visualización vertical*/
     .nav-menu {
         flex-direction: column;
         align-items: center;
-        margin: 0;
         background-color: var(--nav);
-        position: fixed;
-        top: 60px;
-        height: calc(100% - 60px);
-        overflow-y: auto;
-        left: 100%;
-        transition: left 0.3s;
-        display: block;
+        position: fixed; /*Fija el .nav-menu en la ventana del navegador, lo que mantiene su posición incluso al desplazar la página.*/
+        top: 60px; /*Deja un espacio de 60 píxeles desde la parte superior para que el .nav-menu no se superponga al contenido debajo del encabezado (el nav)*/
+        height: calc(100% - 60px); /*Establece la altura del .nav-menu de manera que ocupe el 100% de la altura de la ventana del navegador, menos 60 píxeles para el espacio superior.*/
+        overflow-y: auto; /*Agrega una barra de desplazamiento vertical si el contenido del .nav-menu es más largo que su altura.*/
+        left: 100%; /*Inicialmente, coloca el .nav-menu fuera de la vista, ya que está desplazado hacia la derecha en un 100% de su ancho.*/
+        transition: left 0.3s; /*Agrega una transición suave de 0.3 segundos a la propiedad left, lo que significa que cuando se modifique la propiedad left, habrá una animación de deslizamiento*/
+        display: block; /*Establece la propiedad de visualización del elemento .nav-menu como "block", lo que hace que sea visible en el flujo de la página.*/
     }
-    /*SEARCH BAR*/
+    /*separa la search bar verticalmente*/
     .container-search-bar{
         padding: 2rem 0;
     }
-    /*TOGGLE*/
-    .nav-toggle {
+    /*toggle visible*/
+    .nav-toggle{
+        color: white;
+        background: none;
+        border: none;
+        font-size: 25px;
+        padding: 0 5px;
+        line-height: 60px;
+        cursor: pointer;
         display: flex;
     }
+    /*clase triggereable*/
     .nav-menu_visible {
         left: 0;
     }
     .nav-toggle:focus:not(:focus-visible) {
         outline: none;
     }
+    /*visualización del aside dentro del nav*/
+    .aside-nav{
+        display: flex;
+    }   
+}
 
-    /*ASIDE MOBILE*/
-    .aside-nav-mobile{
-        display: flex;
+/*--------------------------------------------------------------------------------*/
+
+/*Para pantallas de mínimo 10240px*/
+@media (min-width: 1024px) {
+    nav{
+        padding-right: 0.5rem;
     }
-    .aside-nav-mobile{
-        background-color: var(--aside);
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 2rem;
+    /*alto de la imagen del logo*/
+    .logo img{
+        height: 50px;
     }
-    .aside-nav-mobile .access{
-        padding-left: 0;
-        padding-bottom: 1.5rem;
+    /*botones login y register*/
+    .nav-buttons{
+        height: 36px;
+        column-gap: 1.2rem;
     }
-    .aside-nav-mobile .access:last-child{
-        padding-left: 0;
-        padding-bottom: 0;
+    /*ancho de los botones*/
+    .login, .register{
+        min-width: 90px;
     }
-    .aside-nav-mobile .principal-page, .aside-nav-mobile .topics, .aside-nav-mobile .secondary-page{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    /*padding vertical del divider*/
-    .aside-nav-mobile .padding-divider{
-        padding: 2rem 0;
-        width: 100%;
-    }
-    /*estilos del divider*/
-    .aside-nav-mobile .divider{
-        height: 1px;
-        background-color: var(--search);
-    }
-    .aside-nav-mobile li{
-        list-style: none;
-    }
-    .aside-nav-mobile .access:hover, .aside-nav-mobile .show-more-comunities:hover{
-        color:var(--logo);
-        cursor: pointer;
-    }
-    /*color de popular*/
-    .aside-nav-mobile .popular-red{
-        color: var(--logo);
+    /*anchura de la search-nav*/
+    .search-nav{
+        width: 80%; 
     }
 }
 
-@media (min-width: 1024px) {
-    nav{
-        padding: 0 1rem;
+/*Para pantallas mayores a 1240px*/
+@media (min-width: 1240px) {
+    /*alto de la imagen del logo*/
+    .logo img{
+        height: 55px;
+    }
+    /*separación de los costados de la search bar*/
+    .search-bar{
+        padding: 0 1.5rem 0rem 1.5rem;
+    }
+}
+
+/*Para pantallas mayores a 1400px*/
+@media (min-width: 1400px) {
+    /*ancho de los botones*/
+    .login, .register{
+        min-width: 100px;
+    }
+}
+
+/*Para pantallas de 1600px*/
+@media (min-width: 1600px) {
+    /*logo de la página*/
+    .logo img{
+        height: 65px;
+    }
+    /*altura de los botones*/
+    .nav-buttons{
+        height: 40px;
+    }
+    /*width de los botones*/
+    .login, .register{
+        min-width: 130px;
+    }
+}
+
+/*Para pantallas de 1900px*/
+@media (min-width: 1900px) {
+    /*logo de la página*/
+    .logo img{
+        height: 70px;
+    }
+    /*altura del nav más grande*/
+    nav {
+        height: 90px;
+    }
+    /*altura de la search bar*/
+    .search-bar {
+        height: 45px;
+    }
+    /*altura de la lupa*/
+    .search-nav button img{
+        height: 30px;
+    }
+    /*altura de los botones*/
+    .nav-buttons{
+        height: 45px;
+    }
+    /*width de los botones*/
+    .login, .register{
+        min-width: 150px;
+    }
+    /*padding de la search bar*/
+    .search-bar{
+        padding: 0 1.5rem 0rem 2rem;
+    }
+}
+
+/*Para pantallas de 2500px*/
+@media (min-width: 2500px) {
+    /*logo de la página*/
+    .logo img{
+        height: 100px;
+    }
+    /*altura del nav más grande*/
+    nav {
+        height: 130px;
+    }
+    /*altura de la search bar*/
+    .search-bar {
+        height: 60px;
+    }
+    /*altura de la lupa*/
+    .search-nav button img{
+        height: 40px;
+    }
+    /*altura de los botones*/
+    .nav-buttons{
+        height: 60px;
+    }
+    /*width de los botones*/
+    .login, .register{
+        min-width: 180px;
+    }
+    /*padding de la search bar*/
+    .search-bar{
+        padding: 0 2rem 0rem 2.5rem;
     }
 }
