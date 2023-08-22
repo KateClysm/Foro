@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
                 <div className="container-search-bar">
                     <div className="search-nav">
                         <form action="https://www.google.com/search" method="get" className="search-bar" target="_blank">
-                            <input className='post-text' type="text" placeholder="Search Post" name="q" />
+                            <input className='post-title' type="text" placeholder="Search Post" name="q" />
                             <button type="submit">
                               <img src={miniLogo} alt="Mini Logo ParaSeekers" />
                             </button>
@@ -38,10 +38,10 @@ const NavBar: React.FC = () => {
                 </div>
 
                 <div className="nav-buttons">
-                    <button className="login post-text">
+                    <button className="login post-title">
                         <a href="#">Login</a>
                     </button>
-                    <button className="register post-text">
+                    <button className="register post-title">
                         <a href="#">Register</a>
                     </button>
                 </div>
