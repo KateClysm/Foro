@@ -1,3 +1,4 @@
+import React from 'react';
 import './principal-post.css';
 import { IPost } from '../../models/IPost'; 
 import ShowPostButton from '../utilities/show-post/ShowPostButton';
@@ -10,7 +11,7 @@ const PrincipalPost: React.FC<{ post: IPost }> = ({ post }) => {
     <div className="principal-post">
 
         <div className="principal-post-user">
-          <div className="principal-post-user-image" style={{ backgroundImage: `url(${post.userImage})` }}></div>
+          <div className="principal-post-user-image" style={{backgroundImage: `url(${post.userImage})`}}></div>
           <div className="principal-post-user-data">
             <div className="user-name">{post.userName}</div>
             <div className="user-time">{post.userTime} hours ago</div>

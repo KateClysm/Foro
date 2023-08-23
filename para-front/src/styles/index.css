@@ -17,9 +17,8 @@
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
     color: var(--white);
-    /* font-size: 0.9rem; */
-    
 }
+
 html, body{
     height: 100%;
     width: 100%;
@@ -28,7 +27,60 @@ html, body{
 .title{
     font-family: 'Karla', sans-serif;;
 }
+
 a{text-decoration: none;}
 
 
+/*Font Sizes tomadas de referencia del PrincipalPost, pueden usarlas para mantener la integridad de tamaños en la página*/
+.user-name{font-size: 0.7rem;}
+.user-time{font-size: 0.5rem;}
+.post-title{font-size: 0.7rem;}
+.post-text{font-size: 0.6rem;}
+.button-text{font-size: 0.6rem;}
 
+
+/*----------------------RESPONSIVE---------------------------*/
+@media (min-width: 768px) {
+    .user-name{font-size: 0.8rem;}
+    .user-time{font-size: 0.6rem;}
+    .post-title{font-size: 0.8rem;}
+    .post-text{font-size: 0.7rem;}
+    .button-text{font-size: 0.7rem;}
+}
+
+@media (min-width: 1024px) {
+    .user-name{font-size: 0.9rem;}
+    .user-time{font-size: 0.7rem;}
+    .post-title{font-size: 0.9rem;}
+    .post-text{font-size: 0.8rem;}
+    .button-text{font-size: 0.8rem;}
+}
+
+@media (min-width: 1240px) {
+    .user-name{font-size: 1rem;}
+    .user-time{font-size: 0.8rem;}
+    .post-title{font-size: 1rem;}
+    .post-text{font-size: 0.9rem;}
+    .button-text{font-size: 0.9rem;}
+}
+@media (min-width: 1600px) {
+    .user-name{font-size: 1.1rem;}
+    .user-time{font-size: 0.9rem;}
+    .post-title{font-size: 1.1rem;}
+    .post-text{font-size: 1rem;}
+    .button-text{font-size: 1rem;}
+}
+@media (min-width: 1900px) {
+    .user-name{font-size: 1.2rem;}
+    .user-time{font-size: 1rem;}
+    .post-title{font-size: 1.2rem;}
+    .post-text{font-size: 1.1rem;}
+    .button-text{font-size: 1.1rem;}
+}
+@media (min-width: 2500px) {
+    .user-name{font-size: 1.5rem;}
+    .user-time{font-size: 1.3rem;}
+    .post-title{font-size: 1.5rem;}
+    .post-text{font-size: 1.4rem;}
+    .button-text{font-size: 1.4rem;}
+}
