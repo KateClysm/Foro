@@ -1,16 +1,15 @@
-body {
-    background-color: var(--background);
-}
-
 .error-container {
     display: flex; 
     flex-direction: column;
     align-items: center;
+
+    justify-content: center; /*importante*/
+    height: 100vh;
 }
 
 .error {
     max-width: 320px;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
 }
 
 .error-title {
@@ -23,7 +22,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0.2rem;
+    /* margin: 0.2rem; */
+    /* padding: 0.2rem; */
     gap: 2rem;
 }
 
@@ -31,35 +31,64 @@ body {
     max-width: 320px;
 }
 
-.error-button {
+.error-button-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     background-color: var(--logo);
     border: 1px solid var(--logo);
     border-radius: 50px;
     transition: all .1s ease-out;
     cursor: pointer;
-    padding: 0.8rem 2.5rem;
-    text-decoration: none;
+    padding: 0.8rem 1.7rem;
 }
 
-.error-button:hover {
+/* 
+.error-button {
+     background-color: var(--logo);
+    border: 1px solid var(--logo);
+    border-radius: 50px;
+    transition: all .1s ease-out;
+    cursor: pointer;
+    padding: 0.8rem 2.5rem; 
+    text-decoration: none;
+} */
+
+.error-button-container:hover{
+    background-color: var(--background);
+    font-weight: 600;
+}
+/* .error-button:hover {
     background-color: var(--background);
     border: 1px solid var(--logo);
     font-weight: 600;
-}
+} */
 
 .icon {
-    margin-left: 0.5rem;
+    /* margin-left: 0.5rem; */
+    padding-left: 0.4rem;
     transition: transform .3s ease-in-out;
 }
+.icon path {
+    color: var(--white);
+    font-size: 1.3rem;
+}
 
-.error-button:hover .icon {
+.error-button-container:hover > .icon path {
+    color: var(--logo);
+    font-size: 1.3rem;
+}
+.error-button-container:hover > .icon{
     transform: translateX(5px);
 }
+
+/* .error-button:hover .icon {
+    transform: translateX(5px);
+} */
 
 @media screen and (min-width: 768px) {
     .error {
         max-width: 620px;
-        padding: 10rem 0;
+        /* padding: 10rem 0; */
     }
 }
 
@@ -67,10 +96,12 @@ body {
     .error {
         max-width: 900px;
         flex-direction: row;
-        padding: 12rem 0;
+        /* padding: 12rem 0; */
+        /* padding: 2rem 0; */
     }
 
     .error-img {
-        max-width: 400px;
+        /* max-width: 400px; */
+        max-width: 320px
     }
 }
