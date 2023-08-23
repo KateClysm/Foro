@@ -91,6 +91,7 @@ const ContactForm: React.FC = () => {
                     <textarea
                         id='message'
                         name='message'
+                        className='contact-message'
                         placeholder='I wanted to ask about...'
                         required
                         onBlur={() => setMessageTouched(true)}

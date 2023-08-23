@@ -1,12 +1,12 @@
 import React from 'react';
-import './contact.css'
+import './contact.scss'
 import ContactForm from './ContactForm';
 import ContactSocials from './ContactSocials';
 
 const Contact: React.FC = () => {
 
     return (
-        <section className='contact-position'>
+        <section className='contact'>
             <h1 className='title'>
                 Contact Us
             </h1>

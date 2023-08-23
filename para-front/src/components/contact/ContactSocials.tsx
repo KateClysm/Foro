@@ -7,21 +7,21 @@ import mailIcon from '../../assets/contact/mail.png'
 const ContactSocials: React.FC = () => {
 
     return (
-        <div className='contact-socials'>
-            <a href='#' className='social post-text'>
-                <img className='contact-logo' src={instagramIcon} alt='instagram logo' />
+        <div className='socials'>
+            <a href='#' className='socials-social post-text'>
+                <img className='social-logo' src={instagramIcon} alt='instagram logo' />
                 @Para_seekers
             </a>
-            <a href='#' className='social post-text'>
-                <img className='contact-logo' src={mailIcon} alt='mail logo' />
+            <a href='#' className='socials-social post-text'>
+                <img className='social-logo' src={mailIcon} alt='mail logo' />
                 Paraseekers@gmail.com
             </a>
-            <a href='#' className='social post-text'>
-                <img className='contact-logo' src={twitterIcon} alt='twitter logo' />
+            <a href='#' className='socials-social post-text'>
+                <img className='social-logo' src={twitterIcon} alt='twitter logo' />
                 Para/seekers_ok
             </a>
-            <a href='#' className='social post-text'>
-                <img className='contact-logo' src={facebookIcon} alt='facebook logo' />
+            <a href='#' className='socials-social post-text'>
+                <img className='social-logo' src={facebookIcon} alt='facebook logo' />
                 Paraseekers_official
             </a>
         </div>
