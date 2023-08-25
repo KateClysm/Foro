@@ -201,7 +201,7 @@
         padding: 10px 255px 10px 405px;
     }
 }
-@media only screen and(min-width:760px),/*(max-width:1024px)*/{
+@media only screen and(min-width:760px),/*(max-width:1024px)*/ {
     form{
         padding: 10px 255px 10px 165px;
     }

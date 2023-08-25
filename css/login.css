@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 50px;
+    left: 35px;
     margin: 30px 0 30px 0;
 }
 .login-center{
@@ -116,7 +116,8 @@
         width: 450px;
         height: 450px;
         padding: 50px 45px;
-        left: 415px;
+        left: 1px;
+        right: 55px;
     }
     .login-center{
         gap: 6px;
@@ -154,12 +155,28 @@
         font-size: 1.1rem;
     }
     .nav-buttons{
-        padding-inline-start: 500px;
+        justify-content: flex-end;
     }
     .logo {
-        padding-inline-start: 600px;
+        padding-left: 590px;
+        padding-right: 50px;
     }
     .register-option p{
         padding: 30px 50px 10px 100px;
     }
+    form{
+        padding: 10px 255px 10px 405px;
+    }
+}
+@media only screen and(min-width:760px),/*(max-width:1024px)*/{
+    form{
+        padding: 10px 255px 10px 165px;
+    }
+    .logo {
+        display: flex;
+        align-items: start;
+    
+    }
+    
+
 }
