@@ -15,7 +15,7 @@ const ForumComponent: React.FC = () => {
 
   useEffect(() => {
     // Hacer una solicitud GET al backend
-    axios.get('http://localhost:3001/api/forum/posts')
+    axios.get('http://localhost:3001/apiforum/posts')
       .then(response => {
         setPosts(response.data);
       })

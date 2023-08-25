@@ -28,3 +28,7 @@ Si tu frontend se está ejecutando en un servidor de desarrollo diferente (por e
 "proxy": "http://localhost:3001"
 
 Esto ayudará a redirigir las solicitudes desde el frontend al backend correctamente durante el desarrollo.
+
+
+CAUSA DEL ERROR(en este proyecto): 
+para llamar a la info se tiene que entrar a la ruta /apiforum una vez en esa ruta, aparecerán los mensajes de bienvenida.
