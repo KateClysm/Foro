@@ -1,8 +1,9 @@
 import React from 'react';
-import './notFound.css';
+import './notFound.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ghost from '../../assets/not-found/ghost.png'
+import { NavLink } from 'react-router-dom';
 
 const NotFoundPage: React.FC = () => {
     return (
@@ -18,10 +19,11 @@ const NotFoundPage: React.FC = () => {
                     <p>
                         But fear not, curious soul! Embrace the mysterious and continue your journey through our supernatural archives.
                     </p>
-                    <a href='#' className='error-button'>
-                        Go to Home
+                    
+                    <div className='error-button-container'>
+                        <NavLink to="/" className='error-button'>Go to Home</NavLink>
                         <FontAwesomeIcon className='icon' icon={faArrowRight} />
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>

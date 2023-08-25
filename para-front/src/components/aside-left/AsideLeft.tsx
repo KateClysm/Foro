@@ -1,12 +1,13 @@
 import React from 'react';
 import './aside.css';
+import { NavLink } from 'react-router-dom';
 
 
 const AsideLeft: React.FC = () => {
   return (
     <div className="aside-left">
       <ul className="principal-page">
-        <li><a href="#">Home</a></li>
+        <li><NavLink to="/">Home</NavLink></li>
         <li><a href="#" className='popular-red'>Popular</a></li>
       </ul>
 
@@ -35,8 +36,8 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <ul className="secondary-page">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><NavLink to="/about">About us</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
         <li><a href="#">Help</a></li>
       </ul>
     </div>
