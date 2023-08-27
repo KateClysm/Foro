@@ -5,6 +5,7 @@
         "target": "ES6",
         "sourceMap": false,
         "outDir": "./dist",
+        "jsx": "react",
     },
     "include": ["src/**/*"],
 }
