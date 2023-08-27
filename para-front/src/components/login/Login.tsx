@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css';
+import { NavLink } from 'react-router-dom';
 
 const Login: React.FC = () => {
     return (
@@ -39,15 +40,13 @@ const Login: React.FC = () => {
 
                <div className="register-option">
                    <p>You want to create an account? 
-                        <a class="register" href="./register.html">
-                           Register
-                        </a>
+                        <NavLink to="/register">Register</NavLink>
                     </p>
                 </div>
             </div>
 
         </div>
    </form>
-)
-}
-export default Login
+);
+};
+export default Login;

@@ -1,16 +1,23 @@
+form{
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+
 .container-register{
-    width: 290px;
-    height: 300px;
-    padding: 50px 45px;
+    /* width: 290px;
+    height: 300px; */
+    /* padding: 50px 45px; */
     background-color: #444444;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    right: 1px;
-    left: 35px;
-    margin: 30px 0 30px 0;
+    /* right: 1px;
+    left: 35px; */
+    /* margin: 30px 0 30px 0; */
 }
 .register-center{
     display: flex;
@@ -23,7 +30,7 @@
     text-transform: uppercase;
     background-color: #711616;
     height: 30px;
-    width: 290px;
+    width: 300px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     display: flex;
@@ -123,12 +130,12 @@
 }
 
 
-.nav-buttons{
+/* .nav-buttons{
     justify-content: flex-end;
 }
 .logo {
     padding-inline-start: 100px;
-}
+} */
 
 
 @media only screen and (min-width:728px)  {
@@ -186,22 +193,22 @@
         width: 80px;
         font-size: 1.1rem;
     }
-    .nav-buttons{
+    /* .nav-buttons{
         justify-content: flex-end;
     }
     .logo {
         padding-left: 590px;
         padding-right: 50px;
-    }
+    } */
     .logIn-option p{
         padding: 20px 40px 10px 100px;
     }
 
-    form{
+    /* form{
         padding: 10px 255px 10px 405px;
-    }
+    } */
 }
-@media only screen and(min-width:760px),/*(max-width:1024px)*/ {
+/* @media only screen and(min-width:760px){
     form{
         padding: 10px 255px 10px 165px;
     }
@@ -211,4 +218,4 @@
     
     }
     
-}
+} */

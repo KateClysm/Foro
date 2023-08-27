@@ -10,6 +10,8 @@ import AboutUs from '../../components/about-us/AboutUs';
 import NotFoundPage from '../../components/not-found/NotFound';
 import Contact from '../../components/contact/Contact';
 import ForumComponent from '../../components/forum-component/ForumComponent';
+import Login from '../../components/login/Login';
+import Register from '../../components/register/Register';
 
 const MainContent: React.FC = () => {
   return (
@@ -32,9 +34,11 @@ const MainContent: React.FC = () => {
                       <AsideRight/>
                   </>
                 } />
+
                 <Route path="/about" element={<AboutUs/>}/>
                 <Route path="/contact" element={<Contact/>}/>
-
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>

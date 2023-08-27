@@ -1,15 +1,20 @@
+form{
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+}
 .container-login{
     width: 290px;
     height: 300px;
     padding: 50px 45px;
-    background-color: #444444;
+    background-color: #444444; /*no usar colores, usar las variables declaradas en index.css*/
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 50px;
-    margin: 30px 0 30px 0;
+    /* left: 50px;
+    margin: 30px 0 30px 0;   no usar márgenes en la medida de lo posible*/
 }
 .login-center{
     display: flex;
@@ -17,7 +22,7 @@
     gap: 1px;
 }
 .div-login{
-    font-family: 'Inconsolata', monospace;
+    /* font-family: 'Inconsolata', monospace;  ya está en toda la página*/
     text-transform: uppercase;
     background-color: #711616;
     height: 35px;
@@ -29,7 +34,7 @@
     align-items: center;
     position: absolute;
     top: 0px;
-    left: 0px;
+    /* left: 0px; no hace nada*/
 }
 
 .email-login{
@@ -82,19 +87,19 @@
     text-transform: capitalize;
 }
 .register-option a{
-    text-decoration: underline #711616;
-    background-color: #444444;
+    text-decoration: underline #711616;  /*no usar colores, usar las variables declaradas en index.css*/
+    background-color: #444444;  /*no usar colores, usar las variables declaradas en index.css*/
 }
 .submit-login input{
-    background-color: #646464;
-    border-color: #282828;
+    background-color: #646464;  /*no usar colores, usar las variables declaradas en index.css*/
+    border-color: #282828;  /*no usar colores, usar las variables declaradas en index.css*/
     height: 30px;
     width: 65px;
     font-family: 'Inconsolata', monospace;
     font-size: 1rem;
 }
 .submit-login input:hover{
-    background-color: #711616;
+    background-color: #711616;  /*no usar colores, usar las variables declaradas en index.css*/
 }
 .submit-login{
    padding-top: 10px;
@@ -103,20 +108,20 @@
    align-items: center;
 }
 
-.nav-buttons{
-    padding-inline-start: 150px;
-}
+/* .nav-buttons{
+    padding-inline-start: 150px; interfiere con el nav
+} */
 
-.logo {
-    padding-inline-start: 100px;
-}
+/* .logo {
+    padding-inline-start: 100px; intefiere con el nav
+} */
 
 @media only screen and (min-width:728px) {
     .container-login{
         width: 450px;
         height: 450px;
         padding: 50px 45px;
-        left: 415px;
+        /* left: 415px; desconfigura la página*/
     }
     .login-center{
         gap: 6px;
@@ -153,12 +158,12 @@
         width: 80px;
         font-size: 1.1rem;
     }
-    .nav-buttons{
-        padding-inline-start: 500px;
-    }
-    .logo {
-        padding-inline-start: 600px;
-    }
+    /* .nav-buttons{
+        padding-inline-start: 500px;  interfiere con el nav
+    } */
+    /* .logo {
+        padding-inline-start: 600px;  interfiere con el nav
+    } */
     .register-option p{
         padding: 30px 50px 10px 100px;
     }

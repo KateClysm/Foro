@@ -4,6 +4,7 @@ import logoNav from '../../assets/logoNav.png';
 import miniLogo from '../../assets/miniLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
 
@@ -38,11 +39,11 @@ const NavBar: React.FC = () => {
                 </div>
 
                 <div className="nav-buttons">
-                    <button className="login post-title">
-                        <a href="#">Login</a>
+                    <button className="login-button post-title">
+                        <NavLink to="/login">Login</NavLink>
                     </button>
-                    <button className="register post-title">
-                        <a href="#">Register</a>
+                    <button className="register-button post-title">
+                        <NavLink to="/register">Register</NavLink>
                     </button>
                 </div>
 
