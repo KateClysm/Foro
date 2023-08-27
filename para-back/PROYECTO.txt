@@ -1,0 +1,177 @@
+Archivos:
+    -package.json
+    -tsconfig.json
+    -dist
+    -index.tsx
+    -forumRoutes.tsx
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+-index.tsx-
+
+import express from 'express';    ===> importa express
+import cors from 'cors';      ===> importa cors para poder recibir peticiones que se encuentran en otro puerto (del front)
+import forumRoutes from './routes/forumRoutes.js';    ===> importa el archivo de rutas
+
+const app = express();      ===> crea una instancia de express ( inicializando y configurando el servidor utilizando el framework de Express.)
+
+const PORT = process.env.PORT || 3001;  ===> configura el puerto en el cual el servidor Express escuchará las solicitudes entrantes.
+
+app.use(cors());    ===> agrega el middleware CORS (Cross-Origin Resource Sharing) a la aplicación Express.
+
+app.get('/', (req, res) => {
+  res.send('¡Hola desde el servidor Express!');     ===> define una ruta raiz manejada por el método HTTP GET en la aplicación Express.
+});
+
+app.use('/apiforum', forumRoutes);  ===> configura una ruta base (/apiforum) para las rutas manejadas por el router forumRoutes en la aplicación Express.
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);     ===> inicia el servidor Express para escuchar las solicitudes entrantes en el puerto especificado (PORT) y muestra un mensaje en la consola indicando en qué puerto se está ejecutando.
+});
+
+
+
+| 1 | express() es una función proporcionada por el paquete express que crea una instancia de la aplicación Express. Esta instancia de aplicación representa tu servidor web y contendrá todas las funcionalidades y configuraciones que necesitas para manejar las solicitudes HTTP.
+
+Almacenar la instancia de la aplicación en la variable app te permite configurar y utilizar diferentes aspectos de tu servidor, como definir rutas, agregar middleware, establecer configuraciones globales y más.
+
+Por ejemplo, después de crear la instancia de la aplicación, puedes usar app.get(...), app.post(...), app.use(...), y otros métodos proporcionados por Express para definir las rutas y los manejadores de rutas correspondientes. También puedes usar app.use(...) para agregar middleware, como cors, body-parser, autenticación, y más.
+
+En resumen, la línea const app = express(); es el punto de partida para configurar y construir tu servidor web utilizando Express. A partir de aquí, puedes agregar rutas, middlewares y otras configuraciones necesarias para construir una aplicación web funcional.
+
+
+| 2 | const PORT = process.env.PORT || 3001; 
+Esta línea de código está configurando el puerto en el cual tu servidor Express escuchará las solicitudes entrantes.
+
+process.env.PORT es una variable de entorno que se usa comúnmente en aplicaciones web para configurar el puerto en el que el servidor debe escuchar las solicitudes entrantes. Esta variable de entorno puede ser configurada externamente, por ejemplo, a través de una línea de comandos o en un archivo de configuración.
+
+|| es el operador de "o lógico" (OR en inglés). En este contexto, si process.env.PORT no está configurado (es decir, es falsy, como null, undefined o false), entonces la expresión process.env.PORT || 3001 devolverá el valor 3001.
+
+Entonces, la línea completa se lee de la siguiente manera:
+
+"Configura el puerto en el valor de process.env.PORT si está definido; de lo contrario, utiliza el puerto 3001."
+
+Esto significa que si tienes configurado un puerto en la variable de entorno PORT (por ejemplo, si estás utilizando un servicio de hosting que define automáticamente el puerto), tu servidor Express escuchará en ese puerto. Si la variable de entorno no está definida, tu servidor escuchará en el puerto 3001 por defecto.
+
+Esto es especialmente útil cuando deseas desplegar tu aplicación en diferentes entornos (como desarrollo, producción, pruebas, etc.), ya que te permite configurar fácilmente el puerto según las necesidades de cada entorno sin tener que cambiar manualmente el código de tu aplicación.
+
+
+| 3 | app.use(cors()); agrega el middleware CORS (Cross-Origin Resource Sharing) a tu aplicación Express. CORS es un mecanismo de seguridad implementado en los navegadores para controlar las solicitudes y respuestas entre diferentes dominios (origenes) en una aplicación web.
+
+Aquí está una explicación más detallada:
+
+app.use() es un método de Express que se utiliza para agregar middleware a la aplicación. Los middlewares son funciones que se ejecutan en el flujo de procesamiento de solicitudes antes de que lleguen a las rutas finales. Los middlewares son utilizados para realizar diversas tareas, como manejar la autenticación, el registro de solicitudes, el análisis de datos de solicitudes, la compresión de respuestas y más.
+
+cors() es una función proporcionada por el paquete cors. Al llamar a cors(), estás creando una instancia de middleware de CORS. Este middleware permite que tu servidor responda a solicitudes realizadas desde diferentes orígenes (dominios) de manera controlada, siguiendo las políticas de seguridad del navegador.
+
+En resumen, al usar app.use(cors());, estás configurando tu aplicación Express para que las solicitudes entrantes desde cualquier origen sean aceptadas. Esto es útil cuando tienes una aplicación cliente (frontend) en un dominio y un servidor (backend) en otro dominio, y deseas permitir que el cliente acceda a recursos en el servidor de manera segura.
+
+Nota: Aunque usar app.use(cors()) es conveniente para desarrollo local y pruebas, en un entorno de producción es importante configurar CORS de manera más restrictiva y específica para mejorar la seguridad de tu aplicación. Puedes proporcionar opciones de configuración a la función cors() para personalizar su comportamiento según tus necesidades.
+
+
+| 4 | app.get('/', (req, res) => {
+      res.send('Estás en la ruta base del servidor');
+      });
+
+define una ruta manejada por el método HTTP GET en tu aplicación Express.
+
+app.get('/'): Esto establece una ruta que corresponde a la ruta raíz ("/") de tu servidor. El método app.get() se utiliza para manejar las solicitudes HTTP GET.
+
+(req, res) => { ... }: Esto es una función de devolución de llamada (callback) que se ejecutará cuando se reciba una solicitud GET en la ruta raíz. req es el objeto de solicitud (request) que contiene información sobre la solicitud entrante, y res es el objeto de respuesta (response) que se utiliza para enviar la respuesta al cliente.
+
+res.send('Estás en la ruta base del servidor'): Dentro de la función de devolución de llamada, estás utilizando el método send() del objeto de respuesta (res) para enviar una respuesta al cliente. En este caso, estás enviando el mensaje "Estás en la ruta base del servidor".
+
+En resumen, cuando un usuario accede a la ruta raíz (/) del servidor (http://localhost:3001/), esta línea de código se ejecutará y enviará el mensaje "Estás en la ruta base del servidor" como respuesta al navegador del cliente.
+
+
+| 5 | app.use('/apiforum', forumRoutes); configura una ruta base (/apiforum) para las rutas manejadas por el router forumRoutes en tu aplicación Express.
+
+app.use() es un método de Express que se utiliza para agregar middleware a la aplicación. En este caso, estás agregando un router como middleware.
+
+'/apiforum' es la ruta base que especificas. Esta ruta base se utiliza como prefijo para todas las rutas definidas en forumRoutes. Por ejemplo, si tienes una ruta en forumRoutes como /posts, cuando se acceda a /apiforum/posts, la ruta será manejada por el router forumRoutes.
+
+forumRoutes es el router que importas y estás utilizando como middleware. Un router en Express es una forma de organizar y modularizar las rutas en tu aplicación. Puedes definir rutas y sus manejadores en un archivo independiente y luego montar ese router en tu aplicación principal.
+
+En resumen, con esta línea de código, estás configurando tu aplicación Express para que todas las rutas definidas en forumRoutes estén disponibles bajo la ruta base /apiforum. Esto ayuda a mantener tus rutas organizadas y a evitar conflictos con otras rutas que puedas definir en diferentes partes de tu aplicación.
+
+
+| 6 | app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+      });
+
+inicia el servidor Express para escuchar las solicitudes entrantes en el puerto especificado (PORT) y muestra un mensaje en la consola indicando en qué puerto se está ejecutando.
+
+app.listen(PORT, ...) es un método de Express que inicia el servidor y lo configura para escuchar en un puerto específico. El argumento PORT se refiere al número de puerto en el cual deseas que tu servidor escuche las solicitudes entrantes. En tu caso, PORT es la variable que contiene el número del puerto.
+
+El segundo argumento de app.listen() es una función de devolución de llamada (callback) que se ejecutará una vez que el servidor esté en funcionamiento y escuchando en el puerto especificado. En este caso, estás usando una función de flecha para imprimir un mensaje en la consola, indicando que el servidor está en funcionamiento y en qué puerto está escuchando.
+
+Entonces, cuando ejecutas app.listen(PORT, ...):
+Tu servidor Express se inicia y comienza a escuchar las solicitudes en el puerto especificado (PORT).
+
+Una vez que el servidor esté en funcionamiento y listo para recibir solicitudes, la función de devolución de llamada se ejecutará. En este caso, imprimirá un mensaje como "Server is running on port 3001" en la consola.
+
+Este mensaje es útil para verificar que tu servidor se haya iniciado correctamente y para saber en qué puerto está escuchando para que puedas acceder a él a través de tu navegador u otras herramientas de cliente.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+-forumRoutes.tsx-
+
+import express from 'express';    ===> importa el módulo express en el archivo.
+const router = express.Router();  ===> crea una instancia de un objeto Router, que es una característica de Express que te permite definir y organizar rutas de manera modular.
+
+router.get('/', (req, res) => {
+  res.send('Estás en la ruta /apiforum');   
+});     ===> define una ruta manejada por el método HTTP GET en el router 
+
+router.get('/posts', (req, res) => {
+  const posts = [{ id: 1, title: 'Mi primera publicación' }, /* ... */ ]; 
+  res.json(posts);
+});      ===> define una ruta manejada por el método HTTP GET en el router 
+
+export default router;    ===>  exporta el router que has definido en el archivo forumRoutes.ts
+
+| 1 | import express from 'express'; Esta línea importa el módulo express en el archivo. El módulo express es el núcleo de la librería Express.js que utilizas para crear aplicaciones web y definir rutas. Al importar este módulo, tienes acceso a todas las funciones y clases que necesitas para configurar y manejar tus rutas.
+
+| 2 | const router = express.Router();
+Esta línea crea una instancia de un objeto Router, que es una característica de Express que te permite definir y organizar rutas de manera modular. En lugar de definir todas las rutas directamente en el archivo principal de la aplicación, puedes crear routers independientes para diferentes secciones de tu aplicación y luego montar esos routers en tu aplicación principal.
+
+En el contexto del archivo forumRoutes.tsx, estas dos líneas (1 y 2) se utilizan para configurar y definir las rutas relacionadas con el foro. Estás creando un router específico para las rutas del foro y luego exportando ese router para que pueda ser montado en tu servidor Express principal.
+
+| 3 | router.get('/', (req, res) => {
+      res.send('Estás en la ruta /apiforum');
+      });
+
+Define una ruta manejada por el método HTTP GET en el router que has creado en forumRoutes.tsx.
+
+router.get('/'): Esto establece una ruta que corresponde a la ruta raíz ("/") dentro del contexto del router forumRoutes. El método router.get() se utiliza para manejar las solicitudes HTTP GET en este caso.
+
+(req, res) => { ... }: Esto es una función de devolución de llamada (callback) que se ejecutará cuando se reciba una solicitud GET en la ruta raíz ("/apiforum") dentro del contexto del router. Al igual que antes, req es el objeto de solicitud (request) y res es el objeto de respuesta (response).
+
+res.send('Estás en la ruta /apiforum'): Dentro de la función de devolución de llamada, se utiliza el método send() del objeto de respuesta (res) para enviar una respuesta al cliente. En este caso, se está enviando el mensaje "Estás en la ruta /apiforum" como respuesta al cliente.
+
+En resumen, cuando alguien accede a la ruta raíz (/apiforum) dentro del contexto de este router (es decir, http://localhost:3001/apiforum/), este fragmento de código se ejecutará y enviará el mensaje "Estás en la ruta /apiforum" como respuesta al navegador del cliente.
+
+Este tipo de ruta podría usarse para proporcionar información general sobre la sección del foro o para actuar como una especie de "página de inicio" para las rutas relacionadas con el foro.
+
+| 4 | router.get('/posts', (req, res) => {
+      const posts = [{ id: 1, title: 'Mi primera publicación' }, /* ... */ ];
+      res.json(posts);
+      });
+
+define una ruta manejada por el método HTTP GET en el router forumRoutes que has creado en forumRoutes.ts.
+
+router.get('/posts'): Esto establece una ruta que corresponde a la ruta /posts dentro del contexto del router forumRoutes. El método router.get() se utiliza para manejar las solicitudes HTTP GET en esta ruta específica.
+
+(req, res) => { ... }: Esto es una función de devolución de llamada (callback) que se ejecutará cuando se reciba una solicitud GET en la ruta /posts dentro del contexto del router. Como antes, req es el objeto de solicitud (request) y res es el objeto de respuesta (response).
+
+const posts = [...]: Dentro de la función de devolución de llamada, estás creando un arreglo de objetos que representan tus publicaciones. En este caso, se ha creado un solo objeto de publicación con un id y un title.
+
+res.json(posts): Luego, utilizas el método json() del objeto de respuesta (res) para enviar una respuesta en formato JSON al cliente. En este caso, estás enviando el arreglo posts en forma de respuesta JSON. La función json() toma un objeto como argumento y lo convierte en una respuesta JSON que será enviada al cliente.
+
+En resumen, cuando alguien accede a la ruta /posts dentro del contexto de forumRoutes (es decir, http://localhost:3001/apiforum/posts), este fragmento de código se ejecutará. Se creará un arreglo de publicaciones y se enviará como respuesta JSON al navegador del cliente. El cliente recibirá los datos JSON y podrá procesarlos para mostrarlos en la interfaz de usuario.
+
+| 5 |  exporta el router que has definido en el archivo forumRoutes.ts. Esto te permite utilizar y montar este router en otras partes de tu aplicación principal, como en el archivo index.ts, donde configuras y ejecutas tu servidor Express.
+
+Cuando exportas algo con export default, estás haciendo que ese elemento sea el valor predeterminado que se exporta del módulo. En este caso, estás exportando el router como el valor predeterminado del módulo forumRoutes.ts, lo que significa que otros archivos pueden importar este router utilizando import forumRoutes from './forumRoutes'.

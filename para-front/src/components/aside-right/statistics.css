@@ -7,12 +7,14 @@
     flex-direction: column;
     row-gap: 1rem; 
     padding-right: 2rem; /*separa el aside de la derecha*/
+    align-items: center;
 }
 /*estilos de cada contendor*/
 .statistic, .comunities{
     background-color: var(--aside);
     border-radius: 5px;
     padding: 1rem 2rem;
+    width: 100%;
 }
 /*comunidades*/ 
 .comunity{

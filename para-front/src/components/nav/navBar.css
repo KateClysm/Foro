@@ -28,10 +28,11 @@ nav{
 /*nav-menu, contiene la search bar, los botones y el aside. En escritorio se divide en 2 columnas, una de 5fr para la search bar y otra 2fr para los botones. el aside está en display-none*/
 .nav-menu {
     display: grid;
-    grid-template-columns: 5fr 2fr; 
+    grid-template-columns: 5fr 1fr; 
     justify-content: center;
     width: 100%; /*es importante esta declaración para que en mobile ocupe toda la pantalla*/
     align-items: center; /*alinea la search bar con los botones*/
+    padding-right: 1.5rem;
 }
 
 /*--------------------------------------------------------------------------------*/
@@ -178,7 +179,7 @@ width: 100%;
     nav{
         display: flex;
         justify-content: space-between; /*espacio entre el logo y el toggle*/
-        padding: 0 1rem;
+        padding: 0 2rem;
         position: sticky; /*Establece la posición del nav como "sticky", lo que significa que el elemento seguirá siendo fijo en su lugar hasta que se desplace más allá de él. En este caso, el elemento se quedará en la parte superior de la ventana del navegador cuando se desplace hacia abajo.*/
         top: 0px; /*Fija el nav en la parte superior de la ventana del navegador, ya que su posición es "sticky" y el valor "0px" coloca su borde superior justo en la parte superior de la ventana.*/
         height: 60px;
@@ -228,9 +229,6 @@ width: 100%;
 
 /*Para pantallas de mínimo 10240px*/
 @media (min-width: 1024px) {
-    nav{
-        padding-right: 0.5rem;
-    }
     /*alto de la imagen del logo*/
     .logo img{
         height: 50px;
@@ -248,6 +246,7 @@ width: 100%;
     .search-nav{
         width: 80%; 
     }
+    
 }
 
 /*Para pantallas mayores a 1240px*/
@@ -260,6 +259,10 @@ width: 100%;
     .search-bar{
         padding: 0 1.5rem 0rem 1.5rem;
     }
+    .nav-menu {
+        padding-right: 2rem;
+    }
+    
 }
 
 /*Para pantallas mayores a 1400px*/
