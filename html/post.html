@@ -55,12 +55,12 @@
 
             <div class="nav-buttons">
                 <button class="login">
-                    <a href="#">
+                    <a class="Login" href="login.html">
                         Login
                     </a> 
                 </button>
                 <button class="register">
-                    <a href="#">
+                    <a class="Register" href="register.html">
                         Register
                     </a> 
                 </button>
@@ -152,68 +152,71 @@
                 <li href="#" class="access">Help</li>
             </ul>
         </div>
-
-       <!-- Section Post -->
-       <div class="container-post" >
-           <div class="title-post">
-              <h3> Write a title for your post</h3>
-             <input type="text" name="titlePost" id="titlePost" placeholder="Paraseekers"/>
-             <label for="titlePost"></label>
-           </div>
-
-           <div class="category-post">
-             <h3> What is your post about?</h3>
-               <select name="themes" id="themes">
-                 <option value="select">- Select -</option>
-                 <option value="ghost-theme"> Ghosts</option>
-                 <option value="Witchcraft"> Witchcraft</option>
-                 <option value="Demons">Demons</option>
-                 <option value="Mythological"> Mythological</option>
-                 <option value="Past Life Regression">Past Life Regression</option>
-                 <option value="Shadow People">Shadow People</option>
-                 <option value="Fairy Folklore">Fairy Folklore</option>
-                 <option value="Premonitions and Prophecies">Premonitions and Prophecies</option>
-                 <option value="Zombies">Zombies</option>
-                 <option value="Black Magic">Black Magic</option>
-                 <option value="Vudu Magic">Vudu Magic</option>
-                 <option value="Tulpas">Tulpas</option>
-               </select>
-           </div>
-
-          <div class="content-post">
-             <h3> What story are you gonna tell?</h3>
-               <div class="content-box" >
-                 <input type="text" name="contentPost" id="contentPost" placeholder="once upon a time there was an enchanted forum called "Paraseekers", the rumours say they spell a curse on those who do not share this website">
+       <form>
+         <!-- Section Post -->
+           <div class="container-post" >
+                <div class="div-createPost">
+                  Create post
                 </div>
-          </div>
- 
-          <div class="submit-post"> 
-             <button> Submit </button>
-           </div>
-       </div>
 
-    </div>
+               <div class="title-post">
+                 <label>Title</label>
+                 <input type="text" name="titlePost"/>
+               </div>
 
+               <div class="category-post">
+                 <label> What is your post about?</label>
+                  <select name="themes" id="themes">
+                     <option value="select">- Select -</option>
+                     <option value="ghost-theme"> Ghosts</option>
+                     <option value="Witchcraft"> Witchcraft</option>
+                     <option value="Demons">Demons</option>
+                     <option value="Mythological"> Mythological</option>
+                     <option value="Past Life Regression">Past Life Regression</option>
+                     <option value="Shadow People">Shadow People</option>
+                     <option value="Fairy Folklore">Fairy Folklore</option>
+                     <option value="Premonitions and Prophecies">Premonitions and Prophecies</option>
+                     <option value="Zombies">Zombies</option>
+                     <option value="Black Magic">Black Magic</option>
+                     <option value="Vudu Magic">Vudu Magic</option>
+                     <option value="Tulpas">Tulpas</option>
+                   </select>
+               </div>
 
-   <footer>
-    <div class="inside-footer">
-        <div class="footer-logo">
-            <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
-        </div>
+               <div class="content-post">
+                 <label>Write your paranormal story:</label>
+                 <textarea name="content-post" id="" cols="30" rows="5"></textarea>
+               </div>
 
-        <div class="footer-text">
-            <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
-            
-            <div class="footer-icons">
-                <a href="#">
-                    <i class="fa-brands fa-square-github"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-figma"></i>
-                </a>
+               <div class="submit">
+                 <button class="Submit">
+                   <a class="Submit" href="register.html">
+                      Submit
+                   </a> 
+                 </button>
+                </div>
             </div>
-        </div>
+       </form>
     </div>
-</footer>
+   <footer>
+       <div class="inside-footer">
+           <div class="footer-logo">
+             <img src="../resources/logoNavWhite.png" alt="Logo ParaSeekers">
+           </div>
+
+          <div class="footer-text">
+             <p>This site was skillfully crafted by a team of talented developers. We invite you to explore the magic behind the scenes by visiting our GitHub repository, where you can find the code that powers this website. Additionally, you can get a glimpse of our design process and prototypes on Figma. Join us on this exciting journey of creativity and innovation!</p>
+            
+               <div class="footer-icons">
+                 <a href="#">
+                    <i class="fa-brands fa-square-github"></i>
+                 </a>
+                 <a href="#">
+                    <i class="fa-brands fa-figma"></i>
+                 </a>
+                </div>
+           </div>
+        </div>
+   </footer>
 </body>
 </html>
