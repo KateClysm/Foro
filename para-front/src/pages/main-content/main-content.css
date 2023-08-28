@@ -4,8 +4,16 @@
 .main-content{
     background-color: var(--background);
     display: grid;
-    grid-template-columns: 2fr 7fr auto;
+    /* grid-template-columns: 3fr 7fr 2fr; */
     border-top: 1px solid var(--background);
+}
+
+.secondary-grid {
+    grid-template-columns: 3fr 9fr;
+}
+  
+.default-grid {
+grid-template-columns: 3fr 7fr 2fr;
 }
 
 /*Disposición del contenido en una única columna hasta que la pantalla tenga como mínimo 1024px*/
