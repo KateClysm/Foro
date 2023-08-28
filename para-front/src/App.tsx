@@ -10,6 +10,7 @@ import AsideRight from './components/aside-right/AsideRight';
 import Footer from './components/footer/Footer';
 
 import postsData from './data/postsData'; // Importa el arreglo de posts
+import Help from './components/help/Help';
 
 const App: React.FC = () => {
 
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         <AsideRight/> 
       </div>
       <Footer />
+      <Help/>
     </div>
   );
 };
