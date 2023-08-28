@@ -9,11 +9,11 @@
 }
 
 .secondary-grid {
-    grid-template-columns: 3fr 9fr;
+    grid-template-columns: 2fr 9fr;
 }
   
 .default-grid {
-grid-template-columns: 3fr 7fr 2fr;
+grid-template-columns: 2fr 7fr 2fr;
 }
 
 /*Disposición del contenido en una única columna hasta que la pantalla tenga como mínimo 1024px*/
