@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPost } from '../../models/IPost'; 
+import { IPost } from '../../models/Ipost.js'; 
 import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
 import './show-post.css';
 

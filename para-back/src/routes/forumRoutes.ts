@@ -1,14 +1,18 @@
-import { json } from 'body-parser';
 import express from 'express';
+import dbConnection from '../../db.js';
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('Estás en la ruta /apiforum');
+  res.json('El BackEnd está funcionando!');
 });
 
 router.get('/posts', (req, res) => {
-  const posts = [{ id: 1, title: 'Mi primera publicación' }, /* ... */ ];
-  res.json(posts);
+  const q = "SELECT * FROM posts";
+  dbConnection.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
 });
 
 export default router;
