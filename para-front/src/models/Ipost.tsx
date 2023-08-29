@@ -9,6 +9,6 @@ export interface IPost {
     comments: number;
     likes: number;
     views: number;
-    imagePost: string;
+    imagePost?: string;
     typePost: PostTypeSelection;
   }

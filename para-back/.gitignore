@@ -1,3 +1,4 @@
-node_modules
 para-back\node_modules
-para-back/node_modules
+node_modules
+para-back\dist
+dist
