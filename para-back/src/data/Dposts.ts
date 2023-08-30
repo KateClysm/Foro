@@ -41,7 +41,7 @@ const Dposts: Array<{ post: Post; user: User; reactions: Reactions }> = [
   {
     post: {
       title: "Long Hair Lady",
-      text: "Your post text goes here so talk and talk and blablablablablablablablablabalbalablablabalbalablablablabalablablablabalbalabl",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi et, officiis illum quia minus soluta quaerat quasi enim iste voluptate veritatis quos magni inventore maiores numquam deserunt delectus aliquid consequatur? Pariatur beatae neque dolore quas. Sapiente maiores ducimus consequatur veniam reiciendis hic alias illo delectus molestias sed blanditiis ad repudiandae, provident vel voluptatum culpa! Veritatis, perspiciatis. Laudantium eum quia veritatis minima accusantium dolores tempora quis ea fugiat cumque dicta exercitationem pariatur modi, tempore, temporibus dolorem incidunt quasi. Minus culpa ex maxime obcaecati deleniti aliquam consectetur aut. Unde voluptas libero ullam nobis vero mollitia quae, aspernatur, alias ad quo magni rerum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi et, officiis illum quia minus soluta quaerat quasi enim iste voluptate veritatis quos magni inventore maiores numquam deserunt delectus aliquid consequatur? Pariatur beatae neque dolore quas. Sapiente maiores ducimus consequatur veniam reiciendis hic alias illo delectus molestias sed blanditiis ad repudiandae, provident vel voluptatum culpa! Veritatis, perspiciatis. Laudantium eum quia veritatis minima accusantium dolores tempora quis ea fugiat cumque dicta exercitationem pariatur modi, tempore, temporibus dolorem incidunt quasi. Minus culpa ex maxime obcaecati deleniti aliquam consectetur aut. Unde voluptas libero ullam nobis vero mollitia quae, aspernatur, alias ad quo magni rerum.",
       postImage: "https://img2.rtve.es/i/?w=1200&i=https://img2.rtve.es/imagenes/negamos-paranormal-miedo-creer-existe-realmente/1644832335656.jpg",
       typePost: ["Ghosts"]
     },
@@ -51,9 +51,9 @@ const Dposts: Array<{ post: Post; user: User; reactions: Reactions }> = [
       userTime: 5,
     },
     reactions: {
-      likes: 1,
-      comments: 3,
-      views: 10,
+      likes: 30,
+      comments: 10,
+      views: 50,
     },
   },
 ];
