@@ -24,7 +24,7 @@ const Dposts: Array<{ post: Post; user: User; reactions: Reactions }> = [
     post: {
       title: "Encounter in the Haunted Forest",
       text: "Your post text goes here so talk and talk and blablablablablablablablablabalbalablablabalbalablablablabalablablablabalbalabl",
-      postImage: "https://img.lagaceta.com.ar/fotos/notas/2023/05/17/hoia-baciu-considerado-bosque-mas-tenebroso-mundo-991544-083744.png",
+      postImage: "https://ichef.bbci.co.uk/news/640/cpsprodpb/6D1E/production/_102143972_ghost.gif",
       typePost: ["Ghosts"]
     },
     user: {
@@ -40,9 +40,9 @@ const Dposts: Array<{ post: Post; user: User; reactions: Reactions }> = [
   },
   {
     post: {
-      title: "Encounter in the Haunted Forest",
+      title: "Long Hair Lady",
       text: "Your post text goes here so talk and talk and blablablablablablablablablabalbalablablabalbalablablablabalablablablabalbalabl",
-      postImage: "https://img.lagaceta.com.ar/fotos/notas/2023/05/17/hoia-baciu-considerado-bosque-mas-tenebroso-mundo-991544-083744.png",
+      postImage: "https://img2.rtve.es/i/?w=1200&i=https://img2.rtve.es/imagenes/negamos-paranormal-miedo-creer-existe-realmente/1644832335656.jpg",
       typePost: ["Ghosts"]
     },
     user: {
