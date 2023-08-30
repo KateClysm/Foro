@@ -1,27 +1,8 @@
-/* .posts-content{
-    width: 93%; 
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    row-gap: 2rem;
-    padding: 2rem 0;
-}
-
-.secondary-posts{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    row-gap: 0.8rem;
-    padding-bottom: 2rem;
-} */
-
 .container-posts{
-
     width: 93%; /*Lo separa de las otras secciones, deja ese espacio negro del fondo*/
     display: flex;
     flex-direction: column;
     justify-self: center;
     padding: 2rem 0;
-
     row-gap: 0.8rem;
 }

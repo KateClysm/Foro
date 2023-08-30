@@ -104,7 +104,25 @@
     background-size: cover;
 }
 
-
+/*BOTÓN SHOW POST*/
+.button-show{
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 0.4rem;
+    background-color: var(--white);
+}
+.button-show:hover{
+    outline: 1px solid var(--logo);
+    background-color: rgba(0, 0, 0, 0.096);
+    cursor: pointer;
+}
+.button-show a{
+    color: var(--background);
+}
+.button-show:hover a{
+    color: var(--white);
+}
 
 /*----------------------RESPONSIVE---------------------------*/
 @media (min-width: 768px) {

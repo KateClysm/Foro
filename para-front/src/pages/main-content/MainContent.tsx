@@ -12,12 +12,13 @@ import Register from '../../components/register/Register';
 
 import Posts from '../posts/Posts';
 import CreatePost from '../../components/createPost/CreatePost';
+import ShowPost from '../../components/post/show-post/ShowPost';
 
 const MainContent: React.FC = () => {
 
   // si no se encuentra en la página principal, el grid cambia a 3fr 9fr
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === '/' || location.pathname.match(/^\/post\/\d+$/);
   const gridClass = isHomePage ? 'default-grid' : 'secondary-grid';
   
   return (
@@ -25,9 +26,19 @@ const MainContent: React.FC = () => {
         <NavBar/>
         <div className={`main-content ${gridClass}`}>
             <AsideLeft/>
+            
             {/* modal */}
             <CreatePost />
+
             <Routes>
+                
+                {/* renderización de un solo componente al clicklear show post */}
+                <Route path="/post/:postId" element={
+                  <>
+                    <ShowPost/>
+                    <AsideRight/>
+                  </>
+                } />
                 
                 <Route path="/" element={
                   <>
@@ -35,6 +46,8 @@ const MainContent: React.FC = () => {
                       <AsideRight/>
                   </>
                 } />
+
+                
 
                 <Route path="/about" element={<AboutUs/>}/>
                 <Route path="/contact" element={<Contact/>}/>
