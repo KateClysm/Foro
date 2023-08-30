@@ -42,7 +42,6 @@
     overflow: hidden;
     height: 80px;
     display: grid;
-    grid-template-rows: auto auto; 
     grid-auto-rows: auto;
 }
 .most-popular .post-content-data{
@@ -62,7 +61,7 @@
 .post-content-data-text{
     overflow: hidden; 
     word-wrap: break-word; 
-    display: none;
+    /* display: none; */
 }
 .post-content-data-text p{
     max-height: 100%;
