@@ -1,18 +1,17 @@
 import React from 'react';
 import './secondary-post.css';
-import { IPost } from '../../models/IPost'; 
 import ShowPostButton from '../utilities/show-post/ShowPostButton';
 import ButtonsPost from '../utilities/buttons-post/ButtonsPost';
+import { Post, User, Reactions } from '../../models/Ipost';
 
-
-const SecondaryPost: React.FC<{ post: IPost }> = ({ post }) => {
+const SecondaryPost: React.FC<{ post: Post; user: User; reactions: Reactions }> = ({ post, user, reactions }) => {
   
   return (
     <div className="secondary-post">
 
         <div className="secondary-post-content">
           
-            <div className="secondary-post-content-img" style={{ backgroundImage: `url(${post.imagePost})` }}></div>
+            <div className="secondary-post-content-img" style={{ backgroundImage: `url(${post.postImage})` }}></div>
 
             <div className="secondary-post-content-data">
               <div className="secondary-post-content-data-title"><p className="post-title">{post.title}</p></div>
@@ -23,18 +22,18 @@ const SecondaryPost: React.FC<{ post: IPost }> = ({ post }) => {
  
         <div className="secondary-post-user-buttons">
             <div className="secondary-post-user">
-              <div className="secondary-post-user-image" style={{ backgroundImage: `url(${post.userImage})` }}></div>
+              <div className="secondary-post-user-image" style={{ backgroundImage: `url(${user.userImage})` }}></div>
               <div className="secondary-post-user-data">
-                <div className="user-name">{post.userName}</div>
-                <div className="user-time">{post.userTime} hours ago</div>
+                <div className="user-name">{user.userName}</div>
+                <div className="user-time">{user.userTime} hours ago</div>
               </div>
               <ShowPostButton/>
             </div>
 
             <ButtonsPost
-              comments = {post.comments}
-              likes = {post.likes}
-              views = {post.views}
+              comments = {reactions.comments}
+              likes = {reactions.likes}
+              views = {reactions.views}
             />
         </div>
         

@@ -2,13 +2,13 @@ import { PostTypeSelection } from './PostTypes';
 
 export interface Post {
   title: string;
-  text: React.ReactNode;
-  imagePost?: string;
+  text: string;    //ver si lo podemos reemplazar por un eriquecedor de texto
+  postImage?: string;   //lo cambié a postImage
   typePost: PostTypeSelection;
 };
 
 export interface User {
-  username: string;
+  userName: string;
   userImage?: string;
   userTime: number;
 };
