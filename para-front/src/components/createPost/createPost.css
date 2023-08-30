@@ -33,6 +33,7 @@
     width: 30px;
     height: 30px;
     border: 0.2px solid var(--search);
+    cursor: pointer;
 }
 .editor{
     display: flex;
@@ -70,7 +71,6 @@ fieldset {
     height: 160px;
     width: 100%;
     overflow-y: auto;
-    /* border-radius: 3px; */
     border: none;
     outline: none;
 }
@@ -100,6 +100,7 @@ fieldset {
     bottom: 0;
     right: 0;
     margin: 2rem;
+    
 }
 .openModal-btn {
     position: fixed;
@@ -110,6 +111,7 @@ fieldset {
     border:none;
     transition: all 0.5s ease-in;
     font-size: 10px;
+    cursor: pointer;
 }
 .openModal-btn:hover {
     transform: translateX(-120px);
