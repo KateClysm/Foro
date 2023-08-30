@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navigate, Route, Routes, useLocation} from 'react-router-dom';
 import './main-content.css';
 import NavBar from '../../components/nav/NavBar';
@@ -11,6 +11,7 @@ import Contact from '../../components/contact/Contact';
 import ForumComponent from '../../components/forum-component/ForumComponent';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
+import CreatePost from '../../components/createPost/CreatePost';
 
 const MainContent: React.FC = () => {
 
@@ -26,6 +27,8 @@ const MainContent: React.FC = () => {
         <NavBar/>
         <div className={`main-content ${gridClass}`}>
             <AsideLeft/>
+            {/* modal */}
+            <CreatePost />
             <Routes>
                 
                 <Route path="/" element={
