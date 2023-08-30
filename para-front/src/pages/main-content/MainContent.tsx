@@ -7,7 +7,6 @@ import AsideLeft from '../../components/aside-left/AsideLeft';
 import AsideRight from '../../components/aside-right/AsideRight';
 import AboutUs from '../../components/about-us/AboutUs';
 import Contact from '../../components/contact/Contact';
-import ForumComponent from '../../components/forum-component/ForumComponent';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
 import Posts from '../posts/Posts';
@@ -29,13 +28,6 @@ const MainContent: React.FC = () => {
                 <Route path="/" element={
                   <>
                       <Posts/>
-                      <AsideRight/>
-                  </>
-                } />
-
-                <Route path="/posts" element={
-                  <>
-                      <ForumComponent/>
                       <AsideRight/>
                   </>
                 } />
