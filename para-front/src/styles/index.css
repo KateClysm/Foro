@@ -33,20 +33,20 @@ a{text-decoration: none;}
 
 
 /*Font Sizes tomadas de referencia del PrincipalPost, pueden usarlas para mantener la integridad de tamaños en la página*/
-.user-name{font-size: 0.7rem;}
+.user-name{font-size: 0.6rem;}
 .user-time{font-size: 0.5rem;}
-.post-title{font-size: 0.7rem;}
-.post-text{font-size: 0.6rem;}
-.button-text{font-size: 0.6rem;}
+.post-title{font-size: 0.6rem;}
+.post-text{font-size: 0.5rem;}
+.button-text{font-size: 0.5rem;}
 
 
 /*----------------------RESPONSIVE---------------------------*/
 @media (min-width: 768px) {
-    .user-name{font-size: 0.8rem;}
+    .user-name{font-size: 0.7rem;}
     .user-time{font-size: 0.6rem;}
-    .post-title{font-size: 0.8rem;}
-    .post-text{font-size: 0.7rem;}
-    .button-text{font-size: 0.7rem;}
+    .post-title{font-size: 0.7rem;}
+    .post-text{font-size: 0.6rem;}
+    .button-text{font-size: 0.6rem;}
 }
 
 @media (min-width: 1024px) {
