@@ -9,7 +9,9 @@ import AboutUs from '../../components/about-us/AboutUs';
 import Contact from '../../components/contact/Contact';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
+
 import Posts from '../posts/Posts';
+import CreatePost from '../../components/createPost/CreatePost';
 
 const MainContent: React.FC = () => {
 
@@ -23,6 +25,8 @@ const MainContent: React.FC = () => {
         <NavBar/>
         <div className={`main-content ${gridClass}`}>
             <AsideLeft/>
+            {/* modal */}
+            <CreatePost />
             <Routes>
                 
                 <Route path="/" element={
