@@ -4,21 +4,21 @@ import './main-content.css';
 import NavBar from '../../components/nav/NavBar';
 import Footer from '../../components/footer/Footer';
 import AsideLeft from '../../components/aside-left/AsideLeft';
-import PostsContent from '../posts-content/PostsContent';
 import AsideRight from '../../components/aside-right/AsideRight';
 import AboutUs from '../../components/about-us/AboutUs';
 import Contact from '../../components/contact/Contact';
-import ForumComponent from '../../components/forum-component/ForumComponent';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
+
+import Posts from '../posts/Posts';
+import CreatePost from '../../components/createPost/CreatePost';
+import ShowPost from '../../components/post/show-post/ShowPost';
 
 const MainContent: React.FC = () => {
 
   // si no se encuentra en la página principal, el grid cambia a 3fr 9fr
   const location = useLocation();
-  // const secondaryGridRoutes = ['/about', '/contact', '/login', '/register'];
-  // const gridClass = secondaryGridRoutes.includes(location.pathname) ? 'secondary-grid' : 'default-grid';
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === '/' || location.pathname.match(/^\/post\/\d+$/);
   const gridClass = isHomePage ? 'default-grid' : 'secondary-grid';
   
   return (
@@ -26,21 +26,28 @@ const MainContent: React.FC = () => {
         <NavBar/>
         <div className={`main-content ${gridClass}`}>
             <AsideLeft/>
+            
+            {/* modal */}
+            <CreatePost />
+
             <Routes>
+                
+                {/* renderización de un solo componente al clicklear show post */}
+                <Route path="/post/:postId" element={
+                  <>
+                    <ShowPost/>
+                    <AsideRight/>
+                  </>
+                } />
                 
                 <Route path="/" element={
                   <>
-                      <PostsContent/>
+                      <Posts/>
                       <AsideRight/>
                   </>
                 } />
 
-                <Route path="/posts" element={
-                  <>
-                      <ForumComponent/>
-                      <AsideRight/>
-                  </>
-                } />
+                
 
                 <Route path="/about" element={<AboutUs/>}/>
                 <Route path="/contact" element={<Contact/>}/>

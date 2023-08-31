@@ -1,13 +1,8 @@
-/*---------MOBILE FIRST---------*/
-
-/*CONTENEDOR POSTEOS PRINCIPALES*/
-.posts-content{
+.container-posts{
     width: 93%; /*Lo separa de las otras secciones, deja ese espacio negro del fondo*/
     display: flex;
     flex-direction: column;
     justify-self: center;
-    row-gap: 2rem;
     padding: 2rem 0;
+    row-gap: 0.8rem;
 }
-
-
