@@ -9,6 +9,7 @@ import AboutUs from '../../components/about-us/AboutUs';
 import Contact from '../../components/contact/Contact';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
+import Help from '../../components/help/Help';
 
 import Posts from '../posts/Posts';
 import CreatePost from '../../components/createPost/CreatePost';
@@ -41,6 +42,7 @@ const MainContent: React.FC = () => {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
+                <Route path="/help" element={<Help/>} />
                 <Route path="/*" element={<Navigate to="/notfound" />} />
             </Routes>
         </div>
