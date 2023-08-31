@@ -116,17 +116,17 @@
     </nav>
     
     
-    <form>
+    <form action="#" class="login-form">
         <h1> Log In </h1>
 
         <fieldset class="email-login">
             <label for="email-login"> Email</label>
-            <input type="email" id="email-login" name="email" required>
+            <input type="email" id="email-login" name="email" placeholder="email@example.com" required>
         </fieldset>
 
         <fieldset class="pass-login">
             <label for="pass-login"> Password</label>
-            <input type="password" id="pass-login" name="pass" required>
+            <input type="password" id="pass-login" name="pass" min="8" required>
         </fieldset>
 
         <fieldset class="stay-login"> 
@@ -136,7 +136,7 @@
             </label>
         </fieldset>
 
-        <button type="submit">Submit</button>
+        <button class="login-button" type="submit">Submit</button>
 
         <div class="register-option">
          <p>You want to create an account? </p>

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Login: React.FC = () => {
     return (
-        <form>
+       <form action="#" className="login-form">
            <h1> Log In </h1>
 
            <fieldset className="email-login">
@@ -19,12 +19,10 @@ const Login: React.FC = () => {
 
            <fieldset className="stay-login"> 
              <input type="checkbox" id="stay-login" name="stay-login"/>
-             <label htmlFor="stay-login">
-                 Stay logged in 
-             </label>
+             <label htmlFor="stay-login"> Stay logged in </label>              
            </fieldset>
 
-          <button type="submit">Submit</button>
+           <button className="login-button" type="submit">Submit</button>
 
           <div className="register-option">
              <p>You want to create an account? </p>
