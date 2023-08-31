@@ -1,157 +1,104 @@
-
-.login-form{
-    text-align: start;
+.login-form {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    row-gap: 1.2rem;
     background-color: var(--post);
-    border-radius: 20px;
-    padding: 55px 50px;
+    border-radius: 1.25rem;
+    padding: 3rem 3.2rem;
     width: 300px;
-    height: 350px;
-    margin: 45px auto;
+    margin: 5rem auto 6rem;
 }
-.login-form fieldset{
-    border-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 0px 8px 0px;
-}
-.login-form label{
-    padding: 3px 0px 3px 0px;
-}
-.login-form input{
-    padding: 3px;
-    color: var(--background);
-}
-.login-form button{
-    background-color: var(--search);
-    border-radius: 10px;
-    width: 60px;
-    height: 25px;
-    cursor: pointer;
-    align-self: center;
-    padding: 5px;
-}
-.login-form button:hover{
-    background-color: var(--principal);
-}
-.login-form h1{
+
+.login-form h1 {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
-.register-option a{
-    background-color: var(--post);
-    text-decoration: underline var(--principal);
-    padding: 6px 0px 6px 0px;
+
+.login-form input {
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    border: 0;
+    border-radius: 0.3rem;
+    color: var(--background);
+    margin: 0.5rem 0;
 }
-.register-option p{
-    padding: 6px 0px 8px 0px;
+
+.login-form input:focus {
+    transition: all .2s;
+    outline: 2px solid var(--logo);
 }
-.login-checkbox fieldset{
+
+.login-form input::placeholder {
+    color: var(--time);
+}
+
+.login-form .login-button{
+    margin: 0.8rem auto 0 auto;
+    background-color: var(--logo);
+    border: 1px solid var(--logo);
+    border-radius: 1.3rem;
+    transition: all .1s ease-out;
+    cursor: pointer;
+    padding: 0.6rem 2.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    height: 2.5rem;
+}
+
+.login-form .login-button:hover{
+    background-color: var(--nav);
+    border: 1px solid var(--logo);
+    font-weight: 600;
+}
+
+.stay-login {
     display: flex;
     flex-direction: row;
-    padding: 0px 5px 8px 5px;
+    align-items: center;
+    font-size: 0.9rem;
 }
-.login-checkbox input{
-    padding: 0px 5px 8px 5px;
+
+#stay-login {
+    width: 1.3rem;
+    height: 1rem;
+    margin-right: 0.2rem;
+}
+
+#stay-login:focus {
+    outline: 0;
+}
+
+.register-option {
+    text-align: center;
+}
+
+.register-option p{
+    margin: 0.9rem 0 0.6rem;
+}
+
+.register-option-link {
+    text-decoration: underline var(--logo);
 }
 
 @media only screen and (min-width:768px) {
     .login-form{
-        gap: 12px;
-        padding: 55px 50px;
         width: 370px;
-        height: 400px;
-        margin: 70px auto;
-    }
-    .login-form fieldset{
-        padding: 10px 0px 10px 0px;
-    }
-    .login-form label{
-        padding: 5px 0px 5px 0px;
-    }
-    .login-form input{
-        padding: 5px;
-    }
-    .login-form button{
-        width: 60px;
-        height: 30px;
-        padding: 5px;
-    }
-    .register-option a{
-        padding: 10px 0px 7px 0px;
+        margin: 6rem auto 7rem;
     }
     .register-option p{
-        padding: 10px 0px 8px 0px;
-    }
-    .login-checkbox fieldset{
-        padding: 0px 5px 10px 5px;
-    }
-    .login-checkbox input{
-        padding: 0px 5px 10px 5px;
+        margin: 2rem 0 1rem;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .login-form{
         width: 390px;
-        height: 430px;
-        margin: 70px auto;
-    }
-    .login-form a, p {
-        font-size: 10px;
-    }
-    .login-form input{
-        padding: 5px;
-    }
-    .login-form button{
-        width: 68px;
-        height: 35px;
-        padding: 5px;
-        font-size: 13px;
+        max-height: 550px;
     }
 }
 @media screen and (min-width: 1280px){
     .login-form{
-        width: 410px;
-        height: 440px;
-        margin: 70px auto;
-    }
-    .login-form a, p {
-        font-size: 14px;
-    }
-    .login-form input{
-        padding: 7px;
-    }
-    .login-form button{
-        width: 70px;
-        height: 36px;
-        padding: 5px;
-    }
-    .login-checkbox label{
-        font-size: 13px;
-    }
-}
-@media screen and (min-width: 1600px){
-    .login-form{
-        width: 420px;
-        height: 460px;
-        margin: 70px auto;
-    }
-    .login-form a, p {
-        font-size: 16px;
-    }
-    .login-form input{
-        padding: 7px;
-    }
-    .login-form button{
-        width: 75px;
-        height: 40px;
-        padding: 5px;
-        font-size: 15px;
-    }
-    .login-checkbox label{
-        font-size: 14px;
+        width: 550px;
     }
 }
