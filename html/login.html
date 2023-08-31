@@ -117,50 +117,32 @@
     
     
     <form>
-    
-        <div class="container-login">
+        <h1> Log In </h1>
 
-            <div class="login-center">
+        <fieldset class="email-login">
+            <label for="email-login"> Email</label>
+            <input type="email" id="email-login" name="email" required>
+        </fieldset>
 
-               <div class="div-login">
-                 <p> Log In </p>
-               </div>
+        <fieldset class="pass-login">
+            <label for="pass-login"> Password</label>
+            <input type="password" id="pass-login" name="pass" required>
+        </fieldset>
 
-                <div class="email-login">
-                  <label>Please introduce your email:</label>
-                   <input type="email" name="email-login"/>
-                </div>
+        <fieldset class="stay-login"> 
+            <input type="checkbox" id="stay-login" name="stay-login"/>
+            <label for="stay-login">
+             Stay logged in 
+            </label>
+        </fieldset>
 
-               <div class="password-login">
-                  <label>Please introduce your password:</label>
-                  <input type="password" name="password-login"/>
-               </div>
+        <button type="submit">Submit</button>
 
-               <div class="check-login">
-                 <input type="checkbox" name="stay-login"/>
-                 <label> Stay logged in</label>
-                 
-               </div>
-
-               <div class="submit-login">
-                 <input type="submit" value="Login"/>
-                </div>
-
-              <div class="login-divider">
-                  <div class="divider"></div>
-               </div>
-
-               <div class="register-option">
-                   <p>You want to create an account? 
-                        <a class="register" href="./register.html">
-                           Register
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-   </form>  
+        <div class="register-option">
+         <p>You want to create an account? </p>
+         <a class="login" href="./register.html">Register</a>
+        </div> 
+    </form> 
 
     <footer>
         <div class="inside-footer">
