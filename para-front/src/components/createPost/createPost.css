@@ -94,29 +94,28 @@ fieldset {
 
 /*  openModal button styles */
 .openModal {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 10px;
     margin: 2rem;
     
 }
 .openModal-btn {
     position: fixed;
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background: var(--logo);
     border:none;
     transition: all 0.5s ease-in;
-    font-size: 10px;
     cursor: pointer;
 }
 .openModal-btn:hover {
-    transform: translateX(-120px);
+    transform: translateX(-100px);
     width: 150px;
-    border-radius: 15px;
+    border-radius: 5px;
     font-size: 15px;
 }
 /*scrol bar*/

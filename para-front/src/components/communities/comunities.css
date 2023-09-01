@@ -3,7 +3,6 @@
     border-radius: 5px;
     padding: 1rem 1.5rem;
 }
-/*comunidades*/ 
 .comunity{
     padding: 0.3rem 0;
     display: flex;
@@ -21,4 +20,7 @@
 }
 .comunity-name{
     padding-left: 1rem;
+}
+.comunity:hover, .comunity:hover > .comunity-name{
+    color:var(--logo)
 }

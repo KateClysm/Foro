@@ -1,6 +1,8 @@
 import React from 'react';
 import './aside.css';
 import { NavLink } from 'react-router-dom';
+import Communities from '../communities/Comunities';
+import communitiesData from '../../data/communitiesData';
 
 
 const AsideLeft: React.FC = () => {
@@ -15,7 +17,8 @@ const AsideLeft: React.FC = () => {
         <div className="divider"></div>
       </div>
 
-      <ul className="topics">
+      <Communities communities={communitiesData} />
+      {/* <ul className="topics">
         <li><a href="#">Ghosts</a></li>
         <li><a href="#">Witchcraft</a></li>
         <li><a href="#">Demons</a></li>
@@ -29,7 +32,7 @@ const AsideLeft: React.FC = () => {
         <li><a href="#">Vudu Magic</a></li>
         <li><a href="#">Sleep Paralysis</a></li>
         <li><a href="#">Vampires</a></li>
-      </ul>
+      </ul> */}
 
       <div className="padding-divider">
         <div className="divider"></div>

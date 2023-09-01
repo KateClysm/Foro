@@ -20,12 +20,12 @@ const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopu
                   <div className="user-time">{user.userTime} hours ago</div>
                 </div>
                 <button className="button-show">
+
                     <NavLink
                         to={`/post/${post.id}`}
                         className='button-text'
                         state={postState} // Pasar el estado del post como prop "state"
-                    >
-                        Show Post
+                    >Show Post
                     </NavLink>
                 </button>                  
           </div>

@@ -8,7 +8,7 @@ const Communities: React.FC<{communities : ICommunity[]}> = ({ communities }) =>
     <div className="comunities">
         
         <div className="statistic-title">
-        <p className='post-title'>Popular Communities</p></div>
+        <p className='post-text'>Popular Communities</p></div>
 
         {communities.map((community, index) => (
         <a href={community.link} className="comunity" key={index}>

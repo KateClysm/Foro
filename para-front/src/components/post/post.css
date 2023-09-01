@@ -41,8 +41,8 @@
     background-color: var(--search);
     overflow: hidden;
     height: 80px;
-    display: grid;
-    grid-auto-rows: auto;
+    display: flex;
+    flex-direction: column;
 }
 .most-popular .post-content-data{
     height: 130px;
@@ -168,8 +168,8 @@
         padding-bottom: 0.5rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        column-gap: 0rem;
+        justify-content: start;
+        column-gap: 0.6rem;
     }
     .most-popular .post-content-img{
         height: 350px;

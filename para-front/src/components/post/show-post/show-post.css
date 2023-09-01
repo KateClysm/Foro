@@ -9,9 +9,13 @@
 
 .container-show-post .most-popular .post-content-data-text p {
     color: var(--white);
-  }
+}
 
 .container-show-post .most-popular .post-content-data{
     height: fit-content;
     display: block;
+}
+
+.container-show-post .button-show{
+    display: none;
 }

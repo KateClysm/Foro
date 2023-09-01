@@ -1,5 +1,5 @@
 .container-posts{
-    width: 93%; /*Lo separa de las otras secciones, deja ese espacio negro del fondo*/
+    width: 93%;
     display: flex;
     flex-direction: column;
     justify-self: center;

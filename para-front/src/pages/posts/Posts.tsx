@@ -5,18 +5,19 @@ import Post from '../../components/post/Post';
 
 
 const Posts: React.FC = () => {
-    const [posts, setPosts] = useState<Array<any>>([]); // Ajusta el tipo de array según tus datos
+    //Lógica de renderización de los posteos según una metríca de popularidad principalmente en las 'views'
 
+    const [posts, setPosts] = useState<Array<any>>([]);
+    
     useEffect(() => {
         axios.get('http://localhost:3001/apiforum/posts')
             .then(response => {
                 const updatedPosts = response.data.map((post: any) => ({
-                    ...post,
+                    ...post, //método de propagación, crea una copia de la variable que esta mapeando
                     popularity: (post.reactions.views * 2) + post.reactions.comments + post.reactions.likes,
                 }));
 
                 updatedPosts.sort((a: any, b: any) => b.popularity - a.popularity);
-
                 setPosts(updatedPosts);
             })
             .catch(error => {
@@ -32,7 +33,7 @@ const Posts: React.FC = () => {
                     post={data.post}
                     user={data.user}
                     reactions={data.reactions}
-                    mostPopular={index === 0} // Indicador para el post más popular
+                    mostPopular={index === 0} 
                 />
             ))}
         </div>
