@@ -67,14 +67,14 @@ const CreatePost: React.FC = () => {
               </label>
             </fieldset>
           </div>
-          <button onClick={handleUpdatePostClick} className='post-btn button-text'>
+          <button onClick={handleUpdatePostClick} className='post-btn'>
             Update Post
           </button>
         </form>
       </div>
 
       <div className='openModal'>
-        <button onClick={openModal} className='openModal-btn button-text'>
+        <button onClick={openModal} className='openModal-btn'>
           Create Post
         </button>
       </div>

@@ -51,17 +51,18 @@
 /*título restringido al 75% del contenedor*/
 .post-content-data-title{
     padding-bottom: 0.5rem;
-    overflow: hidden; 
-    word-wrap: break-word;   
+    /* overflow: hidden;  */
+    word-wrap: break-word; 
+    height: fit-content;
 }
 .post-content-data-title p{
     height: 100%;
+    padding-bottom: 0.5rem;
 }
 /*texto del posteo, en dispositivos pequeños no se muestra*/
 .post-content-data-text{
     overflow: hidden; 
     word-wrap: break-word; 
-    /* display: none; */
 }
 .post-content-data-text p{
     max-height: 100%;
@@ -72,7 +73,12 @@
     background-clip: text;
     -webkit-background-clip: text; /* Para navegadores basados en WebKit */
     color: transparent;
+    display: none;
   }
+.most-popular .post-content-data-text p{
+    /* height: 100%; */
+    display: block;
+}
 .post-user-data .user-time{
     color: var(--time);
 }
@@ -117,10 +123,10 @@
     background-color: rgba(0, 0, 0, 0.096);
     cursor: pointer;
 }
-.button-show a{
+.button-show a p{
     color: var(--background);
 }
-.button-show:hover a{
+.button-show:hover a p{
     color: var(--white);
 }
 
@@ -131,7 +137,7 @@
         grid-template-columns: 3fr 7fr;
         column-gap: 0.5rem;
     }
-    .post-content-data-text{
+    .post-content-data-text p {
         display: block;
     }
     .most-popular .post-user{

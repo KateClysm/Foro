@@ -1,7 +1,17 @@
+.container-communities{
+    display: flex;
+    justify-content: center;
+}
 .comunities{
     background-color: var(--aside);
     border-radius: 5px;
     padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.statistic-title{
+    padding-bottom: 0.5rem;
 }
 .comunity{
     padding: 0.3rem 0;
@@ -23,4 +33,38 @@
 }
 .comunity:hover, .comunity:hover > .comunity-name{
     color:var(--logo)
+}
+
+@media (min-width: 1024px) {
+    .container-communities{
+        font-size: 0.7rem;
+    }
+    .comunity-image{
+        height: 30px;
+        width: 30px;
+    }
+    .statistic-title{
+        padding-bottom: 1rem;
+    }
+}
+
+@media (min-width: 1240px) {
+    .container-communities{
+        font-size: 0.8rem;
+    }
+    .comunity-image{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-communities{
+        font-size: 0.9rem;
+    }
+}
+@media (min-width: 1900px) {
+    .container-communities{
+        font-size: 1rem;
+    }
 }

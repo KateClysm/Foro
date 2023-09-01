@@ -1,4 +1,3 @@
-/*FOOTER*/
 footer{
     background-color: var(--principal);
     display: flex;
@@ -13,13 +12,11 @@ footer{
     align-content: center;
     justify-content: center;
 }
-/*texto*/
 .footer-text{
     text-align: center;
     width: 70%;
     padding-bottom: 1rem;
 }
-/*logo*/
 .footer-logo{
     text-align: center;
     width: 70%;
@@ -28,17 +25,12 @@ footer{
     width: 100%;
     width: 200px;
 }
-/*íconos*/
 .footer-icons{
     padding-top: 1rem;
     display: flex;
     justify-content: center;
     column-gap: 3rem;
     height: 100%;
-}
-/*FONT AWESOME USA PATH PARA EL COLOR*/
-.footer-icon{
-    font-size: 1rem;
 }
 .footer-icon path{
     color: var(--white);
@@ -50,9 +42,6 @@ footer{
 
 
 @media (min-width: 768px) {
-    .footer-icon{
-        font-size: 1.5rem;
-    }
     .footer-logo img{
         width: 250px;
     }
@@ -67,9 +56,6 @@ footer{
     .footer-text{
         width: 50%;
     }
-    .footer-icon{
-        font-size: 2rem;
-    }
     .footer-logo img{
         width: 300px;
     }
@@ -77,9 +63,6 @@ footer{
 @media (min-width: 1900px) {
     .footer-text{
         width: 50%;
-    }
-    .footer-icon{
-        font-size: 2.5rem;
     }
     .footer-logo img{
         width: 350px;
