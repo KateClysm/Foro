@@ -6,42 +6,40 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState ('');
   const [password, setPassword] = useState ('');
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    if( email == null || email.length == 0 || /^\s+$/.test(email) ) {
+    if( email == null || email.length == 0 || emailRegex.test(email) ) {
       return("email inválido")}
 
     if(password == null || password.length == 0 || /^\s+$/.test(password)) {
       return ("password inválida")
     }
-
-  }
+  }/*
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
       const { name, value } = e.target;
-      if (name === "email") {
+       if (name === "email") {
         setEmail(value);
       } else if (name === "password") {
         setPassword(value);
       }
-    }
-
-  
-
+    }*/
 
     return (
        <form action="#" className="login-form" onSubmit={handleSubmit}>
            <h1> Log In </h1>
 
            <fieldset className="email-login">
-             <label htmlFor="email-login"> Email</label>
+             <label htmlFor="email-login"> Email </label>
              <input 
              type="email" 
              id="email-login" 
              name="email" 
              required
              value={email}
-             onChange={handleChange}
+             onChange={(e) => setEmail (e.target.value)}
              />
             </fieldset>
 
@@ -53,7 +51,7 @@ const Login: React.FC = () => {
              name="password" 
              required
              value={password}
-             onChange={handleChange}
+             onChange={(e) => setPassword (e.target.value)}
              />
            </fieldset>
 
