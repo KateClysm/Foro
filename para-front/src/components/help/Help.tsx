@@ -1,11 +1,11 @@
 import React from 'react';
-import './help.css';
+import './help.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 const Help: React.FC = () => {
 
-  return (
+    return (
         <section className="help">
             <h1 className="help-head">Help</h1>
             <div className="help-question">
@@ -55,7 +55,7 @@ const Help: React.FC = () => {
                 </li>
             </ol>
             <div className="help-question">
-                <FontAwesomeIcon icon={faQuestion}className="help-icon" />
+                <FontAwesomeIcon icon={faQuestion} className="help-icon" />
                 <h2>
                     What do I do if I need technical support?
                 </h2>
@@ -72,7 +72,7 @@ const Help: React.FC = () => {
                 </li>
             </ol>
             <div className="help-question">
-                <FontAwesomeIcon icon={faQuestion}className="help-icon" />
+                <FontAwesomeIcon icon={faQuestion} className="help-icon" />
                 <h2>
                     What if my question or problem is not here?
                 </h2>
@@ -87,7 +87,7 @@ const Help: React.FC = () => {
                 Go to Contact
             </a>
         </section>
-  );
+    );
 }
 
 export default Help;
