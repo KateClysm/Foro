@@ -5,7 +5,7 @@ import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 const Help: React.FC = () => {
 
-    return (
+  return (
         <section className="help">
             <h1 className="help-head">Help</h1>
             <div className="help-question">
