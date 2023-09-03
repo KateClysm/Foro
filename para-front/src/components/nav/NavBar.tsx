@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
-import './navBar.css';
+// import './navBar.css';
+import './nav.scss'
 import logoNav from '../../assets/logoNav.png';
 import miniLogo from '../../assets/miniLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-import AsideLeft from '../aside-left/AsideLeft';
+import Aside from '../aside/Aside';
 
 const NavBar: React.FC = () => {
-
     const [isNavMenuVisible, setIsNavMenuVisible] = useState(false);
-
     const toggleNavMenu = () => {
         setIsNavMenuVisible(!isNavMenuVisible);
     };
-  
     return (
-
         <nav>
             <div className="logo">
                 <img src={logoNav} alt="Logo ParaSeekers"/>
@@ -31,7 +28,7 @@ const NavBar: React.FC = () => {
                 <div className="container-search-bar">
                     <div className="search-nav">
                         <form action="https://www.google.com/search" method="get" className="search-bar" target="_blank">
-                            <input className='title' type="text" placeholder="Search Post" name="q" />
+                            <input className='search' type="text" placeholder="Search Post" name="q" />
                             <button type="submit">
                               <img src={miniLogo} alt="Mini Logo ParaSeekers" />
                             </button>
@@ -49,7 +46,7 @@ const NavBar: React.FC = () => {
                 </div>
 
                 <div className="containerAsideInNav">
-                    <AsideLeft />
+                    <Aside />
                 </div>
             </div>
         </nav>

@@ -1,4 +1,3 @@
-/*general use variables*/
 :root{
     --nav: #282828;
     --search: #646464;
@@ -11,7 +10,6 @@
     --time:#bebebe;
 }
 
-/*APLICA A TODA LA PÁGINA*/
 *{  margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -27,9 +25,9 @@ html, body{
 
 a{text-decoration: none;}
 
-html {font-size: 10px; }     /* Establece un tamaño de fuente base para todo el documento */
-p, button, li a {font-size: 1rem;}     /* Un párrafo con un tamaño de fuente 1.2 veces el tamaño base (19.2px en este caso) */
-.title, h2{font-size: 1.1rem;}
+html {font-size: 10px; }  
+p, button, li a, a{font-size: 1rem;} 
+.title, h2, .user{font-size: 1.1rem;}
 .less-important{font-size: 0.9rem;}
 FontAwesomeIcon, a .footer-icon{font-size: 2rem;}
 

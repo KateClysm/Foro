@@ -1,0 +1,47 @@
+$nav-color: #282828;
+$search-color: #646464;
+$logo-color: #f7452e;
+$aside-color: #282828;
+$background-color: #0D0D0D;
+$white-color: #F3F3F3;
+$post-color: #444444;
+$principal-color: #711616;
+$time-color: #bebebe;
+
+$font-size-mobile: 10px;
+$font-size-tablet: 12px;
+$font-size-laptop: 14px;
+$font-size-desktop: 16px;
+$font-size-large-desktop: 18px;
+$font-size-huge-desktop: 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white-color;
+  font-family: 'Inconsolata', monospace;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: $background-color;
+}
+
+a {text-decoration: none;}
+html {font-size: $font-size-mobile;}
+p, li a, a {font-size: 1.1rem;}
+.title, h2, .user, .search, button {font-size: 1.1rem;}
+.less-important {font-size: 0.9rem;}
+i, a .footer-icon {font-size: 2rem;}
+
+@media (min-width: 425px) {html {font-size: $font-size-tablet;}}
+
+@media (min-width: 1240px) {html {font-size: $font-size-laptop;}}
+
+@media (min-width: 1400px) {html {font-size: $font-size-desktop;}}
+
+@media (min-width: 1900px) {html {font-size: $font-size-large-desktop;}}
+
+@media (min-width: 2500px) {html {font-size: $font-size-huge-desktop;}}

@@ -1,5 +1,4 @@
 import React from 'react';
-// import './footer.css'
 import './footer.scss'
 import logoNavWhite from '../../assets/logoNavWhite.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

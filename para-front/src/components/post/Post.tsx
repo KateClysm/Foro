@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ButtonsPost from './buttons-post/ButtonsPost';
 import { IPost, IUser, IReactions } from '../../models/Ipost';
-
-import './post.css';
+import './post.scss'
+// import './post.css';
 
 const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopular: boolean }> = ({ post, user, reactions, mostPopular }) => {
   
@@ -17,7 +17,7 @@ const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopu
           <div className="post-user">
                 <div className="post-user-image" style={{ backgroundImage: `url(${user.userImage})` }}></div>
                 <div className="post-user-data">
-                  <p className="title">{user.userName}</p>
+                  <p className="user">{user.userName}</p>
                   <p className="less-important">{user.userTime} hours ago</p>
                 </div>
                 <button className="button-show">

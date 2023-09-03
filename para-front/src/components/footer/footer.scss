@@ -1,5 +1,6 @@
+@import '../../styles/styles.scss';
 footer {
-    background-color: var(--principal);
+    background-color: $principal-color;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,11 +39,11 @@ footer {
   
       .footer-icon {
         path {
-          color: var(--white);
+          color: $white-color;;
         }
   
         &:hover > path {
-          color: var(--logo);
+          color: $logo-color;
         }
       }
     }
@@ -70,9 +71,6 @@ footer {
   }
   
   @media (min-width: 1900px) {
-    footer .footer-text {
-      width: 50%;
-    }
     footer .footer-logo img {
       width: 350px;
     }

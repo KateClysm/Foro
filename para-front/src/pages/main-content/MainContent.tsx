@@ -1,9 +1,10 @@
 import React from 'react';
 import { Navigate, Route, Routes, useLocation} from 'react-router-dom';
-import './main-content.css';
+// import './main-content.css';
+import './main-content.scss'
 import NavBar from '../../components/nav/NavBar';
 import Footer from '../../components/footer/Footer';
-import AsideLeft from '../../components/aside-left/AsideLeft';
+import AsideLeft from '../../components/aside/Aside';
 import AboutUs from '../../components/about-us/AboutUs';
 import Contact from '../../components/contact/Contact';
 import Login from '../../components/login/Login';

@@ -1,7 +1,3 @@
-/*--------------MOBILE FIRST-----------------*/
-
-
-/*contenedor del componente*/
 .post{
     background-color: var(--post);
     border-radius: 3px;
@@ -12,7 +8,6 @@
     display: flex;
     flex-direction: column;
 }
-/*-----------------Imagen y texto----------------*/
 .post-content{
     display: grid;
     grid-template-columns: 3fr 7fr;
@@ -23,7 +18,6 @@
     flex-direction: column;
     row-gap: 0.5rem;
 }
-/*imagen del post*/
 .post-content-img{
     background-color: var(--background);
     background-repeat: no-repeat;
@@ -34,7 +28,6 @@
 .most-popular .post-content-img{
     height: 250px;
 }
-/*contendor del título y texto del post*/
 .post-content-data{
     border-radius: 3px;
     padding: 0.3rem;
@@ -48,10 +41,8 @@
     height: 130px;
 }
 
-/*título restringido al 75% del contenedor*/
 .post-content-data-title{
     padding-bottom: 0.5rem;
-    /* overflow: hidden;  */
     word-wrap: break-word; 
     height: fit-content;
 }
@@ -59,7 +50,6 @@
     height: 100%;
     padding-bottom: 0.5rem;
 }
-/*texto del posteo, en dispositivos pequeños no se muestra*/
 .post-content-data-text{
     overflow: hidden; 
     word-wrap: break-word; 
@@ -71,12 +61,11 @@
     color: var(--white);
     background-image: linear-gradient(to bottom, var(--white)40%, transparent);
     background-clip: text;
-    -webkit-background-clip: text; /* Para navegadores basados en WebKit */
+    -webkit-background-clip: text;
     color: transparent;
     display: none;
   }
 .most-popular .post-content-data-text p{
-    /* height: 100%; */
     display: block;
 }
 .post-user-data .user-time{
@@ -84,7 +73,6 @@
 }
 
 
-/*-----------------Usuario y Botón show post----------------*/
 .post-container-user{
     display: flex;
 }
@@ -95,12 +83,10 @@
     justify-content: start;
     column-gap: 0.5rem;
 }
-/*datos del usuario*/
 .post-user-data .user-name:hover{
     color: var(--logo);
     cursor: pointer;
 }
-/*imagen del usuario*/
 .post-user-image{
     background-color: var(--white);
     border-radius: 50%;
@@ -110,7 +96,6 @@
     background-size: cover;
 }
 
-/*BOTÓN SHOW POST*/
 .button-show{
     border-radius: 3px;
     outline: none;
@@ -130,7 +115,6 @@
     color: var(--white);
 }
 
-/*----------------------RESPONSIVE---------------------------*/
 @media (min-width: 768px) {
     .post-content{
         display: grid;
@@ -149,7 +133,6 @@
     .post-content-data{
         height: 120px;
     }
-    /*imagen del post*/
     .post-content-img{
         height: 120px;
     }
@@ -180,7 +163,6 @@
     .most-popular .post-content-img{
         height: 350px;
     }
-    /*contendor del título y texto del post*/
     .most-popular .post-content-data{
         height: 150px;
     }
@@ -190,7 +172,6 @@
     .post-content-img{
         height: 150px;
     }
-    /*contendor del título y texto del post*/
     .post-content-data{
         height: 150px;
     }

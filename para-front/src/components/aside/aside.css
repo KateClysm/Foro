@@ -9,11 +9,9 @@
     border-radius: 0px 0px 3px 0px;
     height: 100%;
 }
-/*Acentuación a popular*/
 .aside-left .popular-red{
     color: var(--logo);
 }
-/*Separaciones*/
 .aside-left li{
     display: block;
     padding-bottom: 1.5rem;
@@ -22,7 +20,6 @@
 .aside-left li > a:hover{
     color: var(--logo);
 }
-/*Línea divisoria*/
 .aside-left .padding-divider{
     padding: 2rem 0;
     width: 100%;
@@ -31,16 +28,13 @@
     height: 1px;
     background-color: var(--search);
 }
-/*Quitado del padding al last child*/
 .aside-left li:last-child{
     padding-bottom: 0;
 }
-/*Separación de la izquierda del contenedor con un padding*/
 .principal-page, .topics, .secondary-page {
     padding: 0 1rem 0 1.5rem;
 }
 
-/*Responsive*/
 @media (max-width: 1023px) {
     .aside-left{
         display: none;
