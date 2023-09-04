@@ -30,18 +30,16 @@ html, body {
 }
 
 a {text-decoration: none;}
-html {font-size: $font-size-mobile;}
+
 p, li a, a {font-size: 1.1rem;}
 .title, h2, .user, .search, button {font-size: 1.1rem;}
 .less-important {font-size: 0.9rem;}
 i, a .footer-icon {font-size: 2rem;}
 
+
+html {font-size: $font-size-mobile;}
 @media (min-width: 425px) {html {font-size: $font-size-tablet;}}
-
 @media (min-width: 1240px) {html {font-size: $font-size-laptop;}}
-
 @media (min-width: 1400px) {html {font-size: $font-size-desktop;}}
-
 @media (min-width: 1900px) {html {font-size: $font-size-large-desktop;}}
-
 @media (min-width: 2500px) {html {font-size: $font-size-huge-desktop;}}
