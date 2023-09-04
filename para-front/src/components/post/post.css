@@ -42,7 +42,6 @@
     overflow: hidden;
     height: 80px;
     display: grid;
-    grid-template-rows: auto auto; 
     grid-auto-rows: auto;
 }
 .most-popular .post-content-data{
@@ -62,7 +61,7 @@
 .post-content-data-text{
     overflow: hidden; 
     word-wrap: break-word; 
-    display: none;
+    /* display: none; */
 }
 .post-content-data-text p{
     max-height: 100%;
@@ -105,7 +104,25 @@
     background-size: cover;
 }
 
-
+/*BOTÓN SHOW POST*/
+.button-show{
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 0.4rem;
+    background-color: var(--white);
+}
+.button-show:hover{
+    outline: 1px solid var(--logo);
+    background-color: rgba(0, 0, 0, 0.096);
+    cursor: pointer;
+}
+.button-show a{
+    color: var(--background);
+}
+.button-show:hover a{
+    color: var(--white);
+}
 
 /*----------------------RESPONSIVE---------------------------*/
 @media (min-width: 768px) {

@@ -1,18 +1,17 @@
-.button-show{
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    padding: 0.4rem;
-    background-color: var(--white);
+.container-show-post{
+    width: 93%; /*Lo separa de las otras secciones, deja ese espacio negro del fondo*/
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 2rem 0;
+    row-gap: 0.8rem;
 }
-.button-show:hover{
-    outline: 1px solid var(--logo);
-    background-color: rgba(0, 0, 0, 0.096);
-    cursor: pointer;
-}
-.button-show p{
-    color: var(--background);
-}
-.button-show:hover > p{
-    color:var(--white)
+
+.container-show-post .most-popular .post-content-data-text p {
+    color: var(--white);
+  }
+
+.container-show-post .most-popular .post-content-data{
+    height: fit-content;
+    display: block;
 }

@@ -1,182 +1,156 @@
-.container-login{
-    width: 290px;
-    height: 300px;
-    padding: 50px 45px;
-    background-color: #444444;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 35px;
-    margin: 30px 0 30px 0;
-}
-.login-center{
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-}
-.div-login{
-    font-family: 'Inconsolata', monospace;
-    text-transform: uppercase;
-    background-color: #711616;
-    height: 35px;
-    width: 290px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
 
-.email-login{
-    font-family: 'Inconsolata', monospace;
-    text-transform: capitalize;
+.login-form{
+    text-align: start;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 10px 50px 10px 60px;
+    gap: 6px;
+    background-color: var(--post);
+    border-radius: 20px;
+    padding: 55px 50px;
+    width: 300px;
+    height: 350px;
+    margin: 45px auto;
 }
-.email-login input{
-    width: 230px;
-    height: 25px;
-    border-radius: 7px;
-    background-color: #646464;
-    border-color: #282828;
-}
-.password-login{
-    font-family: 'Inconsolata', monospace;
-    padding: 10px 50px 10px 60px;
-    text-transform: capitalize;
+.login-form fieldset{
+    border-style: none;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    padding: 8px 0px 8px 0px;
 }
-.password-login input{
-    width: 230px;
+.login-form label{
+    padding: 3px 0px 3px 0px;
+}
+.login-form input{
+    padding: 3px;
+    color: var(--background);
+}
+.login-form button{
+    background-color: var(--search);
+    border-radius: 10px;
+    width: 60px;
     height: 25px;
-    border-radius: 7px;
-    background-color: #646464;
-    border-color: #282828;
+    cursor: pointer;
+    align-self: center;
+    padding: 5px;
 }
-.check-login{
-    font-family: 'Inconsolata', monospace;
-    padding-left: 80px;
-    padding-top: 8px;
+.login-form button:hover{
+    background-color: var(--principal);
 }
-.login-divider .divider{
-    width: 290px;
-    height: 1px;
-    background-color: #646464;
-}
-.login-divider{
-    padding-left: 25px;
-    padding-top: 5px;
-}
-.register-option p{
-    font-family: 'Inconsolata', monospace;
-    padding: 5px 0px 10px 60px;
-    text-transform: capitalize;
+.login-form h1{
+    text-align: center;
+    font-size: 1.1rem;
 }
 .register-option a{
-    text-decoration: underline #711616;
-    background-color: #444444;
+    background-color: var(--post);
+    text-decoration: underline var(--principal);
+    padding: 6px 0px 6px 0px;
 }
-.submit-login input{
-    background-color: #646464;
-    border-color: #282828;
-    height: 30px;
-    width: 65px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 1rem;
+.register-option p{
+    padding: 6px 0px 8px 0px;
 }
-.submit-login input:hover{
-    background-color: #711616;
+.login-checkbox fieldset{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 5px 8px 5px;
 }
-.submit-login{
-   padding-top: 10px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+.login-checkbox input{
+    padding: 0px 5px 8px 5px;
 }
-
-.nav-buttons{
-    padding-inline-start: 150px;
-}
-
-.logo {
-    padding-inline-start: 100px;
-}
-
-@media only screen and (min-width:728px) {
-    .container-login{
-        width: 450px;
-        height: 450px;
-        padding: 50px 45px;
-        left: 1px;
-        right: 55px;
+@media only screen and (min-width:768px) {
+    .login-form{
+        gap: 12px;
+        padding: 55px 50px;
+        width: 370px;
+        height: 400px;
+        margin: 70px auto;
     }
-    .login-center{
-        gap: 6px;
+    .login-form fieldset{
+        padding: 10px 0px 10px 0px;
     }
-    .div-login{
-        height: 50px;
-        width: 450px;
+    .login-form label{
+        padding: 5px 0px 5px 0px;
     }
-    .email-login{
-        gap: 15px;
+    .login-form input{
+        padding: 5px;
     }
-    .email-login input{
-       width: 330px;
-       height: 27px; 
-    } 
-    .password-login{
-       gap: 15px;
+    .login-form button{
+        width: 60px;
+        height: 30px;
+        padding: 5px;
     }
-    .password-login input{
-        width: 330px;
-        height: 27px;
-    }
-    .login-divider .divider{
-        width: 440px;
-        height: 1px;
-        background-color: #646464;
-    }
-    .login-divider{
-        padding-left: 10px;
-        padding-top: 15px;
-    }
-    .submit-login input{
-        height: 40px;
-        width: 80px;
-        font-size: 1.1rem;
-    }
-    .nav-buttons{
-        justify-content: flex-end;
-    }
-    .logo {
-        padding-left: 590px;
-        padding-right: 50px;
+    .register-option a{
+        padding: 10px 0px 7px 0px;
     }
     .register-option p{
-        padding: 30px 50px 10px 100px;
+        padding: 10px 0px 8px 0px;
     }
-    form{
-        padding: 10px 255px 10px 405px;
+    .login-checkbox fieldset{
+        padding: 0px 5px 10px 5px;
+    }
+    .login-checkbox input{
+        padding: 0px 5px 10px 5px;
     }
 }
-@media only screen and(min-width:760px),/*(max-width:1024px)*/{
-    form{
-        padding: 10px 255px 10px 165px;
-    }
-    .logo {
-        display: flex;
-        align-items: start;
-    
-    }
-    
 
+@media screen and (min-width: 1024px) {
+    .login-form{
+        width: 390px;
+        height: 430px;
+        margin: 70px auto;
+    }
+    .login-form a, p {
+        font-size: 10px;
+    }
+    .login-form input{
+        padding: 5px;
+    }
+    .login-form button{
+        width: 68px;
+        height: 35px;
+        padding: 5px;
+        font-size: 13px;
+    }
+}
+@media screen and (min-width: 1280px){
+    .login-form{
+        width: 410px;
+        height: 440px;
+        margin: 70px auto;
+    }
+    .login-form a, p {
+        font-size: 14px;
+    }
+    .login-form input{
+        padding: 7px;
+    }
+    .login-form button{
+        width: 70px;
+        height: 36px;
+        padding: 5px;
+    }
+    .login-checkbox label{
+        font-size: 13px;
+    }
+}
+@media screen and (min-width: 1600px){
+    .login-form{
+        width: 420px;
+        height: 460px;
+        margin: 70px auto;
+    }
+    .login-form a, p {
+        font-size: 16px;
+    }
+    .login-form input{
+        padding: 7px;
+    }
+    .login-form button{
+        width: 75px;
+        height: 40px;
+        padding: 5px;
+        font-size: 15px;
+    }
+    .login-checkbox label{
+        font-size: 14px;
+    }
 }

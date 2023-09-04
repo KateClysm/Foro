@@ -1,3 +1,11 @@
+.modal-container {
+    position: relative;
+    height: 85vh;
+    padding: 0.3rem;
+    border-radius: 3px;
+    background-color: var(--aside);
+    width: 85%;
+}
 .modal{
     position: fixed;
     z-index: 999;
@@ -15,35 +23,27 @@
     display: flex;
     flex-direction: column;
 }
-.modal-container {
-    position: relative;
-    width: 50%;
-    height: 500px;
-    padding: 3.5rem;
-    border-radius: 15px;
-    background-color: #282828;
-}
+
 .modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-
+    top: 0.6rem;
+    right: 0.7rem;
     background: transparent;
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    border: 0.2px solid #444444;
+    border: 0.2px solid var(--search);
+    cursor: pointer;
 }
-
+.editor{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6rem;
+}
 /* text editor styles */
-.title-post {
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    height: 40px;
+.editor .post-title {
     width: 100%;
-    padding: 1rem;
-    font-size: 18px;
-
+    padding: 0.8rem;
     background: inherit;
 }
 .title-post:focus {
@@ -53,42 +53,43 @@
     height: 200px;
     color: inherit;
     padding: 2px;
-    border-bottom-color: 0.2px solid #444444;
+    border-bottom-color: 0.2px solid var(--search);
     overflow-y: auto;
-    margin-bottom: 10px;
 }
-
+.border-container{
+    border-top: 2px solid var(--search);
+    border-right: 2px solid var(--time);
+    border-bottom: 2px solid var(--time);
+    border-left: 2px solid var(--search);
+    border-radius: 3px;
+}
 /* categories styles */
-.item {
+fieldset {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    height: 120px;
+    height: 160px;
     width: 100%;
     overflow-y: auto;
-    border-radius: 3px;
-}
-.item legend {
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin: 0 6px;
+    border: none;
+    outline: none;
 }
 .item label {
     flex-direction: column;
     padding: 1px 5px;
+    font-size: 0.6rem;
 }
 .post-btn {
     background: var(--logo);
-    border-radius: 10px;
-    border: 0.1px solid #444444;
-    padding: 3px;
-    width: 40%;
-    height: 7%;
-    font-size: 13.5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
     margin-top: 1.5rem;
     position: absolute;
-    right: 1rem;
-    bottom: 1.5rem;
+    right: 0.3rem;
+    bottom: 0.8rem;
 }
 
 /*  openModal button styles */
@@ -99,6 +100,7 @@
     bottom: 0;
     right: 0;
     margin: 2rem;
+    
 }
 .openModal-btn {
     position: fixed;
@@ -109,6 +111,7 @@
     border:none;
     transition: all 0.5s ease-in;
     font-size: 10px;
+    cursor: pointer;
 }
 .openModal-btn:hover {
     transform: translateX(-120px);
@@ -116,10 +119,108 @@
     border-radius: 15px;
     font-size: 15px;
 }
+/*scrol bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--white);
+    border-radius: 10px 10px 3px 3px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--search);
+    border-radius: 50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--time)
+  }
 
-@media only screen and (max-width: 500px) {
+
+/* ==================================================================== */
+
+@media (min-width: 768px) {
     .modal-container {
-        width: 70%;
+        width: 65%;
+    }
+     .item label {
+        font-size: 0.7rem;
+    }
+    .modal-container {
+    padding: 0.5rem;
+    }
+    .modal-close {/*reposicionamiento*/
+        top: 0.9rem;
+        right: 0.9rem;
+    }
+}
+@media (min-width: 1024px) {
+    .modal-container {
+        height: 75vh;
+        width: 55%;
+    }
+    .item label {
+        font-size: 0.8rem;
+    }
+    .modal-container {
+        padding: 0.8rem 0.5rem;
+    }
+     .modal-close { /*reposicionamiento*/
+        top: 1.3rem;
+        right: 1rem;
+    }
+}
+@media (min-width: 1240px) {
+    .modal-container {
+        width: 55%;
+    }
+    .item label {
+        font-size: 0.9rem;
+    }
+}
+@media (min-width: 1400px) {
+    .item label {
+        font-size: 1rem;
+    }
+    .modal-container {
+        height: 70vh;
+        width: 45%;
+    }
+    fieldset{
+        height: 160px;
+    }
+}
+@media (min-width: 1600px) {
+    .item label {
+        font-size: 1.1rem;
+    }
+    .modal-container {
+        height: 65vh;
+        width: 45%;
+    }
+    fieldset{
+        height: 220px;
+    }
+}
+@media (min-width: 2000px) {
+    .item label {
+        font-size: 1.3rem;
+    }
+    .modal-container {
+        height: 50vh;
+        width: 45%;
+    }
+    fieldset{
+    height: 250px;
     }
 }
 /* ==================================================================== */
+
+
+

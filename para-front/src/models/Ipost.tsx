@@ -5,6 +5,7 @@ export interface IPost {
   text: string;    //ver si lo podemos reemplazar por un eriquecedor de texto
   postImage?: string;   //lo cambié a postImage
   typePost: PostTypeSelection;
+  id:number;  //para la visualización mediante showPost
 };
 
 export interface IUser {

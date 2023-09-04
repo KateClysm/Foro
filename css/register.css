@@ -1,214 +1,136 @@
-.container-register{
-    width: 290px;
-    height: 300px;
-    padding: 50px 45px;
-    background-color: #444444;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    right: 1px;
-    left: 35px;
-    margin: 30px 0 30px 0;
-}
-.register-center{
+
+.register-form{
+    text-align: start;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 6px;
+    background-color: var(--post);
+    border-radius: 20px;
+    padding: 55px 50px;
+    width: 300px;
+    height: 350px;
+    margin: 45px auto;
 }
-
-.div-register{
-    font-family: 'Inconsolata', monospace;
-    text-transform: uppercase;
-    background-color: #711616;
-    height: 30px;
-    width: 290px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-
-.email-register{
-    font-family: 'Inconsolata', monospace;
-    text-transform: capitalize;
+.register-form fieldset{
+    border-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding: 10px 10px 10px 30px;
+    padding: 8px 0px 8px 0px;
 }
-.email-register input{
-    width: 230px;
+.register-form label{
+    padding: 3px 0px 3px 0px;
+}
+.register-form input{
+    padding: 3px;
+    color: var(--background);
+}
+.register-form button{
+    background-color: var(--search);
+    border-radius: 10px;
+    width: 60px;
     height: 25px;
-    border-radius: 7px;
-    background-color: #646464;
-    border-color: #282828;
+    cursor: pointer;
+    align-self: center;
+    padding: 5px;
 }
-
-
-.password-register{
-    font-family: 'Inconsolata', monospace;
-    padding: 5px 10px 10px 30px;
-    text-transform: capitalize;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.register-form button:hover{
+    background-color: var(--principal);
 }
-.password-register input{
-    width: 230px;
-    height: 25px;
-    border-radius: 7px;
-    background-color: #646464;
-    border-color: #282828;
-}
-
-
-.confirmPassword-register{
-    font-family: 'Inconsolata', monospace;
-    padding: 5px 10px 10px 30px;
-    text-transform: capitalize;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-.confirmPassword-register input{
-    width: 230px;
-    height: 25px;
-    border-radius: 7px;
-    background-color: #646464;
-    border-color: #282828;
-}
-
-
-.register-divider .divider{
-    width: 290px;
-    height: 1px;
-    background-color: #646464;
-}
-
-
-.logIn-option p{
-    font-family: 'Inconsolata', monospace;
-    padding: 5px 0px 10px 30px;
-    text-transform: capitalize;
+.register-form h1{
+    text-align: center;
+    font-size: 1.1rem;
 }
 .logIn-option a{
-    text-decoration: underline #711616;
-    background-color: #444444;
+    background-color: var(--post);
+    text-decoration: underline var(--principal);
+    padding: 6px 0px 6px 0px;
 }
-
-
-.confirm-register input{
-    background-color: #646464;
-    border-color: #282828;
-    height: 30px;
-    width: 65px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 1rem;
+.logIn-option p{
+    padding: 6px 0px 8px 0px;
 }
-.confirm-register {
-    display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 5px 0px 10px 0px;
-}
-.confirm-register input:hover{
-    background-color: #711616;
-}
-
-
-.nav-buttons{
-    justify-content: flex-end;
-}
-.logo {
-    padding-inline-start: 100px;
-}
-
-
-@media only screen and (min-width:728px)  {
-    .container-register{
-        width: 450px;
-        height: 450px;
-        padding: 50px 45px;
-        left: 1px;
-        right: 55px;
+@media only screen and (min-width:768px) {
+    .register-form{
+        gap: 12px;
+        padding: 55px 50px;
+        width: 370px;
+        height: 400px;
+        margin: 70px auto;
     }
-    .register-center{
-        gap: 6px;
+    .register-form fieldset{
+        padding: 10px 0px 10px 0px;
     }
-    .div-register{
-        height: 50px;
-        width: 450px;
+    .register-form label{
+        padding: 5px 0px 5px 0px;
     }
-    .email-register{
-        padding: 15px 10px 10px 60px;
-        gap: 10px;
+    .register-form input{
+        padding: 5px;
     }
-    .email-register input{
-       width: 330px;
-       height: 27px; 
-    } 
-    .password-register{
-        padding: 15px 10px 10px 60px;
-       gap: 10px;
+    .register-form button{
+        width: 60px;
+        height: 30px;
+        padding: 5px;
     }
-    .password-register input{
-        width: 330px;
-        height: 27px;
-    }
-    
-    .confirmPassword-register{
-        padding: 10px 10px 10px 60px;
-        gap: 10px;
-    }
-    .confirmPassword-register input{
-        width: 330px;
-        height: 27px;
-    }
-
-    .register-divider .divider{
-        width: 445px;
-        height: 1px;
-        background-color: #646464;
-    }
-    .register-divider{
-        padding-left: 3px;
-        padding-top: 10px;
-    }
-    .confirm-register input{
-        height: 40px;
-        width: 80px;
-        font-size: 1.1rem;
-    }
-    .nav-buttons{
-        justify-content: flex-end;
-    }
-    .logo {
-        padding-left: 590px;
-        padding-right: 50px;
+    .logIn-option a{
+        padding: 10px 0px 7px 0px;
     }
     .logIn-option p{
-        padding: 20px 40px 10px 100px;
-    }
-
-    form{
-        padding: 10px 255px 10px 405px;
+        padding: 10px 0px 8px 0px;
     }
 }
-@media only screen and(min-width:760px),/*(max-width:1024px)*/{
-    form{
-        padding: 10px 255px 10px 165px;
+
+@media screen and (min-width: 1024px) {
+    .register-form{
+        width: 390px;
+        height: 430px;
+        margin: 70px auto;
     }
-    .logo {
-        display: flex;
-        align-items: start;
-    
+    .register-form a, p {
+        font-size: 10px;
     }
-    
+    .register-form input{
+        padding: 5px;
+    }
+    .register-form button{
+        width: 68px;
+        height: 35px;
+        padding: 5px;
+        font-size: 13px;
+    }
+}
+@media screen and (min-width: 1280px){
+    .register-form{
+        width: 410px;
+        height: 440px;
+        margin: 70px auto;
+    }
+    .register-form a, p {
+        font-size: 14px;
+    }
+    .register-form input{
+        padding: 7px;
+    }
+    .register-form button{
+        width: 70px;
+        height: 36px;
+        padding: 5px;
+    }
+}
+@media screen and (min-width: 1600px){
+    .register-form{
+        width: 420px;
+        height: 460px;
+        margin: 70px auto;
+    }
+    .register-form a, p {
+        font-size: 16px;
+    }
+    .register-form input{
+        padding: 7px;
+    }
+    .register-form button{
+        width: 75px;
+        height: 40px;
+        padding: 5px;
+        font-size: 15px;
+    }
 }

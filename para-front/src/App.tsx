@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './pages/main-content/main-content.css';
 import MainContent from './pages/main-content/MainContent';
 import NotFoundPage from './components/not-found/NotFound';
 
