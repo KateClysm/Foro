@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import './login.css';
+import './login.scss';
 import { NavLink } from 'react-router-dom';
 
 const Login: React.FC = () => {

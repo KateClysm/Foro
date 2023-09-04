@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import './register.css';
+import './register.scss';
 import { NavLink } from 'react-router-dom';
 
 const Register: React.FC = () => {
