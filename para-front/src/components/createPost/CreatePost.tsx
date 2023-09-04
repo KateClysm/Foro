@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import './createPost.css'
+import React, { useState } from 'react';
+// import './createPost.css'
+import './create-post.scss'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -95,4 +96,4 @@ const CreatePost: React.FC = () => {
     )
 };
 
-export default CreatePost
+export default CreatePost;

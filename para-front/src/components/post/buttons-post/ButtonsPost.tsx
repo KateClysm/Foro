@@ -1,6 +1,6 @@
 import React from 'react';
-import './buttons-post.css'
-
+// import './buttons-post.css';
+import './buttons-post.scss';
 interface IButtons {
     comments: number;
     likes: number;
@@ -14,25 +14,22 @@ interface IButtons {
    }) => {
     return (
         <div className="post-buttons">
-            <button className="post-button button-text button-comments">
+            <button className="post-button button-comments">
                 <div className="button-image "></div>
-                 <p>{comments} Comments</p>
+                {comments} Comments
             </button>
             
-            <button className="post-button button-text button-likes">
+            <button className="post-button button-likes">
                 <div className="button-image "></div>
-                 <p>{likes} Likes</p>
+                {likes} Likes
             </button>
 
-            <button className="post-button button-text button-views">
+            <button className="post-button button-views">
                 <div className="button-image "></div>
-                 <p>{views} Views</p>
+                {views} Views
             </button>
               
         </div>
     );
-
-
 };
-
 export default ButtonsPost;

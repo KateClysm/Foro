@@ -1,0 +1,78 @@
+@import '../../styles/styles.scss';
+
+.container-communities {
+  display: flex;
+  justify-content: center;
+
+  .comunities {
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .communities-title {
+      padding-bottom: 0.5rem;
+    }
+
+    .comunity {
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+
+      .show-more-comunities {
+        padding-top: 0.5rem;
+        color: #bebebe;
+      }
+
+      .comunity-image {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $white-color;
+      }
+
+      .comunity-name {
+        padding-left: 1rem;
+      }
+
+      &:hover,
+      &:hover > .comunity-name {
+        color: $logo-color;
+      }
+      
+    }
+    .show-more-comunities:hover {
+      color: $logo-color;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .comunity-image {
+      height: 30px;
+      width: 30px;
+    }
+
+    .communities-title {
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1240px) {
+    .comunity-image {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .comunities {
+      padding: 0 1rem 0 2rem;
+    }
+  }
+
+  @media (min-width: 2500px) {
+    .comunities {
+      padding: 0 1rem 0 2.5rem;
+    }
+  }
+}
