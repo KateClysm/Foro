@@ -42,7 +42,7 @@ const AsideLeft: React.FC = () => {
       <ul className="secondary-page">
         <li><NavLink to="/about">About us</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        <li><a href="#">Help</a></li>
+        <li><NavLink to="/help">Help</NavLink></li>
       </ul>
     </div>
   );
