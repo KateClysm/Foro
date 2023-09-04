@@ -1,3 +1,4 @@
+@import '../../styles/styles.scss';
 .contact {
     padding: 4rem 0.2rem 6rem;
 
@@ -20,12 +21,12 @@
         margin-right: 0.6rem;
     
         path {
-            color: var(--logo);
+            color: $logo-color;
         }
     }
 
     &-required {
-        color: var(--logo);
+        color: $logo-color;
         margin-left: 0.1rem;
     }
 
@@ -38,7 +39,7 @@
         padding: 0.7rem 0.5rem;
         border: 0;
         border-radius: 0.3rem;
-        color: var(--background);
+        color: $background-color;
     }
 
     &-message {
@@ -47,14 +48,14 @@
         padding: 0.8rem;
         border-radius: 0.3rem;
         resize: none;
-        color: var(--background);
+        color: $background-color;
     }
 
     &-submit {
         display: block;
         margin: 1rem 0 0 auto;
-        background-color: var(--logo);
-        border: 1px solid var(--logo);
+        background-color: $logo-color;
+        border: 1px solid $logo-color;
         border-radius: 1.3rem;
         transition: all .1s ease-out;
         cursor: pointer;
@@ -65,8 +66,8 @@
 
     &-another-message {
         margin-top: 1rem;
-        background-color: var(--logo);
-        border: 1px solid var(--logo);
+        background-color: $logo-color;
+        border: 1px solid $logo-color;
         border-radius: 1.3rem;
         transition: all .1s ease-out;
         cursor: pointer;
@@ -81,7 +82,7 @@
 }
 
 .contact-form, .socials {
-    background-color: var(--nav);
+    background-color:$nav-color;
     width: 320px;
     height: 550px;
     border-radius: 1.3rem;
@@ -113,16 +114,16 @@ input {
 
 .contact-input:focus, .contact-message:focus {
     transition: all .2s;
-    outline: 2px solid var(--logo);
+    outline: 2px solid $logo-color;
 }
 
 .contact-input::placeholder, textarea::placeholder {
-    color: var(--time);
+    color: $time-color;
 }
 
 .contact-submit:hover, .contact-another-message:hover {
-    background-color: var(--nav);
-    border: 1px solid var(--logo);
+    background-color: $nav-color;
+    border: 1px solid $logo-color;
     font-weight: 600;
 }
 
@@ -139,7 +140,7 @@ input {
         &:hover {
             transition: 0.5s all;
             text-decoration: underline;
-            text-decoration-color: var(--logo);
+            text-decoration-color: $logo-color;
             text-underline-offset: 0.5rem;
         }
     }

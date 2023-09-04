@@ -1,0 +1,21 @@
+.container-show-post{
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 2rem 0;
+    row-gap: 0.8rem;
+}
+
+.container-show-post .most-popular .post-content-data-text p {
+    color: var(--white);
+}
+
+.container-show-post .most-popular .post-content-data{
+    height: fit-content;
+    display: block;
+}
+
+.container-show-post .button-show{
+    display: none;
+}
