@@ -24,7 +24,7 @@ const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopu
                     <NavLink
                         to={`/post/${post.id}`}
                         className='button-text'
-                        state={postState} // Pasar el estado del post como prop "state"
+                        state={postState} // Paso el estado del post como prop "state"
                     ><p>Show Post</p>
                     </NavLink>
                 </button>                  
