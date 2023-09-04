@@ -1,3 +1,5 @@
+
+
 export const register = (req:Object, res:any) => {
     res.json('register') 
 }
