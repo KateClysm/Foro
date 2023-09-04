@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './show-post.css';
+// import './show-post.css';
+import './show-post.scss'
 import Post from '../Post';
 
 const ShowPost: React.FC = () => {

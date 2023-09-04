@@ -7,16 +7,12 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <Router>
-        
           <Routes>
             <Route path="/*" element={<MainContent />} />
             <Route path="/notfound" element={<NotFoundPage />} />
           </Routes>
-         
-        
       </Router>
     </div>
   );
 };
-
 export default App;

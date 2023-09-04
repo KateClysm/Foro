@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import './createPost.css'
+import React, { useState } from 'react';
+// import './createPost.css'
+import './create-post.scss'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -34,13 +35,12 @@ const CreatePost: React.FC = () => {
               <button onClick={closeModal} className='modal-close'>X</button>
 
               <div className="editor" onClick={handleModalContainerClick}>
-                <input className='post-title border-container' type="text" name="title" id="title" placeholder='Title...' />
-                
+                <input className='title-post' type="text" name="title" id="title" placeholder='Title...' />
                 <ReactQuill id='textEditor' theme='snow' modules={modules} value={value} onChange={setValue} />
 
-                <div className="item border-container">
-                  <fieldset>
-                    <legend className='post-title'>Category</legend>
+                <div className="item">
+                  <fieldset className='item'>
+                    <legend>Category</legend>
                     <label htmlFor="ghosts">
                       <input type="radio" name="cat" value='ghosts' id="ghosts" /> Ghosts
                     </label>
@@ -85,15 +85,15 @@ const CreatePost: React.FC = () => {
                   </div> 
               </div>
                {/* condicionar con una funcion, cuando se envia el post, el modal se cierra y la vista se refresca */}
-              <button onClick={closeModal} className='post-btn  button-text'>Update Post</button>
+              <button onClick={closeModal} className='post-btn'>Update Post</button>
             </article>
           </div>
 
         <div className='openModal'>
-          <button onClick={openModal} className='openModal-btn button-text'>Create Post</button>
+          <button onClick={openModal} className='openModal-btn'>Create Post</button>
         </div>
       </>
     )
 };
 
-export default CreatePost
+export default CreatePost;

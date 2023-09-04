@@ -1,6 +1,6 @@
 import React from 'react';
 import './statistics.css';
-import Communities from '../communities/Comunities';
+import Communities from '../communities/Communities';
 import communitiesData from '../../data/communitiesData';
 
 const AsideRight: React.FC = () => {

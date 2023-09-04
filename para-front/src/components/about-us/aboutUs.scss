@@ -1,3 +1,4 @@
+@import '../../styles/styles.scss';
 .about {
     width: 100%;
     padding: 2rem 3rem 4rem;
@@ -15,7 +16,7 @@
         h2 {
             font-size: 1.5rem;
             text-decoration: underline;
-            text-decoration-color: var(--logo);
+            text-decoration-color: $logo-color;
             text-underline-offset: 0.5rem;
         }
     }
@@ -30,5 +31,5 @@
 }
 
 path {
-    color: var(--logo);
+    color: $logo-color;
 }

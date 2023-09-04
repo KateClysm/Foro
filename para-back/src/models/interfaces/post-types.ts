@@ -1,4 +1,5 @@
 export const PostTypes = [
+    "All",
     "Ghosts",
     "Witchcraft",
     "Demons",
