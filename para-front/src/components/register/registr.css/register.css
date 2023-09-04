@@ -1,0 +1,82 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  background-color: var(--post);
+  border-radius: 1.25rem;
+  padding: 3rem 3.2rem;
+  width: 300px;
+  margin: 5rem auto 6rem;
+}
+.register-form h1 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  border: 0;
+  border-radius: 0.3rem;
+  color: var(--background);
+  margin: 0.5rem 0;
+}
+.register-form input-input:focus {
+  transition: all 0.2s;
+  outline: 2px solid var(--logo);
+}
+.register-form input-input::placeholder {
+  color: var(--time);
+}
+
+.register-button-btn {
+  margin: 0.8rem auto 0 auto;
+  background-color: var(--logo);
+  border: 1px solid var(--logo);
+  border-radius: 1.3rem;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+  padding: 0.6rem 2.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  height: 2.5rem;
+}
+.register-button-btn:hover {
+  background-color: var(--nav);
+  border: 1px solid var(--logo);
+  font-weight: 600;
+}
+
+.logIn-option {
+  text-align: center;
+}
+.logIn-option-p {
+  margin: 0.9rem 0 0.2rem;
+}
+.logIn-option-link {
+  text-decoration: underline var(--logo);
+}
+
+@media only screen and (min-width: 768px) {
+  .register-form {
+    width: 370px;
+    margin: 6rem auto 7rem;
+  }
+  .logIn-option p {
+    margin: 2rem 0 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .register-form {
+    width: 390px;
+    max-height: 550px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .register-form {
+    width: 550px;
+  }
+}
+
+/*# sourceMappingURL=register.css.map */
