@@ -6,8 +6,8 @@ import { faGithub, faFigma } from '@fortawesome/free-brands-svg-icons';
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <div className="inside-footer">
+    <footer className='footer'>
+      <div className="footer-inside">
         <div className="footer-logo">
           <img src={logoNavWhite} alt="Logo ParaSeekers" />
         </div>
