@@ -1,4 +1,5 @@
 import express from 'express';
+import userRoutes from "./routes/users";
 import authRoutes from './routes/auth';
 import postRoutes from './routes/posts';
 import likesRoutes from './routes/likes';
@@ -21,7 +22,8 @@ const corsOptions = {
   app.use(cors(corsOptions));
 
 
-// ROUTES
+// ROUTES utilización de las rutas importadas
+app.use('/apiForum/users', userRoutes);
 app.use('/apiForum/auth', authRoutes);
 app.use('/apiForum/posts', postRoutes);
 app.use('/apiForum/likes', likesRoutes);
@@ -32,7 +34,7 @@ app.get('/test', (req, res) => {
     res.json('hello server')
 })
 
-
 app.listen(PORT, () => {
     console.log(`⚡ [server]: Server is running at http://localhost:${PORT}`);
 })
+
