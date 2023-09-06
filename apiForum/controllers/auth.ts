@@ -14,15 +14,15 @@ export const register = (req: Request, res: Response) => {
     
     // chequeamos si el usuario existe:
     // "q" es una consulta SQL para verificar si el usuario ya existe en la base de datos.
-    const q = "SELECT * FROM users WHERE username = ?";
+    const q = "SELECT * FROM users WHERE email = ?";
 
     // ejecuta una consulta a la base de datos utilizando la función db.query
     //q: Es la consulta SQL que se va a ejecutar.
-    //[req.body.username]: es un arreglo que contiene los parámetros que se van a sustituir en la consulta SQL. El valor de req.body.username se utiliza para reemplazar el marcador de posición ? en la consulta SQL.
+    //[req.body.email]: es un arreglo que contiene los parámetros que se van a sustituir en la consulta SQL. El valor de req.body.email se utiliza para reemplazar el marcador de posición ? en la consulta SQL.
     //cuando la consulta a la base de datos se complete se ejecuta el call back (err, data) => {...} para manejar el resultado de la consulta
     //err: es un objeto que contendrá información sobre cualquier error que ocurra durante la consulta a la base de datos.
     //data: es el resultado de la consulta a la base de datos. 
-    db.query(q, [req.body.username], (err, data) => {
+    db.query(q, [req.body.email], (err, data) => {
 
         if (err) { return res.status(500).json(err); } //si hubo un error
         
@@ -54,8 +54,8 @@ export const register = (req: Request, res: Response) => {
 
 
 export const login = (req: Request, res: Response) => {
-    const q = "SELECT * FROM users WHERE username = ?";
-    db.query(q, [req.body.username], (err, data) => {
+    const q = "SELECT * FROM users WHERE email = ?";        //podrìa ser username
+    db.query(q, [req.body.email], (err, data) => {    //podrìa ser req.body.username
         if (err) { return res.status(500).json(err); }; 
         
         const user: Iuser[] = data as Iuser[];
