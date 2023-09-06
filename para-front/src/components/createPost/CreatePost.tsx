@@ -39,7 +39,7 @@ const CreatePost: React.FC = () => {
                 <ReactQuill id='textEditor' theme='snow' modules={modules} value={value} onChange={setValue} />
 
                 <div className="item">
-                  <fieldset className='item'>
+                  <fieldset className='item item-fieldset'>
                     <legend>Category</legend>
                     <label htmlFor="ghosts">
                       <input type="radio" name="cat" value='ghosts' id="ghosts" /> Ghosts

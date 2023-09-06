@@ -1,5 +1,5 @@
 import React from 'react';
-import './statistics.css';
+import './statistics.scss';
 import Communities from '../communities/Communities';
 import communitiesData from '../../data/communitiesData';
 
