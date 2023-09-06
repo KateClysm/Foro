@@ -1,27 +1,30 @@
 import express from 'express';
+import userRoutes from "./routes/users";
 import authRoutes from './routes/auth';
 import postRoutes from './routes/posts';
 import likesRoutes from './routes/likes';
 import commentRoutes from './routes/comments';
-import cors from 'cors';
+import cors from 'cors'; // mecanismo de seguridad implementado en los navegadores web para controlar las solicitudes HTTP entre diferentes dominios o orígenes.
+import cookieParser from 'cookie-parser'; //facilita la manipulación de cookies en una aplicación 
 
 const app = express();
-app.use(express.json());
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8800; //acá van a ir todas nuestras requests
 
-// Configurar CORS con opciones específicas
+//middlewares
+app.use(express.json());
+app.use(cookieParser());
 const corsOptions = {
-    origin: 'http://localhost:5173', // Cambia esto al origen de tu frontend
+    origin: 'http://localhost:5173', 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
-    // Añade el siguiente encabezado para permitir el origen específico
     allowedHeaders: 'Content-Type, Authorization',
   };
-  
-  app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 
-// ROUTES
+
+// ROUTES utilización de las rutas importadas
+app.use('/apiForum/users', userRoutes);
 app.use('/apiForum/auth', authRoutes);
 app.use('/apiForum/posts', postRoutes);
 app.use('/apiForum/likes', likesRoutes);
@@ -32,7 +35,7 @@ app.get('/test', (req, res) => {
     res.json('hello server')
 })
 
-
 app.listen(PORT, () => {
     console.log(`⚡ [server]: Server is running at http://localhost:${PORT}`);
 })
+
