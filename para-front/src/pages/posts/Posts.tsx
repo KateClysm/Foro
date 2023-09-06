@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import './posts.css';
 import './posts.scss';
 import Post from '../../components/post/Post';
 
@@ -11,7 +10,7 @@ const Posts: React.FC = () => {
     const [posts, setPosts] = useState<Array<any>>([]);
     
     useEffect(() => {
-        axios.get('http://localhost:3001/apiforum/posts')
+        axios.get('http://localhost:8800/apiForum/posts/post')
             .then(response => {
                 const updatedPosts = response.data.map((post: any) => ({
                     ...post, //método de propagación, crea una copia de la variable que esta mapeando

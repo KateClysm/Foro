@@ -1,5 +1,4 @@
 import React from 'react';
-// import './aside.css';
 import './aside.scss';
 import { NavLink } from 'react-router-dom';
 import Communities from '../communities/Communities';

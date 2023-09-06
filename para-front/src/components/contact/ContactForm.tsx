@@ -13,7 +13,7 @@ const ContactForm: React.FC = () => {
     const [submitMessage, setSubmitMessage] = useState('');
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isEmailValid = email === '' || emailRegex.test(email);
+    const isEmailValid = email === '' || emailRegex.test(email); //esto admite que no se ingrese email, hay que corregir la parte de email === '' por !==
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();

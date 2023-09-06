@@ -12,13 +12,12 @@ const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopu
 
   return (
     <div className={`post ${mostPopular ? 'most-popular' : ''}`}>
-
-        <div className="post-container-user">
-          <div className="post-user">
+  
+            <div className="post-container-user">
                 <div className="post-user-image" style={{ backgroundImage: `url(${user.userImage})` }}></div>
                 <div className="post-user-data">
-                  <p className="user">{user.userName}</p>
-                  <p className="less-important">{user.userTime} hours ago</p>
+                  <p className="username">{user.userName}</p>
+                  <p className="less-important user-time">{user.userTime} hours ago</p>
                 </div>
                 <button className="button-show">
                     <NavLink
@@ -29,14 +28,13 @@ const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopu
                     </NavLink>
                 </button>                  
           </div>
-        </div>
         
 
         <div className="post-content">
             <div className="post-content-img" style={{ backgroundImage: `url(${post.postImage})` }}></div>
             <div className="post-content-data">
               <h2 className="post-content-data-title">{post.title}</h2>
-              <div className="post-content-data-text "><p>{post.text}</p></div>
+              <div className="post-content-data-text "><p >{post.text}</p></div>
             </div>
         </div>
  
