@@ -1,53 +1,43 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import ButtonsPost from './buttons-post/ButtonsPost';
-import { IPost, IUser, IReactions } from '../../models/Ipost';
+import { IPost } from '../../models/Ipost';
+import moment from 'moment';
 import './post.scss'
-// import './post.css';
 
-const Post: React.FC<{ post: IPost; user: IUser; reactions: IReactions; mostPopular: boolean }> = ({ post, user, reactions, mostPopular }) => {
-  
-  const [postState] = useState({ post, user, reactions }); // Almacena los datos del post en el estado
-
-
+const Post = ({post}: IPost) => {
+  const [postState] = useState({ post });
   return (
-    <div className={`post ${mostPopular ? 'most-popular' : ''}`}>
-
-        <div className="post-container-user">
-          <div className="post-user">
-                <div className="post-user-image" style={{ backgroundImage: `url(${user.userImage})` }}></div>
-                <div className="post-user-data">
-                  <p className="user">{user.userName}</p>
-                  <p className="less-important">{user.userTime} hours ago</p>
-                </div>
-                <button className="button-show">
-                    <NavLink
-                        to={`/post/${post.id}`}
-                        className='button-text'
-                        state={postState} // Paso el estado del post como prop "state"
-                    ><p>Show Post</p>
-                    </NavLink>
-                </button>                  
-          </div>
-        </div>
-        
-
-        <div className="post-content">
-            <div className="post-content-img" style={{ backgroundImage: `url(${post.postImage})` }}></div>
-            <div className="post-content-data">
-              <h2 className="post-content-data-title">{post.title}</h2>
-              <div className="post-content-data-text "><p>{post.text}</p></div>
+  <div className={`post most-popular`}>
+    <div className='post-container-user'>
+      <div className="post-user">
+          <div className="post-user-image" style={{ backgroundImage: `url(${post.profilePic})` }}></div>
+            <div className="post-user-data">
+               <p className="user">{post.name}</p>
+               <p className="less-important">Posted {moment(post.createAt).fromNow() }</p>
             </div>
-        </div>
- 
-        <ButtonsPost
-              comments = {reactions.comments}
-              likes = {reactions.likes}
-              views = {reactions.views}
-        />
-        
+            <button className="button-show">
+              <NavLink
+                to={`/post/${post.userId}`}
+                className='button-text'
+                state={postState}
+                >
+                <p>Show Post</p> 
+              {/* podríamos condicionar, si quien entra al show post es el creador del post, aparecerán dos iconos (uno para editar el post y otro para eliminarlo) => usar contexto de user con contextProvider (envolver app con context provider) */}
+              </NavLink>
+            </button>                  
+      </div>
     </div>
-  );
-};
+
+    <div className="post-content">
+    <div className="post-content-img" style={{ backgroundImage: `url(${post?.img})` }}></div>
+      <div className="post-content-data">
+        <h2 className="post-content-data-title">{post.title}</h2>
+        <div className="post-content-data-text "><p>{post.description}</p></div>
+      </div>
+    </div>
+
+  </div>
+  )
+}
 
 export default Post;
