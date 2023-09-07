@@ -27,7 +27,7 @@ export const addPost = (req:any, res:any) => {
             req.body.description,
             req.body.img,
             moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
-            userInfo,
+            userInfo.id,
             req.body.cat
         ];
     

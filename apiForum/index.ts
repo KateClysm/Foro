@@ -36,7 +36,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 app.post('/apiForum/upload', upload.single('file'), function (req, res) {
     const file = req.file;
-    res.status(200).json(file ? file.filename : '');
+    res.status(200).json(file ? file.filename : 'null');
 })
 
 
