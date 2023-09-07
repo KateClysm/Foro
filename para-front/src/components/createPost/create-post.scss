@@ -48,15 +48,26 @@
   padding: 0.8rem;
   background: inherit;
 }
-.title-post:focus {
+.title-post {
   outline: none;
+  background-color: transparent;
+  height: 30px;
 }
 #textEditor {
-  height: 200px;
+  max-height: 200px;
+  max-width: 100%;
+  min-width: 100%;
   color: inherit;
   padding: 2px;
   border-bottom-color: 0.2px solid $search-color;
   overflow-y: auto;
+  background-color: transparent;
+  outline: none;
+}
+/* input file */
+.inputFile {
+  background-color: inherit;
+  border-radius: 2px;
 }
 .border-container{
   border-top: 2px solid $search-color;
@@ -111,7 +122,7 @@ fieldset {
   border-radius: 50%;
   background: $logo-color;
   border:none;
-  transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 .openModal-btn:hover {

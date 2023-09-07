@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './posts.scss';
 import Post from '../../components/post/Post';
-import { useQuery } from '@tanstack/react-query';
 import { makeRequest } from '../../axios';
 import { useLocation } from 'react-router-dom';
 

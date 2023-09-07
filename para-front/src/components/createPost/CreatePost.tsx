@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-// import './createPost.css'
 import './create-post.scss'
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import { makeRequest } from '../../axios';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import moment from 'moment';
 
-
-// armar modal + react-quill + funcionalidad de create post => 
 
 const CreatePost: React.FC = () => {
-  const [value, setValue] = useState('');
-
-  // react-quill edition values
-  const modules = {
-    toolbar: [
-      ['image'],
-    ],
-  }
+  const state = useLocation().state;
+  const [file, setFile] = useState<File | null>(null);
+  const [description, setDescription] = useState(state?.description || '');
+  const [title, setTitle] = useState(state?.title || '');
+  const [category, setCategory] = useState(state?.category || '');
+  const navigate = useNavigate();
+  
 
   // modal function
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +23,33 @@ const CreatePost: React.FC = () => {
   const handleModalContainerClick = (e:any) => e.stopPropagation();
 
 
+  const upload = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('file', file ? file : '');
+      const res = await makeRequest.post('/upload', formData);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
+  const handleClick =  async (e:any) => {
+    e.preventDefault();
+
+    const imageUrl = upload();
+    try {
+      state ? await makeRequest.put(`/posts/${state.id}`, {
+        title, description, category, img:file ? imageUrl : ''
+      })
+        : await makeRequest.post(`/posts`, {
+          title, description, category, img: file ? imageUrl : '', createAt: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss')
+        });
+        navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
     return (
       <>
@@ -35,62 +58,66 @@ const CreatePost: React.FC = () => {
               <button onClick={closeModal} className='modal-close'>X</button>
 
               <div className="editor" onClick={handleModalContainerClick}>
-                <input className='title-post' type="text" name="title" id="title" placeholder='Title...' />
-                <ReactQuill id='textEditor' theme='snow' modules={modules} value={value} onChange={setValue} />
+                <input className='title-post' type="text" value={title} placeholder='Title...' onChange={e => setTitle(e.target.value)} />
+                <textarea name="description" id="textEditor" cols={30} rows={10} value={description} onChange={e => setDescription(e.target.value)} placeholder="What's your freaky history to me?" ></textarea>
+                <label htmlFor="file">
+                  <input className='inputFile' type="file" name="filePost" onChange={e => e.target.files ? setFile(e.target.files[0]) : null} />
+                </label>
 
                 <div className="item">
                   <fieldset className='item'>
                     <legend>Category</legend>
                     <label htmlFor="ghosts">
-                      <input type="radio" name="cat" value='ghosts' id="ghosts" /> Ghosts
+                      <input type="radio" checked={category === 'ghosts'} name="cat" value='ghosts' id="ghosts" onChange={e => setCategory(e.target.value)} /> Ghosts
                     </label>
                     <label htmlFor="witchcraft">
-                      <input type="radio" name="cat" value='witchcraft' id="witchcraft" /> Witchcraft
+                      <input type="radio" checked={category === 'witchcraft'} name="cat" value='witchcraft' id="witchcraft" onChange={e => setCategory(e.target.value)} /> Witchcraft
                     </label>
                     <label htmlFor="demons">
-                      <input type="radio" name="cat" value='demons' id="demons" /> Demons
+                      <input type="radio" checked={category === 'demons'} name="cat" value='demons' id="demons" onChange={e => setCategory(e.target.value)} /> Demons
                     </label>
                     <label htmlFor="mythological">
-                      <input type="radio" name="cat" value='mythological' id="mythological" /> Mythological
+                      <input type="radio" checked={category === 'mythological'} name="cat" value='mythological' id="mythological" onChange={e => setCategory(e.target.value)} /> Mythological
                     </label>
                     <label htmlFor="past_life_regression">
-                      <input type="radio" name="cat" value='past_life_regression' id="past_life_regression" /> Past Life Regression
+                      <input type="radio" checked={category === 'pastLifeRegression'} name="cat" value='pastLifeRegression' id="past_life_regression" onChange={e => setCategory(e.target.value)} /> Past Life Regression
                     </label>
                     <label htmlFor="shadow_people">
-                      <input type="radio" name="cat" value='shadow_people' id="shadow_people" /> Shadow People
+                      <input type="radio" checked={category === 'shadowPeople'} name="cat" value='shadowPeople' id="shadow_people" onChange={e => setCategory(e.target.value)} /> Shadow People
                     </label>
                     <label htmlFor="fairy_folklore">
-                      <input type="radio" name="cat" value='fairy_folklore' id="fairy_folklore" /> Fairy Folklore
+                      <input type="radio"checked={category === 'fairyFolklore'} name="cat" value='fairyFolklore' id="fairy_folklore" onChange={e => setCategory(e.target.value)} /> Fairy Folklore
                     </label>
                     <label htmlFor="premonitions_and_prophecies">
-                      <input type="radio" name="cat" value='premonitions_and_prophecies' id="premonitions_and_prophecies" /> Premonitions and Prophecies
+                      <input type="radio" checked={category === 'premonitionsAndProphecies'} name="cat" value='premonitionsAndProphecies' id="premonitions_and_prophecies" onChange={e => setCategory(e.target.value)} /> Premonitions and Prophecies
                     </label>
                     <label htmlFor="zombies">
-                      <input type="radio" name="cat" value='zombies' id="zombies" /> Zombies
+                      <input type="radio"checked={category === 'zombies'} name="cat" value='zombies' id="zombies" onChange={e => setCategory(e.target.value)} /> Zombies
                     </label>
                     <label htmlFor="black_magic">
-                      <input type="radio" name="cat" value='black_magic' id="black_magic" /> Black Magic
+                      <input type="radio" checked={category === 'blackMagic'} name="cat" value='blackMagic' id="black_magic" onChange={e => setCategory(e.target.value)} /> Black Magic
                     </label>
                     <label htmlFor="vudu_magic">
-                      <input type="radio" name="cat" value='vudu_magic' id="vudu_magic" /> Vudu Magic
+                      <input type="radio" checked={category === 'vuduMagic'} name="cat" value='vuduMagic' id="vudu_magic" onChange={e => setCategory(e.target.value)} /> Vudu Magic
                     </label>
                     <label htmlFor="sleep_paralysis">
-                      <input type="radio" name="cat" value='sleep_paralysis' id="sleep_paralysis" /> Sleep Paralysis
+                      <input type="radio" checked={category === 'sleepParalysis'} name="cat" value='sleepParalysis' id="sleep_paralysis" onChange={e => setCategory(e.target.value)} /> Sleep Paralysis
                     </label>
                     <label htmlFor="vampires">
-                      <input type="radio" name="cat" value='vampires' id="vampires" /> Vampires
+                      <input type="radio" checked={category === 'vampires'} name="cat" value='vampires' id="vampires" onChange={e => setCategory(e.target.value)} /> Vampires
                     </label>
 
                     </fieldset>
                   </div> 
               </div>
-               {/* condicionar con una funcion, cuando se envia el post, el modal se cierra y la vista se refresca */}
-              <button onClick={closeModal} className='post-btn'>Update Post</button>
+              <button onClick={handleClick} className='post-btn'>Update Post</button>
             </article>
           </div>
 
         <div className='openModal'>
-          <button onClick={openModal} className='openModal-btn'>Create Post</button>
+          <Link className="link" to="/?edit=2">
+            <button onClick={openModal} className='openModal-btn'>Create Post</button>
+          </Link>
         </div>
       </>
     )
