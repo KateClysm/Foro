@@ -29,6 +29,29 @@ html, body {
   background-color: $background-color;
 }
 
+/*scrol bar*/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $white-color;
+  border-radius: 10px 10px 3px 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $search-color;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $time-color;
+}
+
 a {text-decoration: none;}
 
 p, li a, a {font-size: 1.1rem;}

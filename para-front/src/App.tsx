@@ -10,9 +10,10 @@ import AboutUs from './components/about-us/AboutUs';
 import Register from './components/register/Register';
 import Login from './components/login/Login';
 import './styles/main-content.scss';
-import CreatePost from './components/createPost/CreatePost';
 import { AuthContext } from './context/authContext';
 import NotFoundPage from './components/not-found/NotFound';
+import CreatePostButton from './components/createPostButton/CreatePostButton';
+import CreatePost from './components/createPost/CreatePost';
 
 const Layout = () => {
   return (
@@ -20,7 +21,7 @@ const Layout = () => {
       <NavBar />
       <div className='main-content default-grid'>
         <AsideLeft />
-        <CreatePost />
+        <CreatePostButton />
         <Outlet />
       </div>
       <Footer />
@@ -59,6 +60,10 @@ const App: React.FC = () => {
         {
           path: '/about',
           element: <AboutUs />
+        },
+        {
+          path: '/createpost',
+          element: <CreatePost />
         }
         // {
         //   path:"/profile/:id",
