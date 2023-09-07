@@ -5,7 +5,8 @@ import moment from 'moment';
 import './post.scss'
 import { makeRequest } from '../../axios';
 
-const Post = ({post}: IPost) => {
+// const Post: React.FC<IPost> = ({ post }) => {
+const Post: React.FC<{ post: IPost }> = ({ post }) => { //espera una prop llamada post de tipo IPost
   const [postState] = useState({ post });
   const postId = location.pathname.split('/')[2];
   const navigate = useNavigate()
@@ -27,9 +28,11 @@ const handleDelete = async () => {
 
     <div className='post-container-user'>
       <div className="post-user">
-          <div className="post-user-image" style={{ backgroundImage: `url(${post.profilePic})` }}></div>
+          {/* <div className="post-user-image" style={{ backgroundImage: `url(${post.profilePic})` }}></div> */}
+          <div className="post-user-image" style={{ backgroundImage: `url(https://marketplace.canva.com/EAFXS8-cvyQ/1/0/1600w/canva-brown-and-light-brown%2C-circle-framed-instagram-profile-picture-2PE9qJLmPac.jpg)` }}></div>
             <div className="post-user-data">
-               <p className="user">{post.name}</p>
+               {/* <p className="user">{post.name}</p> */}
+                <p className="user">Username</p>
                <p className="less-important">Posted {moment(post.createAt).fromNow() }</p>
             </div>
             <button className="button-show">

@@ -25,7 +25,7 @@ const Register: React.FC = () => {
 
   //valida estructura del email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const emailValid = email === '' || emailRegex.test(email);
+  const emailValid = email === '' && emailRegex.test(email);
  
   //validaciones individuales para saber qué tipo de error notificar
   const isPasswordLenghtValid = password.length >= 8;
