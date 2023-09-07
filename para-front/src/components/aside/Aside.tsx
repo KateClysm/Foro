@@ -18,23 +18,6 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <Communities communities={communitiesData} />
-      {/* <ul className="topics">
-        <li><a href="#">Ghosts</a></li>
-        <li><a href="#">Witchcraft</a></li>
-        <li><a href="#">Demons</a></li>
-        <li><a href="#">Mythological</a></li>
-        <li><a href="#">Past Life Regression</a></li>
-        <li><a href="#">Shadow People</a></li>
-        <li><a href="#">Fairy Folklore</a></li>
-        <li><a href="#">Premonitions and Prophecies</a></li>
-        <li><a href="#">Zombies</a></li>
-        <li><a href="#">Black Magic</a></li>
-        <li><a href="#">Vudu Magic</a></li>
-        <li><a href="#">Sleep Paralysis</a></li>
-        <li><a href="#">Vampires</a></li>
-      </ul> */}
-
-      {/* testing */}
       <ul className="topics">
       <Link className="link" to="/">
             <li>All</li>

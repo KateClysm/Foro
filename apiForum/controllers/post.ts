@@ -5,7 +5,7 @@ import { Request, Response } from 'express';
 
 
 //lógica final
-interface IConditionalPosts { //interfaz con una queryPetition y una notificación
+interface IConditionalPosts {
     queryPetition: string;
     notification: string;
 }
@@ -13,28 +13,45 @@ export const getPosts = (req: Request, res: Response) => {
 
     const cat = req.query.cat;
 
-    // Querie para encontrar los posteos que cumplen con la categoría
     const queryFind: IConditionalPosts = {
         queryPetition: `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId) WHERE cat=?`,
         notification: 'Here are the posts that fulfill the criteria',
     };
 
-    // Querie para renderizar todos los posteos y mostrar un mensaje de 404
     const queryDenied: IConditionalPosts = {
         queryPetition: `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId)`,
         notification: 'There are no posts that fulfill the criteria. You can be the first to make one! Or you could check all the posts:',
     };
 
-    const selectedQuery = cat ? queryFind : queryDenied;  //Si la categoría existe, se aplica queryFind, sino, queryDenied
+    const queryAll: IConditionalPosts = {
+        queryPetition: `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId)`,
+        notification: 'Here are all the posts in the Foro!',
+    }
+    const selectedQuery = cat ? queryFind : queryDenied : queryAll; 
     
-    //El segundo argumento es un arreglo que contiene los valores de los parámetros de la consulta SQL, que en este caso es [cat] si cat está definido o un arreglo vacío [] si cat es null o undefined
     db.query(selectedQuery.queryPetition, cat ? [cat] : [], (err, arrayPosts) => {  
-        if (err) {
-            return res.status(500).json({ message: 'Error fetching posts.' });  //notifica un error con el servidor/base de dato
+        if (cat?) { //si se seleccionó una categoría y existen posteos con esa categoría
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching all posts.' });
+            }
+            return res.status(200).json({ arrayPosts, message: selectedQuery.notification }); //queryAll
         }
-        return res.status(200).json({ arrayPosts, message: selectedQuery.notification }); //mostrará los posteos de la categoría seleccionada o todos los poseos, y la respectiva notificación
+        if (cat === 'all') { //si se seleccionó la categoría all
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching all posts.' });
+            }
+            return res.status(200).json({ arrayPosts, message: selectedQuery.notification }); //queryAll
+        }
+        if (!cat) { //si se clickleó en una categoría pero no hay ningún posteo con esa categoría
+            db.query(queryDenied.queryPetition, [], (err, allPosts) => {
+                if (err) {
+                    return res.status(500).json({ message: 'Error fetching all posts.' });
+                }
+                return res.status(200).json({ arrayPosts: allPosts, message: selectedQuery.notification }); //muestra todos los posteos y una notificación
+        })};
     });
-};//hacer un condicional para cat=all porque sino dice lo mismo para all
+};
+
 
 
 
