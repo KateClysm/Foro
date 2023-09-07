@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from 'react';
+import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faMessage } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,17 +18,30 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        setSubmitMessage("Thank you! We'll be in touch with you shortly.")
-        setEmail('')
-        setName('')
-        setMessage('')
-        setNameTouched(false)
-        setEmailTouched(false)
-        setMessageTouched(false)
+
+        const form = e.target as HTMLFormElement;
+
+        emailjs.sendForm('service_5e3kcjf', 'template_5o5busd', form, '8n-mlNrupz3rdpU0s')
+        .then((result) => {
+            
+            console.log(result.text);
+            setSubmitMessage("Thank you! We'll be in touch with you shortly.")
+            setEmail('')
+            setName('')
+            setMessage('')
+            setNameTouched(false)
+            setEmailTouched(false)
+            setMessageTouched(false)
+
+        }, (error) => {
+            console.log(error.text);
+        });
+
+        form.reset()
     };
 
     return (
-        <form action='#' className='contact-form' onSubmit={handleSubmit}>
+        <form className='contact-form' onSubmit={handleSubmit}>
             {!submitMessage &&
                 <>
                     <div className='form-label'>
