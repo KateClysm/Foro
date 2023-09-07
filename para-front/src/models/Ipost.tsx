@@ -1,16 +1,19 @@
-import { PostTypeSelection } from './PostTypes';
-
 export interface IPost {
-  title: string;
-  text: string;    //ver si lo podemos reemplazar por un eriquecedor de texto
-  postImage?: string;   //lo cambié a postImage
-  typePost: PostTypeSelection;
-  id:number;  //para la visualización mediante showPost
-};
+  post: {
+    name: string;
+    userId: number;
+    profilePic: string;
+    title: string;
+    description: string;
+    img?: string;
+    createAt: string;
+    cat?: string;
+}
+}
 
 export interface IUser {
   userName: string;
-  userImage?: string;
+  profilePic?: string;
   userTime: number;
 };
 
