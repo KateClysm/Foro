@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { IPost } from '../../models/Ipost';
 import moment from 'moment';
 import './post.scss'
@@ -10,8 +10,7 @@ const Post = ({post}: IPost) => {
   const postId = location.pathname.split('/')[2];
   const navigate = useNavigate()
 
-  // contexto de usuario
-  // const { currentUser } = useContext(AuthContext);
+
   
 
 const handleDelete = async () => {

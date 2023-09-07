@@ -54,9 +54,15 @@ const Register: React.FC = () => {
   const handleClick = async (e: FormEvent) => { 
     e.preventDefault(); 
     try {
-      await axios.post("http://localhost:8800/apiForum/auth/register", {username, email, name, password});
-      setNotification("User created");
-      setErr(null);
+      // await axios.post("http://localhost:8800/apiForum/auth/register", {username, email, name, password});
+      // // setNotification("User created");
+      // setErr(null);
+
+      //cambios para poder usar return res.status(200).json({ message: "User has been created" }); del back
+      const response = await axios.post("http://localhost:8800/apiForum/auth/register", { username, email, name, password });
+      if (response.data && response.data.message) {
+      setNotification(response.data.message); // Aquí capturamos el mensaje del servidor
+  }
     } catch (err: any) { 
       setErr(err.response?.data); 
       setNotification(null);

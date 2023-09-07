@@ -47,10 +47,13 @@ export const register = (req: Request, res: Response) => {
         const values = [req.body.username, req.body.email, hashedPassword, req.body.name];
         db.query(q, values, (err, data) => {
             if (err) {return res.status(500).json(err);}
-            return res.status(200).json("User has been created");
+            //cambios para poder notificar al front
+            // return res.status(200).json("User has been created");
+            return res.status(200).json({ message: "User has been created" });
         });
     });
 };
+
 
 
 export const login = (req: Request, res: Response) => {
