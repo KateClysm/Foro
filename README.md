@@ -24,6 +24,10 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - JavaScript
+- React
+- Node Js
+- Typescript
+- Express
 
 ### Authors
 - Github: [Guadalupe](https://github.com/guadalupe1516)
@@ -32,6 +36,8 @@ Users should be able to:
 - Linkedin: [Valentina Belén Sánchez](https://www.linkedin.com/in/valentina-belen-sanchez/)
 - Github: [Maria Monchot](https://github.com/KateClysm)
 - Linkedin: [Maria Monchot](https://www.linkedin.com/in/maria-monchot/)
+- Github: [Giuliana Villaroel](https://github.com/Icaros95)
+- Linkedin: [Giuliana Villaroel](https://ar.linkedin.com/in/giuliana-villarroel-67812627a)
 - Github: [Ludmila](https://github.com/ludm1)
 - Linkedin: [Ludmila Agostinelli](https://www.linkedin.com/in/ludmila-agostinelli-2a004a27b/)
 
@@ -61,6 +67,10 @@ Los usuarios deberían:
 - HTML5 Semántico
 - CSS
 - JavaScript
+- React
+- Node js
+- Typescript
+- Express
 
 ### Integrantes
 - Github: [Guadalupe](https://github.com/guadalupe1516)
@@ -69,5 +79,7 @@ Los usuarios deberían:
 - Linkedin: [Valentina Belén Sánchez](https://www.linkedin.com/in/valentina-belen-sanchez/)
 - Github: [Maria Monchot](https://github.com/KateClysm)
 - Linkedin: [Maria Monchot](https://www.linkedin.com/in/maria-monchot/)
+- Github: [Giuliana Villaroel](https://github.com/Icaros95)
+- Linkedin: [Giuliana Villaroel](https://ar.linkedin.com/in/giuliana-villarroel-67812627a)
 - Github: [Ludmila](https://github.com/ludm1)
 - Linkedin: [Ludmila Agostinelli](https://www.linkedin.com/in/ludmila-agostinelli-2a004a27b/)

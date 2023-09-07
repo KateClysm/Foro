@@ -1,5 +1,5 @@
 import React from 'react';
-import './notFound.css';
+import './notFound.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ghost from '../../assets/not-found/ghost.png'
@@ -19,19 +19,11 @@ const NotFoundPage: React.FC = () => {
                     <p>
                         But fear not, curious soul! Embrace the mysterious and continue your journey through our supernatural archives.
                     </p>
-
                     
                     <div className='error-button-container'>
                         <NavLink to="/" className='error-button'>Go to Home</NavLink>
-                        {/* <a href='#' className='error-button'>Go to Home</a> */}
                         <FontAwesomeIcon className='icon' icon={faArrowRight} />
                     </div>
-
-
-                    {/* <a href='#' className='error-button'>
-                        Go to Home
-                        <FontAwesomeIcon className='icon' icon={faArrowRight} />
-                    </a> */}
                 </div>
             </div>
         </section>

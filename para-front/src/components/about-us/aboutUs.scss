@@ -1,0 +1,35 @@
+@import '../../styles/styles.scss';
+.about {
+    width: 100%;
+    padding: 2rem 3rem 4rem;
+
+    &-head {
+        font-size: 2rem;
+    }
+
+    &-title {
+        display: flex;
+        column-gap: 0.7rem;
+        padding: 3rem 0 1.25rem;
+        align-items: baseline;
+
+        h2 {
+            font-size: 1.5rem;
+            text-decoration: underline;
+            text-decoration-color: $logo-color;
+            text-underline-offset: 0.5rem;
+        }
+    }
+
+    &-icon {
+        font-size: 1.2rem;
+        
+        path {
+            color: $logo-color;
+        }
+    }
+}
+
+.about-subtitle, .about-spacing {
+    padding: 1.563rem 0 1rem;
+}

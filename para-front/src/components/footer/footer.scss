@@ -1,0 +1,80 @@
+@import '../../styles/styles.scss';
+
+.footer {
+  background-color: $principal-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+
+  &-inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &-text {
+    text-align: center;
+    width: 70%;
+    padding-bottom: 1rem;
+  }
+
+  &-logo {
+    text-align: center;
+    width: 70%;
+
+    img {
+      width: 100%;
+      width: 200px;
+    }
+  }
+
+  &-icons {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    height: 100%;
+
+    .footer-icon {
+      path {
+        color: $white-color;
+        ;
+      }
+
+      &:hover>path {
+        color: $logo-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer .footer-logo img {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .footer .footer-text {
+    width: 50%;
+  }
+
+  .footer .footer-logo img {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .footer .footer-logo img {
+    width: 350px;
+  }
+}

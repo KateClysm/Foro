@@ -1,0 +1,73 @@
+.post-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding-top: 0.3rem;
+}
+.post-button{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding-right: 0.3rem;
+    cursor: pointer;
+}
+.post-button p {
+    padding-left: 0.3rem;
+}
+
+.button-image{
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button-comments .button-image{
+    background-image: url(./comments.png);
+}
+.button-likes .button-image{
+    background-image: url(./likes.png);
+}
+.button-views .button-image{
+    background-image: url(./views.png);
+}
+
+
+.button-comments:hover > .button-image{
+    background-image: url(./comments-red.png);
+}
+.button-likes:hover > .button-image{
+    background-image: url(./likes-red.png);
+}
+.button-views:hover > .button-image{
+    background-image: url(./views-red.png);
+}
+
+.post-button:hover > p{
+    color: var(--logo);
+}
+/*----------------------RESPONSIVE---------------------------*/
+@media (min-width: 768px) {
+    .post-buttons{
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 1.5rem;
+        padding-left: 2rem;
+    }
+    .button-image{
+        height: 30px;
+        width: 30px;
+    }
+}
+@media (min-width: 1024px) {
+    .post-buttons{
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 1rem;
+    }
+    .post-button p {
+        padding-left: 0.4rem;
+    }
+}
+
