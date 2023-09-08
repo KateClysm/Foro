@@ -23,22 +23,24 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-// uso de multer
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads/')
+      cb(null, "../client/public/upload");
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now()+file.originalname)
-    }
-});
-
-const upload = multer({ storage });
-app.post('/apiForum/upload', upload.single('file'), function (req, res) {
+      cb(null, Date.now() + file.originalname);
+    },
+  });
+  
+  const upload = multer({ storage });
+  
+  app.post("/api/upload", upload.single("file"), function (req, res) {
     const file = req.file;
-    res.status(200).json(file ? file.filename : 'null');
-})
-
+    if (file){
+        return res.status(200).json(file.filename);
+    }
+  });
 
 
 

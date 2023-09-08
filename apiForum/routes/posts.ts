@@ -1,11 +1,11 @@
 import express from 'express';
-import { addPost, deletePost, getPosts } from '../controllers/post.js';
+import { addPost, getPosts} from '../controllers/post.js';
 
 const router = express.Router();
 
 router.get('/', getPosts);
 router.post('/', addPost);
-router.delete('/:id', deletePost);
+// router.delete('/:id', deletePost);
 // router.put('/:id', updatePost);
 
 
@@ -14,21 +14,4 @@ router.delete('/:id', deletePost);
 //     res.json(Dposts);
 // });
 
-
-
 export default router;
-//-------------
-
-
-
-
-
-
-// import express from "express";
-// import { } from "../controllers/post";
-
-// const router = express.Router();
-
-// router.get("",); 
-
-// export default router;

@@ -1,12 +1,12 @@
-interface Iuser { //tiene que ser igual a lo que está definido en la base de datos
+interface IUser { 
     id: number;
     username: string;
     email: string;
-    password: string;
     name: string;
-    profilePic: string;
-    city: string;
-    website: string;
+    password: string;
+    profilePic?: string;
+    city?: string;
+    website?: string;
 };
 
-export default Iuser;
+export default IUser;

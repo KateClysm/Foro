@@ -8,14 +8,14 @@ export interface IPost {
     id:number;
   }
   
-  export interface IUser {
-    userName: string;
-    userImage?: string;
-    userTime: number;
-  }
+  // export interface IUser {
+  //   userName: string;
+  //   userImage?: string;
+  //   userTime: number;
+  // }
   
-  export interface IReactions {
-    likes: number;
-    comments: number;
-    views: number;
-  }
+  // export interface IReactions {
+  //   likes: number;
+  //   comments: number;
+  //   views: number;
+  // }

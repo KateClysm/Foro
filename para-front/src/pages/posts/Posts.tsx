@@ -7,6 +7,7 @@ import { IPost } from '../../models/Ipost';
 
 const Posts: React.FC = () => {
   
+
    const [posts, setPosts] = useState<IPost[]>([]);
    const [message, setMessage] = useState('');
   // const cat = useLocation().search;

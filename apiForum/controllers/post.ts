@@ -55,31 +55,77 @@ export const getPosts = (req: Request, res: Response) => {
     }
 
     // Verificamos si se seleccionó una categoría específica
-if (cat) {
-    // Si se seleccionó una categoría específica, verificamos si existen publicaciones con esa categoría
-    db.query(queryFind.queryPetition, [cat], (err, arrayPosts: []) => {
-        if (err) {
-            return res.status(500).json({ message: 'Error fetching posts.' });
-        }
-        if (arrayPosts.length === 0) {
-            // No se encontraron publicaciones con la categoría seleccionada
-            // Luego, realizamos una consulta para obtener todas las publicaciones
-            return db.query(queryDenied.queryPetition, [], (err, allPosts) => {
-                if (err) {
-                    return res.status(500).json({ message: 'Error fetching all posts.' });
-                }
-                return res.status(200).json({ arrayPosts: allPosts, message: queryDenied.notification });
-            });
-        }
-        // Se encontraron publicaciones con la categoría seleccionada
-        return res.status(200).json({ arrayPosts, message: queryFind.notification });
-    });
-    return; // Salimos de la función después de hacer la consulta
-}
+    if (cat) {
+        // Si se seleccionó una categoría específica, verificamos si existen publicaciones con esa categoría
+        db.query(queryFind.queryPetition, [cat], (err, arrayPosts: []) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching posts.' });
+            }
+            if (arrayPosts.length === 0) {
+                // No se encontraron publicaciones con la categoría seleccionada
+                // Luego, realizamos una consulta para obtener todas las publicaciones
+                return db.query(queryDenied.queryPetition, [], (err, allPosts) => {
+                    if (err) {
+                        return res.status(500).json({ message: 'Error fetching all posts.' });
+                    }
+                    return res.status(200).json({ arrayPosts: allPosts, message: queryDenied.notification });
+                });
+            }
+            // Se encontraron publicaciones con la categoría seleccionada
+            return res.status(200).json({ arrayPosts, message: queryFind.notification });
+        });
+        return; // Salimos de la función después de hacer la consulta
+    }
 
     // Si no se seleccionó una categoría válida, devolvemos un mensaje de error
     return res.status(400).json({ message: 'Invalid category.' });
 };
+
+// AÑADIR GET POST (1)
+// export const getPost = (req, res) => {
+//     const q =
+//       "SELECT p.id, `username`, `title`, `desc`, p.img, u.img AS userImg, `cat`,`date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = ? ";
+  
+//     db.query(q, [req.params.id], (err, data) => {
+//       if (err) return res.status(500).json(err);
+  
+//       return res.status(200).json(data[0]);
+//     });
+//   };
+
+     
+  
+
+
+export const addPost = (req: Request, res: Response) => {
+    const token = req.cookies.accessToken; 
+    if (!token) return res.status(401).json("Not authenticated!");
+
+    jwt.verify(token, "secretkey", (err:any, userInfo:any) => {    //LOS ANY ESTAN MAL, CORREGIRLOS
+        if (err) return res.status(403).json("Token is not valid!");
+
+        const q = "INSERT INTO posts (`title`, `description`, `img`, `createAt`, `userId`, `cat`) VALUES (?)";
+
+        const values = [
+            req.body.title,
+            req.body.description,
+            req.body.img,
+            moment(Date.now()).format("YYYY-MM_DD HH:mm:ss"),
+            userInfo?.id, // Usamos "?." para asegurarnos de que userInfo no sea undefined
+            req.body.cat,
+        ]
+
+        db.query(q, [values], (err, data) => {
+            if (err) return res.status(500).json(err);
+            return res.status(200).json("Post has been created!")
+        })
+    });
+};
+
+
+
+
+
 
 
 
@@ -272,48 +318,48 @@ if (cat) {
     // })
 
 
-export const addPost = (req:Request, res:Response) => {
-    const token = req.cookies.accessToken;
-    if(!token) return res.status(401).json('Not logged in!');
+// export const addPost = (req:Request, res:Response) => {
+//     const token = req.cookies.accessToken;
+//     if(!token) return res.status(401).json('Not logged in!');
 
-    jwt.verify(token, 'secretKey', (error:any, userInfo:any) => {
-        if(error) return res.status(403).json('Token is not valid!');
+//     jwt.verify(token, 'secretKey', (error:any, userInfo:any) => {
+//         if(error) return res.status(403).json('Token is not valid!');
     
-        const q = "INSERT INTO posts (`title`, `description`, `img`,`createAt`, `userId`, `cat`) VALUES (?)";
+//         const q = "INSERT INTO posts (`title`, `description`, `img`,`createAt`, `userId`, `cat`) VALUES (?)";
 
-        const values = [
-            req.body.title,
-            req.body.description,
-            req.body.img,
-            moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
-            userInfo.id,
-            req.body.cat
-        ];
+//         const values = [
+//             req.body.title,
+//             req.body.description,
+//             req.body.img,
+//             moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
+//             userInfo.id,
+//             req.body.cat
+//         ];
     
-        db.query(q, [values], (error:any, data:any) => {
-            if(error) return res.status(500).json(error);
-            return res.status(200).json('Post has been created!');
-        })
-    })   
-}
+//         db.query(q, [values], (error:any, data:any) => {
+//             if(error) return res.status(500).json(error);
+//             return res.status(200).json('Post has been created!');
+//         })
+//     })   
+// }
 
-export const deletePost = (req:any, res:any) => {
-    const token = req.cookies.accessToken;
-    if(!token) return res.status(401).json('Not authenticated!');
+// export const deletePost = (req:any, res:any) => {
+//     const token = req.cookies.accessToken;
+//     if(!token) return res.status(401).json('Not authenticated!');
 
-    jwt.verify(token, 'secretKey', (error:any, userInfo:any) => {
-        if(error) return res.status(403).json('Token is not valid!');
+//     jwt.verify(token, 'secretKey', (error:any, userInfo:any) => {
+//         if(error) return res.status(403).json('Token is not valid!');
 
-        const postId = req.params.id;
-        const q = 'DELETE FROM posts WHERE `id` = ? AND `uid` = ?';
+//         const postId = req.params.id;
+//         const q = 'DELETE FROM posts WHERE `id` = ? AND `uid` = ?';
 
-        db.query(q, [postId, req.query.id], (error: any, data:any) => {
-            if(error) return res.status(403).json('You can delete only your posts.');
+//         db.query(q, [postId, req.query.id], (error: any, data:any) => {
+//             if(error) return res.status(403).json('You can delete only your posts.');
 
-            return res.json('Post has been deleted!')
-        })
-    })
-}
+//             return res.json('Post has been deleted!')
+//         })
+//     })
+// }
 
 // export const updatePost = (req:any, res:any) => {
 //     const token = req.cookies.accessToken;

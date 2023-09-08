@@ -1,11 +1,11 @@
 // importa las definiciones necesarias para Express y la base de datos
 import { Request, Response } from 'express';
-import Iuser from '../models/interfaces/Iuser';
 import db from "../db";
 import bcrypt from "bcryptjs";
 //bcryptjs es una biblioteca de JavaScript utilizada para el hash y la verificación de contraseñas de manera segura. Su principal función es proteger las contraseñas almacenadas en una base de datos mediante el proceso de "hashing" y comparación de contraseñas. 
 //Salting: bcryptjs maneja automáticamente la generación de "salts" (cadenas aleatorias únicas) para cada contraseña. El salt se concatena con la contraseña antes de realizar el hashing, lo que agrega una capa adicional de seguridad, incluso si dos usuarios tienen la misma contraseña, sus hashes serán diferentes debido a los salts únicos.
 import jwt from "jsonwebtoken";
+import IUser from '../models/interfaces/IUser';
 //JSON Web Token, comúnmente abreviado como JWT, es un estándar abierto (RFC 7519) que define un formato compacto y autocontenible para la representación segura de información entre dos partes. Por lo general, se utiliza para transmitir información entre un cliente y un servidor de una manera que sea segura y eficiente.
 
 
@@ -27,7 +27,7 @@ export const register = (req: Request, res: Response) => {
         if (err) { return res.status(500).json(err); } //si hubo un error
         
         // Comprueba si se encontraron resultados en la base de datos. deben cumplir con nuestra interfaz así que utilizamos una conversión para ajustar el resultado de la consulta al tipo que esperamos.
-        const user: Iuser[] = data as Iuser[];
+        const user: IUser[] = data as IUser[];
 
         if (user.length) { //si ya existe
             return res.status(409).json("User already exists!");
@@ -61,7 +61,7 @@ export const login = (req: Request, res: Response) => {
     db.query(q, [req.body.email], (err, data) => {    //podrìa ser req.body.username
         if (err) { return res.status(500).json(err); }; 
         
-        const user: Iuser[] = data as Iuser[];
+        const user: IUser[] = data as IUser[];
         if (user.length === 0) { 
             return res.status(404).json("User not found");
         };

@@ -14,18 +14,23 @@ import { AuthContext } from './context/authContext';
 import NotFoundPage from './components/not-found/NotFound';
 import CreatePostButton from './components/createPostButton/CreatePostButton';
 import CreatePost from './components/createPost/CreatePost';
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+// const queryClient = new QueryClient();
 
 const Layout = () => {
   return (
-    <>
-      <NavBar />
-      <div className='main-content default-grid'>
-        <AsideLeft />
-        <CreatePostButton />
-        <Outlet />
-      </div>
-      <Footer />
-    </>
+    // <QueryClientProvider client={queryClient}>
+        <> 
+          <NavBar />
+          <div className='main-content default-grid'>
+            <AsideLeft />
+            <CreatePostButton />
+            <Outlet />
+          </div>
+          <Footer />
+        </>
+    // </QueryClientProvider>
   );
 };
 
