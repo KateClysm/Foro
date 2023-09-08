@@ -41,11 +41,14 @@ const Posts: React.FC = () => {
           <Post post={post} key={post.id} />
         ))}
     </div>
+    // hacer una evaluación de ruta, si se está en http://localhost:5173/?cat=home, que se rendericen sólo 5 posteos y un botón de show all posts, sino, que se renderice lo de arriba, intentar aplicar métrica de popularidad constante
   );
 };
 export default Posts;
 
 
+
+//lógica vieja
 // const fetchData = async () => {
 //   try {
 //     const res = await makeRequest.get(`/posts${cat}`);

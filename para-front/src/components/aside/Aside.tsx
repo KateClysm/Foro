@@ -9,7 +9,12 @@ const AsideLeft: React.FC = () => {
   return (
     <div className="aside-left">
       <ul className="principal-page">
-        <li><NavLink to="/">Home</NavLink></li>
+        {/* <li><NavLink to="/">Home</NavLink></li> */}
+        {/* <Link className="link" to="/?cat=all">
+            <li>Homepage</li>
+        </Link> */}
+        <li><NavLink to="/?cat=home">Home</NavLink></li>
+
         <li><a href="#" className='popular-red'>Popular</a></li>
       </ul>
 
@@ -22,6 +27,7 @@ const AsideLeft: React.FC = () => {
       <Link className="link" to="/?cat=all">
             <li>All</li>
         </Link>
+        
         <Link className="link" to="/?cat=ghosts">
             <li>Ghosts</li>
         </Link>
@@ -31,17 +37,11 @@ const AsideLeft: React.FC = () => {
         <Link className="link" to="/?cat=demons">
             <li>Demons</li>
         </Link>
-        <Link className="link" to="/?cat=mythological">
-            <li>Mythological</li>
-        </Link>
-        <Link className="link" to="/?cat=pastLifeRegression">
-            <li>Past Life Regression</li>
+        <Link className="link" to="/?cat=mythological_oldfolklore">
+            <li>Mythological/OldFolklore</li>
         </Link>
         <Link className="link" to="/?cat=shadowPeople">
             <li>Shadow People</li>
-        </Link>
-        <Link className="link" to="/?cat=fairyFolklore">
-            <li>Fairy Folklore</li>
         </Link>
         <Link className="link" to="/?cat=premonitionsAndProphecies">
             <li>Premonitions and Prophecies</li>
@@ -49,17 +49,8 @@ const AsideLeft: React.FC = () => {
         <Link className="link" to="/?cat=zombies">
             <li>Zombies</li>
         </Link>
-        <Link className="link" to="/?cat=blackMagic">
-            <li>Black Magic</li>
-        </Link>
-        <Link className="link" to="/?cat=vuduMagic">
-            <li>Vudu Magic</li>
-        </Link>
         <Link className="link" to="/?cat=sleepParalysis">
             <li>Sleep Paralysis</li>
-        </Link>
-        <Link className="link" to="/?cat=vampires">
-            <li>Vampires</li>
         </Link>
       </ul>
 

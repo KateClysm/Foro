@@ -26,6 +26,22 @@ export const getPosts = (req: Request, res: Response) => {
         notification: 'There are no posts that fulfill the criteria. You can be the first to make one! Or you could check all the posts:',
     };
 
+    const queryHome: IConditionalPosts = {
+        queryPetition: `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId)`,
+        notification: '',
+    };
+    // Verificamos si se seleccionó la categoría 'home'
+    if (cat === 'home') {
+        // Si se seleccionó 'home', obtenemos todas las publicaciones
+        db.query(queryHome.queryPetition, [], (err, allPosts) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching all posts.' });
+            }
+            return res.status(200).json({ arrayPosts: allPosts, message: queryHome.notification });
+        });
+        return; // Salimos de la función después de hacer la consulta
+    }
+
     // Verificamos si se seleccionó la categoría 'all'
     if (cat === 'all') {
         // Si se seleccionó 'all', obtenemos todas las publicaciones

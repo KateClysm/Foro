@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login({email, password});
-      navigate("/")
+      navigate("/?cat=home")
     } catch (err:any) {
       setErr(err.response.data);
     }
