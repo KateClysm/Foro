@@ -12,8 +12,6 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => { //espera una prop llamad
   const navigate = useNavigate()
 
 
-  
-
 const handleDelete = async () => {
   try {
     await makeRequest.delete(`/posts/${postId}`)

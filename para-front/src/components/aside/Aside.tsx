@@ -19,7 +19,7 @@ const AsideLeft: React.FC = () => {
 
       <Communities communities={communitiesData} />
       <ul className="topics">
-      <Link className="link" to="/">
+      <Link className="link" to="/?cat=all">
             <li>All</li>
         </Link>
         <Link className="link" to="/?cat=ghosts">
@@ -62,9 +62,6 @@ const AsideLeft: React.FC = () => {
             <li>Vampires</li>
         </Link>
       </ul>
-
-
-
 
       <div className="padding-divider">
         <div className="divider"></div>
