@@ -69,132 +69,135 @@ const Register: React.FC = () => {
     <form action="#" className="register-form" onSubmit={handleChange}>
       <h1>Register</h1>
 
-      {/* username */}
-      <div className="username-register">
-        <label htmlFor="username-register">
-          Introduce an username
-        <span className='username-required'>*</span>
-        </label>
-        <input 
-        type="username" 
-        id="username-register" 
-        name="username" 
-        required
-        onBlur={() => setUsernameTouched(true)} 
-        value= {username}
-        onChange={(e) => setUsername (e.target.value)}/>
-      </div>
-      {usernameTouched && !isUsernameValid &&(
-        <span className='username-validation'>
+     <div className='column-left'>
+        {/* username */}
+        <div className="username-register">
+         <label htmlFor="username-register">
+           Introduce an username
+          <span className='username-required'>*</span>
+          </label>
+          <input 
+           type="username" 
+           id="username-register" 
+           name="username" 
+           required
+           onBlur={() => setUsernameTouched(true)} 
+           value= {username}
+           onChange={(e) => setUsername (e.target.value)}/>
+        </div>
+        {usernameTouched && !isUsernameValid &&(
+         <span className='username-validation'>
            Your username can't be null or have less than 3 characters!
-        </span>
-      )}
+         </span>
+        )}
 
-      {/* email */}
-      <div className="email-register">
-        <label htmlFor="email-register">
-          Introduce an email
-        <span className='email-required'>*</span>
-        </label>
-        <input 
-        type="email" 
-        id="email-register" 
-        name="email" 
-        required
-        onBlur={() => setEmailTouched(true)} 
-        value= {email}
-        onChange={(e) => setEmail (e.target.value)}/>
+        {/* password */}
+        <div className="password-register">
+         <label htmlFor="password-register">
+           Introduce a password</label>
+          <input
+           type="password"
+           id="password-register"
+           name="password"
+           required
+           onBlur={() =>setPasswordTouched (true)}
+           value={password}
+           onChange={(e) => setPassword (e.target.value)}
+          />
+       </div>
+        {passwordTouched && !isPasswordLenghtValid &&(
+         <span className='password-validation'>
+           Your password must have at least 8 characters
+         </span>
+        )}
+        {passwordTouched && !passwordNotBlank &&(
+         <span className='password-validation'>
+           Your must type a password
+         </span>
+        )}
       </div>
-      {emailTouched && !emailValid &&(
-        <span className='email-validation'>
-           Your email address must be in format: email@example.com
-        </span>
-      )}
 
-      {/* name */}
-      <div className="name-register">
-        <label htmlFor="name-register">
-          Introduce a name
-        <span className='name-required'>*</span>
-        </label>
-        <input 
-        type="name" 
-        id="name-register" 
-        name="name" 
-        required
-        onBlur={() => setNameTouched(true)} 
-        value= {name}
-        onChange={(e) => setName (e.target.value)}/>
-      </div>
-      {nameTouched && !isNameValid &&(
-        <span className='name-validation'>
-           Your name can't be null or have less than 3 characters!
-        </span>
-      )}
+      <div className='column-rigth'>
+       {/* name */}
+       <div className="name-register">
+          <label htmlFor="name-register">
+           Introduce a name
+          <span className='name-required'>*</span>
+          </label>
+         <input 
+           type="name" 
+           id="name-register" 
+           name="name" 
+           required
+           onBlur={() => setNameTouched(true)} 
+           value= {name}
+           onChange={(e) => setName (e.target.value)}/>
+       </div>
+        {nameTouched && !isNameValid &&(
+         <span className='name-validation'>
+            Your name can't be null or have less than 3 characters!
+         </span>
+        )}
 
+        {/* confirm password */}
+        <div className="confirm-password">
+          <label htmlFor="confirm-password">Confirm password</label>
+           <input 
+          type="password" 
+           id="confirm-password" 
+           name="confirm-password" 
+           required
+           onBlur={() => setConfirmPasswordTouched (true)}
+           value={confirmPassword}
+           onChange={(e) => setConfirmPassword (e.target.value)}
+          />
+       </div>
+        {confirmPasswordTouched && !passwordMatch &&(
+          <span className='password-validation'>
+           Your passwords do not match
+          </span>
+        )}
+        {passwordTouched && isPasswordValid &&(
+         <span className='password-validation'>
+           Your password has pass all the checks, congrats!
+         </span>
+       )}
+     </div>
 
-      {/* password */}
-      <div className="password-register">
-        <label htmlFor="password-register">Introduce a password</label>
-        <input
-         type="password"
-         id="password-register"
-         name="password"
-         required
-         onBlur={() =>setPasswordTouched (true)}
-         value={password}
-         onChange={(e) => setPassword (e.target.value)}
-         />
-      </div>
-      {passwordTouched && !isPasswordLenghtValid &&(
-        <span className='password-validation'>
-          Your password must have at least 8 characters
-        </span>
-      )}
-      {passwordTouched && !passwordNotBlank &&(
-        <span className='password-validation'>
-          Your must type a password
-        </span>
-      )}
+      <div className='bottom-elements'>
+       {/* email */}
+        <div className="email-register">
+          <label htmlFor="email-register">
+           Introduce an email
+           <span className='email-required'>*</span>
+          </label>
+          <input 
+           type="email" 
+           id="email-register" 
+           name="email" 
+           required
+           onBlur={() => setEmailTouched(true)} 
+           value= {email}
+           onChange={(e) => setEmail (e.target.value)}/>
+       </div>
+        {emailTouched && !emailValid &&(
+          <span className='email-validation'>
+            Your email address must be in format: email@example.com
+         </span>
+        )}
+     
+       {/* submit */}
+         <button className="register-button-btn" type="submit" onClick={handleClick} >Confirm</button>
+       {err && <p>{err}</p>}
+       {notification && <p>{notification}</p>}
 
-
-
-
-      {/* confirm password */}
-      <div className="confirm-password">
-        <label htmlFor="confirm-password">Confirm password</label>
-        <input 
-        type="password" 
-        id="confirm-password" 
-        name="confirm-password" 
-        required
-        onBlur={() => setConfirmPasswordTouched (true)}
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword (e.target.value)}
-        />
-      </div>
-      {confirmPasswordTouched && !passwordMatch &&(
-        <span className='password-validation'>
-          Your passwords do not match
-        </span>
-      )}
-      {passwordTouched && isPasswordValid &&(
-        <span className='password-validation'>
-          Your password has pass all the checks, congrats!
-        </span>
-      )}
-
-
-      {/* submit */}
-      <button className="register-button-btn" type="submit" onClick={handleClick} >Confirm</button>
-      {err && <p>{err}</p>}
-      {notification && <p>{notification}</p>}
-
-      {/* login */}
-      <div className="logIn-option">
-       <p>You already have an account?</p>
-        <NavLink to="/login" className="logIn-option-link">Login</NavLink>
-      </div>
+        {/* login */}
+        <div className="logIn-option">
+         <p>You already have an account?</p>
+         <NavLink to="/login" className="logIn-option-link">Login</NavLink>
+        </div>
+     </div>
+      
    </form>
   );
 };
