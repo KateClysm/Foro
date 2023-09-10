@@ -1,57 +1,51 @@
 import React from 'react';
 import './aside.scss';
-import { Link, NavLink } from 'react-router-dom';
-import Communities from '../communities/Communities';
-import communitiesData from '../../data/communitiesData';
+import { NavLink } from 'react-router-dom';
 
 
 const AsideLeft: React.FC = () => {
   return (
     <div className="aside-left">
       <ul className="principal-page">
-        {/* <li><NavLink to="/">Home</NavLink></li> */}
-        {/* <Link className="link" to="/?cat=all">
-            <li>Homepage</li>
-        </Link> */}
-        <li><NavLink to="/?cat=home">Home</NavLink></li>
 
-        <li><a href="#" className='popular-red'>Popular</a></li>
+      <NavLink to="/"><li>Home</li></NavLink>
+
       </ul>
 
       <div className="padding-divider">
         <div className="divider"></div>
       </div>
 
-      <Communities communities={communitiesData} />
+      
       <ul className="topics">
-      <Link className="link" to="/?cat=all">
+        <NavLink className="link" to="/?cat=all">
             <li>All</li>
-        </Link>
+        </NavLink>
         
-        <Link className="link" to="/?cat=ghosts">
+        <NavLink className="link" to="/?cat=ghosts">
             <li>Ghosts</li>
-        </Link>
-        <Link className="link" to="/?cat=witchcraft">
+        </NavLink>
+        <NavLink className="link" to="/?cat=witchcraft">
             <li>Witchcraft</li>
-        </Link>
-        <Link className="link" to="/?cat=demons">
+        </NavLink>
+        <NavLink className="link" to="/?cat=demons">
             <li>Demons</li>
-        </Link>
-        <Link className="link" to="/?cat=mythological_oldfolklore">
+        </NavLink>
+        <NavLink className="link" to="/?cat=mythological_oldfolklore">
             <li>Mythological/OldFolklore</li>
-        </Link>
-        <Link className="link" to="/?cat=shadowPeople">
+        </NavLink>
+        <NavLink className="link" to="/?cat=shadowPeople">
             <li>Shadow People</li>
-        </Link>
-        <Link className="link" to="/?cat=premonitionsAndProphecies">
+        </NavLink>
+        <NavLink className="link" to="/?cat=premonitionsAndProphecies">
             <li>Premonitions and Prophecies</li>
-        </Link>
-        <Link className="link" to="/?cat=zombies">
+        </NavLink>
+        <NavLink className="link" to="/?cat=zombies">
             <li>Zombies</li>
-        </Link>
-        <Link className="link" to="/?cat=sleepParalysis">
+        </NavLink>
+        <NavLink className="link" to="/?cat=sleepParalysis">
             <li>Sleep Paralysis</li>
-        </Link>
+        </NavLink>
       </ul>
 
       <div className="padding-divider">
@@ -59,9 +53,9 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <ul className="secondary-page">
-        <li><NavLink to="/about">About us</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
-        <li><NavLink to="/help">Help</NavLink></li>
+      <NavLink to="/about"><li>About us</li></NavLink>
+      <NavLink to="/contact"><li>Contact</li></NavLink>
+      <NavLink to="/help"><li>Help</li></NavLink>
       </ul>
     </div>
   );

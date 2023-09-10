@@ -7,4 +7,31 @@
     justify-self: center;
     padding: 2rem 0;
     row-gap: 0.8rem;
+
+    .container-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0rem;
+    }
+    
+
+    .show-all-posts-button{
+        color: $background-color;
+        background-color: $logo-color;
+        outline: none;
+        border:none;
+        border-radius: 3px;
+        padding: 0.5rem 1rem;
+    }
+    
+    .show-all-posts-button:hover{
+        color: $white-color;
+        background-color: $background-color;
+        outline: 1px solid $logo-color;
+        border:none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 }
+

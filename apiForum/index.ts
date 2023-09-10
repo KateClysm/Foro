@@ -4,9 +4,8 @@ import authRoutes from './routes/auth';
 import postRoutes from './routes/posts';
 import likesRoutes from './routes/likes';
 import commentRoutes from './routes/comments';
-import cors from 'cors'; // mecanismo de seguridad implementado en los navegadores web para controlar las solicitudes HTTP entre diferentes dominios o orígenes.
-import cookieParser from 'cookie-parser'; //facilita la manipulación de cookies en una aplicación 
-import multer from 'multer'; // carga de archivos en server
+import cors from 'cors'; 
+import cookieParser from 'cookie-parser';
 
 const app = express();
 const PORT = process.env.PORT || 8800; //acá van a ir todas nuestras requests
@@ -21,28 +20,6 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 app.use(cors(corsOptions));
-
-
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "../client/public/upload");
-    },
-    filename: function (req, file, cb) {
-      cb(null, Date.now() + file.originalname);
-    },
-  });
-  
-  const upload = multer({ storage });
-  
-  app.post("/api/upload", upload.single("file"), function (req, res) {
-    const file = req.file;
-    if (file){
-        return res.status(200).json(file.filename);
-    }
-  });
-
-
 
 // ROUTES utilización de las rutas importadas
 app.use('/apiForum/users', userRoutes);

@@ -1,8 +1,11 @@
-@import '../../styles/styles.scss';
+@import '../../../styles/styles.scss';
 
 .container-communities {
   display: flex;
   justify-content: center;
+  background-color: $aside-color;
+  border-radius: 3px;
+  width: 100%;
 
   .comunities {
     border-radius: 5px;

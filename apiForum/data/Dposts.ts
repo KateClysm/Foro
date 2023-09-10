@@ -1,7 +1,7 @@
-import { IPost } from '../models/interfaces/post-interface.js'
+import { IPostJson } from '../models/interfaces/post-interface-json.js'
 
 // Arreglo de objetos que cumple con las interfaces Post, User y Reactions
-const Dposts: Array<{ post: IPost;}> = [
+const Dposts: Array<{ post: IPostJson;}> = [
   {
     post: {
       title: "Si estás viendo esto, es porque funcionó el linkeo y estás viendo datos desde un json del back.",

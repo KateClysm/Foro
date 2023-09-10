@@ -1,13 +1,12 @@
 import express from 'express';
-import { addPost, getPosts} from '../controllers/post.js';
+import { addPost, deletePost, getPost, getPosts, updatePost } from '../controllers/post.js';
 
 const router = express.Router();
-
-router.get('/', getPosts);
-router.post('/', addPost);
-// router.delete('/:id', deletePost);
-// router.put('/:id', updatePost);
-
+router.get( '/', getPosts );
+router.get( '/:id', getPost );
+router.post( '/addPost', addPost );
+router.delete( '/:id', deletePost );
+router.put( '/:id', updatePost );
 
 // // lectura provisoria de data from 'json'
 // router.get('/post', (req, res) => {

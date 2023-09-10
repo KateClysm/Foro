@@ -1,26 +1,31 @@
+//módulos
 import React, { useEffect, useState } from 'react';
-import './posts.scss';
-import Post from '../../components/post/Post';
-import { makeRequest } from '../../axios';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+//lógica
+import { makeRequest } from '../../axios'; 
 import { IPost } from '../../models/Ipost';
+//componentes
+import Post from './post/Post';
+//estilos
+import './posts.scss';
 
+
+//creación componente Posts
 const Posts: React.FC = () => {
-  
 
    const [posts, setPosts] = useState<IPost[]>([]);
    const [message, setMessage] = useState('');
-  // const cat = useLocation().search;
-   const cat = useLocation().search || 'notfound'; // Establece 'all' como valor predeterminado si no hay categoría seleccionada
+
+  const param = useLocation().search.replace('?cat=', '') || 'home';
 
   const fetchData = async () => {
     try {
-      const res = await makeRequest.get(`/posts${cat}`);
+      // Manda la petición de posteos con la categoría y recibe los posteos y un mensaje 
+      const res = await makeRequest.get(`/posts/?cat=${param}`);
       const responseData = res.data.arrayPosts;
       const responseMessage = res.data.message;
       
-      //verifica si responseData es un array
-      //verificación es exitosa, se configura setPosts con responseData. Si no, se muestra un mensaje de error en la consola.
+      // Verifica si responseData es un array, si lo es, configura setPosts con responseData. Si no, muestra un mensaje de error en la consola.
       if (Array.isArray(responseData) && responseData.every(item => typeof item === 'object')) {
         setPosts(responseData);
         setMessage(responseMessage);
@@ -30,37 +35,29 @@ const Posts: React.FC = () => {
       console.log(err);
     }
   };
+    
+    useEffect(() => {
+      fetchData();
+    }, [param]); 
 
-  useEffect(() => {
-    fetchData(); 
-  }, [cat]); 
-
-  return (
-    <div className='container-posts'>
-      <h2>{message}</h2>
-       {posts.map((post) => (
+    return (
+      <div className='container-posts'>
+        {param !== 'home' && (
+          <h2 className='title-cat-selected'>{message}</h2>
+        )}
+        {posts.map((post) => (
           <Post post={post} key={post.id} />
         ))}
-    </div>
-    // hacer una evaluación de ruta, si se está en http://localhost:5173/?cat=home, que se rendericen sólo 5 posteos y un botón de show all posts, sino, que se renderice lo de arriba, intentar aplicar métrica de popularidad constante
-  );
-};
+  
+        {param === 'home' && ( 
+          <div className="container-button">
+            <NavLink to="/?cat=all" >
+                <button className='show-all-posts-button'>Show All Posts</button>
+            </NavLink>
+          </div>
+        )}
+      </div>
+    );
+  };
+
 export default Posts;
-
-
-
-//lógica vieja
-// const fetchData = async () => {
-//   try {
-//     const res = await makeRequest.get(`/posts${cat}`);
-//     const responseData = res.data;
-
-//     if (Array.isArray(responseData) && responseData.every(item => typeof item === 'object')) {
-//       setPosts(responseData);
-//     } else {
-//       console.error("Response is not an array of objects:", responseData);
-//     }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };

@@ -1,15 +1,15 @@
 import React from 'react';
-import './statistics.css';
-import Communities from '../communities/Communities';
+import './aside-right.scss';
+import Communities from './communities/Communities';
 import communitiesData from '../../data/communitiesData';
 
 const AsideRight: React.FC = () => {
   return (
-    <div className="container-statistics-and-comunities">
+    <div className="container-asideright">
       
       <Communities communities={communitiesData} />
 
-      <div className="statistic">
+      {/* <div className="statistic">
         <div className="statistic-title">
           <i className="fa-solid fa-chart-column statistics-icon"></i>
           <p className='post-title'>Online Statistics</p>
@@ -41,7 +41,7 @@ const AsideRight: React.FC = () => {
           <p className="post-text visitors">Members</p>
           <p className="post-text number">15</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

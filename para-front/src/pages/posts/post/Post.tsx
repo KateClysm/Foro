@@ -1,54 +1,39 @@
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { IPost } from '../../models/Ipost';
+import { IPost } from '../../../models/Ipost';
 import moment from 'moment';
 import './post.scss'
-// import { makeRequest } from '../../axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Post: React.FC<{ post: IPost }> = ({ post }) => {
-  const [postState] = useState({ post });
-
-
-  //TO DO:
-  //aplicar contexto de usuario, si está logueado aparecerán los botones de delete y update.
-  //aplicar lógica de showpost
-
-
-
-
-
-//   const postId = location.pathname.split('/')[2];
-//   const navigate = useNavigate()
-
-// const handleDelete = async () => {
-//   try {
-//     await makeRequest.delete(`/posts/${postId}`)
-//     navigate('/');
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
   return (
   <div className={`post most-popular`}>
 
     <div className='post-container-user'>
       <div className="post-user">
-          <div className="post-user-image" style={{ backgroundImage: `url(https://marketplace.canva.com/EAFXS8-cvyQ/1/0/1600w/canva-brown-and-light-brown%2C-circle-framed-instagram-profile-picture-2PE9qJLmPac.jpg)` }}></div>
+        <div className="post-user-image" style={{ backgroundImage: `url(${post.profilePic})` }}></div>
             <div className="post-user-data">
-                <p className="user">Username</p>
+                <p className="user">{post.username}</p>
                <p className="less-important">Posted {moment(post.createAt).fromNow() }</p>
             </div>
+
             <button className="button-show">
               <NavLink
-                to={`/post/${post.userId}`}
+                to={`/post/${post.id}`}
                 className='button-text'
-                state={postState}
+                state={{ post }}
                 >
                 <p>Show Post</p> 
               </NavLink>
             </button>
+
+            <div className="enable-icons-container">
+              <FontAwesomeIcon icon={faPen} className='enable-icon'/>
+              <FontAwesomeIcon icon={faTrash} className='enable-icon'/>
+            </div>
         </div>
     </div>
+
 
     <div className="post-content">
     <div className="post-content-img" style={{ backgroundImage: `url(${post?.img})` }}></div>

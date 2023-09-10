@@ -12,14 +12,21 @@
   
     .popular-red {color: $logo-color;}
   
-    li {
-      display: block;
-      padding-bottom: 1.5rem;
-  
-      > a:hover {color: $logo-color;}
-  
-      &:last-child {padding-bottom: 0;}
+    ul{
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+
+      li {
+        display: block;
+        padding-bottom: 1.5rem;
+    
+        &:hover {color: $logo-color;}
+    
+        &:last-child {padding-bottom: 0;}
+      }
     }
+   
     .padding-divider {
       padding: 2rem 0;
       width: 100%;
