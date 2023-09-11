@@ -1,6 +1,6 @@
 //módulos
-import React, { ReactNode, useContext } from 'react';
-import { Outlet, createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import React from 'react';
+import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 //componentes y pages
 import NavBar from './components/nav/NavBar';
@@ -16,7 +16,6 @@ import NotFoundPage from './pages/not-found/NotFound';
 import CreatePostButton from './pages/createPost/createPostButton/CreatePostButton';
 import CreatePost from './pages/createPost/CreatePost2';
 //lógica
-import { AuthContext } from './context/authContext';
 //estilos
 import './styles/main-content.scss';
 import AsideRight from './components/aside-right/AsideRight';
@@ -44,19 +43,20 @@ const Layout = () => {
 const App: React.FC = () => {
   
   //si no se está logueado, redirecciona a login,si se está logueado habilita las rutas hijas
-  const { currentUser } = useContext(AuthContext);
-  const ProtectedRoute = ({ children }: { children: ReactNode }) =>{
-    if ( !currentUser ){
-      return <Navigate to="/login"/>
-    }
-    return children;
-  };
+  // const { currentUser } = useContext(AuthContext);
+  // const ProtectedRoute = ({ children }: { children: ReactNode }) =>{
+  //   if ( !currentUser ){
+  //     return <Navigate to="/login"/>
+  //   }
+  //   return children;
+  // };
 
   //creación del ruteo
   const router = createBrowserRouter([
     {
       path: '/', 
-      element: <ProtectedRoute><Layout /></ProtectedRoute>,  //rutas privadas
+      // element: <ProtectedRoute><Layout /></ProtectedRoute>,  //rutas privadas
+       element: <Layout />,
       children: [
         {
           path: '/',

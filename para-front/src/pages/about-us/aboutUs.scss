@@ -1,7 +1,7 @@
 @import '../../styles/styles.scss';
 .about {
     width: 100%;
-    padding: 2rem 3rem 4rem;
+    padding: 4rem 3rem;
 
     &-head {
         font-size: 2rem;
@@ -30,6 +30,6 @@
     }
 }
 
-.about-subtitle, .about-spacing {
-    padding: 1.563rem 0 1rem;
+.about-subtitle {
+    padding: 1.5rem 0 1rem;
 }

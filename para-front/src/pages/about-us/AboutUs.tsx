@@ -17,7 +17,7 @@ const AboutUs: React.FC = () => {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='about-icon' />
                 <h2>Who We Are</h2>
             </div>
-            <p className='about-spacing'>
+            <p>
                 ParaSeekers is a diverse group of open-minded enthusiasts, ranging from seasoned paranormal investigators to curious novices eager to embark on their first otherworldly adventure. We hail from all walks of life, each bringing a unique perspective to the table. Our common bond is the relentless pursuit of truth, unwavering in our commitment to unraveling the enigmas that surround us.
             </p>
             <div className='about-title'>
