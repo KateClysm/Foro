@@ -4,8 +4,9 @@ import authRoutes from './routes/auth';
 import postRoutes from './routes/posts';
 import likesRoutes from './routes/likes';
 import commentRoutes from './routes/comments';
-import cors from 'cors'; // mecanismo de seguridad implementado en los navegadores web para controlar las solicitudes HTTP entre diferentes dominios o orígenes.
-import cookieParser from 'cookie-parser'; //facilita la manipulación de cookies en una aplicación 
+import cors from 'cors'; 
+import cookieParser from 'cookie-parser';
+
 const app = express();
 const PORT = process.env.PORT || 8800; //acá van a ir todas nuestras requests
 
@@ -19,7 +20,6 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 app.use(cors(corsOptions));
-
 
 // ROUTES utilización de las rutas importadas
 app.use('/apiForum/users', userRoutes);

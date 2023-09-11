@@ -13,13 +13,12 @@ const Login = () => {
 
   const navigate = useNavigate()
 
+  const { login } = useContext(AuthContext);
   const handleChange = (e: FormEvent) => {
     e.preventDefault()
     setEmail('')
     setPassword('')
   };
-
-  const { login } = useContext(AuthContext);
 
   const handleLogin = async (e:FormEvent) => {
     e.preventDefault();

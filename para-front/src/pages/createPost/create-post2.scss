@@ -1,0 +1,102 @@
+@import '../../styles/styles.scss';
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 0rem 4rem 0rem;
+    height: fit-content;
+    
+    h2{
+        padding-bottom: 2rem;
+        font-size: 2rem;
+    }
+    form{
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        background-color: $aside-color;
+        padding: 3rem;
+        border-radius: 3px;
+        
+        .containerInputs{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 3fr auto;
+            justify-content: space-between;
+            column-gap: 3rem;
+
+            .inputs-row1{
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+
+                .titleInput, .inputDescription{
+                    width: 100%;
+                    border-radius: 3px;
+                    color: $background-color;
+    
+                    &::placeholder{
+                        color:$logo-color;
+                    }
+                }
+                .file{
+                    background-color: $search-color;
+                    padding: 0.6rem 1rem;
+                    width: fit-content;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+            }
+            
+            .inputs-row2{
+                
+                .categoryMenu{
+                    width: fit-content;
+                    padding-bottom: 2rem;
+                    h3{
+                        width: fit-content;
+                        padding-bottom: 1rem;
+                    }
+                    .categories{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        row-gap: 0.5rem;
+                        width: fit-content;
+                        
+                        .catInput{
+                            display: flex;
+                            flex-direction: row-reverse;
+    
+                            label{
+                                padding-left: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
+        }
+
+       
+    }
+    button{
+        color: $white-color;
+        background-color: $logo-color;
+        padding: 0.6rem 1rem;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    ::placeholder{
+        color: $nav-color;
+        padding-left: 0.5rem;
+    }
+}
+

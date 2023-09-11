@@ -1,7 +1,7 @@
-import { IPost, IUser, IReactions  } from '../models/interfaces/post-interface.js'
+import { IPostJson } from '../models/interfaces/post-interface-json.js'
 
 // Arreglo de objetos que cumple con las interfaces Post, User y Reactions
-const Dposts: Array<{ post: IPost; user: IUser; reactions: IReactions }> = [
+const Dposts: Array<{ post: IPostJson;}> = [
   {
     post: {
       title: "Si estás viendo esto, es porque funcionó el linkeo y estás viendo datos desde un json del back.",
@@ -9,17 +9,7 @@ const Dposts: Array<{ post: IPost; user: IUser; reactions: IReactions }> = [
       postImage: "https://img.lagaceta.com.ar/fotos/notas/2023/05/17/hoia-baciu-considerado-bosque-mas-tenebroso-mundo-991544-083744.png",
       typePost: ["Ghosts"],
       id: 1
-    },
-    user: {
-      userName: "Alice Queen",
-      userImage: "https://clipart-library.com/images/kc8oLrMMi.png",
-      userTime: 3,
-    },
-    reactions: {
-      likes: 2,
-      comments: 9,
-      views: 10,
-    },
+    }
   },
   {
     post: {
@@ -28,17 +18,7 @@ const Dposts: Array<{ post: IPost; user: IUser; reactions: IReactions }> = [
       postImage: "https://ichef.bbci.co.uk/news/640/cpsprodpb/6D1E/production/_102143972_ghost.gif",
       typePost: ["Ghosts"],
       id: 2
-    },
-    user: {
-      userName: "Alice Queen",
-      userImage: "https://clipart-library.com/images/kc8oLrMMi.png",
-      userTime: 14,
-    },
-    reactions: {
-      likes: 20,
-      comments: 5,
-      views: 40,
-    },
+    }
   },
   {
     post: {
@@ -47,17 +27,7 @@ const Dposts: Array<{ post: IPost; user: IUser; reactions: IReactions }> = [
       postImage: "https://img2.rtve.es/i/?w=1200&i=https://img2.rtve.es/imagenes/negamos-paranormal-miedo-creer-existe-realmente/1644832335656.jpg",
       typePost: ["Ghosts"],
       id: 3
-    },
-    user: {
-      userName: "Alice Queen",
-      userImage: "https://clipart-library.com/images/kc8oLrMMi.png",
-      userTime: 5,
-    },
-    reactions: {
-      likes: 30,
-      comments: 10,
-      views: 50,
-    },
+    }
   },
 ];
 

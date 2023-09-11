@@ -1,7 +1,6 @@
 //módulos
 import React, { ReactNode, useContext } from 'react';
 import { Outlet, createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 //componentes y pages
 import NavBar from './components/nav/NavBar';
 import Footer from './components/footer/Footer';
@@ -19,18 +18,14 @@ import CreatePost from './pages/createPost/CreatePost2';
 import { AuthContext } from './context/authContext';
 //estilos
 import './styles/main-content.scss';
-import AsideRight from './components/aside-right/AsideRight';
-import ExtendedPost from './pages/posts/extended-post/ExtendedPost';
 
 
 //estructura básica de la página
 const Layout = () => {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
   return (
         <> 
           <NavBar />
-          <div className={`main-content ${isHome ? 'home-grid' : 'secondary-grid'}`}>
+          <div className='main-content default-grid'>
             <AsideLeft />
             <CreatePostButton />
             <Outlet />
@@ -59,12 +54,12 @@ const App: React.FC = () => {
       element: <ProtectedRoute><Layout /></ProtectedRoute>,  //rutas privadas
       children: [
         {
-          path: '/',
-          element: 
-            <>
-              <Posts />
-              <AsideRight/>
-            </>
+          path: '/home',
+          element: <Posts />
+        },
+        {
+          path: '/categories',
+          element: <Posts />
         },
         {
           path: '/contact',
@@ -77,10 +72,6 @@ const App: React.FC = () => {
         {
           path: '/about',
           element: <AboutUs />
-        },
-        {
-          path: '/post/:id',
-          element: <ExtendedPost/>
         },
         {
           path: '/createpost',

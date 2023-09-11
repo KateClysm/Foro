@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import './navBar.css';
 import './nav.scss'
 import logoNav from '../../assets/logoNav.png';
@@ -7,8 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import Aside from '../aside/Aside';
+import { AuthContext } from '../../context/authContext';
 
 const NavBar: React.FC = () => {
+
+    const { currentUser, logout } = useContext(AuthContext);
     const [isNavMenuVisible, setIsNavMenuVisible] = useState(false);
     const toggleNavMenu = () => {
         setIsNavMenuVisible(!isNavMenuVisible);
@@ -36,13 +39,16 @@ const NavBar: React.FC = () => {
                     </div>
                 </div>
 
+                {/* <p>{currentUser?.email}</p> */}
                 <div className="nav-buttons">
-                    <button className="login-button ">
-                        <NavLink to="/login">Login</NavLink>
-                    </button>
-                    <button className="register-button ">
-                        <NavLink to="/register">Register</NavLink>
-                    </button>
+                    {
+                    currentUser ? 
+                        <button className="login-button " onClick={logout}>
+                            <NavLink to="/login">Logout</NavLink>
+                        </button>
+                        : ''
+                    }
+                    
                 </div>
 
                 <div className="containerAsideInNav">

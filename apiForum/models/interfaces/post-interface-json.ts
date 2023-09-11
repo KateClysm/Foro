@@ -1,6 +1,6 @@
 import { PostTypeSelection } from "./post-types.js";
 
-export interface IPost {
+export interface IPostJson {
     title: string;
     text: string; // Cambiado a string
     postImage?: string;
@@ -8,13 +8,13 @@ export interface IPost {
     id:number;
   }
   
-  export interface IUser {
+  export interface IUserJson {
     userName: string;
     userImage?: string;
     userTime: number;
   }
   
-  export interface IReactions {
+  export interface IReactionsJson {
     likes: number;
     comments: number;
     views: number;

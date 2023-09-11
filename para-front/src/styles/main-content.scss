@@ -1,4 +1,4 @@
-@import '../../styles/styles.scss';
+@import './styles.scss';
 .main-content {
     background-color: var(--background);
     display: grid;
@@ -8,8 +8,8 @@
       grid-template-columns: 2fr 9fr;
     }
   
-    &.default-grid {
-      grid-template-columns: 2fr 8fr 1fr;
+    &.home-grid {
+      grid-template-columns: 2fr 7fr 2fr;
     }
   
     @media (max-width: 1023px) {

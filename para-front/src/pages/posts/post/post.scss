@@ -1,4 +1,4 @@
-@import '../../styles/styles.scss';
+@import '../../../styles/styles.scss';
 
 .post{
   background-color: $post-color;
@@ -57,41 +57,73 @@
       }
     }
   }
-
-  .username:hover{
-    color: $logo-color;
-    cursor: pointer;
-  }
-  .user-time{
+  .less-important {
     color: $time-color;
   }
-  .post-user-image{
-    background-color: $white-color;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .post-container-user {
+    display: flex;
+
+    .enable-icons-container{
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      column-gap: 1.5rem;
+    }
+    .enable-icon{
+      path {
+        color: $white-color;;
+      }
+
+      &:hover > path {
+        color: $logo-color;
+      }
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
   }
-  .button-show{
+
+  .post-user {
+    padding-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 0.5rem;
+
+    .user-name:hover {
+      color: $logo-color;
+      cursor: pointer;
+    }
+
+    .post-user-image {
+      background-color: $white-color;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .button-show {
     border-radius: 3px;
     outline: none;
     border: none;
-    padding: 0.4rem;
+    padding: 0.5rem ;
     background-color: $white-color;
+    
 
-    a p{
-       color: $background-color;
-    }
+    a p {color: $background-color;}
 
-    &:hover a p{
-      color: var(--white);
-    }
-
-    &:hover{
+    &:hover {
       outline: 1px solid $logo-color;
       background-color: rgba(0, 0, 0, 0.096);
       cursor: pointer;
+
+      a p {
+        color: $white-color;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './communities.scss';
-import { ICommunity } from '../../models/ICommunities';
+import { ICommunity } from '../../../models/ICommunities';
 
 const Communities: React.FC<{communities : ICommunity[]}> = ({ communities }) => {
 

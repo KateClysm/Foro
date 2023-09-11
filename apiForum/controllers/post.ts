@@ -1,0 +1,99 @@
+import db from "../db";
+import { Request, Response } from 'express';
+
+interface IPetitionNotification {
+    queryPetition: string;
+    notification: string;
+};
+//OBTENER UN S0LO POSTEO
+export const getPost = (req:Request, res:Response) => {
+    const queryFindPost: IPetitionNotification = {
+        // queryPetition: `SELECT p.*, u.id AS userId, username, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.uid)`,
+        queryPetition: "SELECT p.id, u.username, u.name, u.profilePic, p.title, p.description, p.img, p.cat, p.date FROM users AS u JOIN posts AS p ON u.id = p.uid WHERE p.id = ?",
+        notification: 'Here is the extended post',
+    };
+
+    db.query (queryFindPost.queryPetition, [req.params.id], (err, data) =>{
+        if(err) return res.json(err);
+        return res.status(200).json({ data, message: queryFindPost.notification });
+    })
+};
+
+
+//RENDERIZADO DE POSTEOS PARA EL HOME Y PARA LAS CATEGORÍAS
+export const getPosts = (req: Request, res: Response) => {
+
+    const cat = req.query.cat as string | null;
+    
+    const queryFind: IPetitionNotification = {
+        queryPetition: `SELECT p.*, u.id AS userId, username, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.uid) WHERE cat=?`,
+        notification: 'Here are the posts that fulfill the criteria',
+    };
+
+    const queryAll: IPetitionNotification = {
+        queryPetition: `SELECT p.*, u.id AS userId, username, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.uid)`,
+        notification: 'Here are all the posts in the Foro!',
+    };
+
+    const queryDenied: IPetitionNotification = {
+        queryPetition: `SELECT p.*, u.id AS userId, username, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.uid)`,
+        notification: 'There are no posts that fulfill the criteria. You can be the first to make one! Or you could check all the posts:',
+    };
+
+    if (cat === 'home') {
+        db.query(queryAll.queryPetition, [], (err, arrayPosts: []) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching all posts.' });
+            }
+            const limitedPosts = arrayPosts.slice(0, 3);
+            return res.status(200).json({ arrayPosts: limitedPosts, message: 'Here you have some of the posts in our Foro!' });
+        });
+        return;
+    }
+
+    if (cat === 'all') {
+        db.query(queryAll.queryPetition, [], (err, arrayPosts: []) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching all posts.' });
+            }
+            return res.status(200).json({ arrayPosts, message: queryAll.notification });
+        });
+        return;
+    }
+
+    if (cat ) {
+        db.query(queryFind.queryPetition, [cat], (err, arrayPosts: []) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error fetching posts.' });
+            }
+            if (arrayPosts.length === 0) {
+                return db.query(queryDenied.queryPetition, [], (err, allPosts) => {
+                    if (err) {
+                        return res.status(500).json({ message: 'Error fetching all posts.' });
+                    }
+                    return res.status(200).json({ arrayPosts: allPosts, message: queryDenied.notification });
+                });
+            };
+            return res.status(200).json({ arrayPosts, message: queryFind.notification });
+            
+        });
+        return; 
+    };
+    return res.status(400).json({ message: 'Invalid category.' });
+};
+
+
+//AÑADIR UN POSTEO
+export const addPost = (req:Request, res:Response) => {
+    res.send('addpost funcionando')
+};
+
+//ACTUALIZAR UN POSTEO
+export const updatePost = (req:Request, res:Response) => {
+    res.send('updatepost funcionando')
+};
+
+//ELIMINAR UN POSTEO
+export const deletePost = (req:Request, res:Response) => {
+    res.send('deletepost funcionando')
+};

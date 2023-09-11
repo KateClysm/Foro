@@ -1,25 +1,16 @@
 import express from 'express';
-import Dposts from '../data/Dposts';
+import { addPost, deletePost, getPost, getPosts, updatePost } from '../controllers/post.js';
 
 const router = express.Router();
+router.get( '/', getPosts );
+router.get( '/:id', getPost );
+router.post( '/addPost', addPost );
+router.delete( '/:id', deletePost );
+router.put( '/:id', updatePost );
 
-router.get('/post', (req, res) => {
-    res.json(Dposts);
-});
+// // lectura provisoria de data from 'json'
+// router.get('/post', (req, res) => {
+//     res.json(Dposts);
+// });
 
 export default router;
-//-------------
-
-
-
-
-
-
-// import express from "express";
-// import { } from "../controllers/post";
-
-// const router = express.Router();
-
-// router.get("",); 
-
-// export default router;
