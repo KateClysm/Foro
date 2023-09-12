@@ -1,4 +1,4 @@
-import { IPostJson } from '../models/interfaces/post-interface-json.js'
+import { IPostJson } from '../models/post-interface-json'
 
 // Arreglo de objetos que cumple con las interfaces Post, User y Reactions
 const Dposts: Array<{ post: IPostJson;}> = [

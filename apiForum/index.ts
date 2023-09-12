@@ -13,8 +13,9 @@ const app = express();
 const PORT = process.env.PORT || 8800; //acá van a ir todas nuestras requests
 
 //middlewares
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
+
 const corsOptions = {
   origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

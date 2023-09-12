@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import './create-update-post.scss';
+import './create-post.scss';
 import { makeRequest } from '../../axios';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext';
 
-const CreateUpdatePost = () => {
+const CreatePost = () => {
+    const { currentUser } = useContext(AuthContext);
+    const idUser = currentUser?.id;
 
-  //para editar el post, reach the state
-  const state = useLocation().state;
-  //si hay un estado, usarlo, sino, significa que es un post nuevo y tiene que se un empty string
-  const [title, setTitle] = useState(state?.title || '');
-  const [textArea, setTextArea] = useState(state?.textArea || ''); //descripción
-  const [file, setFile] = useState<File | null>(null);   //imágen
-  const [cat, setCat] = useState<string>(state?.cat || '');
+    const navigate = useNavigate();
+  const [title, setTitle] = useState('');
+  const [textArea, setTextArea] = useState(''); 
+  const [file, setFile] = useState<File | null>(null);
+  const [cat, setCat] = useState<string>('');
 
   const upload = async () => {
     try {
       if (file) {
         const formData = new FormData();
-        formData.append("file", file); // imagen
-        const res = await makeRequest.post("/upload", formData); //upload
-        console.log("Image uploaded successfully:", res.data); //notifica
-        return res.data; //devuelve
-      } else {
-        console.error("No file selected.");
+        formData.append("file", file);
+        const res = await makeRequest.post("/upload", formData);
+        console.log("Image uploaded successfully:", res.data); 
+        return res.data; 
       }
+        console.error("No file selected.");
+      
     } catch (error) {
       console.error("Error uploading image:", error);
     }
@@ -35,18 +36,15 @@ const CreateUpdatePost = () => {
     e.preventDefault();
     const imgUrl =  await upload();
     try{
-      state? await makeRequest.put(`/posts/${state.id}`, { //si hay estado
+      await makeRequest.post(`/posts/` ,{  
         title,
         description:textArea,
-        cat,
-        img:file? imgUrl : ''
-      }) : await makeRequest.post(`/posts/` ,{    //si no hay estado
-        title,
-        description:textArea,
-        cat,
         img:file? imgUrl : '',
-        date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
-      })
+        uid: idUser,
+        createAt: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+        cat
+      });
+      navigate("/");
     }catch(err){
       console.log(err);
     }
@@ -140,4 +138,4 @@ const CreateUpdatePost = () => {
   )
 };
   
-export default CreateUpdatePost;
+export default CreatePost;

@@ -53,7 +53,7 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
               
               { idUser === post.uid && (
                 <div className="enable-icons-container">
-                      <NavLink to={`/createorupdatepost/${post.id}`} state={post}>
+                      <NavLink to={`/updatepost/${post.id}`} state={post}>
                         <FontAwesomeIcon icon={faPen} className='enable-icon'/>
                       </NavLink>
         
@@ -68,8 +68,8 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
   
   
       <div className="post-content">
-      <div className="post-content-img" style={{ backgroundImage: `url(${post?.img})` }}></div>
-      {/* <div className="post-content-img" style={{ backgroundImage: `url(../upload/${post.img})` }}></div> */}
+      {/* <div className="post-content-img" style={{ backgroundImage: `url(${post?.img})` }}></div> */}
+      <div className="post-content-img" style={{ backgroundImage: `url(../upload/${post.img})` }}></div>
         <div className="post-content-data">
           <h2 className="post-content-data-title">{post.title}</h2>
           <div className="post-content-data-text "><p>{post.description}</p></div>

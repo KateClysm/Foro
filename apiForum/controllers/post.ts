@@ -9,33 +9,41 @@ interface IPetitionNotification {
 };
 
 //AÑADIR UN POSTEO
-export const addPost = (req:Request, res:Response) => {
+// AÑADIR UN POSTEO
+export const addPost = (req: Request, res: Response) => {
     const token = req.cookies.accessToken;
-
+  
     if (!token) return res.status(401).json("Not authenticated!");
   
     jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
       if (err) return res.status(403).json("Token is not valid!");
-    
-      const q = "INSERT INTO posts (`title`,`description`,`img`,`cat`,`createAt`,`uid`,) VALUES (?)"
-
+  
+      const q = "INSERT INTO posts (`title`, `description`, `img`, `uid`, `createAt`, `cat`) VALUES (?, ?, ?, ?, ?, ?)";
+  
       const values = [
         req.body.title,
         req.body.description,
         req.body.img,
-        req.body.cat,
+        req.body.uid, // Utiliza el uid del cuerpo de la solicitud
         req.body.createAt,
-        userInfo.id
-      ]
-
-      db.query(q,[values], (err, data) => {
-        if (err) return res.status(403).json(err);
-
+        req.body.cat,
+      ];
+  
+      db.query(q, values, (err, data) => {
+        if (err) {
+          console.error("Error creating post:", err);
+          return res.status(500).json("Error creating post");
+        }
+  
         return res.json("Post has been created");
-      })
+      });
     });
-};
+  };
 
+
+
+
+  
 //ACTUALIZAR UN POSTEO
 export const updatePost = (req:Request, res:Response) => {
     const token = req.cookies.accessToken;

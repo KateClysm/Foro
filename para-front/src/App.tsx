@@ -21,7 +21,8 @@ import AsideRight from './components/aside-right/AsideRight';
 import ExtendedPost from './pages/posts/extended-post/ExtendedPost';
 import { AuthContext } from './context/authContext';
 import { configureAxiosWithToken } from './axios';
-import CreateUpdatePost from './pages/create-update-post/CreateUpdatePost';
+import UpdatePost from './pages/create-update-post/UpdatePost';
+import CreatePost from './pages/create-update-post/CreatePost';
 
 
 //estructura básica de la página
@@ -89,8 +90,12 @@ const App: React.FC = () => {
           element: <ExtendedPost/>
         },
         {
-          path: '/createorupdatepost',
-          element: <CreateUpdatePost />
+          path: '/createpost',
+          element: <CreatePost />
+        },
+        {
+          path: '/updatepost/:id',
+          element: <UpdatePost />
         }
         // {
         //   path:"/profile/:id",
