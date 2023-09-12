@@ -40,12 +40,6 @@ const AsideLeft: React.FC = () => {
         <NavLink className="link" to="/?cat=premonitionsAndProphecies">
             <li>Premonitions and Prophecies</li>
         </NavLink>
-        <NavLink className="link" to="/?cat=zombies">
-            <li>Zombies</li>
-        </NavLink>
-        <NavLink className="link" to="/?cat=sleepParalysis">
-            <li>Sleep Paralysis</li>
-        </NavLink>
       </ul>
 
       <div className="padding-divider">

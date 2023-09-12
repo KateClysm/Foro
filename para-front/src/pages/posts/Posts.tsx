@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 //lógica
 import { makeRequest } from '../../axios'; 
-import { IPost } from '../../models/Ipost';
+import { IPost } from '../../models/IPost';
 //componentes
 import Post from './post/Post';
 //estilos
@@ -29,8 +29,7 @@ const Posts: React.FC = () => {
       if (Array.isArray(responseData) && responseData.every(item => typeof item === 'object')) {
         setPosts(responseData);
         setMessage(responseMessage);
-      } 
-      return console.error("Response is not an array of objects:", responseData);
+      }
     } catch (err) {
       console.log(err);
     }

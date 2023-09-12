@@ -2,11 +2,11 @@ import axios from "axios";
 import moment from "moment";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import './create-post2.scss';
+import './edit-post.scss';
 // import { AuthContext } from "../../context/authContext"; 
 // import jwt_decode from "jwt-decode";
 
-const CreatePost = () => {
+const EditPost = () => {
   // const authContext = useContext(AuthContext);
   // const currentUser = authContext.currentUser; 
 
@@ -189,139 +189,118 @@ const CreatePost = () => {
   )
 };
   
-export default CreatePost;
-
-
-// import React from 'react';
-// import './create-post.scss'
-// import { useContext } from 'react';
-// import { AuthContext } from '../../context/authContext';
-// import { useMutation, useQueryClient } from "@tanstack/react-query";
-// import { makeRequest } from '../../axios';
+export default EditPost;
 
 
 
+// import React, { useEffect, useState } from 'react';
+// import { useLocation, useParams } from 'react-router-dom';
+// import Post from '../post/Post';
+// import './extended.post.scss';
+// import { makeRequest } from '../../../axios';
+// import { IPost } from '../../../models/Ipost';
 
-// const CreatePost: React.FC = () => {
+// const ExtendedPost: React.FC = () => {
+//   const [post, setPost] = useState<IPost | null>(null);
+//   const [postId, setPostId] = useState<string | undefined >(undefined);
+//   const [loadedOnce, setLoadedOnce] = useState(false); 
+//   const { id } = useParams();
+//   console.log('el id del post ingresado es: ', id);
 
+//   const location = useLocation();
+//   const postFromLocation = location.state ? location.state.post : null;
 
-    
-    // const {currentUser} = useContext(AuthContext);
-    // const queryClient = useQueryClient();
-
-    // //formulario
-    // const [title, setTitle] = useState<string | ''>('');
-    // const [description, setDescription] = useState<string | ''>('');
-    // const [image, setImage] = useState<File | null>(null);
-    // const [category, setCategory] = useState<string | ''>('');
-
-
-    // const mutation = useMutation( 
-    //     (newPost) => {
-    //         return makeRequest.post("/posts", newPost);
-    //     },
-    //     {
-    //         onSuccess: () => {
-
-    //             queryClient.invalidateQueries(["posts"]);
-    //         }
-    //     }
-    // )
-
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     mutation.mutate({title, description, image, category})
-    // };
-
-//     return (
-//       <div className='container-create-post'>
-//         <div className="create-post">
-//             <h2>Create Your Post</h2>
-//             <form >
-//                 <div className="editor" >
-
-//                     <p>{`What's on your mind ${currentUser.username}?`}</p>
-//                     <img src={currentUser.profilePic} alt="userImage" />
-
-//                     <div className='title'>
-//                         <input
-//                             type="text"
-//                             placeholder='your title'
-//                             onChange={(e) => setTitle(e.target.value)}
-//                         />
-//                     </div>
-
-//                     <div className='description'>
-//                         <p>description</p>
-//                         <input
-//                             type="textarea"
-//                             name="description" 
-//                             id="textEditor"
-//                             placeholder='your description'
-//                             onChange={(e) => setDescription(e.target.value)}
-//                         />
-//                     </div>
-
-//                     <div className='image'>
-//                         <p>image</p>
-//                         <input
-//                             type="file"
-//                             name="filePost"
-//                             placeholder='your Image'
-//                             // onChange={(e) => setImage(e.target.value)}
-//                             onChange={e => e.target.files ? setImage(e.target.files[0]) : null} 
-//                         />                    
-//                     </div>
-
-                
-                    
-
-//                     <div className="item">
-//                         <fieldset className='item'>
-
-//                             <legend>Category</legend>
-
-//                             <label htmlFor="ghosts">
-//                             <input type="radio" checked={category === 'ghosts'} name="cat" value='ghosts' id="ghosts" onChange={e => setCategory(e.target.value)} /> Ghosts
-//                             </label>
-
-//                             <label htmlFor="witchcraft">
-//                             <input type="radio" checked={category === 'witchcraft'} name="cat" value='witchcraft' id="witchcraft" onChange={e => setCategory(e.target.value)} /> Witchcraft
-//                             </label>
-
-//                             <label htmlFor="demons">
-//                             <input type="radio" checked={category === 'demons'} name="cat" value='demons' id="demons" onChange={e => setCategory(e.target.value)} /> Demons
-//                             </label>
-
-//                             <label htmlFor="mythological/oldfolklore">
-//                             <input type="radio" checked={category === 'mythological_oldfolklore'} name="cat" value='mythological_oldfolklore' id="mythological_oldfolklore" onChange={e => setCategory(e.target.value)} /> Mythological
-//                             </label>
-
-//                             <label htmlFor="past_life_regression">
-//                             <input type="radio" checked={category === 'pastLifeRegression'} name="cat" value='pastLifeRegression' id="past_life_regression" onChange={e => setCategory(e.target.value)} /> Past Life Regression
-//                             </label>
-
-//                             <label htmlFor="shadow_people">
-//                             <input type="radio" checked={category === 'shadowPeople'} name="cat" value='shadowPeople' id="shadow_people" onChange={e => setCategory(e.target.value)} /> Shadow People
-//                             </label>
-
-//                             <label htmlFor="premonitions_and_prophecies">
-//                             <input type="radio" checked={category === 'premonitionsAndProphecies'} name="cat" value='premonitionsAndProphecies' id="premonitions_and_prophecies" onChange={e => setCategory(e.target.value)} /> Premonitions and Prophecies
-//                             </label>
-
-//                             <label htmlFor="zombies">
-//                             <input type="radio"checked={category === 'zombies'} name="cat" value='zombies' id="zombies" onChange={e => setCategory(e.target.value)} /> Zombies
-//                             </label>
-//                         </fieldset>
-//                     </div> 
-//                 </div>
-//             </form>
-
-//             <button onClick={handleClick} className='post-btn'>Create Post</button>
-//         </div>
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         if (postFromLocation && !loadedOnce) {
+//           setPost(postFromLocation);
+//           setPostId(postFromLocation.id);
+//           setLoadedOnce(true);
+//           return;
+//         }
         
-//       </div>
-//     )
+//         const res = await makeRequest.get(`/posts/${id}`);
+//         setPost(res.data[0]);
+//         setPostId(id);
+//         setLoadedOnce(true);
+//         console.log('el post traido en un array: ', res.data); 
+//         console.log('el post traido en un objeto: ', res.data[0]);
+//         console.log('el post traido en un array: ', post); 
+//         console.log('el id del post si fue buscado manualmente: ', postId);  
+//       } catch (err) {
+//         console.log(err);
+//       }
+//     };
+//     fetchData();
+//   }, [id, postFromLocation]);
+
+//   return (
+//     <div className='container-show-post'>
+//       {post !== null ? (
+//         <Post post={post} key={postId} />
+//       ) : (
+//         <p>Finding post...</p>
+//       )}
+//     </div>
+//   );
 // };
 
-// export default CreatePost;
+// export default ExtendedPost;
+
+
+// import React, { useEffect, useState } from 'react';
+// import { useLocation, useParams } from 'react-router-dom'; // Importa useLocation
+// import Post from '../post/Post';
+// import './extended.post.scss';
+// import { makeRequest } from '../../../axios';
+// import { IPost } from '../../../models/Ipost';
+
+// const ExtendedPost: React.FC = () => {
+//   const [post, setPost] = useState<IPost | null>(null);
+//   const [postId, setPostId] = useState<string | undefined >(undefined);
+
+//   // Obtén el estado de la ubicación
+//   const location = useLocation();
+//   const postFromLocation = location.state ? location.state.post : null;
+  
+//   if (postFromLocation) {
+//     setPost(postFromLocation);
+//     setPostId(postFromLocation.id);
+//     return;
+//  }
+
+//  if(!postFromLocation){
+//       const { id } = useParams();
+//       const fetchData = async () => {
+//         try {
+//           const res = await makeRequest.get(`/posts/${id}`);
+//           setPost(res.data);
+//           console.log(post);
+//           if (post){
+//             setPostId(id);
+//             console.log(postId);
+//           }
+//         } catch (err) {
+//           console.log(err);
+//         }
+//       };
+//       useEffect(() => {
+//         fetchData();
+//       }
+//     )
+//   }
+  
+
+//   return (
+//     <div className='container-show-post'>
+//        {post !== null ? (
+//         <Post post={post} key={postId} />
+//         ) : (
+//           <p>Finding post...</p>
+//         )}
+//     </div>
+//   );
+// };
+
+// export default ExtendedPost;

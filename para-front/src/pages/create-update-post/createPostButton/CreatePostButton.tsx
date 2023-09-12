@@ -9,10 +9,7 @@ const CreatePostButton: React.FC = () => {
 
     return (
       <div className='openModal'>
-         <NavLink to="/createpost"><button className='openModal-btn'>Create Post</button></NavLink>
-          {/* <Link className="link" to="/createpost">
-            
-          </Link> */}
+         <NavLink to="/createorupdatepost"><button className='openModal-btn'>Create Post</button></NavLink>
       </div>
     )
 };

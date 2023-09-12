@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 //base de datos
 import db from "../db";
 //interfaces
-import IUser from '../models/interfaces/IUser';
+import IUser from '../models/IUser';
 
 
 export const register = (req: Request, res: Response) => {
@@ -51,6 +51,9 @@ export const login = (req: Request, res: Response) => {
 
         // const token = jwt.sign({id:user[0].id}, "secretKey");
         const token = jwt.sign({id:user[0].id}, "jwtkey");
+
+        // console.log('EL TIPO DEL ID QUE SE PASA COMO USERINFO ES: ', typeof user[0].id);   DA NUMBER
+
         const {password, ...others} = user[0]; //destructuración
         res.cookie("accessToken", token, {
             httpOnly: true,

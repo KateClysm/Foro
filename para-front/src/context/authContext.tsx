@@ -1,12 +1,13 @@
 import axios from "axios";
 import { ReactNode, createContext, useEffect, useState } from "react";
+import { IUser } from "../models/IUsers";
 
 interface LoginInputs {
   email: string;
   password: string;
 }
 interface AuthContextType {
-  currentUser: string | null;
+  currentUser: IUser | null;
   login: (inputs: LoginInputs) => Promise<void>;
   logout: () => Promise<void>;
 }
@@ -23,7 +24,7 @@ export const AuthContext = createContext(initialContextValue);
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   // const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")||null));
   const storedUser = localStorage.getItem("user");
-  const [currentUser, setCurrentUser] = useState<string | null>(
+  const [currentUser, setCurrentUser] = useState<IUser | null>(
     typeof storedUser === "string" ? JSON.parse(storedUser) : null
   );
 
@@ -31,7 +32,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     const res = await axios.post("http://localhost:8800/apiForum/auth/login", inputs, {
       withCredentials: true,
     });
-    setCurrentUser(res.data)
+    setCurrentUser(res.data);
   };
 
   const logout = async () => {
@@ -51,8 +52,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     logout
   };
 
+
   return (
-    // <AuthContext.Provider value={{currentUser, login, logout}}>
     <AuthContext.Provider value={contextValue}>
       {children}
     </AuthContext.Provider>

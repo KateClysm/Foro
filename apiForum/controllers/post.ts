@@ -1,23 +1,119 @@
 import db from "../db";
 import { Request, Response } from 'express';
+import { IPost } from "../models/IPost";
+import jwt from 'jsonwebtoken';
 
 interface IPetitionNotification {
     queryPetition: string;
     notification: string;
 };
-//OBTENER UN S0LO POSTEO
-export const getPost = (req:Request, res:Response) => {
+
+//AÑADIR UN POSTEO
+export const addPost = (req:Request, res:Response) => {
+    const token = req.cookies.accessToken;
+
+    if (!token) return res.status(401).json("Not authenticated!");
+  
+    jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
+      if (err) return res.status(403).json("Token is not valid!");
+    
+      const q = "INSERT INTO posts (`title`,`description`,`img`,`cat`,`createAt`,`uid`,) VALUES (?)"
+
+      const values = [
+        req.body.title,
+        req.body.description,
+        req.body.img,
+        req.body.cat,
+        req.body.createAt,
+        userInfo.id
+      ]
+
+      db.query(q,[values], (err, data) => {
+        if (err) return res.status(403).json(err);
+
+        return res.json("Post has been created");
+      })
+    });
+};
+
+//ACTUALIZAR UN POSTEO
+export const updatePost = (req:Request, res:Response) => {
+    const token = req.cookies.accessToken;
+
+    if (!token) return res.status(401).json("Not authenticated!");
+  
+    jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
+      if (err) return res.status(403).json("Token is not valid!");
+    
+      const q = "UPDATE posts SET `title`=?, `description`=?, `img`=?, `cat`=? WHERE `id` = ? AND `uid` = ?";
+
+      const postId = req.params.id;
+      const values = [
+        req.body.title,
+        req.body.description,
+        req.body.img,
+        req.body.cat,
+        userInfo.id
+      ]
+
+      db.query(q,[...values, postId, userInfo.id], (err, data) => {
+        if (err) return res.status(403).json(err);
+
+        return res.json("Post has been updated");
+      })
+    });
+};
+
+
+//ELIMINAR UN POSTEO
+export const deletePost = (req: Request, res: Response) => {
+    const token = req.cookies.accessToken;
+
+    if (!token) return res.status(401).json("Not authenticated!");
+  
+    jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
+      if (err) return res.status(403).json("Token is not valid!");
+
+        const postId = req.params.id; 
+
+        const uid = req.body.uid;
+
+        if (userInfo.id !== uid) {
+            console.error("User is not the owner of the post.");
+            return res.status(403).json("You can delete only your posts!");
+        }
+  
+        const queryDeletePost = "DELETE FROM posts WHERE `id` = ?";
+        db.query(queryDeletePost, [postId], (err, data) => {
+            if (err) return res.status(403).json("Error deleting the post.");
+
+            return res.json("The post has been deleted");
+        });
+    });
+};
+
+// OBTENER UN S0LO POSTEO
+export const getPost = (req: Request, res: Response) => {
     const queryFindPost: IPetitionNotification = {
-        // queryPetition: `SELECT p.*, u.id AS userId, username, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.uid)`,
-        queryPetition: "SELECT p.id, u.username, u.name, u.profilePic, p.title, p.description, p.img, p.cat, p.date FROM users AS u JOIN posts AS p ON u.id = p.uid WHERE p.id = ?",
+        queryPetition: "SELECT p.id, u.id, u.username, u.name, u.profilePic, p.title, p.description, p.img, p.cat, p.createAt FROM users AS u JOIN posts AS p ON u.id = p.uid WHERE p.id = ?",
         notification: 'Here is the extended post',
     };
 
-    db.query (queryFindPost.queryPetition, [req.params.id], (err, data) =>{
-        if(err) return res.json(err);
-        return res.status(200).json({ data, message: queryFindPost.notification });
-    })
+    db.query(queryFindPost.queryPetition, [req.params.id], (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Internal server error' });
+        }
+        if (Array.isArray(data) && data.length > 0) {
+            const post: IPost = data[0] as IPost; // Realiza una comprobación de tipo
+            return res.status(200).json({ data: post, message: queryFindPost.notification });
+        } else {
+            return res.status(404).json({ error: 'Post not found' });
+        }
+    });
 };
+
+
 
 
 //RENDERIZADO DE POSTEOS PARA EL HOME Y PARA LAS CATEGORÍAS
@@ -74,8 +170,7 @@ export const getPosts = (req: Request, res: Response) => {
                     return res.status(200).json({ arrayPosts: allPosts, message: queryDenied.notification });
                 });
             };
-            return res.status(200).json({ arrayPosts, message: queryFind.notification });
-            
+            return res.status(200).json({ arrayPosts, message: queryFind.notification });    
         });
         return; 
     };
@@ -83,17 +178,8 @@ export const getPosts = (req: Request, res: Response) => {
 };
 
 
-//AÑADIR UN POSTEO
-export const addPost = (req:Request, res:Response) => {
-    res.send('addpost funcionando')
-};
 
-//ACTUALIZAR UN POSTEO
-export const updatePost = (req:Request, res:Response) => {
-    res.send('updatepost funcionando')
-};
 
-//ELIMINAR UN POSTEO
-export const deletePost = (req:Request, res:Response) => {
-    res.send('deletepost funcionando')
-};
+
+
+

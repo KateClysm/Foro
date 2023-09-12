@@ -6,6 +6,8 @@ import likesRoutes from './routes/likes';
 import commentRoutes from './routes/comments';
 import cors from 'cors'; 
 import cookieParser from 'cookie-parser';
+import multer from "multer";
+import { Request, Response } from 'express';
 
 const app = express();
 const PORT = process.env.PORT || 8800; //acá van a ir todas nuestras requests
@@ -20,6 +22,29 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 app.use(cors(corsOptions));
+
+
+//multer
+
+const storage = multer.diskStorage({
+  destination: function (req:Request, file, cb){
+    cb(null, '../para-front/public/upload')
+  },
+  filename: function (req:Request, file, cb){
+    cb(null, Date.now()+file.originalname);
+  }
+});
+const upload = multer({ storage });
+// const upload = multer({dest: './uploads/'});
+app.post('/apiForum/upload', upload.single('file'), (req: Request, res: Response) => { 
+  const file = req.file;
+  if(file){
+    return res.status(200).json(file.filename)
+  }
+})
+
+
+
 
 // ROUTES utilización de las rutas importadas
 app.use('/apiForum/users', userRoutes);
