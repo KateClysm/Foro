@@ -3,10 +3,10 @@
 .post{
   background-color: $post-color;
   border-radius: 3px;
-  padding: 0.3rem;
+  padding: 0.5rem;
 
   &-container-user{
-        padding-bottom: 0.3rem;
+        padding-bottom: 0.5rem;
         display: flex;
         align-items: center;
         justify-content: start;
@@ -16,7 +16,8 @@
   &-content{
     display: grid;
     grid-template-columns: 3fr 7fr;
-    column-gap: 0.3rem;
+    column-gap: 0.5rem;
+    
 
     &-img{
       background-color: var(--background);
@@ -28,7 +29,7 @@
 
     &-data{
       border-radius: 3px;
-      padding: 0.3rem;
+      padding: 1rem;
       background-color: $search-color;
       overflow: hidden;
       height: 60px;
@@ -53,6 +54,7 @@
           -webkit-background-clip: text;
           color: transparent;
           display: none;
+          line-height: 2rem;
         }
       }
     }
@@ -68,6 +70,12 @@
       display: flex;
       flex-direction: row;
       column-gap: 1.5rem;
+
+      button {
+        background-color: transparent;
+        outline: none;
+        border: none;
+      }
     }
     .enable-icon{
       path {
@@ -156,6 +164,9 @@
 @media (min-width: 768px) {
   .post-content{
     padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
     &-img{
       height: 100px;
     }
@@ -176,9 +187,9 @@
         }
       }
   }
-  .post-content-data-text p{
-    display:block
-  }
+  // .post-content-data-text p{
+  //   display:block
+  // }
 }
 
 @media (min-width: 1024px) {
@@ -205,8 +216,10 @@
 @media (min-width: 1400px) {
   .most-popular .post-content-img{
       height: 400px;
+      
   }
   .most-popular .post-content-data{
+    
       height: 160px;
   }
 }

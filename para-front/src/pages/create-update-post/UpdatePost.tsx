@@ -10,7 +10,7 @@ const UpdatePost = () => {
   const state = useLocation().state;
   const [title, setTitle] = useState(state.title);
   const [textArea, setTextArea] = useState(state.description);
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState(state.img);
   const [cat, setCat] = useState<string>(state.cat);
 
   const upload = async () => {
@@ -124,7 +124,7 @@ const UpdatePost = () => {
                       </div>
                   </div>
 
-                  <button type="submit">Publish</button>
+                  <button type="submit">Update</button>
               </div>
             </div>
 

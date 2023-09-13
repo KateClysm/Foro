@@ -8,7 +8,7 @@ const AsideLeft: React.FC = () => {
     <div className="aside-left">
       <ul className="principal-page">
 
-      <NavLink to="/"><li>Home</li></NavLink>
+      <NavLink to="/"><li className='home-hover'>Home</li></NavLink>
 
       </ul>
 

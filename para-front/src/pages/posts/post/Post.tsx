@@ -9,7 +9,11 @@ import { AuthContext } from '../../../context/authContext';
 import { useContext } from 'react';
 
 const Post: React.FC<{ post: IPost }> = ({ post }) => {  
-  
+
+  //if current location is home, navlink renderizado, else dont.
+
+
+
   const { currentUser } = useContext(AuthContext);
   const idUser = currentUser?.id;
 
@@ -37,10 +41,10 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
           <div className="post-user-image" style={{ backgroundImage: `url(${post.profilePic})` }}></div>
               <div className="post-user-data">
                   <p className="user">{post.username}</p>
-                 <p className="less-important">Posted {moment(post.createAt).fromNow() }</p>
+                 <p className="less-important">{moment(post.createAt).fromNow() }</p>
               </div>
   
-              <button className="button-show">
+              {/* <button className="button-show">
                 <NavLink
                   to={`/post/${post.id}`}
                   className='button-text'
@@ -48,8 +52,9 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
                   >
                   <p>Show Post</p> 
                 </NavLink>
-              </button>
+              </button> */}
   
+                
               
               { idUser === post.uid && (
                 <div className="enable-icons-container">
@@ -69,13 +74,18 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
   
       <div className="post-content">
       {/* <div className="post-content-img" style={{ backgroundImage: `url(${post?.img})` }}></div> */}
-      <div className="post-content-img" style={{ backgroundImage: `url(../upload/${post.img})` }}></div>
-        <div className="post-content-data">
-          <h2 className="post-content-data-title">{post.title}</h2>
-          <div className="post-content-data-text "><p>{post.description}</p></div>
-        </div>
+          <div className="post-content-img" style={{ backgroundImage: `url(../upload/${post.img})` }}></div>
+
+          <NavLink to={`/post/${post.id}`} state={{ post }}>
+              <div className="post-content-data">
+                <h2 className="post-content-data-title">{post.title}</h2>
+                <div className="post-content-data-text "><p className='texto'>{post.description}</p></div>
+              </div>
+          </NavLink>
+          
       </div>
   
+                
     </div>
   );
 };
