@@ -1,10 +1,7 @@
-//modulos
 import { Request, Response } from 'express';
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-//base de datos
 import db from "../db";
-//interfaces
 import IUser from '../models/IUser';
 
 
@@ -14,15 +11,14 @@ export const register = (req: Request, res: Response) => {
 
     db.query(q, [req.body.email], (err, data) => {
 
-        if (err) { return res.status(500).json(err)}; //si hubo un error
+        if (err) { return res.status(500).json(err)};
         
-        const user: IUser[] = data as IUser[]; //si cumple con la interfaz
+        const user: IUser[] = data as IUser[];
 
-        if (user.length) { //si el email ya está registrado
+        if (user.length) { 
             return res.status(409).json("User already exists!")
         };
 
-        //si el usuario no existe, crear un nuevo usuario, hash la contraseña.
         const salt = bcrypt.genSaltSync(10);
         const hashedPassword = bcrypt.hashSync(req.body.password, salt);
         const q = "INSERT INTO users (username, email, password, name) VALUES (?, ?, ?, ?)";
@@ -51,7 +47,6 @@ export const login = (req: Request, res: Response) => {
 
         // const token = jwt.sign({id:user[0].id}, "secretKey");
         const token = jwt.sign({id:user[0].id}, "jwtkey");
-
         // console.log('EL TIPO DEL ID QUE SE PASA COMO USERINFO ES: ', typeof user[0].id);   DA NUMBER
 
         const {password, ...others} = user[0]; //destructuración
@@ -60,8 +55,6 @@ export const login = (req: Request, res: Response) => {
         }).status(200).json(others);
     });
 };
-
-
 
 export const logout = (req: Request, res: Response) => {
     res.clearCookie("accessToken", {

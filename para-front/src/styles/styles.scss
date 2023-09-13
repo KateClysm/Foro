@@ -39,7 +39,6 @@ html, body {
 }
 
 /*scrol bar*/
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -64,9 +63,9 @@ html, body {
 a {text-decoration: none;}
 
 p, li a, a, .titleInput, .inputDescription {font-size: 1.1rem;}
-.title, h2, .user, .search, button, .enable-icon {font-size: 1.1rem;}
+.title, h2, .user, .search, button, .enable-icon, .user-info-name {font-size: 1.1rem;}
 .less-important {font-size: 0.9rem;}
-i, a .footer-icon {font-size: 2rem;}
+i, a .footer-icon, .user-info-username {font-size: 2rem;}
 
 
 html {font-size: $font-size-mobile;}

@@ -1,4 +1,4 @@
-interface IUser { 
+export interface IUser { 
     id: number;
     username: string;
     email: string;
@@ -7,6 +7,6 @@ interface IUser {
     profilePic?: string;
     city?: string;
     website?: string;
-};
+    coverImage: string;
 
-export default IUser;
+};

@@ -7,15 +7,12 @@ const AsideLeft: React.FC = () => {
   return (
     <div className="aside-left">
       <ul className="principal-page">
-
-      <NavLink to="/"><li className='home-hover'>Home</li></NavLink>
-
+          <NavLink to="/"><li className='home-hover'>Home</li></NavLink>
       </ul>
 
       <div className="padding-divider">
         <div className="divider"></div>
       </div>
-
       
       <ul className="topics">
         <NavLink className="link" to="/?cat=all">
@@ -47,9 +44,9 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <ul className="secondary-page">
-      <NavLink to="/about"><li>About us</li></NavLink>
-      <NavLink to="/contact"><li>Contact</li></NavLink>
-      <NavLink to="/help"><li>Help</li></NavLink>
+        <NavLink to="/about"><li>About us</li></NavLink>
+        <NavLink to="/contact"><li>Contact</li></NavLink>
+        <NavLink to="/help"><li>Help</li></NavLink>
       </ul>
     </div>
   );

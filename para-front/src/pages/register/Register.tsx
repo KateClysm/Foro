@@ -35,7 +35,6 @@ const Register: React.FC = () => {
   const isNameValid = name !== '' && name.length >= 3;
   const isUsernameValid = username !== '' && username.length >= 3;
 
-  //maneja los cambios
   const handleChange = (e: FormEvent) => {
     e.preventDefault()
     setUsername('')
@@ -54,14 +53,9 @@ const Register: React.FC = () => {
   const handleClick = async (e: FormEvent) => { 
     e.preventDefault(); 
     try {
-      // await axios.post("http://localhost:8800/apiForum/auth/register", {username, email, name, password});
-      // // setNotification("User created");
-      // setErr(null);
-
-      //cambios para poder usar return res.status(200).json({ message: "User has been created" }); del back
       const response = await axios.post("http://localhost:8800/apiForum/auth/register", { username, email, name, password });
       if (response.data && response.data.message) {
-      setNotification(response.data.message); // Aquí capturamos el mensaje del servidor
+      setNotification(response.data.message);
   }
     } catch (err: any) { 
       setErr(err.response?.data); 

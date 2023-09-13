@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import './update-post.scss';
-import { makeRequest } from '../../axios';
+import { makeRequest } from '../../../axios';
 import { useNavigate } from 'react-router-dom';
+import Categories from '../categories/Categories';
+import './update-post.scss';
 
 const UpdatePost = () => {
   const navigate = useNavigate();
@@ -87,45 +88,10 @@ const UpdatePost = () => {
                 </div>
               
 
-              <div className="inputs-row2">
-                  <div className="categoryMenu">
-                      <h3>Category</h3> 
-                      <div className="categories">
-                          
-                          <div className="catInput">
-                            <label htmlFor="ghosts">Ghosts</label>
-                            <input type="radio" checked={cat === 'ghosts'} name="cat" value='ghosts' id="ghosts" onChange={e => setCat(e.target.value)} /> 
-                          </div>
-
-                          <div className="catInput">
-                            <label htmlFor="witchcraft">Witchcraft</label>
-                            <input type="radio" checked={cat === 'witchcraft'} name="cat" value='witchcraft' id="witchcraft" onChange={e => setCat(e.target.value)} /> 
-                          </div>
-
-                          <div className="catInput">
-                            <label htmlFor="demons">Demons</label>
-                            <input type="radio" checked={cat === 'demons'} name="cat" value='demons' id="demons" onChange={e => setCat(e.target.value)} /> 
-                          </div>
-
-                          <div className="catInput">
-                            <label htmlFor="mythological/oldfolklore">Mythological / Old Folklore</label>
-                            <input type="radio" checked={cat === 'mythological_oldfolklore'} name="cat" value='mythological_oldfolklore' id="mythological/oldfolklore" onChange={e => setCat(e.target.value)} />
-                          </div>
-                                          
-                          <div className="catInput">
-                            <label htmlFor="shadow_people">Shadow People</label>
-                            <input type="radio" checked={cat === 'shadowPeople'} name="cat" value='shadowPeople' id="shadow_people" onChange={e => setCat(e.target.value)} />
-                          </div>
-                          
-                          <div className="catInput">
-                            <label htmlFor="premonitions_and_prophecies">Premonitions and Prophecies</label>
-                            <input type="radio" checked={cat === 'premonitionsAndProphecies'} name="cat" value='premonitionsAndProphecies' id="premonitions_and_prophecies" onChange={e => setCat(e.target.value)} /> 
-                          </div>
-                      </div>
-                  </div>
-
-                  <button type="submit">Update</button>
-              </div>
+                <div className="inputs-row2">
+                  <Categories cat={cat} setCat={setCat} />
+                  <button type="submit">Publish</button>
+                </div>
             </div>
 
           

@@ -21,18 +21,21 @@ const NavBar: React.FC = () => {
                 <img src={logoNav} alt="Logo ParaSeekers"/>
             </div>
 
+            <div className="navbar-center"></div>
+            
             <button className="nav-toggle" aria-label={isNavMenuVisible ? "Close Menu" : "Open Menu"} onClick={toggleNavMenu}>
                 <FontAwesomeIcon icon={faBars} />
             </button>
 
-            <div className="navbar-center"></div>
+            
 
             <div className={`nav-menu ${isNavMenuVisible ? 'nav-menu_visible' : ''}`}>
                 {currentUser && (
                     <div className="nav-buttons">
                         <div className="username-container">
                             <img src={miniLogo} alt="Mini Logo ParaSeekers" />
-                            <p>{currentUser?.username}</p>
+
+                            <NavLink to="/myprofile"><p>{currentUser?.username}</p></NavLink>
                         </div>
                         <button className="logout-button" onClick={logout}>
                             <NavLink to="/login">Logout</NavLink>

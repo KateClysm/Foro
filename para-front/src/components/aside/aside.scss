@@ -22,9 +22,7 @@
       li {
         display: block;
         padding-bottom: 1.5rem;
-    
         &:hover {color: $logo-color;}
-    
         &:last-child {padding-bottom: 0;}
       }
     }
@@ -32,50 +30,20 @@
     .padding-divider {
       padding: 2rem 0;
       width: 100%;
-    }
-  }
 
-  .padding-divider {
-    padding: 2rem 0;
-    width: 100%;
-
-    .divider {
-      height: 1px;
-      background-color: $post-color;
-    }
-  }
-
-  .principal-page,
-  .topics,
-  .secondary-page {
-    padding: 0 1rem 0 1.5rem;
-  }
-  .home-hover{color: $logo-color;}
-  
-
-  @media (min-width: 1600px) {
-    li {
-      padding-bottom: 2rem;
+      .divider {
+        height: 1px;
+        background-color: $post-color;
+      }
     }
 
     .principal-page,
     .topics,
     .secondary-page {
-      padding: 0 1rem 0 2rem;
+      padding: 0 1rem 0 1.5rem;
     }
-  }
-
-  @media (min-width: 2500px) {
-    li {
-      padding-bottom: 3rem;
-    }
-
-    .principal-page,
-    .topics,
-    .secondary-page {
-      padding: 0 1rem 0 2.5rem;
-    }
-  }
+    .home-hover{color: $logo-color;}
+}
 @media (max-width: 1023px) {
     .aside-left {display: none;}
 }

@@ -1,8 +1,6 @@
-//módulos
 import React, { ReactNode, useContext } from 'react';
 import { Outlet, createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-//componentes y pages
 import NavBar from './components/nav/NavBar';
 import Footer from './components/footer/Footer';
 import AsideLeft from './components/aside/Aside';
@@ -14,18 +12,18 @@ import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import NotFoundPage from './pages/not-found/NotFound';
 import CreatePostButton from './pages/create-update-post/createPostButton/CreatePostButton';
-//lógica
-//estilos
 import './styles/main-content.scss';
 import AsideRight from './components/aside-right/AsideRight';
 import ExtendedPost from './pages/posts/extended-post/ExtendedPost';
 import { AuthContext } from './context/authContext';
 import { configureAxiosWithToken } from './axios';
-import UpdatePost from './pages/create-update-post/UpdatePost';
-import CreatePost from './pages/create-update-post/CreatePost';
+import UpdatePost from './pages/create-update-post/update-post/UpdatePost';
+import CreatePost from './pages/create-update-post/create-post/CreatePost';
+import MyProfile from './pages/profile/MyProfile';
+import Profile from './pages/profile/Profile';
+import UpdateUser from './pages/update-user/UpdateUser';
 
 
-//estructura básica de la página
 const Layout = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -42,10 +40,8 @@ const Layout = () => {
   );
 };
 
-//componente App
 const App: React.FC = () => {
   
-  //si no se está logueado, redirecciona a login,si se está logueado habilita las rutas hijas
   const { currentUser } = useContext(AuthContext);
     console.log("El usuario actual es: ", currentUser);
 
@@ -58,12 +54,10 @@ const App: React.FC = () => {
     return children;
   };
 
-  //creación del ruteo
   const router = createBrowserRouter([
     {
       path: '/', 
-      element: <ProtectedRoute><Layout /></ProtectedRoute>,  //rutas privadas
-      //  element: <Layout />,
+      element: <ProtectedRoute><Layout /></ProtectedRoute>,
       children: [
         {
           path: '/',
@@ -96,11 +90,19 @@ const App: React.FC = () => {
         {
           path: '/updatepost/:id',
           element: <UpdatePost />
+        },
+        {
+          path:"/myprofile",
+          element: <MyProfile/>
+        },
+        {
+          path:"/updatemyprofile/:id",
+          element: <UpdateUser/>
+        },
+        {
+          path:"/profile/:id",
+          element: <Profile/>
         }
-        // {
-        //   path:"/profile/:id",
-        //   element: <ProfilePage/>
-        // }
       ]
     },
     {
@@ -117,7 +119,6 @@ const App: React.FC = () => {
     }
   ]);
 
-  //devuelve el ruteo
   return (
     <div>
       <RouterProvider router={router} />

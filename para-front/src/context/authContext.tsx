@@ -22,7 +22,6 @@ const initialContextValue: AuthContextType = {
 export const AuthContext = createContext(initialContextValue);
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-  // const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")||null));
   const storedUser = localStorage.getItem("user");
   const [currentUser, setCurrentUser] = useState<IUser | null>(
     typeof storedUser === "string" ? JSON.parse(storedUser) : null

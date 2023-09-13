@@ -4,5 +4,7 @@ export interface IUser {
     email: string;
     name: string;
     profilePic: string;
+    coverImage: string;
+    city:string;
+    website:string;
   };
-  

@@ -1,14 +1,12 @@
 @import '../../../styles/styles.scss';
 
-/*  openModal button styles */
 .openModal {
   width: 65px;
   height: 65px;
   position: absolute;
   bottom: 0;
   right: 10px;
-  margin: 2rem;
-  
+  margin: 2rem;  
 }
 .openModal-btn {
   position: fixed;

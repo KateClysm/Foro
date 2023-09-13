@@ -9,7 +9,6 @@ interface IPetitionNotification {
 };
 
 //AÑADIR UN POSTEO
-// AÑADIR UN POSTEO
 export const addPost = (req: Request, res: Response) => {
     const token = req.cookies.accessToken;
   
@@ -41,9 +40,6 @@ export const addPost = (req: Request, res: Response) => {
   };
 
 
-
-
-  
 //ACTUALIZAR UN POSTEO
 export const updatePost = (req:Request, res:Response) => {
     const token = req.cookies.accessToken;
@@ -187,6 +183,22 @@ export const getPosts = (req: Request, res: Response) => {
 
 
 
+//RENDERIZADO DE POSTEOS PARA UN USUARIO
+export const getPostsForUser = (req: Request, res: Response) => {
+    const uid = req.params.uid; // Obtén el uid del parámetro de la URL
+  
+    const q = `SELECT p.*, u.id AS userId, username, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.uid) WHERE p.uid = ?`;
+  
+    db.query(q, [uid], (err, arrayPosts: []) => {
+      if (err) {
+        return res.status(500).json({ message: 'Error fetching posts.' });
+      }
+      if (arrayPosts.length === 0) {
+        return res.status(200).json({ message: "Hey! You haven't made a post?" });
+      }
+      return res.status(200).json({ arrayPosts, message: 'Your Posts'});
+    });
+  };
 
 
 

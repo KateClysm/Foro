@@ -1,0 +1,18 @@
+@import "../../styles/styles.scss";
+
+.containerMyProfile{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0rem;
+    align-items: center;
+    width: 100%;
+    .enable-icon{
+        path {
+            color: $white-color;;
+          }
+    
+          &:hover > path {
+            color: $logo-color;
+          }
+    }
+}

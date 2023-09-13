@@ -1,16 +1,11 @@
-//módulos
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-//lógica
 import { makeRequest } from '../../axios'; 
 import { IPost } from '../../models/IPost';
-//componentes
 import Post from './post/Post';
-//estilos
 import './posts.scss';
 
 
-//creación componente Posts
 const Posts: React.FC = () => {
 
    const [posts, setPosts] = useState<IPost[]>([]);
@@ -20,12 +15,10 @@ const Posts: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      // Manda la petición de posteos con la categoría y recibe los posteos y un mensaje 
       const res = await makeRequest.get(`/posts/?cat=${param}`);
       const responseData = res.data.arrayPosts;
       const responseMessage = res.data.message;
       
-      // Verifica si responseData es un array, si lo es, configura setPosts con responseData. Si no, muestra un mensaje de error en la consola.
       if (Array.isArray(responseData) && responseData.every(item => typeof item === 'object')) {
         setPosts(responseData);
         setMessage(responseMessage);
@@ -47,7 +40,7 @@ const Posts: React.FC = () => {
         {posts.map((post) => (
           <Post post={post} key={post.id} />
         ))}
-  
+
         {param === 'home' && ( 
           <div className="container-button">
             <NavLink to="/?cat=all" >
