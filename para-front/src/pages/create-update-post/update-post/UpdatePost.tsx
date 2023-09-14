@@ -1,52 +1,68 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { makeRequest } from '../../../axios';
 import { useNavigate } from 'react-router-dom';
 import Categories from '../categories/Categories';
 import './update-post.scss';
+import { AuthContext } from '../../../context/authContext';
 
 const UpdatePost = () => {
+  const { currentUser } = useContext(AuthContext);
+  const idUser = currentUser?.id;
+
+
+
   const navigate = useNavigate();
   const state = useLocation().state;
-  const [title, setTitle] = useState(state.title);
-  const [textArea, setTextArea] = useState(state.description);
-  const [file, setFile] = useState(state.img);
-  const [cat, setCat] = useState<string>(state.cat);
+  const [newTitle, setNewTitle] = useState(state.title); 
+  const [textArea, setTextArea] = useState(state.description); 
+  const [file, setFile] = useState<File | null>(null);
+  const [newCat, setNewCat] = useState(state.cat); 
 
-  const upload = async () => {
+  const upload = async (file: File | null) => {
     try {
       if (file) {
         const formData = new FormData();
-        formData.append("file", file); // imagen
+        formData.append("file", file);
         const res = await makeRequest.post("/upload", formData);
         console.log("Image uploaded successfully:", res.data);
-        return res.data; 
+        return res.data; // Devuelve solo el nombre del archivo, no la URL completa
       }
-        console.error("No file selected.");
-      
+      console.error("No file selected.");
+      // Si no se selecciona un archivo, no modificamos el estado 'file'
+      return null;
     } catch (error) {
       console.error("Error uploading image:", error);
+      // Si ocurre un error, también puedes devolver null o manejar el error según tus necesidades
+      return null;
     }
   };
 
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const imgUrl =  await upload();
+      
+    console.log('datos del posteo por ser actualizado: title:', newTitle, ' description:', textArea, ' cat:', newCat, ' img: ',file, ' uid: ', state.uid);
+    // const imgUrl =  await upload(file);
+    const imgUrl = file ? await upload(file) : null;
     try {
-      await makeRequest.put(`/posts/${state.id}`, { 
-        title,
+      await makeRequest.put(`/posts/update/${state.id}`, { 
+        title: newTitle,
         description: textArea,
-        cat,
-        img: file ? imgUrl : '', 
+        // img: file ? imgUrl : state.img, 
+        img: imgUrl,
+        cat: newCat, 
+        uid: idUser
       });
-      navigate("/");
+      console.log('Successful changes!');      
+      navigate("/myprofile");
+      return;
     } catch (err) {
       console.log(err);
+      console.log('An error has occurred while uploading!');    
     }
-  }
+  };
   
-
     
   return (
     <div className="containerForm">
@@ -59,22 +75,20 @@ const UpdatePost = () => {
                     <input
                       className="titleInput"
                       type="text"
-                      placeholder="Title"
-                      value= {title}
-                      onChange={(e) => setTitle(e.target.value)}
+                      value= {newTitle}
+                      onChange={(e) => setNewTitle(e.target.value)}
                     />
                 
                     <div className="editorContainer">
                       <textarea 
                         className="inputDescription"
-                        placeholder="Tell your Story..."
                         value={textArea}
                         onChange={(e) => setTextArea(e.target.value)}
                         >
                       </textarea>
                     </div>
                       
-                      <label className="file" htmlFor="file">Upload Image</label>
+                    <label className="file" htmlFor="file">Upload Image</label>
                       <input
                       style={{ display: "none" }}
                       type="file"
@@ -89,7 +103,7 @@ const UpdatePost = () => {
               
 
                 <div className="inputs-row2">
-                  <Categories cat={cat} setCat={setCat} />
+                  <Categories cat={newCat} setCat={setNewCat} />
                   <button type="submit">Publish</button>
                 </div>
             </div>

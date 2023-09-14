@@ -8,5 +8,4 @@ export interface IUser {
     city?: string;
     website?: string;
     coverImage: string;
-
 };

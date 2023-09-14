@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import db from "../db";
-import IUser from '../models/IUser';
+import { IUser } from '../models/IUser';
 
 
 export const register = (req: Request, res: Response) => {

@@ -17,7 +17,7 @@ const CreatePost = () => {
   const [file, setFile] = useState<File | null>(null);
   const [cat, setCat] = useState<string>('');
 
-  const upload = async () => {
+  const upload = async (file: File | null) => {
     try {
       if (file) {
         const formData = new FormData();
@@ -35,7 +35,7 @@ const CreatePost = () => {
 
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const imgUrl =  await upload();
+    const imgUrl =  await upload(file);
     try{
       await makeRequest.post(`/posts/` ,{  
         title,

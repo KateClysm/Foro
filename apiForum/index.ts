@@ -26,7 +26,6 @@ app.use(cors(corsOptions));
 
 
 //multer
-
 const storage = multer.diskStorage({
   destination: function (req:Request, file, cb){
     cb(null, '../para-front/public/upload')

@@ -40,33 +40,87 @@ export const addPost = (req: Request, res: Response) => {
   };
 
 
-//ACTUALIZAR UN POSTEO
-export const updatePost = (req:Request, res:Response) => {
-    const token = req.cookies.accessToken;
 
+// export const updatePost = (req: Request, res: Response) => {
+//   const token = req.cookies.accessToken;
+//   if (!token) return res.status(401).json("Not authenticated!");
+
+//   jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
+//     if (err) return res.status(403).json("Token is not valid!");
+
+//     const q = "UPDATE posts SET title=?, description=?, img=?, cat=? WHERE uid = ? AND id = ?";
+//     const postId = req.params.id;
+//     const values = [
+//       req.body.title,
+//       req.body.description,
+//       req.body.img,
+//       req.body.cat,
+//       req.body.uid
+//     ];
+
+//     db.query(q, [...values, postId], (err, data) => {
+//       if (err) {
+//         console.error(err);
+//         return res.status(500).json(err); // Maneja el error y envía una respuesta de error
+//       }
+//       // Envía una respuesta exitosa si no hay errores
+//       res.status(200).json("Post updated successfully");
+//     });
+//   });
+// };
+// controlador.js
+export const updatePost = (req: Request, res: Response) => {
+    const token = req.cookies.accessToken;
     if (!token) return res.status(401).json("Not authenticated!");
   
     jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
       if (err) return res.status(403).json("Token is not valid!");
-    
-      const q = "UPDATE posts SET `title`=?, `description`=?, `img`=?, `cat`=? WHERE `id` = ? AND `uid` = ?";
-
+  
       const postId = req.params.id;
-      const values = [
-        req.body.title,
-        req.body.description,
-        req.body.img,
-        req.body.cat,
-        userInfo.id
-      ]
+   
+      const imgExists = req.body.img;
 
-      db.query(q,[...values, postId, userInfo.id], (err, data) => {
-        if (err) return res.status(403).json(err);
+      if (imgExists){
+            const values = [
+                req.body.title,
+                req.body.description,
+                req.body.img,
+                req.body.cat,
+                req.body.uid
+            ];
 
-        return res.json("Post has been updated");
-      })
+            const q = "UPDATE posts SET title=?, description=?, img=?, cat=? WHERE uid=? AND id=?";
+            db.query(q, [...values, postId], (err, data) => {
+                if (err) {
+                  console.error(err);
+                  return res.status(500).json(err);
+                }
+                res.status(200).json("Post updated successfully");
+              });
+              return console.log("Un error cuando la imagen existe")
+      }
+      if (!imgExists){
+            const values = [
+                req.body.title,
+                req.body.description,
+                req.body.cat,
+                req.body.uid
+            ];
+
+            const q = "UPDATE posts SET title=?, description=?, cat=? WHERE uid=? AND id=?";
+            db.query(q, [...values, postId], (err, data) => {
+                if (err) {
+                  console.error(err);
+                  return res.status(500).json(err);
+                }
+                res.status(200).json("Post updated successfully");
+              });
+            
+            return console.log("Un error cuando la imagen no existe")
+      }
     });
 };
+
 
 
 //ELIMINAR UN POSTEO

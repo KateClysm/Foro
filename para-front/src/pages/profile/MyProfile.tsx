@@ -33,10 +33,9 @@ const MyProfile = () => {
         setLoading(false);
       });
   }, [idUser]);
-
   return (
     <div className="containerMyProfile">
-      <NavLink to={`/updateuser/${idUser}`} state={currentUser} className="linkEditProfile">
+      <NavLink to={`/updatemyprofile/${idUser}`} state={currentUser as IUser} className="linkEditProfile">
         <FontAwesomeIcon icon={faPen} className='enable-icon'/>
       </NavLink>
       <ProfileBase userPosts={userPosts} loading={loading} user={currentUser as IUser} />
