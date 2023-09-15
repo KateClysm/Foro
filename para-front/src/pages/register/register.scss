@@ -2,25 +2,25 @@
 .register-form {
     background-color: $post-color;
     border-radius: 1.25rem;
-    padding: 2rem 2rem 2rem 4rem;
+    padding: 2rem 1rem 2rem 1rem;
     width: 280px;
     margin: 5rem auto 6rem;
 
     h1{
         text-align: center;
         font-size: 1.4rem;
-        margin: 0.8rem 2rem 0 1rem;
-        padding: 0.6rem 1.2rem;
+        padding: 0 1rem 0.5rem 1rem;
+        margin: 1.5rem 0.5rem;
     }
 }
 
 .register-form input {
     color: $background-color;
-    width: 85%;
-    padding: 0.5rem 0.7rem;
+    width: 92%;
+    padding: 0.5rem 0.9rem;
     border: 0;
     border-radius: 0.3rem;
-    margin: 0.7rem 0.5rem;
+    margin: 1.2rem 1.2rem;
 
     &-input:focus{
         transition: all .2s;
@@ -30,9 +30,14 @@
         color: $time-color;
     }
 }
-
+.register-form label{
+    margin: 1rem 0 0.8rem 1.2rem;
+}
+.register-form span{
+    padding: 0.3rem 0 0.3rem 1.2rem;
+}
 .register-button-btn{
-    margin: 0.8rem 4rem 0 6rem;
+    margin: 1.3rem 0 0 8.5rem;
     padding: 0.6rem 1.2rem;
     background-color: $logo-color;
     border: 1px solid $logo-color;
@@ -79,7 +84,6 @@
         flex-direction: column;
         float: left;
     } 
-    
     .column-rigth{
         width: 50%;
         display: flex;
@@ -87,28 +91,39 @@
         float: right;
     } 
     .bottom-elements{ 
-        width: 100%;
+        width: 95%;
         display: flex;
         flex-direction: column;
         clear: both;
     } 
     .email-register input{
-        width: 93%;
-    } 
-    .register-button-btn{
-        margin: 1rem auto 0 auto;
-        padding: 0.6rem 2.5rem;
+        width: 100%;
+    }
+    .logIn-option {
+        text-align: center;
+        padding: 1.5rem 0 1rem 1.8rem;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .register-form{
-        width: 550px;
-        max-height: 550px;
+        width: 580px;
+        max-height: 640px;
     }
+    .register-button-btn{
+        margin: 2rem auto 0 auto;
+    }
+    
 }
 @media screen and (min-width: 1280px){
     .register-form{
-        width: 600px;
+        width: 620px;
+    }
+    .register-button-btn{
+        margin: 2rem auto 0 auto;
+    }
+    .logIn-option {
+        text-align: center;
+        padding: 1.5rem 0 1rem 1.5rem;
     }
 }
