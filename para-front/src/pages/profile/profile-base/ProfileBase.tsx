@@ -7,18 +7,8 @@ const ProfileBase: React.FC<{userPosts: IPost[];  loading: boolean; user: IUser}
     if (user){ return (
       <div className="profile">
         <div className="images">
-          <img src={`../../../../public/upload/${user.coverImage}`} alt="" className="cover" />
-          <img src={`../../../../public/upload/${user.profilePic}`} alt="" className="profilePic" />
-            {/* <img
-            src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt=""
-            className="cover"
-            />
-            <img
-            src="https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt=""
-            className="profilePic"
-            /> */}
+          <img src={`../../../../public/uploads/users/coverPic${user.coverImage}`} alt="" className="cover" />
+          <img src={`../../../../public/uploads/users/profilePic${user.profilePic}`} alt="" className="profilePic" />
         </div>
   
         <div className="info-posts">

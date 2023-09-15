@@ -9,68 +9,75 @@ const UpdateUser = () => {
   const navigate = useNavigate();
   const state = useLocation().state;
   
-  const [username, setUsername] = useState(state.username);
-  const [name, setName] = useState(state.name);
-  const [email, setEmail] = useState(state.email);
-  const [city, setCity] = useState(state.city);
-  const [website, setWebsite] = useState(state.website);
-  const [userImage, setUserImage] = useState(state.profilePic);
-  const [baner, setBaner] = useState(state.coverImage)
+  const [newUsername, setNewUsername] = useState(state.username);
+  const [newName, setNewName] = useState(state.name);
+  const [newEmail, setNewEmail] = useState(state.email);
+  const [newCity, setNewCity] = useState(state.city);
+  const [newWebsite, setNewWebsite] = useState(state.website);
+  const [newProfilePic, setNewProfilePic] = useState<File | null>(null);
+  const [newCoverImage, setNewCoverImage] = useState<File | null>(null);
+  const userId = useState(state.id);
 
-  const uploadUserImage = async (userImage: File | null) => {
-    if (userImage) {
-      const formData = new FormData();
-      formData.append("file", userImage);
-      try {
-        const response = await makeRequest.post("/upload", formData);
-        return response.data;
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        throw error;
+
+  const uploadProfilePic = async (newProfilePic: File | null) => {
+    try {
+      if (newProfilePic) {
+        const formData = new FormData();
+        formData.append("file", newProfilePic);
+        const res = await makeRequest.post("/uploads/users/profilePic", formData);
+        console.log("Image uploaded successfully:", res.data);
+        return res.data; // Devuelve solo el nombre del archivo, no la URL completa
       }
+      console.error("No newProfilePic selected.");
+      // Si no se selecciona un archivo, no modificamos el estado 'file'
+      return null;
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      // Si ocurre un error, también puedes devolver null o manejar el error según tus necesidades
+      return null;
     }
-    return null;
   };
 
-  const uploadBaner = async (baner: File | null) => {
-    if (baner) {
-      const formData = new FormData();
-      formData.append("file", baner);
-      try {
-        const response = await makeRequest.post("/upload", formData);
-        return response.data;
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        throw error;
+  const uploadCoverImage= async (newCoverImage: File | null) => {
+    try {
+      if (newCoverImage) {
+        const formData = new FormData();
+        formData.append("file", newCoverImage);
+        const res = await makeRequest.post("/uploads/users/coverPic", formData);
+        console.log("Image uploaded successfully:", res.data);
+        return res.data; 
       }
+      console.error("No newCoverImage selected.");
+      return null;
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      return null;
     }
-    return null;
   };
 
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const ppurl = newProfilePic ? await uploadProfilePic(newProfilePic) : null;
+    const ciurl = newCoverImage ? await uploadCoverImage(newCoverImage) : null;
     try {
-      const profilePicUrl = await uploadUserImage(userImage);
-      const coverImageUrl = await uploadBaner(baner);
-
-      const updatedUser = {
-        username,
-        name,
-        email,
-        city,
-        website,
-        profilePic: userImage? profilePicUrl : state.profilePic,
-        coverImage: baner? coverImageUrl : state.coverImage,
-      };
-
-      await makeRequest.put(`/users/update/${state.id}`, updatedUser);
+      await makeRequest.put(`/users/update/${userId}`, { 
+        username: newUsername,
+        name: newName,
+        email: newEmail,
+        city: newCity,
+        website: newWebsite,
+        profilePic: ppurl,
+        coverPic: ciurl
+      });
+      console.log('Successful changes!');      
       navigate("/myprofile");
-    } catch (error) {
-      console.error("Error updating user:", error);
+      return;
+    } catch (err) {
+      console.log(err);
+      console.log('An error has occurred while uploading!');    
     }
   };
-  
     
   return (
     <div className="containerForm">
@@ -81,36 +88,36 @@ const UpdateUser = () => {
                     <input
                       type="text"
                       placeholder="username"
-                      value= {username}
-                      onChange={(e) => setUsername(e.target.value)}
+                      value= {newUsername}
+                      onChange={(e) => setNewUsername(e.target.value)}
                     />
                 
                     <input
                       type="text"
                       placeholder="name"
-                      value= {name}
-                      onChange={(e) => setName(e.target.value)}
+                      value= {newName}
+                      onChange={(e) => setNewName(e.target.value)}
                     />
 
                     <input
                       type="text"
                       placeholder="email"
-                      value= {email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value= {newEmail}
+                      onChange={(e) => setNewEmail(e.target.value)}
                     />
 
                     <input
                       type="text"
                       placeholder="city"
-                      value= {city}
-                      onChange={(e) => setCity(e.target.value)}
+                      value= {newCity}
+                      onChange={(e) => setNewCity(e.target.value)}
                     />
 
                     <input
                       type="text"
                       placeholder="website"
-                      value= {website}
-                      onChange={(e) => setWebsite(e.target.value)}
+                      value= {newWebsite}
+                      onChange={(e) => setNewWebsite(e.target.value)}
                     />
 
                 
@@ -121,7 +128,7 @@ const UpdateUser = () => {
                     id="userImage"
                     onChange={(e) => {
                         if (e.target.files) {
-                          setUserImage(e.target.files[0]);
+                          setNewProfilePic(e.target.files[0]);
                         }
                       }}
                     />
@@ -133,7 +140,7 @@ const UpdateUser = () => {
                       id="baner"
                       onChange={(e) => {
                           if (e.target.files) {
-                            setBaner(e.target.files[0]);
+                            setNewCoverImage(e.target.files[0]);
                           }
                         }}
                       />

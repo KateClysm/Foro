@@ -25,7 +25,7 @@ const UpdatePost = () => {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        const res = await makeRequest.post("/upload", formData);
+        const res = await makeRequest.post("/uploads/posts", formData);
         console.log("Image uploaded successfully:", res.data);
         return res.data; // Devuelve solo el nombre del archivo, no la URL completa
       }

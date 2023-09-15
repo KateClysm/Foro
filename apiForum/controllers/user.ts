@@ -24,9 +24,6 @@ export const getUser = (req: Request, res: Response) => {
 
 
 export const updateUser = (req: Request, res: Response) => {
-    // const userId = req.params.id; // Obtén el ID del usuario autenticado desde el token
-  
-    // const { username, name, email, city, website, profilePic, coverImage } = req.body;
   
     const q = `UPDATE users SET username=?, name=?, email=?, city=?, website=?, profilePic=?, coverImage=? WHERE id=?`;
   
@@ -43,13 +40,13 @@ export const updateUser = (req: Request, res: Response) => {
   
     db.query(q, ...values, (err:any, data:any) => {
       if (err) {
+        console.error(err);
         return res.status(500).json(err);
       }
-  
-      if (data && "affectedRows" in data && data.affectedRows === 1) {
-        return res.status(200).json("Usuario actualizado con éxito");
-      }
-      return res.status(404).json("Usuario no encontrado");
-      
+      res.status(200).json("Images updated successfully");
+      return;
     });
-  };
+  
+    return console.log("Un error cuando la imagen no existe")
+      
+};
