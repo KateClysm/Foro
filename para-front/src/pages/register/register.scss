@@ -2,7 +2,7 @@
 .register-form {
     background-color: $post-color;
     border-radius: 1.25rem;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 2rem 2.5rem;
     width: 280px;
     margin: 5rem auto 6rem;
 
@@ -16,28 +16,32 @@
 
 .register-form input {
     color: $background-color;
-    width: 92%;
-    padding: 0.5rem 0.9rem;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
     border: 0;
     border-radius: 0.3rem;
-    margin: 1.2rem 1.2rem;
+    margin: 0.8rem 0 2.5rem;
 
-    &-input:focus{
+    &:focus{
         transition: all .2s;
         outline: 2px solid $logo-color;
     }
-    &-input::placeholder {
+    &::placeholder {
         color: $time-color;
     }
 }
 .register-form label{
-    margin: 1rem 0 0.8rem 1.2rem;
+    margin: 1rem 0 0.8rem 0;
 }
-.register-form span{
-    padding: 0.3rem 0 0.3rem 1.2rem;
+.username-required, .name-required, .email-required{
+    padding: 0.3rem;
+}
+.username-validation, .name-validation, .password-validation, .email-validation {
+    margin: -2rem 0 3rem 0;
 }
 .register-button-btn{
-    margin: 1.3rem 0 0 8.5rem;
+    display: block;
+    margin: 1.3rem auto 0 auto;
     padding: 0.6rem 1.2rem;
     background-color: $logo-color;
     border: 1px solid $logo-color;
@@ -71,6 +75,9 @@
 
 
 @media only screen and (min-width:768px) {
+    .register-form input {
+        margin: 0.8rem 0 2.5rem;
+    }
     .register-form{
         width: 500px;
         margin: 6rem auto 7rem;
@@ -79,19 +86,18 @@
         padding: 1rem 0 1rem 0;
     }
     .column-left{
-        width: 50%;
+        width: 46%;
         display: flex;
         flex-direction: column;
         float: left;
     } 
     .column-rigth{
-        width: 50%;
+        width: 46%;
         display: flex;
         flex-direction: column;
         float: right;
     } 
     .bottom-elements{ 
-        width: 95%;
         display: flex;
         flex-direction: column;
         clear: both;
@@ -101,14 +107,13 @@
     }
     .logIn-option {
         text-align: center;
-        padding: 1.5rem 0 1rem 1.8rem;
+        padding: 1.5rem 0 1rem 0;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .register-form{
         width: 580px;
-        max-height: 640px;
     }
     .register-button-btn{
         margin: 2rem auto 0 auto;
@@ -124,6 +129,6 @@
     }
     .logIn-option {
         text-align: center;
-        padding: 1.5rem 0 1rem 1.5rem;
+        padding: 1.5rem 0 1rem 0;
     }
 }
