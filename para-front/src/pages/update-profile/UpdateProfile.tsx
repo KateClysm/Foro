@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from "react";
 import { makeRequest } from '../../axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './update-profile.scss'
+import { AuthContext } from '../../context/authContext';
 
 
 const UpdateProfile = () => {
+  const { currentUser, updateCurrentUser } = useContext(AuthContext); // Cambio de setCurrentUser a updateCurrentUser
 
   const navigate = useNavigate();
   const state = useLocation().state;
@@ -62,11 +64,16 @@ const UpdateProfile = () => {
       });
       console.log('datos del usuario por ser actualizado: username:', newUsername, ' name:', newName, ' city: ',newCity, ' website: ', newWebsite, ' coverImage: ', imgUrl);
 
-     // Actualiza los datos del usuario en el contexto
-     const updatedUser = await fetchUpdatedUserData();
 
      console.log('Successful changes desde handleclick!');
-     navigate('/myprofile', { state: { updatedUser } });
+     console.log(currentUser);
+
+     const updatedUserData = await fetchUpdatedUserData();
+      if (updatedUserData) {
+        updateCurrentUser(updatedUserData);
+      }
+
+    navigate('/myprofile');
      return;
    } catch (err) {
      console.log(err);
@@ -74,7 +81,7 @@ const UpdateProfile = () => {
    }
  };
 
-
+ 
   return (
     <div className="containerForm">
       <h2>Edit Your User</h2>

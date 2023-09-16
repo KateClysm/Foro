@@ -10,7 +10,6 @@ const Profile = () => {
     const { id } = useParams();
     const [userPosts, setUserPosts] = useState<IPost[]>([]);
     const [user, setUser] = useState<IUser | null>(null);
-    // const [loading, setLoading] = useState(true);
     const [loading, setLoading] = useState(true);
 
 

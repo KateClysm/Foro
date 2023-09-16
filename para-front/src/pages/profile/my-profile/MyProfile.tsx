@@ -1,4 +1,4 @@
-import {  useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { makeRequest } from "../../../axios";
 import { AuthContext } from "../../../context/authContext";
 import { IPost } from "../../../models/IPost";
@@ -8,21 +8,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import '../profile.scss';
-import { useLocation } from 'react-router-dom';
+
 
 const MyProfile = () => {
-  const location = useLocation();
-  const updatedUser = location.state?.updatedUser;  
-
-
+  
   const [userPosts, setUserPosts] = useState<IPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   const { currentUser } = useContext(AuthContext);
 
-  const dataUser = updatedUser? updatedUser : currentUser; //si en location pasé actualizaciones de usuario uso esas, sino, el current
-  const idUser = updatedUser? updatedUser.id : currentUser;
-  
+  console.log(currentUser);
+
+  const idUser = currentUser?.id;
   console.log('id del usuario: ', idUser);
 
   useEffect(() => {
@@ -44,10 +41,10 @@ const MyProfile = () => {
   }, [idUser]);
   return (
     <div className="containerMyProfile">
-      <NavLink to={`/updatemyprofile/${idUser}`} state={dataUser as IUser} className="linkEditProfile">
+      <NavLink to={`/updatemyprofile/${idUser}`} state={currentUser as IUser} className="linkEditProfile">
         <FontAwesomeIcon icon={faPen} className='enable-icon'/>
       </NavLink>
-      <ProfileBase userPosts={userPosts} loading={loading} user={dataUser as IUser} />
+      <ProfileBase userPosts={userPosts} loading={loading} user={currentUser as IUser} />
     </div>
     
   );
