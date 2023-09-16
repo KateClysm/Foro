@@ -40,7 +40,6 @@ export const updateUser = (req: Request, res: Response) => {
         const values = [
           req.body.username,
           req.body.name,
-          req.body.email,
           req.body.city,
           req.body.website,
           req.body.coverImage
@@ -48,7 +47,7 @@ export const updateUser = (req: Request, res: Response) => {
 
         console.log('values desde el server: ', values);
 
-        const q = "UPDATE users SET username=?, name=?, email=?, city=?, website=?, coverImage=? WHERE id=?";
+        const q = "UPDATE users SET username=?, name=?, city=?, website=?, coverImage=? WHERE id=?";
         db.query(q, [...values, id], (err, data) => {
             if (err) {
               console.error(err);

@@ -4,16 +4,16 @@ import { makeRequest } from '../../axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './update-profile.scss'
 
+
 const UpdateProfile = () => {
+
   const navigate = useNavigate();
   const state = useLocation().state;
   
   const [newUsername, setNewUsername] = useState(state.username); 
   const [newName, setNewName] = useState(state.name);
-  const [newEmail, setNewEmail] = useState(state.email);
   const [newCity, setNewCity] = useState(state.city || '');
   const [newWebsite, setNewWebsite] = useState(state.website || '');
-  // const [newProfilePic, setNewProfilePic] = useState<File | null>(null);
   const [file, setFile] = useState<File | null>(null);
 
   const upload = async (file: File | null) => {
@@ -24,18 +24,27 @@ const UpdateProfile = () => {
         const res = await makeRequest.post("/upload", formData);
         console.log("Image uploaded successfully desde el front:", res.data);
         return res.data; 
-        // return res.data.filename;
       }
       console.error("No file selected.");
-      // Si no se selecciona un archivo, no modificamos el estado 'file'
       return null;
     } catch (error) {
       console.error("Error uploading image desde el front:", error);
-      // Si ocurre un error, también puedes devolver null o manejar el error según tus necesidades
       return null;
     }
   };
     
+
+  const fetchUpdatedUserData = async () => {
+    try {
+      const response = await makeRequest.get(`/users/find/${state.id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching updated user data:', error);
+      return null;
+    }
+  };
+
+
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
       
@@ -47,21 +56,24 @@ const UpdateProfile = () => {
       await makeRequest.put(`/users/update/${state.id}`, {
         username: newUsername,
         name: newName,
-        email: newEmail,
         city: newCity,
         website: newWebsite,
-        coverImage: imgUrl, // Asegúrate de que imgUrl contenga el nombre de la imagen
+        coverImage: imgUrl,
       });
-      console.log('datos del usuario por ser actualizado: username:', newUsername, ' name:', newName, ' email:', newEmail, ' city: ',newCity, ' website: ', newWebsite, ' coverImage: ', imgUrl);
+      console.log('datos del usuario por ser actualizado: username:', newUsername, ' name:', newName, ' city: ',newCity, ' website: ', newWebsite, ' coverImage: ', imgUrl);
 
-      console.log('Successful changes desde handleclick!');      
-      navigate("/myprofile");
-      return;
-    } catch (err) {
-      console.log(err);
-      console.log('An error has occurred while uploading desde handleclick!');    
-    }
-  };
+     // Actualiza los datos del usuario en el contexto
+     const updatedUser = await fetchUpdatedUserData();
+
+     console.log('Successful changes desde handleclick!');
+     navigate('/myprofile', { state: { updatedUser } });
+     return;
+   } catch (err) {
+     console.log(err);
+     console.log('An error has occurred while uploading desde handleclick!');
+   }
+ };
+
 
   return (
     <div className="containerForm">
@@ -78,12 +90,6 @@ const UpdateProfile = () => {
                 type="text"
                 value= {newName}
                 onChange={(e) => setNewName(e.target.value)}
-              />
-
-              <input
-                type="text"
-                value= {newEmail}
-                onChange={(e) => setNewEmail(e.target.value)}
               />
 
               <div className='city'>
@@ -105,34 +111,6 @@ const UpdateProfile = () => {
                   onChange={(e) => setNewWebsite(e.target.value)}
                 />
               </div>
-
-          
-              {/* <label className="file" htmlFor="userImage">Upload User Image</label>
-              <input
-              style={{ display: "none" }}
-              name="profilepic"
-              type="file"
-              id="userImage"
-              onChange={(e) => {
-                  if (e.target.files) {
-                    setNewProfilePic(e.target.files[0]);
-                  }
-                }}
-              /> */}
-
-              {/* <label className="file" htmlFor="baner">Upload User Baner</label>
-                <input
-                style={{ display: "none" }}
-                name="file"
-                type="file"
-                id="baner"
-                onChange={(e) => {
-                    if (e.target.files) {
-                      setNewCoverImage(e.target.files[0]);
-                    }
-                  }}
-                />
-            </div> */}
 
             <label className="file" htmlFor="file">Upload Image</label>
               <input
