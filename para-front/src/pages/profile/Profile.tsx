@@ -7,6 +7,7 @@ import { IUser } from "../../models/IUsers";
 import './profile.scss';
 
 const Profile = () => {
+  
     const { id } = useParams();
     const [userPosts, setUserPosts] = useState<IPost[]>([]);
     const [user, setUser] = useState<IUser | null>(null);

@@ -50,6 +50,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
       // Mantén el email y la contraseña del currentUser actual
       const updatedUser: IUser = {
         ...currentUser, // Copia todos los campos actuales del currentUser
+        username: user.username,
         name: user.name, // Actualiza el nombre (u otros campos según sea necesario)
         city: user.city,
         website: user.website,
