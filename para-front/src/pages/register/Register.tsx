@@ -92,7 +92,7 @@ const Register: React.FC = () => {
           </div>
           {usernameTouched && !isUsernameValid && (
             <span className='username-validation'>
-              Your username must have at least 3 characters
+              Your username must have at least 3 characters.
             </span>
           )}
           {/* name */}
@@ -135,7 +135,7 @@ const Register: React.FC = () => {
           </div>
           {passwordTouched && !isPasswordLenghtValid && (
             <span className='password-validation'>
-              Your password must have at least 8 characters
+              Your password must have at least 8 characters.
             </span>
           )}
           {passwordTouched && !passwordNotBlank && (
@@ -159,7 +159,7 @@ const Register: React.FC = () => {
           </div>
           {confirmPasswordTouched && !passwordMatch && passwordNotBlank && (
             <span className='password-validation'>
-              Your passwords do not match
+              Your passwords do not match.
             </span>
           )}
         </div>
@@ -180,12 +180,12 @@ const Register: React.FC = () => {
             onBlur={() => setEmailTouched(true)}
             value={email}
             onChange={(e) => setEmail(e.target.value)} />
+          {emailTouched && !emailValid && (
+            <span className='email-validation'>
+              Your email address must be in format: email@example.com
+            </span>
+          )}
         </div>
-        {emailTouched && !emailValid && (
-          <span className='email-validation'>
-            Your email address must be in format: email@example.com
-          </span>
-        )}
 
         {/* submit */}
         <button className="register-button-btn" type="submit" onClick={handleClick} >Confirm</button>
