@@ -2,15 +2,19 @@ import { IPost } from "../../../models/IPost";
 import { IUser } from "../../../models/IUsers";
 import Post from "../../posts/post/Post";
 import './profile-base.scss';
-
 const ProfileBase: React.FC<{userPosts: IPost[];  loading: boolean; user: IUser}> = ({userPosts, loading, user}) => {
-    if (user){ return (
+
+  console.log(user);
+
+  return (
       <div className="profile">
         <div className="images">
-          <img src={`../../../../public/uploads/users/coverPic${user.coverImage}`} alt="" className="cover" />
-          <img src={`../../../../public/uploads/users/profilePic${user.profilePic}`} alt="" className="profilePic" />
+
+          <img src={`../../../../public/upload/${user.coverImage}`} alt="" className="cover" />
+          <div className="post-content-img" style={{ backgroundImage: `url(../../../../public/upload/${user.coverImage})` }}></div>
+          {/* <img src={`../../../../public/postsPictures/${user.profilePic}`} alt="" className="profilePic" /> */}
         </div>
-  
+      
         <div className="info-posts">
           <div className="user-info">
             <h3 className="user-info-username">{user.username}</h3>
@@ -42,6 +46,6 @@ const ProfileBase: React.FC<{userPosts: IPost[];  loading: boolean; user: IUser}
         </div>
       </div>
     );
-  }};
+  };
   
   export default ProfileBase;

@@ -66,9 +66,7 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
   
   
       <div className="post-content">
-          {post.img &&(
-              <div className="post-content-img" style={{ backgroundImage: `url(../../../../public/uploads/posts/${post.img})` }}></div>
-          )}
+          <div className="post-content-img" style={{ backgroundImage: `url(../../../../public/upload/${post.img})` }}></div>
 
           {isExtendedPost ? (
           <div className="post-content-data">

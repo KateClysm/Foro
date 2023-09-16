@@ -17,11 +17,11 @@ import AsideRight from './components/aside-right/AsideRight';
 import ExtendedPost from './pages/posts/extended-post/ExtendedPost';
 import { AuthContext } from './context/authContext';
 import { configureAxiosWithToken } from './axios';
-import MyProfile from './pages/profile/MyProfile';
 import Profile from './pages/profile/Profile';
-import UpdateUser from './pages/update-user/UpdateUser';
 import CreatePost from './pages/create-update-post/create-post/CreatePost';
 import UpdatePost from './pages/create-update-post/update-post/UpdatePost';
+import UpdateProfile from './pages/update-profile/UpdateProfile';
+import MyProfile from './pages/profile/my-profile/MyProfile';
 
 
 const Layout = () => {
@@ -97,7 +97,7 @@ const App: React.FC = () => {
         },
         {
           path:"/updatemyprofile/:id",
-          element: <UpdateUser/>
+          element: <UpdateProfile/>
         },
         {
           path:"/profile/:id",

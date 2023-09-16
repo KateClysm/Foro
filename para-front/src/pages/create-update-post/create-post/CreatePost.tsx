@@ -22,7 +22,7 @@ const CreatePost = () => {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        const res = await makeRequest.post("/uploads/posts", formData);
+        const res = await makeRequest.post("/upload", formData);
         console.log("Image uploaded successfully:", res.data); 
         return res.data; 
       }
