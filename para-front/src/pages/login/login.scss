@@ -23,13 +23,13 @@
     color: $background-color;
     margin: 0.5rem 0;
 
-    &-input:focus{
+    &:focus{
         transition: all .2s;
         outline: 2px solid $logo-color;
     }
 
-    &-input::placeholder{
-        color: var(--time);
+    &::placeholder{
+        color: $time-color;
     }
 }
 .login-form .login-button{
@@ -93,7 +93,6 @@
 @media screen and (min-width: 1024px) {
     .login-form{
         width: 390px;
-        max-height: 550px;
     }
 }
 @media screen and (min-width: 1280px){
