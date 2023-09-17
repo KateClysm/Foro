@@ -2,20 +2,18 @@ import express from 'express';
 import userRoutes from "./routes/users";
 import authRoutes from './routes/auth';
 import postRoutes from './routes/posts';
-import likesRoutes from './routes/likes';
-import commentRoutes from './routes/comments';
+import communitiesRoutes from './routes/communities';
 import cors from 'cors'; 
 import cookieParser from 'cookie-parser';
 import multer from "multer";
 import { Request, Response } from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 8800; //acá van a ir todas nuestras requests
+const PORT = process.env.PORT || 8800;
 
 //middlewares
 app.use(cookieParser());
 app.use(express.json());
-
 const corsOptions = {
   origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -23,7 +21,6 @@ const corsOptions = {
   allowedHeaders: 'Content-Type, Authorization',
 };
 app.use(cors(corsOptions));
-
 
 //multer
 const storage = multer.diskStorage({
@@ -42,15 +39,13 @@ app.post('/apiForum/upload', upload.single('file'), (req: Request, res: Response
   }
 })
 
-
-// ROUTES utilización de las rutas importadas
+// routes
 app.use('/apiForum/users', userRoutes);
 app.use('/apiForum/auth', authRoutes);
 app.use('/apiForum/posts', postRoutes);
-app.use('/apiForum/likes', likesRoutes);
-app.use('/apiForum/comments', commentRoutes);
+app.use('/apiForum/communities', communitiesRoutes);
 
-// test server => remove
+// test server
 app.get('/test', (req, res) => {
     res.json('hello server')
 })

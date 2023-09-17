@@ -1,7 +1,7 @@
 @import '../../../styles/styles.scss';
 
 .container-show-post {
-    width: 93%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -21,5 +21,12 @@
   
     .button-show {
       display: none;
+    }
+
+    .post-content{
+      height: 100%;
+    }
+    .post-content-img{
+      height: 500px;
     }
   }

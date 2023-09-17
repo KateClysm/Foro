@@ -4,18 +4,25 @@ import { IUser } from "../../../models/IUsers";
 import Post from "../../posts/post/Post";
 import './profile-base.scss';
 import { faBuildingUser, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import paramember from './paramember.png';
+import paraghost from './paraseekerghost.png';
+
 const ProfileBase: React.FC<{userPosts: IPost[];  loading: boolean; user: IUser}> = ({userPosts, loading, user}) => {
 
   console.log(user);
 
   if(user){
-
     return (
       <div className="profile">
         <div className="images">
 
-          <img src={`../../../../public/upload/${user.coverImage}`} alt="" className="cover" />
-          {/* <img src={`../../../../public/postsPictures/${user.profilePic}`} alt="" className="profilePic" /> */}
+          {user.coverImage? (
+            <img src={`../../../../public/upload/${user.coverImage}`} alt="" className="cover" />
+          ) : (<img src={paramember} alt="" className="cover" />)}
+
+          {user.profilePic? (
+            <img src={`../../../../public/upload/${user.profilePic}`} alt="" className="profilePic" />
+          ) : (<img src={paraghost} alt="" className="profilePic" />)}
         </div>
       
         <div className="info-posts">

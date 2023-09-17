@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import db from "../db";
-import { IUser } from '../models/IUser';
+import { IUser } from '../interfaces/IUser';
 
 
 export const register = (req: Request, res: Response) => {
@@ -45,11 +45,9 @@ export const login = (req: Request, res: Response) => {
         const checkPassword = bcrypt.compareSync(req.body.password, user[0].password);
         if(!checkPassword) return res.status(400).json("Wrong password or username"); 
 
-        // const token = jwt.sign({id:user[0].id}, "secretKey");
         const token = jwt.sign({id:user[0].id}, "jwtkey");
-        // console.log('EL TIPO DEL ID QUE SE PASA COMO USERINFO ES: ', typeof user[0].id);   DA NUMBER
 
-        const {password, ...others} = user[0]; //destructuración
+        const {password, ...others} = user[0]; 
         res.cookie("accessToken", token, {
             httpOnly: true,
         }).status(200).json(others);

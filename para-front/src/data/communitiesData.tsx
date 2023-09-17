@@ -1,4 +1,4 @@
-import { ICommunity } from "../models/ICommunities";
+import { ICommunity } from "../models/ICommunity";
 
 const communitiesData: ICommunity[] = [
   {

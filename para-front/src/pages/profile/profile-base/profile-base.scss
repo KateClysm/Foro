@@ -13,6 +13,8 @@
         height: 100%;
         object-fit: cover;
         border-radius: 3px;
+        background-color: transparent;
+        border: 1px solid $search-color;
       }
 
       .profilePic {
@@ -25,6 +27,8 @@
         right: 0;
         margin: auto;
         top: 150px;
+        border: 1px solid $search-color;
+        background-color: $background-color;
       }
     }
     .info-posts{
@@ -34,7 +38,7 @@
       .info-posts-container{
         display: flex;
         flex-direction: column;
-        column-gap: 5rem;
+        row-gap: 2rem;
         width: 100%;
       }
       

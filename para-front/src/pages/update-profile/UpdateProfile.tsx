@@ -17,6 +17,7 @@ const UpdateProfile = () => {
   const [newCity, setNewCity] = useState(state.city || '');
   const [newWebsite, setNewWebsite] = useState(state.website || '');
   const [file, setFile] = useState<File | null>(null);
+  const [ newProfilePic, setNewProfilePic] = useState<File | null>(null);
 
   const upload = async (file: File | null) => {
     try {
@@ -24,13 +25,13 @@ const UpdateProfile = () => {
         const formData = new FormData();
         formData.append("file", file);
         const res = await makeRequest.post("/upload", formData);
-        console.log("Image uploaded successfully desde el front:", res.data);
+        console.log("Image uploaded successfully", res.data);
         return res.data; 
       }
       console.error("No file selected.");
       return null;
     } catch (error) {
-      console.error("Error uploading image desde el front:", error);
+      console.error("Error uploading image", error);
       return null;
     }
   };
@@ -53,6 +54,7 @@ const UpdateProfile = () => {
     
 
     const imgUrl = file ? await upload(file) : null;
+    const newProfilePicUrl = newProfilePic ? await upload(newProfilePic) : null;
     console.log(imgUrl);
     try {
       await makeRequest.put(`/users/update/${state.id}`, {
@@ -61,8 +63,10 @@ const UpdateProfile = () => {
         city: newCity,
         website: newWebsite,
         coverImage: imgUrl,
+        profilePic: newProfilePicUrl
       });
-      console.log('datos del usuario por ser actualizado: username:', newUsername, ' name:', newName, ' city: ',newCity, ' website: ', newWebsite, ' coverImage: ', imgUrl);
+
+      console.log('datos del usuario por ser actualizado: username:', newUsername, ' name:', newName, ' city: ',newCity, ' website: ', newWebsite, ' coverImage: ', imgUrl, ' profilePic: ', newProfilePic);
 
 
      console.log('Successful changes desde handleclick!');
@@ -71,7 +75,7 @@ const UpdateProfile = () => {
      const updatedUserData = await fetchUpdatedUserData();
       if (updatedUserData) {
         updateCurrentUser(updatedUserData);
-      }
+      };
 
     navigate('/myprofile');
      return;
@@ -119,7 +123,7 @@ const UpdateProfile = () => {
                 />
               </div>
 
-            <label className="file" htmlFor="file">Upload Image</label>
+            <label className="file" htmlFor="file">Upload Cover Image</label>
               <input
               style={{ display: "none" }}
               type="file"
@@ -131,6 +135,17 @@ const UpdateProfile = () => {
                 }}
               />
 
+            <label className="file" htmlFor="newProfilePic">Upload Profile Picture</label>
+              <input
+              style={{ display: "none" }}
+              type="file"
+              id="newProfilePic"
+              onChange={(e) => {
+                  if (e.target.files) {
+                    setNewProfilePic(e.target.files[0]);
+                  }
+                }}
+              />
             </div>
             
             <button type="submit">Update User</button>

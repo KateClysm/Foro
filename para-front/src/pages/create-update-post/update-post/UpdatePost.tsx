@@ -43,13 +43,11 @@ const UpdatePost = () => {
     e.preventDefault();
       
     console.log('datos del posteo por ser actualizado: title:', newTitle, ' description:', textArea, ' cat:', newCat, ' img: ',file, ' uid: ', state.uid);
-    // const imgUrl =  await upload(file);
     const imgUrl = file ? await upload(file) : null;
     try {
       await makeRequest.put(`/posts/update/${state.id}`, { 
         title: newTitle,
         description: textArea,
-        // img: file ? imgUrl : state.img, 
         img: imgUrl,
         cat: newCat, 
         uid: idUser

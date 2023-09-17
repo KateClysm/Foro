@@ -7,6 +7,8 @@ import {IPost} from '../../../models/IPost'
 import { makeRequest } from '../../../axios';
 import { AuthContext } from '../../../context/authContext';
 import { useContext } from 'react';
+import paraghost from './paraseekerghost.png';
+
 const Post: React.FC<{ post: IPost }> = ({ post }) => {  
   const navigate = useNavigate(); 
 
@@ -35,12 +37,19 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
     }
   };
 
+
   return (
     <div className={`post most-popular`}>
   
       <div className='post-container-user'>
         <div className="post-user">
-          <div className="post-user-image" style={{ backgroundImage: `url(${post.profilePic})` }}></div>
+
+              {post.profilePic? (
+                <div className="post-user-image" style={{ backgroundImage: `url(../../../../public/upload/${post.profilePic})` }}></div>
+              ):(
+                <div className="post-user-image" style={{ backgroundImage: `url(${paraghost})` }}></div>
+              )}
+              
               <div className="post-user-data">
 
                   <NavLink to={`/profile/${post.uid}`} onClick={handleReloadRoute}><p className="user">{post.username}</p></NavLink>
