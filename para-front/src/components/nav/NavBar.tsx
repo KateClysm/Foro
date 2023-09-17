@@ -43,7 +43,7 @@ const NavBar: React.FC = () => {
                 <div className="nav-buttons">
                     {
                     currentUser ? 
-                        <button className="login-button " onClick={logout}>
+                        <button className="login-button register-button" onClick={logout}>
                             <NavLink to="/login">Logout</NavLink>
                         </button>
                         : ''
