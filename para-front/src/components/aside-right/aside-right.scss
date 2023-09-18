@@ -1,11 +1,18 @@
 @import '../../styles/styles.scss';
 
 .container-asideright{
-    width: 100%;
-    padding: 2rem 0;
+    width: 93%;
+    padding: 2rem 0rem;
     display: flex;
     flex-direction: column;
     row-gap: 0.8rem; 
-    padding-right: 2rem; /*separa el aside de la derecha*/
     align-items: center;
+}
+
+
+@media (min-width: 1024px) {
+    .container-asideright{
+        width: 100%;
+        padding-right: 2rem; 
+    }
 }

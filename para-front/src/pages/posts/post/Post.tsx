@@ -39,7 +39,7 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
 
 
   return (
-    <div className={`post most-popular`}>
+    <div className={`post`}>
   
       <div className='post-container-user'>
         <div className="post-user">
