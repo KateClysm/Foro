@@ -3,11 +3,11 @@ import moment from 'moment';
 import './post.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
-import {IPost} from '../../../models/Ipost'
 import { makeRequest } from '../../../axios';
 import { AuthContext } from '../../../context/authContext';
 import { useContext } from 'react';
 import paraghost from './paraseekerghost.png';
+import { IPost } from '../../../models/IPosts';
 
 const Post: React.FC<{ post: IPost }> = ({ post }) => {  
   const navigate = useNavigate(); 

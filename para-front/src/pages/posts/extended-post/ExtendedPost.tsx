@@ -3,7 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import Post from '../post/Post';
 import './extended-post.scss';
 import { makeRequest } from '../../../axios';
-import { IPost } from '../../../models/IPost';
+import { IPost } from '../../../models/IPosts';
 
 const ExtendedPost: React.FC = () => {
   const [post, setPost] = useState<IPost | null>(null);

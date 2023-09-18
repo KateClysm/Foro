@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IPost } from "../../../models/IPost";
 import { IUser } from "../../../models/IUsers";
 import Post from "../../posts/post/Post";
 import './profile-base.scss';
 import { faBuildingUser, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import paramember from './paramember.png';
 import paraghost from './paraseekerghost.png';
+import { IPost } from "../../../models/IPosts";
 
 const ProfileBase: React.FC<{userPosts: IPost[];  loading: boolean; user: IUser}> = ({userPosts, loading, user}) => {
 

@@ -1,56 +1,83 @@
 @import '../../styles/styles.scss';
 
-.containerForm{
+
+.container-form-update-profile{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 4rem 0rem 4rem 0rem;
-    height: fit-content;
+    padding-top: 6rem;
     
+    width: 100%;
+
     h2{
         padding-bottom: 2rem;
-        font-size: 2rem;
     }
     form{
-        width: fit-content;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         background-color: $aside-color;
+        width: 70%;
         padding: 3rem;
-        border-radius: 3px;
-        
-        .containerInputs{
-            width: 100%;
-            display: grid;
-            grid-template-columns: 3fr auto;
-            justify-content: space-between;
-            column-gap: 3rem;
 
-            input{
-                width: 100%;
-                border-radius: 3px;
-                color: $background-color;
+        input {
+            color: $logo-color;
+        }
+        .container-inputs-user{
+            display: flex;
+            justify-content: space-evenly;
+            padding-bottom: 2rem;
+            .upload-info-user{
+                width: 50%;
 
+                .username, .name, .city, .website{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 1.6rem;
+
+                    input{ padding: 0.4rem;}
+                }
             }
-            .file{
-                background-color: $search-color;
-                padding: 0.6rem 1rem;
-                width: fit-content;
-                border-radius: 3px;
+            .upload-images{
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                align-items: center;
+
+                .profile-picture, .cover-image{
+                    background-color: $search-color;
+                    padding: 0.5rem 1rem;
+                    border-radius: 0.3rem;
+                    border: 1px solid $aside-color;
+
+                    &:hover{
+                        background-color: rgba(0, 0, 0, 0.452);
+                        border: 1px solid $logo-color;
+                        color: $white-color;
+                        cursor: pointer;
+                    }
+                    &:hover > label { cursor: pointer;}
+
+                    .upload-message{
+                        padding: 0.2rem;
+                    }
+                }
+            }
+        }
+
+
+        button{
+            background-color: $logo-color;
+            padding: 0.6rem;
+            border-radius: 0.3rem;
+            border: 1px solid $background-color;
+
+            &:hover{
+                background-color:rgba(0, 0, 0, 0.452);
+                border: 1px solid $logo-color;
+                color: $white-color;
                 cursor: pointer;
             }
-            
         }
     }
-    button{
-        color: $white-color;
-        background-color: $logo-color;
-        padding: 0.6rem 1rem;
-        border-radius: 3px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-    }
 }
-
