@@ -87,67 +87,84 @@ const UpdateProfile = () => {
 
  
   return (
-    <div className="containerForm">
-      <h2>Edit Your User</h2>
-      <form onSubmit={handleClick}>
-            <div className="containerInputs">
-              <input
-                type="text"
-                value= {newUsername}
-                onChange={(e) => setNewUsername(e.target.value)}
-              />
-          
-              <input
-                type="text"
-                value= {newName}
-                onChange={(e) => setNewName(e.target.value)}
-              />
+    <div className="container-form-update-profile">
+      <h2 className='edit-user-title'>Edit Your User</h2>
+      <form onSubmit={handleClick} >
+            <div className="container-inputs-user">
 
-              <div className='city'>
-                <label htmlFor="city">Your City/Country</label>
-                <input
-                  id="city"
-                  type="text"
-                  value= {newCity}
-                  onChange={(e) => setNewCity(e.target.value)}
-                />
-              </div>
+                <div className="upload-info-user">
+                    <div className="username">
+                        <label htmlFor="username">Your Username</label>
+                        <input
+                          type="text"
+                          value= {newUsername}
+                          onChange={(e) => setNewUsername(e.target.value)}
+                        />
+                    </div>
+                    
+                    <div className="name">
+                        <label htmlFor="name">Your Name</label>
+                        <input
+                          type="text"
+                          value= {newName}
+                          onChange={(e) => setNewName(e.target.value)}
+                        />
+                    </div>
 
-              <div className="website">
-                <label htmlFor="website">Your Website</label>
-                <input
-                  id= "website"
-                  type="text"
-                  value= {newWebsite}
-                  onChange={(e) => setNewWebsite(e.target.value)}
-                />
-              </div>
+                    <div className='city'>
+                      <label htmlFor="city">Your City/Country</label>
+                      <input
+                        id="city"
+                        type="text"
+                        value= {newCity}
+                        onChange={(e) => setNewCity(e.target.value)}
+                      />
+                    </div>
 
-            <label className="file" htmlFor="file">Upload Cover Image</label>
-              <input
-              style={{ display: "none" }}
-              type="file"
-              id="file"
-              onChange={(e) => {
-                  if (e.target.files) {
-                    setFile(e.target.files[0]);
-                  }
-                }}
-              />
+                    <div className="website">
+                      <label htmlFor="website">Your Website</label>
+                      <input
+                        id= "website"
+                        type="text"
+                        value= {newWebsite}
+                        onChange={(e) => setNewWebsite(e.target.value)}
+                      />
+                    </div>
+                </div>
 
-            <label className="file" htmlFor="newProfilePic">Upload Profile Picture</label>
-              <input
-              style={{ display: "none" }}
-              type="file"
-              id="newProfilePic"
-              onChange={(e) => {
-                  if (e.target.files) {
-                    setNewProfilePic(e.target.files[0]);
-                  }
-                }}
-              />
+                <div className="upload-images">
+                    <div className="cover-image">
+                      <label className="file" htmlFor="file">Upload Cover Image</label>
+                        <input
+                        style={{ display: "none" }}
+                        type="file"
+                        id="file"
+                        onChange={(e) => {
+                            if (e.target.files) {
+                              setFile(e.target.files[0]);
+                            }
+                          }}
+                        />
+                    </div>
+
+                    <div className="profile-picture">
+                      <label className="file" htmlFor="newProfilePic">Upload Profile Picture</label>
+                        <input
+                        style={{ display: "none" }}
+                        type="file"
+                        id="newProfilePic"
+                        onChange={(e) => {
+                            if (e.target.files) {
+                              setNewProfilePic(e.target.files[0]);
+                            }
+                          }}
+                        />
+                    </div>
+                   
+                </div>
+
             </div>
-            
+
             <button type="submit">Update User</button>
       </form>
     </div>

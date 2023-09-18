@@ -164,7 +164,7 @@ const CreatePost = () => {
     <div className="containerForm">
       <h2>Make your Post!</h2>
       <form onSubmit={handleClick}>
-            <div className="containerInputs">
+            <div className="container-inputs-post">
 
                 <div className="inputs-row1">
 
