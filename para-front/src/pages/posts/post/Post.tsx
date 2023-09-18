@@ -12,6 +12,13 @@ import { IPost } from '../../../models/IPosts';
 const Post: React.FC<{ post: IPost }> = ({ post }) => {  
   const navigate = useNavigate(); 
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  };
+
   const handleReloadRoute = () => {
     const currentLocation = window.location.pathname;
     navigate(currentLocation, { replace: true }); 
@@ -87,7 +94,7 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
             </div>
           </div>
         ) : (
-          <NavLink to={`/post/${post.id}`} state={{ post }}>
+          <NavLink to={`/post/${post.id}`} state={{ post }} onClick={scrollToTop}>
             <div className="post-content-data">
               <h2 className="post-content-data-title">{post.title}</h2>
               <div className="post-content-data-text">

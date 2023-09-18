@@ -2,10 +2,18 @@ import React from 'react';
 import './help.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const Help: React.FC = () => {
 
-  return (
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+        });
+    };
+
+    return (
         <section className="help">
             <h1 className="help-head">Help</h1>
             <div className="help-question">
@@ -83,9 +91,9 @@ const Help: React.FC = () => {
             <p>
                 You can click the button down below and head over to our “Contact” section!
             </p>
-            <a className="help-button" href="contact.html">
+            <NavLink to="/contact" className="help-button" onClick={scrollToTop}>
                 Go to Contact
-            </a>
+            </NavLink>
         </section>
     );
 }
