@@ -17,8 +17,6 @@ Users should be able to:
 [Trello](https://trello.com/b/g6Q9Sa6i/foro)
 
 ![WhatsApp Image 2023-09-18 at 00 48 07 (1)](https://github.com/KateClysm/Foro/assets/134759638/003cdf2e-5e9d-44b8-8e8a-6ee7c28cfb66)
-![WhatsApp Image 2023-09-18 at 00 48 07](https://github.com/KateClysm/Foro/assets/134759638/f3cf14a0-7700-4bb0-8ddf-b6213efa2dbd)
-![WhatsApp Image 2023-09-18 at 00 48 06](https://github.com/KateClysm/Foro/assets/134759638/6e27c2be-47c8-4861-bc7f-3b1e04b9c913)
 
 
 ### Built with
