@@ -8,36 +8,36 @@ interface IPetitionNotification {
     notification: string;
 };
 
-//AÑADIR UN POSTEO
+// AÑADIR UN POSTEO
 export const addPost = (req: Request, res: Response) => {
-    const token = req.cookies.accessToken;
-  
-    if (!token) return res.status(401).json("Not authenticated!");
-  
-    jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
-      if (err) return res.status(403).json("Token is not valid!");
-  
-      const q = "INSERT INTO posts (`title`, `description`, `img`, `uid`, `createAt`, `cat`) VALUES (?, ?, ?, ?, ?, ?)";
-  
-      const values = [
-        req.body.title,
-        req.body.description,
-        req.body.img,
-        req.body.uid, // Utiliza el uid del cuerpo de la solicitud
-        req.body.createAt,
-        req.body.cat,
-      ];
-  
-      db.query(q, values, (err, data) => {
-        if (err) {
-          console.error("Error creating post:", err);
-          return res.status(500).json("Error creating post");
-        }
-        return res.json("Post has been created");
-      });
-    });
-  };
+  const token = req.cookies.accessToken;
 
+  if (!token) return res.status(401).json("Not authenticated!");
+
+  jwt.verify(token, "jwtkey", (err: any, userInfo: any) => {
+    if (err) return res.status(403).json("Token is not valid!");
+
+    const q = "INSERT INTO posts (`title`, `description`, `img`, `uid`, `createAt`, `cat`) VALUES (?, ?, ?, ?, ?, ?)";
+
+    const values = [
+      req.body.title,
+      req.body.description,
+      req.body.img,
+      req.body.uid,
+      req.body.createAt,
+      req.body.cat,
+    ];
+
+    db.query(q, values, (err, data) => {
+      if (err) {
+        console.error("Error creating post:", err);
+        return res.status(500).json("Error creating post");
+      }
+      return res.json("Post has been created"); // Envía la respuesta aquí, una sola vez
+    });
+    
+  });
+};
 
 export const updatePost = (req: Request, res: Response) => {
     const token = req.cookies.accessToken;
@@ -197,7 +197,6 @@ export const getPosts = (req: Request, res: Response) => {
             const limitedPosts = arrayPosts.slice(0, 4);
             return res.status(200).json({ arrayPosts: limitedPosts, message: 'Here you have some of the posts in our Foro!' });
         });
-        return;
     }
 
     if (cat === 'all') {
@@ -207,7 +206,6 @@ export const getPosts = (req: Request, res: Response) => {
             }
             return res.status(200).json({ arrayPosts, message: queryAll.notification });
         });
-        return;
     }
 
     if (cat ) {
@@ -226,7 +224,6 @@ export const getPosts = (req: Request, res: Response) => {
             return res.status(200).json({ arrayPosts, message: queryFind.notification }); //si se encontraron posteos los muestra
         });
     };
-    return res.status(400).json({ message: 'Invalid category.' });
 };
 
 

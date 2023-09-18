@@ -51,15 +51,3 @@ const NavBar: React.FC = () => {
 }
 
 export default NavBar;
-
-
-/* <div className="container-search-bar">
-    <div className="search-nav">
-        <form action="https://www.google.com/search" method="get" className="search-bar" target="_blank">
-            <input className='search' type="text" placeholder="Search Post" name="q" />
-            <button type="submit">
-                <img src={miniLogo} alt="Mini Logo ParaSeekers" />
-            </button>
-        </form>
-    </div>
-</div> */
