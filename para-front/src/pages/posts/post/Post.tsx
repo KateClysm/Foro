@@ -3,7 +3,7 @@ import moment from 'moment';
 import './post.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
-import {IPost} from '../../../models/IPost'
+import {IPost} from '../../../models/Ipost'
 import { makeRequest } from '../../../axios';
 import { AuthContext } from '../../../context/authContext';
 import { useContext } from 'react';
@@ -11,6 +11,13 @@ import paraghost from './paraseekerghost.png';
 
 const Post: React.FC<{ post: IPost }> = ({ post }) => {  
   const navigate = useNavigate(); 
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  };
 
   const handleReloadRoute = () => {
     const currentLocation = window.location.pathname;
@@ -87,7 +94,7 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
             </div>
           </div>
         ) : (
-          <NavLink to={`/post/${post.id}`} state={{ post }}>
+          <NavLink to={`/post/${post.id}`} state={{ post }} onClick={scrollToTop}>
             <div className="post-content-data">
               <h2 className="post-content-data-title">{post.title}</h2>
               <div className="post-content-data-text">
