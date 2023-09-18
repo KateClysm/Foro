@@ -19,6 +19,7 @@ const UpdateProfile = () => {
   const [file, setFile] = useState<File | null>(null);
   const [ newProfilePic, setNewProfilePic] = useState<File | null>(null);
 
+
   const upload = async (file: File | null) => {
     try {
       if (file) {
@@ -51,11 +52,9 @@ const UpdateProfile = () => {
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
       
-    
-
     const imgUrl = file ? await upload(file) : null;
     const newProfilePicUrl = newProfilePic ? await upload(newProfilePic) : null;
-    console.log(imgUrl);
+ 
     try {
       await makeRequest.put(`/users/update/${state.id}`, {
         username: newUsername,
@@ -65,6 +64,7 @@ const UpdateProfile = () => {
         coverImage: imgUrl,
         profilePic: newProfilePicUrl
       });
+
 
       console.log('datos del usuario por ser actualizado: username:', newUsername, ' name:', newName, ' city: ',newCity, ' website: ', newWebsite, ' coverImage: ', imgUrl, ' profilePic: ', newProfilePic);
 
@@ -145,6 +145,11 @@ const UpdateProfile = () => {
                             }
                           }}
                         />
+                        
+                        {file &&
+                          <p>{file.name}</p>
+                        }
+
                     </div>
 
                     <div className="profile-picture">
@@ -159,6 +164,10 @@ const UpdateProfile = () => {
                             }
                           }}
                         />
+
+                        {newProfilePic &&
+                          <p>{newProfilePic.name}</p>
+                        }
                     </div>
                    
                 </div>

@@ -41,12 +41,21 @@
                         color:$logo-color;
                     }
                 }
-                .file{
+                .post-upload-image{
                     background-color: $search-color;
-                    padding: 0.6rem 1rem;
-                    width: fit-content;
                     border-radius: 3px;
+                    
+                    padding: 0.8rem 1rem;
+                    border: 1px solid $background-color;
+
+                    &:hover{
+                    background-color: rgba(0, 0, 0, 0.384);
+                    border: 1px solid $logo-color;
+                    color: $white-color;
                     cursor: pointer;
+                    }
+
+                    &:hover > label{ cursor: pointer;}
                 }
             }
             

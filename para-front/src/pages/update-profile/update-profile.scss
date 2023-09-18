@@ -32,9 +32,9 @@
                 .username, .name, .city, .website{
                     display: flex;
                     justify-content: space-between;
-                    padding-bottom: 0.5rem;
+                    padding-bottom: 1.6rem;
 
-                    input{ padding: 0.2rem;}
+                    input{ padding: 0.4rem;}
                 }
             }
             .upload-images{
@@ -57,6 +57,10 @@
                         cursor: pointer;
                     }
                     &:hover > label { cursor: pointer;}
+
+                    .upload-message{
+                        padding: 0.2rem;
+                    }
                 }
             }
         }

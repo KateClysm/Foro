@@ -86,17 +86,22 @@ const UpdatePost = () => {
                       </textarea>
                     </div>
                       
-                    <label className="file" htmlFor="file">Upload Image</label>
-                      <input
-                      style={{ display: "none" }}
-                      type="file"
-                      id="file"
-                      onChange={(e) => {
-                          if (e.target.files) {
-                            setFile(e.target.files[0]);
-                          }
-                        }}
-                      />
+                    <div className="post-upload-image">
+                      <label className="file" htmlFor="file">Upload Image</label>
+                        <input
+                        style={{ display: "none" }}
+                        type="file"
+                        id="file"
+                        onChange={(e) => {
+                            if (e.target.files) {
+                              setFile(e.target.files[0]);
+                            }
+                          }}
+                        />
+                        {file &&
+                          <p>{file.name}</p>
+                        }
+                     </div>
                 </div>
               
 
