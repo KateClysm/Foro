@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { makeRequest } from '../../axios'; 
-import { IPost } from '../../models/IPost';
 import Post from './post/Post';
 import './posts.scss';
+import { IPost } from '../../models/IPosts';
 
 
 const Posts: React.FC = () => {
@@ -11,8 +11,9 @@ const Posts: React.FC = () => {
    const [posts, setPosts] = useState<IPost[]>([]);
    const [message, setMessage] = useState('');
 
-  const param = useLocation().search.replace('?cat=', '') || 'home';
-
+  // const param = useLocation().search.replace('?cat=', '') || 'home';
+  const param = new URLSearchParams(useLocation().search).get('cat') || 'home';
+  
   const fetchData = async () => {
     try {
       const res = await makeRequest.get(`/posts/?cat=${param}`);

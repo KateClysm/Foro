@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { makeRequest } from "../../axios";
-import { IPost } from "../../models/IPost";
 import ProfileBase from "./profile-base/ProfileBase";
 import { useParams } from 'react-router-dom';
 import { IUser } from "../../models/IUsers";
 import './profile.scss';
+import { IPost } from "../../models/IPosts";
 
 const Profile = () => {
   

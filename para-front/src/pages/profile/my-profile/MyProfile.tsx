@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { makeRequest } from "../../../axios";
 import { AuthContext } from "../../../context/authContext";
-import { IPost } from "../../../models/IPost";
 import ProfileBase from "../profile-base/ProfileBase";
 import { IUser } from "../../../models/IUsers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import '../profile.scss';
+import { IPost } from "../../../models/IPosts";
 
 
 const MyProfile = () => {
