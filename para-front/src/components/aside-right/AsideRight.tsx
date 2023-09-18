@@ -1,47 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './aside-right.scss';
 import Communities from './communities/Communities';
-import communitiesData from '../../data/communitiesData';
+import { ICommunity } from '../../models/ICommunity';
+import { makeRequest } from '../../axios';
 
 const AsideRight: React.FC = () => {
+
+  const [communities, setCommunities] = useState<ICommunity[]>([]);
+
+  const fetchCommunities = async () => {
+    try {
+      const res = await makeRequest.get('/communities');
+      const responseData = res.data.data; // Accede a responseData.data
+
+      if (Array.isArray(responseData) && responseData.every(item => typeof item === 'object')) {
+        setCommunities(responseData);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }; 
+
+  useEffect(() => {
+    fetchCommunities();
+  }, []); // Agrega un arreglo de dependencias vacío
+
   return (
     <div className="container-asideright">
-      
-      <Communities communities={communitiesData} />
-
-      {/* <div className="statistic">
-        <div className="statistic-title">
-          <i className="fa-solid fa-chart-column statistics-icon"></i>
-          <p className='post-title'>Online Statistics</p>
-        </div>
-        <div className="statistic-data">
-          <p className="post-text members">Members</p>
-          <p className="post-text number">3</p>
-        </div>
-        <div className="statistic-data">
-          <p className="post-text visitors">Visitors</p>
-          <p className="post-text number">12</p>
-        </div>
-      </div>
-
-      <div className="statistic">
-        <div className="statistic-title">
-          <i className="fa-solid fa-chart-column statistics-icon"></i>
-          <p className='post-title'>Forum Statistics</p>
-        </div>
-        <div className="statistic-data">
-          <p className="post-text members">Threads:</p>
-          <p className="post-text number">40</p>
-        </div>
-        <div className="statistic-data">
-          <p className="post-text visitors">Messages</p>
-          <p className="post-text number">120</p>
-        </div>
-        <div className="statistic-data">
-          <p className="post-text visitors">Members</p>
-          <p className="post-text number">15</p>
-        </div>
-      </div> */}
+      <Communities communities={communities} />
     </div>
   );
 };

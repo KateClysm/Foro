@@ -1,124 +1,21 @@
 @import '../../styles/styles.scss';
 
+//MOBILE FIRST
 nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: $nav-color;
-    height: 70px;
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo img{
-    height: 50px;
-}
-
-.nav-menu {
-    display: grid;
-    grid-template-columns: 5fr 1fr; 
-    justify-content: center;
-    width: 100%; 
-    align-items: center; 
-    padding-right: 1.5rem;
-}
-
-.container-search-bar{
-    display: flex;
-    justify-content: center;
-}
-.search-nav{
-    width: 70%; 
-}
-.search-nav button{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding-left: 0.8rem; 
-}
-.search-nav button img{
-    height: 25px;
-}
-.search-bar{
-    height: 35px;
-    background-color: $search-color;
-    border-radius: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.8rem 0rem 1.5rem;
-}
-.search-bar input{
-    width: 100%;
-    border: none; 
-    background-color: transparent;
-    color: $white-color;
-    outline: none;
-}
-::placeholder{
-    color: $white-color;
-    background-color: transparent;
-}
-
-
-.nav-buttons{
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    column-gap: 1rem;
-}
-.login-button{
-    background-color: $logo-color;
-}
-.register-button{
-    background-color: $search-color
-}
-.login-button, .register-button{
-    height: 100%;
-    border-radius: 45px;
-    min-width: 80px;
-    border: none;
-    cursor: pointer;
-}
-
-.aside-nav{
-    display: none;
-}
-
-.nav-toggle{
-    display: none;
-}
-
-
-.containerAsideInNav{
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .aside-nav li a{
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 1023px) {
-    nav{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 2rem;
-        position: sticky;
-        top: 0px;
-        height: 60px;
-    }
+    border-bottom: 1px solid $search-color;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0px;
+    height: 60px;
+    z-index: 50;
+    
     .nav-menu {
         flex-direction: column;
         align-items: center;
-        background-color: $nav-color;
         position: fixed; 
         top: 60px;
         height: calc(100% - 60px);
@@ -127,132 +24,164 @@ nav{
         transition: left 0.3s; 
         display: block;
         padding-right: 0rem;
-        z-index: 200;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-buttons{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            column-gap: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            background-color: $nav-color;
+            .logout-button{
+                background-color: $post-color;
+                border: 1px solid $background-color;
+                border-radius: 3px;
+                padding: 0.7rem 2rem;
+                text-align: center;
+
+                &:hover{
+                    color: $white-color;
+                    background-color: $background-color;
+                    border: 1px solid $logo-color;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+            }
+
+            .username-container{
+                display: flex;
+                align-items: center;
+                img {
+                    height: 30px;
+                }
+                p:hover{
+                    color: $logo-color;
+                    cursor: pointer;
+                }
+            }
+        }
     }
-    .container-search-bar{
-        padding: 2rem 0;
+
+    .nav-menu_visible {
+        left: 0;
     }
     .nav-toggle{
         color: $white-color;
         background: none;
         border: none;
-        font-size: 25px;
+        font-size: 20px;
         padding: 0 5px;
         line-height: 60px;
         cursor: pointer;
         display: flex;
+        
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
     }
-    .nav-menu_visible {
-        left: 0;
-    }
-    .nav-toggle:focus:not(:focus-visible) {
-        outline: none;
-    }
+    
     .containerAsideInNav{
         display: flex;
-    }
-    .containerAsideInNav .aside-left{
-        display: block; 
-        width: 100%;
-        text-align: center;
-    }
-    .containerAsideInNav{
         justify-content: center;
+
+        .aside-left{
+            display: block; 
+            width: 100%;
+            text-align: center;
+            padding-bottom: 0;
+        }
     }
+
+    .logo{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            height: 50px;
+        }
+
+        @media (min-width: 1240px) {
+            img{
+                height: 55px;
+                }
+            }
+            
+        @media (min-width: 1400px) {
+            img{
+                height: 60px;
+            }
+        }
+        @media (min-width: 1900px) {
+            img{
+                height: 80px;
+            }
+        }
+        @media (min-width: 2500) {
+            img{
+                height: 100px;
+            }
+        }
+    }   
 }
+
 
 @media (min-width: 1024px) {
-    .logo img{
-        height: 50px;
-    }
-    .nav-buttons{
-        height: 36px;
-        column-gap: 1.2rem;
-    }
-    .login-button, .register-button{
-        min-width: 90px;
-    }
-    .search-nav{
-        width: 80%; 
-    }
-    
-}
-
-@media (min-width: 1240px) {
-    .logo img{
-        height: 55px;
-    }
-    .search-bar{
-        padding: 0 1.5rem 0rem 1.5rem;
-    }
-    .nav-menu {
-        padding-right: 2rem;
-    }
-    
-}
-
-@media (min-width: 1400px) {
-    .login-button, .register-button{
-        min-width: 100px;
-    }
-}
-
-@media (min-width: 1600px) {
-    .logo img{
-        height: 65px;
-    }
-    .nav-buttons{
-        height: 40px;
-    }
-    .login-button, .register-button{
-        min-width: 130px;
-    }
-}
-
-@media (min-width: 1900px) {
-    .logo img{
+    nav{
+        display: grid;
+        grid-template-columns: 2fr 5fr 3fr;
+        position: static;
         height: 70px;
-    }
-    nav {
-        height: 90px;
-    }
-    .search-bar {
-        height: 45px;
-    }
-    .search-nav button img{
-        height: 30px;
-    }
-    .nav-buttons{
-        height: 45px;
-    }
-    .login-button, .register-button{
-        min-width: 150px;
-    }
-    .search-bar{
-        padding: 0 1.5rem 0rem 2rem;
+        padding-left: 0;
+
+        .nav-toggle{
+            display: none;
+        }
+        .nav-menu {
+            z-index:0;
+            display: flex;
+            flex-direction: row;
+            justify-content:flex-end;
+            align-items: center;
+            width: 100%; 
+            height: 100%;
+            padding-right: 2rem;
+            position: static;
+            padding-right: 0;
+
+            .containerAsideInNav{
+                display: none;
+            }
+
+            .nav-buttons{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                column-gap: 2rem;
+                padding-top:0;
+                
+            }
+        }
+
     }
 }
-
-@media (min-width: 2500px) {
-    .logo img{
+@media (min-width: 1900px) {
+    nav{
         height: 100px;
     }
-    nav {
-        height: 130px;
-    }
-    .search-bar {
-        height: 60px;
-    }
-    .search-nav button img{
-        height: 40px;
-    }
-    .nav-buttons{
-        height: 60px;
-    }
-    .login-button, .register-button{
-        min-width: 180px;
-    }
-    .search-bar{
-        padding: 0 2rem 0rem 2.5rem;
+}
+@media (min-width: 2500) {
+    nav{
+        height: 120;
     }
 }

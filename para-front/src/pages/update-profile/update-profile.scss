@@ -1,0 +1,56 @@
+@import '../../styles/styles.scss';
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 4rem 0rem 4rem 0rem;
+    height: fit-content;
+    
+    h2{
+        padding-bottom: 2rem;
+        font-size: 2rem;
+    }
+    form{
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        background-color: $aside-color;
+        padding: 3rem;
+        border-radius: 3px;
+        
+        .containerInputs{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 3fr auto;
+            justify-content: space-between;
+            column-gap: 3rem;
+
+            input{
+                width: 100%;
+                border-radius: 3px;
+                color: $background-color;
+
+            }
+            .file{
+                background-color: $search-color;
+                padding: 0.6rem 1rem;
+                width: fit-content;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            
+        }
+    }
+    button{
+        color: $white-color;
+        background-color: $logo-color;
+        padding: 0.6rem 1rem;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}
+

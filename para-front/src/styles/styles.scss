@@ -1,11 +1,20 @@
-$nav-color: #282828;
-$search-color: #646464;
+// $nav-color: #282828;
+// $search-color: #646464;
+// $logo-color: #f7452e;
+// $aside-color: #282828;
+// $background-color: #0D0D0D;
+// $white-color: #F3F3F3;
+// $post-color: #444444;
+// $principal-color: #711616;
+// $time-color: #bebebe;
+$nav-color: #181818;
+$search-color: #464545;
 $logo-color: #f7452e;
-$aside-color: #282828;
+$aside-color: #181818;
 $background-color: #0D0D0D;
 $white-color: #F3F3F3;
 $post-color: #444444;
-$principal-color: #711616;
+$principal-color: #6b0505;
 $time-color: #bebebe;
 
 $font-size-mobile: 10px;
@@ -30,7 +39,6 @@ html, body {
 }
 
 /*scrol bar*/
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -54,10 +62,11 @@ html, body {
 
 a {text-decoration: none;}
 
+.community-name{ font-size: 1rem;}
 p, li a, a, .titleInput, .inputDescription {font-size: 1.1rem;}
-.title, h2, .user, .search, button, .enable-icon {font-size: 1.1rem;}
+.title, h2, .user, .search, button, .enable-icon, .user-info-name {font-size: 1.1rem;}
 .less-important {font-size: 0.9rem;}
-i, a .footer-icon {font-size: 2rem;}
+i, a .footer-icon, .user-info-username {font-size: 2rem;}
 
 
 html {font-size: $font-size-mobile;}

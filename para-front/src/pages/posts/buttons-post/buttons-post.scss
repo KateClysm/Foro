@@ -14,8 +14,6 @@
       align-items: center;
       padding-right: 0.3rem;
       cursor: pointer;
-      
-  
     }
   
     .button-image {
@@ -53,8 +51,6 @@
     &:hover > .post-button > p {
       color: var(--logo);
     }
-  
-    // RESPONSIVE
     @media (min-width: 768px) {
       display: flex;
       justify-content: flex-end;

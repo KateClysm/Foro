@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 
 const AsideLeft: React.FC = () => {
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -15,15 +14,12 @@ const AsideLeft: React.FC = () => {
   return (
     <div className="aside-left">
       <ul className="principal-page">
-
-      <NavLink to="/" onClick={scrollToTop}><li>Home</li></NavLink>
-
+          <NavLink to="/" onClick={scrollToTop}><li className='home-hover'>Home</li></NavLink>
       </ul>
 
       <div className="padding-divider">
         <div className="divider"></div>
       </div>
-
       
       <ul className="topics">
         <NavLink className="link" to="/?cat=all" onClick={scrollToTop}>
@@ -48,12 +44,6 @@ const AsideLeft: React.FC = () => {
         <NavLink className="link" to="/?cat=premonitionsAndProphecies" onClick={scrollToTop}>
             <li>Premonitions and Prophecies</li>
         </NavLink>
-        <NavLink className="link" to="/?cat=zombies" onClick={scrollToTop}>
-            <li>Zombies</li>
-        </NavLink>
-        <NavLink className="link" to="/?cat=sleepParalysis" onClick={scrollToTop}>
-            <li>Sleep Paralysis</li>
-        </NavLink>
       </ul>
 
       <div className="padding-divider">
@@ -61,15 +51,9 @@ const AsideLeft: React.FC = () => {
       </div>
 
       <ul className="secondary-page">
-      <NavLink to="/about" onClick={scrollToTop}>
-        <li>About us</li>
-        </NavLink>
-      <NavLink to="/contact" onClick={scrollToTop}>
-        <li>Contact</li>
-        </NavLink>
-      <NavLink to="/help" onClick={scrollToTop}>
-        <li>Help</li>
-        </NavLink>
+        <NavLink to="/about" onClick={scrollToTop}><li>About us</li></NavLink>
+        <NavLink to="/contact" onClick={scrollToTop}><li>Contact</li></NavLink>
+        <NavLink to="/help" onClick={scrollToTop}><li>Help</li></NavLink>
       </ul>
     </div>
   );

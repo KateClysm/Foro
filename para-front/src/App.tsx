@@ -1,8 +1,6 @@
-//módulos
-import React from 'react';
-import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { ReactNode, useContext } from 'react';
+import { Outlet, createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-//componentes y pages
 import NavBar from './components/nav/NavBar';
 import Footer from './components/footer/Footer';
 import AsideLeft from './components/aside/Aside';
@@ -13,16 +11,19 @@ import AboutUs from './pages/about-us/AboutUs';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import NotFoundPage from './pages/not-found/NotFound';
-import CreatePostButton from './pages/createPost/createPostButton/CreatePostButton';
-import CreatePost from './pages/createPost/CreatePost2';
-//lógica
-//estilos
+import CreatePostButton from './pages/create-update-post/createPostButton/CreatePostButton';
 import './styles/main-content.scss';
 import AsideRight from './components/aside-right/AsideRight';
 import ExtendedPost from './pages/posts/extended-post/ExtendedPost';
+import { AuthContext } from './context/authContext';
+import { configureAxiosWithToken } from './axios';
+import Profile from './pages/profile/Profile';
+import CreatePost from './pages/create-update-post/create-post/CreatePost';
+import UpdatePost from './pages/create-update-post/update-post/UpdatePost';
+import UpdateProfile from './pages/update-profile/UpdateProfile';
+import MyProfile from './pages/profile/my-profile/MyProfile';
 
 
-//estructura básica de la página
 const Layout = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -39,24 +40,24 @@ const Layout = () => {
   );
 };
 
-//componente App
 const App: React.FC = () => {
   
-  //si no se está logueado, redirecciona a login,si se está logueado habilita las rutas hijas
-  // const { currentUser } = useContext(AuthContext);
-  // const ProtectedRoute = ({ children }: { children: ReactNode }) =>{
-  //   if ( !currentUser ){
-  //     return <Navigate to="/login"/>
-  //   }
-  //   return children;
-  // };
+  const { currentUser } = useContext(AuthContext);
+    console.log("El usuario actual es: ", currentUser);
 
-  //creación del ruteo
+    configureAxiosWithToken();
+    
+  const ProtectedRoute = ({ children }: { children: ReactNode }) =>{
+    if ( !currentUser ){
+      return <Navigate to="/login"/>
+    }
+    return children;
+  };
+
   const router = createBrowserRouter([
     {
       path: '/', 
-      // element: <ProtectedRoute><Layout /></ProtectedRoute>,  //rutas privadas
-       element: <Layout />,
+      element: <ProtectedRoute><Layout /></ProtectedRoute>,
       children: [
         {
           path: '/',
@@ -85,11 +86,23 @@ const App: React.FC = () => {
         {
           path: '/createpost',
           element: <CreatePost />
+        },
+        {
+          path: '/updatepost/:id',
+          element: <UpdatePost />
+        },
+        {
+          path:"/myprofile",
+          element: <MyProfile/>
+        },
+        {
+          path:"/updatemyprofile/:id",
+          element: <UpdateProfile/>
+        },
+        {
+          path:"/profile/:id",
+          element: <Profile/>
         }
-        // {
-        //   path:"/profile/:id",
-        //   element: <ProfilePage/>
-        // }
       ]
     },
     {
@@ -106,7 +119,6 @@ const App: React.FC = () => {
     }
   ]);
 
-  //devuelve el ruteo
   return (
     <div>
       <RouterProvider router={router} />

@@ -2,7 +2,6 @@
 .main-content {
     background-color: var(--background);
     display: grid;
-    border-top: 1px solid var(--background);
   
     &.secondary-grid {
       grid-template-columns: 2fr 9fr;

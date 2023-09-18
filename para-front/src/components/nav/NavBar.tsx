@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-// import './navBar.css';
 import './nav.scss'
 import logoNav from '../../assets/logoNav.png';
 import miniLogo from '../../assets/miniLogo.png';
@@ -22,35 +21,27 @@ const NavBar: React.FC = () => {
                 <img src={logoNav} alt="Logo ParaSeekers"/>
             </div>
 
+            <div className="navbar-center"></div>
+            
             <button className="nav-toggle" aria-label={isNavMenuVisible ? "Close Menu" : "Open Menu"} onClick={toggleNavMenu}>
                 <FontAwesomeIcon icon={faBars} />
             </button>
 
+            
+
             <div className={`nav-menu ${isNavMenuVisible ? 'nav-menu_visible' : ''}`}>
+                {currentUser && (
+                    <div className="nav-buttons">
+                        <div className="username-container">
+                            <img src={miniLogo} alt="Mini Logo ParaSeekers" />
 
-                <div className="container-search-bar">
-                    <div className="search-nav">
-                        <form action="https://www.google.com/search" method="get" className="search-bar" target="_blank">
-                            <input className='search' type="text" placeholder="Search Post" name="q" />
-                            <button type="submit">
-                              <img src={miniLogo} alt="Mini Logo ParaSeekers" />
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                {/* <p>{currentUser?.email}</p> */}
-                <div className="nav-buttons">
-                    {
-                    currentUser ? 
-                        <button className="login-button register-button" onClick={logout}>
+                            <NavLink to="/myprofile"><p>{currentUser?.username}</p></NavLink>
+                        </div>
+                        <button className="logout-button" onClick={logout}>
                             <NavLink to="/login">Logout</NavLink>
                         </button>
-                        : ''
-                    }
-                    
-                </div>
-
+                     </div>
+                )}
                 <div className="containerAsideInNav">
                     <Aside />
                 </div>
