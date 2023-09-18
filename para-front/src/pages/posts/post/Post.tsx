@@ -38,7 +38,7 @@ const Post: React.FC<{ post: IPost }> = ({ post }) => {
           uid: post.uid,
         },
     });
-      navigate("/myprofile");
+    document.location.reload();
     } catch (err) {
       console.log(err);
     }
