@@ -1,87 +1,42 @@
-# Paraseekers Forum - Group Proyect 1
+# Paraseekers Forum - Group Project 
 
-This is a forum created by a group a students as a proyect for the Full Stack Web Development Course from [SomosCoders](https://somoscoders.org/es).
+**Paraseekers Forum** is an interactive discussion platform built as a group project for the Full Stack Web Development Course at [SomosCoders](https://somoscoders.org/es). It allows users to create accounts, share posts, and explore content in a responsive and modern interface.  
 
-## Overview
+## Project Description
 
-### The Task
-Users should be able to:
-- Enjoy an optical view of the site depending on their device's screen size.
-- Register and create an account
-- Be able to make posts, edit them and delete them.
-- Be able to see your own profile and that of other users.
+Paraseekers Forum is a dynamic web forum where users can:
+- Share and manage posts with full CRUD functionality (create, read, update, delete).  
+- Explore other users’ profiles and their contributions.  
+- Enjoy a fully responsive design that adapts to any device, from mobile to desktop.  
 
-### Screenshots, Figma Desing & Trello
+The project demonstrates full-stack development skills using **React, Node.js, TypeScript, Express, and MySQL**, integrating both frontend and backend functionality in a cohesive application.  
 
-[Figma](https://www.figma.com/file/VjMA0EgLWkCp1j1akCVeo1/Grupo-1---Foro?type=design&node-id=0-1&mode=design&t=cstp5onT911A9dS5-0)
+## Screenshots, Design & Project Management
 
-[Trello](https://trello.com/b/g6Q9Sa6i/foro)
+- [Figma Design](https://www.figma.com/file/VjMA0EgLWkCp1j1akCVeo1/Grupo-1---Foro?type=design&node-id=0-1&mode=design&t=cstp5onT911A9dS5-0)  
+- [Trello Board](https://trello.com/b/g6Q9Sa6i/foro)  
 
-![WhatsApp Image 2023-09-18 at 00 48 07 (1)](https://github.com/KateClysm/Foro/assets/134759638/003cdf2e-5e9d-44b8-8e8a-6ee7c28cfb66)
+![Screenshot 1](https://github.com/KateClysm/Foro/assets/134759638/003cdf2e-5e9d-44b8-8e8a-6ee7c28cfb66)  
+![Screenshot 2](https://github.com/KateClysm/Foro/assets/134759638/f3cf14a0-7700-4bb0-8ddf-b6213efa2dbd)  
+![Screenshot 3](https://github.com/KateClysm/Foro/assets/134759638/6e27c2be-47c8-4861-bc7f-3b1e04b9c913)  
 
+## Built With / Hecho con
 
-### Built with
+- HTML5 Semántico  
+- CSS (Custom Properties)  
+- JavaScript / TypeScript  
+- React  
+- Node.js & Express  
+- MySQL  
 
-- Semantic HTML5 markup
-- CSS custom properties
-- JavaScript
-- React
-- Node Js
-- Typescript
-- Express
-- MySql
+## Authors / Integrantes
 
-### Authors
-- Github: [Guadalupe](https://github.com/guadalupe1516)
-- Linkedin: [Guadalupe Escobar](https://www.linkedin.com/in/guadalupe-escobar-65967627a/)
-- Github: [ValentinaBS](https://github.com/ValentinaBS)
-- Linkedin: [Valentina Belén Sánchez](https://www.linkedin.com/in/valentina-belen-sanchez/)
-- Github: [Maria Monchot](https://github.com/KateClysm)
-- Linkedin: [Maria Monchot](https://www.linkedin.com/in/maria-monchot/)
-- Github: [Giuliana Villaroel](https://github.com/Icaros95)
-- Linkedin: [Giuliana Villaroel](https://ar.linkedin.com/in/giuliana-villarroel-67812627a)
-- Github: [Ludmila](https://github.com/ludm1)
-- Linkedin: [Ludmila Agostinelli](https://www.linkedin.com/in/ludmila-agostinelli-2a004a27b/)
+- [Guadalupe Escobar](https://www.linkedin.com/in/guadalupe-escobar-65967627a/) | [GitHub](https://github.com/guadalupe1516)  
+- [Valentina Belén Sánchez](https://www.linkedin.com/in/valentina-belen-sanchez/) | [GitHub](https://github.com/ValentinaBS)  
+- [Maria Monchot](https://www.linkedin.com/in/maria-monchot/) | [GitHub](https://github.com/KateClysm)  
+- [Giuliana Villaroel](https://ar.linkedin.com/in/giuliana-villarroel-67812627a) | [GitHub](https://github.com/Icaros95)  
+- [Ludmila Agostinelli](https://www.linkedin.com/in/ludmila-agostinelli-2a004a27b/) | [GitHub](https://github.com/ludm1)  
 
-# Paraseekers Foro - Proyecto Grupo 1
-
-Este es un foro creado por un grupo de estudiantes como proyecto para el Curso de Desarrollo Web Full Stack de [SomosCoders](https://somoscoders.org/es).
-
-## Visión General
-
-### La Tarea
-Los usuarios deberían:
-- Disfrutar de una visión óptica del sitio en función del tamaño de la pantalla de su dispositivo.
-- Poder registrarse y crear una cuenta 
-- Poder realizar posteos, editarlos y eliminarlos.
-- Poder ver el perfil propio y de otros usuarios.
-
-### Screenshots, Figma Desing & Trello
-
-[Figma](https://www.figma.com/file/VjMA0EgLWkCp1j1akCVeo1/Grupo-1---Foro?type=design&node-id=0-1&mode=design&t=cstp5onT911A9dS5-0)
-
-[Trello](https://trello.com/b/g6Q9Sa6i/foro)
-
-![WhatsApp Image 2023-09-18 at 00 48 07 (1)](https://github.com/KateClysm/Foro/assets/134759638/003cdf2e-5e9d-44b8-8e8a-6ee7c28cfb66)
-![WhatsApp Image 2023-09-18 at 00 48 07](https://github.com/KateClysm/Foro/assets/134759638/f3cf14a0-7700-4bb0-8ddf-b6213efa2dbd)
-![WhatsApp Image 2023-09-18 at 00 48 06](https://github.com/KateClysm/Foro/assets/134759638/6e27c2be-47c8-4861-bc7f-3b1e04b9c913)
-
-### Hecho con
-
-- HTML5 Semántico
-- CSS
-- JavaScript
-- React
-- Node js
-- Typescript
-- Express
-- MySql
-
-### Integrantes
-- Github: [Guadalupe](https://github.com/guadalupe1516)
-- Linkedin: [Guadalupe Escobar](https://www.linkedin.com/in/guadalupe-escobar-65967627a/)
-- Github: [ValentinaBS](https://github.com/ValentinaBS)
-- Linkedin: [Valentina Belén Sánchez](https://www.linkedin.com/in/valentina-belen-sanchez/)
 - Github: [Maria Monchot](https://github.com/KateClysm)
 - Linkedin: [Maria Monchot](https://www.linkedin.com/in/maria-monchot/)
 - Github: [Ludmila](https://github.com/ludm1)
